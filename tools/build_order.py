@@ -22,7 +22,7 @@ js_qrsvg = between('function qrSVG(', '\nconst fmtCode')
 js_fmt = next(l for l in lines if l.startswith('const fmtCode = '))
 js_sticker = between('function stickerHTML(', '\nfunction renderStickers')
 
-for name in ['order', 'home', 'home2', 'home3']:
+for name in ['order', 'home', 'home2', 'home3', 'home4']:
     tpl = open(os.path.join(D, name + '.template.html'), encoding='utf-8').read()
     out = (tpl.replace('/*@FONTS@*/', fonts)
               .replace('/*@STICKER_CSS@*/', logo_css + '\n' + sticker_css)
