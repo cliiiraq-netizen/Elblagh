@@ -711,11 +711,11 @@ const PLANS = {
   basic: {name:'إبلاغ', em:'', price:15000, incl:1, ic:'bell',
     tag:'تنبيه فوري لسيارتك، ورقمك يبقى إلك',
     top:[['bell','إشعار فوري بالتطبيق، وتنبيه عاجل لو ما شفته'],['lock','رقمك ما يظهر لأي أحد'],['shield','حماية ذكية من البلاغات المزعجة']]},
-  plus: {name:'إبلاغ', em:'بلس', price:22000, incl:3, ic:'users',
-    tag:'لعائلتك وسياراتك: 3 ملصقات مشمولة',
+  plus: {name:'إبلاغ', em:'بلس', price:22000, incl:1, ic:'users',
+    tag:'لعائلتك وسياراتك: كلكم توصلكم التنبيهات',
     top:[['checks','كل مزايا إبلاغ'],['share','شارك السيارة ويا عائلتك أو السائق'],['msg','ما شفت الإشعار؟ نوصلك على واتساب']]},
 };
-const EXTRA = 3000, DELIVERY = 5000, DISCOUNT = 2000, MAXQ = 20;
+const DELIVERY = 5000, DISCOUNT = 2000, MAXQ = 20;
 const DESIGNS = [['white','أبيض'],['black','أسود'],['yellow','أصفر']];
 const GOVS = {
   'بغداد':['الكرادة','المنصور','الأعظمية','الكاظمية','زيونة','اليرموك','الدورة','البياع','الجادرية','الغدير','الشعب','مدينة الصدر','الحرية','الغزالية'],
@@ -749,7 +749,7 @@ const topV = () => Object.keys(S.qty).reduce((a, k) => S.qty[k] > S.qty[a] ? k :
 const mixLabel = () => { const p = DESIGNS.filter(([k]) => S.qty[k]); return p.length > 1 ? ' (' + p.map(([k,t]) => `${S.qty[k]} ${t}`).join(' · ') + ')' : ''; };
 function totals(){
   if (!S.plan) return null;
-  const P = PLANS[S.plan], n = count(), extra = Math.max(0, n - P.incl) * EXTRA;
+  const P = PLANS[S.plan], n = count(), extra = Math.max(0, n - 1) * P.price;   // each extra sticker = another year of the same plan
   const deliv = n >= 2 ? 0 : (S.gov ? DELIVERY : null);   // free from two stickers, else known once a governorate is picked
   const disc = S.codeOk ? DISCOUNT : 0;
   return {P, n, extra, deliv, disc, sub: P.price + extra - disc, total: P.price + extra + (deliv || 0) - disc};
@@ -908,7 +908,7 @@ function renderP1(){
       <div class="sec-h"><h3 id="desH">اختار ملصقاتك</h3><span class="chip" id="qtyChip">${qtyLabel(n || 1)}</span></div>
       ${shapeSeg('shape-seg')}
       <div class="designs">${DESIGNS.map(designCard).join('')}</div>
-      <p class="qhint">كل ملصق إضافي بـ ${IQD(EXTRA)} · التوصيل مجاني من ملصقين</p>
+      <p class="qhint">كل ملصق إضافي باشتراك سنة بنفس سعر الباقة · التوصيل مجاني من ملصقين</p>
     </section>
     <section class="assure" aria-label="مشمولة بالباقتين">
       <div class="as">${I.refresh}<b>ضاع أو انسرق؟ بديله علينا</b><small>توقفه بنقرة ونطلع لك بديل بنفس حسابك.</small></div>
@@ -1018,7 +1018,7 @@ function renderSums(anim){
   $('#side').innerHTML = `<div class="pd"><div class="art">${stkMini(topV(), 76, 96)}</div><div><h3>ملصق إبلاغ</h3><p>يشمل الملصق وسنة من الباقة اللي تختارها.</p></div></div>
     <dl aria-live="polite" aria-atomic="true">
       <div><dt>${t ? `${n} × ${t.P.name}${t.P.em ? ' ' + t.P.em : ''}` : 'الباقة'}</dt><dd>${t ? IQD(t.P.price) : 'بعدك ما اخترت'}</dd></div>
-      ${t && t.extra ? `<div><dt>ملصقات إضافية × ${n - t.P.incl}</dt><dd>${IQD(t.extra)}</dd></div>` : ''}
+      ${t && t.extra ? `<div><dt>ملصقات إضافية × ${n - 1}</dt><dd>${IQD(t.extra)}</dd></div>` : ''}
       ${t && t.disc ? `<div><dt>خصم · ${esc(S.code.toUpperCase())}</dt><dd><span class="free">− ${IQD(t.disc)}</span></dd></div>` : ''}
       <div><dt>التوصيل</dt><dd>${!t || t.deliv === null ? 'اختار المحافظة' : t.deliv === 0 ? '<span class="free">مجاناً</span>' : IQD(t.deliv)}</dd></div>
       <div class="tot"><dt>${t && t.deliv !== null ? 'إجمالي الطلب' : 'المجموع قبل التوصيل'}</dt><dd>${t ? IQD(t.deliv === null ? t.sub : t.total) : '—'}</dd></div>
@@ -1029,7 +1029,7 @@ function renderSums(anim){
   const key = [S.plan, n, t.deliv, t.disc, S.shape, topV()].join('|'), doAnim = anim && key !== lastSum && lastSum !== ''; lastSum = key;
   $('#msum').innerHTML = `<div class="msum" aria-live="polite" aria-atomic="true"><div class="pr">${stkMini(topV(), 48, 64)}<div class="lns${doAnim ? ' anim' : ''}">
     <div class="r1"><span>${t.P.name}${t.P.em ? ' ' + t.P.em : ''} × ${n}</span><b>${IQD(t.P.price)}</b></div>
-    ${t.extra ? `<div class="r2"><span>ملصقات إضافية × ${n - t.P.incl}</span><b>${IQD(t.extra)}</b></div>` : ''}
+    ${t.extra ? `<div class="r2"><span>ملصقات إضافية × ${n - 1}</span><b>${IQD(t.extra)}</b></div>` : ''}
     ${t.disc ? `<div class="r2"><span>خصم · ${esc(S.code.toUpperCase())}</span><b class="free">− ${IQD(t.disc)}</b></div>` : ''}
     <div class="r2"><span>التوصيل</span><b ${t.deliv === 0 ? 'class="free"' : ''}>${t.deliv === null ? 'اختار المحافظة' : t.deliv === 0 ? 'مجاناً' : IQD(t.deliv)}</b></div>
     <div class="r3"><span>${t.deliv === null ? 'المجموع قبل التوصيل' : 'الإجمالي'}</span><b>${IQD(t.deliv === null ? t.sub : t.total)}</b></div>
