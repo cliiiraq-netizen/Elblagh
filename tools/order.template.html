@@ -60,19 +60,48 @@ svg{display:block}
 /*@STICKER_CSS@*/
 
 /* ============ Header ============ */
-.top{position:relative;z-index:30;color:var(--ink)}
-.top-in{width:min(1120px,calc(100% - 24px));margin:0 auto;min-height:66px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
-.brand-mk{width:36px;height:36px;border-radius:11px;background:var(--y);color:#111;display:grid;place-items:center;flex:none}
-.brand-mk svg{width:26px;height:auto}
+.top{position:relative;z-index:30;color:var(--ink);padding-top:10px}
+.top-in{position:relative;width:min(1120px,calc(100% - 24px));margin:0 auto;min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:7px 7px 7px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--line);box-shadow:0 8px 24px -16px rgba(60,40,0,.35)}
+.top-in::after{content:"";position:absolute;inset-inline:22%;bottom:-1px;height:1px;background:linear-gradient(90deg,transparent,rgba(245,170,0,.6),transparent);pointer-events:none}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
+.brand-mk{position:relative;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#FFDD55,#FFC816 45%,#F2AA00);color:#111;display:grid;place-items:center;flex:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 6px 14px -6px rgba(245,170,0,.6)}
+.brand-mk svg{width:27px;height:auto}
+.brand-tx{display:flex;flex-direction:column;line-height:1}
 .brand b{font-size:18px;font-weight:700;line-height:1;letter-spacing:-.01em}
-.top-l{display:flex;align-items:center;gap:10px}
-.secure{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:400;color:var(--ink3)}
-.secure .ic{width:14px;height:14px}
-.tbtn{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;color:var(--ink3);border:1px solid var(--line);background:var(--surface)}
-.tbtn .ic{width:15px;height:15px}
+.brand small{margin-top:3px;font:600 10px/1 -apple-system,"Segoe UI",system-ui,sans-serif;letter-spacing:.06em;color:var(--ink3);direction:ltr;text-align:right}
+.top-l{display:flex;align-items:center;gap:8px}
+.secure{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 11px;border-radius:999px;background:var(--surface2);border:1px solid var(--line);font-size:11px;font-weight:600;color:var(--ink2)}
+.secure .ic{width:13px;height:13px;color:var(--ok)}
+.tbtn{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:var(--ink2);border:1px solid var(--line);background:var(--surface2)}
+.tbtn .ic{width:16px;height:16px}
 @media (min-width:640px){.top-in{width:min(1120px,calc(100% - 48px))}}
 @media (min-width:768px){.top-in{width:min(1120px,calc(100% - 80px))}}
+/* footer — same dark card as the home page */
+.site-footer{padding:20px 0 calc(110px + env(safe-area-inset-bottom))}
+.site-footer .shell{width:min(1120px,calc(100% - 24px));margin:0 auto}
+.ft{position:relative;overflow:hidden;border-radius:24px;background:radial-gradient(120% 90% at 100% 0,rgba(255,200,22,.13),transparent 55%),#141311;color:#f5f3f0;border:1px solid rgba(255,255,255,.07)}
+.ft::before{content:"";position:absolute;inset-inline:18%;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,200,22,.6),transparent)}
+.ft-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 20px 14px}
+.ft-brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none}
+.ft-brand .brand-mk{width:40px;height:40px}
+.ft-brand b{display:block;font-size:19px;font-weight:700;line-height:1;color:#fff}
+.ft-brand small{display:block;margin-top:4px;font:600 10px/1 -apple-system,"Segoe UI",system-ui,sans-serif;letter-spacing:.06em;color:rgba(255,255,255,.45);direction:ltr;text-align:right}
+.ft-tag{margin:0 20px;font-size:13px;line-height:1.7;color:rgba(255,255,255,.62)}
+.ft-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:18px 20px 0}
+.ft-cols h3{margin:0 0 7px;font-size:11px;font-weight:600;letter-spacing:.04em;color:#FFD966}
+.ft-cols a{display:flex;align-items:center;min-height:32px;font-size:13px;color:rgba(255,255,255,.78);text-decoration:none}
+.ft-cols a:hover{color:#fff}
+.ft-chips{display:flex;flex-wrap:wrap;gap:6px;padding:16px 20px 18px}
+.ft-chips>span{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);font-size:11px;color:rgba(255,255,255,.72)}
+.ft-chips .ic{width:13px;height:13px;color:#FFC816}
+.ft-bot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 12px;padding:11px 20px;border-top:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.18)}
+.ft-bot p{margin:0;font-size:11px;color:rgba(255,255,255,.5)}
+.ft-bot p b{font-weight:600;color:rgba(255,255,255,.72)}
+.ft-legal{display:flex;flex-wrap:wrap;gap:2px 4px}
+.ft-legal a{display:inline-flex;align-items:center;min-height:28px;padding:0 7px;border-radius:999px;font-size:11px;color:rgba(255,255,255,.55);text-decoration:none}
+.ft-legal a:hover{color:#fff;background:rgba(255,255,255,.06)}
+@media (min-width:640px){.site-footer .shell{width:min(1120px,calc(100% - 48px))}}
+@media (min-width:768px){.site-footer .shell{width:min(1120px,calc(100% - 80px))}.ft{display:grid;grid-template-columns:1.2fr 1fr}.ft-head{grid-column:1}.ft-cols{grid-column:2;grid-row:1/3;padding:22px 24px 0}.ft-chips{grid-column:1;padding:16px 24px 20px}.ft-bot{grid-column:1/-1;padding:12px 24px}.ft-top{padding:22px 24px 14px}.ft-tag{margin:0 24px}}
 @media (min-width:801px){.top-in{min-height:74px}.secure{font-size:11px}}
 @media (min-width:1024px){.top-in{width:min(1120px,calc(100% - 96px))}}
 @media (min-width:1280px){.top-in{width:min(1120px,calc(100% - 128px))}}
@@ -621,7 +650,7 @@ select.inp{-webkit-appearance:none;appearance:none;cursor:pointer;padding-inline
 </head>
 <body>
 <header class="top"><div class="top-in">
-  <a class="brand" href="#top" aria-label="إبلاغ"><span class="brand-mk" id="brandMk"></span><b>إبلاغ</b></a>
+  <a class="brand" href="home.html" aria-label="إبلاغ — الرئيسية"><span class="brand-mk" id="brandMk"></span><span class="brand-tx"><b>إبلاغ</b><small>eblagh.iq</small></span></a>
   <div class="top-l"><span class="secure" id="secure"></span><button class="tbtn" id="themeBtn" type="button" aria-label="الوضع الداكن"></button></div>
 </div></header>
 
@@ -669,6 +698,20 @@ select.inp{-webkit-appearance:none;appearance:none;cursor:pointer;padding-inline
     </div>
   </section>
 </main>
+<footer class="site-footer" id="siteFooter">
+  <div class="shell"><div class="ft">
+    <div class="ft-head">
+      <div class="ft-top"><a class="ft-brand" href="home.html"><span class="brand-mk ft-mk"></span><span><b>إبلاغ</b><small>eblagh.iq</small></span></a></div>
+      <p class="ft-tag">ملصق ذكي يخلّي أي شخص ينبّهك بخصوص سيارتك، ورقمك يبقى إلك.</p>
+    </div>
+    <div class="ft-cols">
+      <nav aria-label="روابط الموقع"><h3>الموقع</h3><a href="how-it-works.html">شلون يشتغل</a><a href="order.html">الأسعار</a><a href="home.html">الرئيسية</a></nav>
+      <nav aria-label="المساعدة"><h3>المساعدة</h3><a href="contact.html">تواصل ويانا</a><a href="login.html">تسجيل الدخول</a><a href="site.html">جرّب التطبيق</a></nav>
+    </div>
+    <div class="ft-chips"><span class="fck"></span><span class="fck2"></span></div>
+    <div class="ft-bot"><p>© 2026 <b>إبلاغ</b> · <span>صُنع بالعراق</span></p><nav class="ft-legal" aria-label="قانوني"><a href="privacy.html">الخصوصية</a><a href="terms.html">الشروط</a><a href="communications.html">سياسة التواصل</a></nav></div>
+  </div></div>
+</footer>
 
 <div class="bar hid" id="bar" role="region" aria-label="مجموع الطلب"><div class="bar-in">
   <div class="tt" aria-live="polite" aria-atomic="true"><small id="barLbl">المجموع</small><strong id="barTotal">—</strong></div>
@@ -768,6 +811,8 @@ MQ.addEventListener?.('change', applyTheme); applyTheme();
 
 /* ---------- hero ---------- */
 $('#brandMk').innerHTML = markSVG;
+$$('.ft-mk').forEach(e => e.innerHTML = markSVG);
+$('.fck').innerHTML = I.check + 'الدفع عند الاستلام'; $('.fck2').innerHTML = I.check + 'توصيل لكل المحافظات';
 $('#secure').innerHTML = icn(I.lock) + 'إتمام الطلب';
 $('#cta').innerHTML = 'اطلب من هنا' + X.chevDown;
 const SHAPES = [['v','طولي'],['h','مستطيل'],['r','دائري']];
