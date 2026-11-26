@@ -1434,6 +1434,8 @@ let toastT = null;
 function toast(m){ $('.toast')?.remove(); const d = document.createElement('div'); d.className = 'toast'; d.setAttribute('role','status'); d.textContent = m; document.body.appendChild(d); clearTimeout(toastT); toastT = setTimeout(() => d.remove(), 2600); }
 
 renderSteps(); renderP1(); renderSums(false); renderBar();
+try { const qc = (new URLSearchParams(location.search).get('code') || '').trim(); const v = qc.toUpperCase().replace(/[^A-Z0-9]/g,'');
+  if (v === 'SCAN2K' || /^EB[0-9A-Z]{4}$/.test(v)){ S.code = qc; S.codeOk = true; S.codeOpen = true; } } catch(e){}
 try { const qp = new URLSearchParams(location.search).get('plan'); if (qp === 'basic' || qp === 'plus'){ selectPlan(qp); setTimeout(() => scrollToEl($('#ohead'), 56), 900); } } catch(e){}
 }
 </script>

@@ -375,6 +375,28 @@ textarea.inp{height:auto;min-height:92px;padding:12px 14px;resize:none;line-heig
 .rate button.on{background:var(--ysoft);border-color:var(--yline);color:var(--ytext)}
 .rate .ic{width:24px;height:24px}
 .rate button.dn .ic{transform:rotate(180deg)}
+.sale{position:relative;overflow:hidden;margin:18px 18px 0;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:12px 14px;padding:16px;border-radius:18px;background:radial-gradient(circle at 100% 0,rgba(255,200,22,.2),transparent 46%),#282624;border:1px solid rgba(255,200,22,.22);box-shadow:0 14px 32px rgba(43,31,24,.14);color:#FFFAF5;text-align:start}
+.sale::after{content:"";position:absolute;inset-inline-end:-70px;bottom:-78px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,.06);box-shadow:0 0 0 24px rgba(255,255,255,.024);pointer-events:none}
+.sale .pics{position:relative;z-index:1;display:block;width:60px;height:66px}
+.sale .pics .stk{position:absolute;top:2px;left:4px;transform:rotate(-9deg);filter:drop-shadow(3px 6px 6px rgba(0,0,0,.28))}
+.sale .pics .stk+.stk{left:22px;top:6px;transform:rotate(8deg)}
+.sale .off{position:absolute;bottom:-2px;inset-inline-end:-6px;z-index:2;height:22px;padding:0 7px;border-radius:999px;background:linear-gradient(135deg,#FFDD55,#FFC816 45%,#F2AA00);color:#111;border:2px solid #282624;font-size:10px;font-weight:800;display:grid;place-items:center;direction:ltr;white-space:nowrap}
+.sale .cp{position:relative;z-index:1;display:grid;gap:3px;min-width:0}
+.sale .tag{font-size:10.5px;font-weight:600;letter-spacing:.02em;color:#FFD84A}
+.sale h4{margin:0;font-size:15.5px;font-weight:700;line-height:1.5;color:#FFFAF5}
+.sale .pr{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px;font-size:13px;font-weight:600;line-height:1.4}
+.sale .pr>span{font-size:11px;font-weight:500;color:#BDB2A9}
+.sale .pr s{color:#A8A29E;font-weight:500;text-decoration-thickness:1.5px}
+.sale .pr b{font-size:14px;font-weight:800;color:#FFFAF5}
+.sale .stx{display:block;max-width:none;font-size:12px;line-height:1.7;color:#BDB2A9}
+.sale .cd{display:block;margin-top:2px;font-size:11.5px;line-height:1.9;color:#BDB2A9}
+.sale .cd i{font-style:normal;font-weight:800;color:#FFD84A;padding:1px 7px;margin:0 2px;border-radius:6px;border:1px dashed rgba(255,216,74,.55);direction:ltr;unicode-bidi:isolate;letter-spacing:.03em;white-space:nowrap}
+.sale .go{grid-column:1/-1;position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:9px 16px;border-radius:999px;background:linear-gradient(135deg,#FFDD55,#FFC816 45%,#F2AA00);color:#111;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 8px 20px rgba(245,170,0,.24);transition:transform .18s,box-shadow .18s}
+.sale .go:hover{transform:translateY(-1px);box-shadow:0 11px 24px rgba(245,170,0,.32)}
+.sale .go .ic{width:16px;height:16px}
+.sale .apps{grid-column:1/-1;position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:8px;font-size:11px;color:#A8A29E}
+.sale .apps span{display:inline-flex;align-items:center;gap:4px;direction:ltr;color:#D6CFC8;font-weight:600}
+.sale .apps .ic{width:12px;height:12px}
 .promo{margin:18px 18px 0;padding:16px;border-radius:24px;background:#111;color:#fff;display:flex;gap:14px;align-items:center;position:relative;overflow:hidden}
 :root[data-theme="dark"] .promo{background:var(--surface2);border:1px solid var(--line)}
 .promo .pst{width:58px;flex:none}
@@ -1598,7 +1620,7 @@ function rStatus(){
     ${['delivered','seen'].includes(st) ? adStrip() : ''}
     ${st==='resolved' ? `<p style="text-align:center;font-size:13px;color:var(--ink2);margin:20px 0 0">${T('شلون كانت التجربة؟','How was it?','ئەزموونەکە چۆن بوو؟')}</p>
       <div class="rate"><button class="${S.r.rated==='up'?'on':''}" data-act="r-rate" data-v="up" aria-label="${T('ممتازة','Great','نایاب')}">${I.thumb}</button><button class="dn ${S.r.rated==='dn'?'on':''}" data-act="r-rate" data-v="dn" aria-label="${T('سيئة','Bad','خراپ')}">${I.thumb}</button></div>
-      <div class="promo"><div class="pst">${stickerHTML('sv','yellow',S.r.car,0.72)}</div><div><b>${T('تريد ملصق لسيارتك؟','Want a sticker for your car?','ستیکەرێکت بۆ ئۆتۆمبێلەکەت دەوێت؟')}</b><small>${T('حمّل التطبيق وفعّل ملصقك بدقيقة.','Get the app and activate your sticker in a minute.','ئەپەکە دابگرە و لە خولەکێکدا ستیکەرەکەت چالاک بکە.')}</small><div class="promo-code">${T('خصم 2,000 د.ع بكود','2,000 IQD off with code','2,000 دینار داشکاندن بە کۆدی')} <b>${ltr('SCAN-2K')}</b></div><button class="tb-btn y" data-act="r-promo" style="margin-bottom:8px">${I.bag} ${T('احجز ملصقك','Book your sticker','ستیکەرەکەت حیجز بکە')}</button><div class="stores"><span>${I.apple}App Store</span><span>${I.play}Google Play</span></div></div></div>
+      ${`<div class="sale"><span class="pics" aria-hidden="true">${stickerHTML('ev','white',S.r.car,0.5)}${stickerHTML('ev','yellow',S.r.car,0.5)}<span class="off">−2,000</span></span><div class="cp"><span class="tag">${T('عرض خاص لصفحة المسح','Scan-page offer','دیاری تایبەتی پەڕەی سکان')}</span><h4>${T('تريد ملصق لسيارتك؟','Want a sticker for your car?','ستیکەرێکت بۆ ئۆتۆمبێلەکەت دەوێت؟')}</h4><span class="pr"><span>${T('باقة إبلاغ · سنة','Eblagh plan · year','پلانی ئیبلاغ · ساڵ')}</span><s>${ltr('15,000')}</s><b>${ltr('13,000')} ${T('د.ع','IQD','دینار')}</b></span><span class="stx">${T('خلّي الناس توصلك بدون ما يعرفون رقمك.','Let people reach you without knowing your number.','با خەڵک بێ ژمارەکەت پەیوەندیت پێوە بکەن.')}</span><span class="cd">${T('كود الخصم','Code','کۆد')} <i>SCAN-2K</i> ${T('ينطبق تلقائياً','applied automatically','خۆکار جێبەجێ دەبێت')}</span></div><a class="go" href="order.html?plan=basic&code=SCAN-2K">${I.bag} ${T('اطلب ملصقك بالخصم','Order with the discount','بە داشکاندن داوا بکە')}</a><span class="apps">${T('التطبيق متوفر على','App available on','ئەپەکە لەسەر')} <span>${I.apple}App Store</span><span>${I.play}Google Play</span></span></div>`}
       <div class="acts"><button class="pbtn ghost" data-act="r-new">${I.refresh} ${T('بلاغ جديد','New report','ڕاپۆرتی نوێ')}</button></div>` : ''}
     <div style="height:20px"></div>`;
 }
@@ -2047,7 +2069,7 @@ const setMode = m => { S.mode = m; try { localStorage.setItem('eb_mode', m); } c
 
 /* --- 2. reporter error states --- */
 function adStrip(){
-  return `<div class="adpromo"><div class="pst">${stickerHTML('sv','yellow','EB5002',0.6)}</div><div><b>${T('تريد ملصق لسيارتك؟','Want a sticker for your car?','ستیکەرێکت بۆ ئۆتۆمبێلەکەت دەوێت؟')}</b><small>${T('خصم 2,000 د.ع لأول طلب من صفحة المسح · كود','2,000 IQD off your first order from this page · code','2,000 دینار داشکاندن بۆ یەکەم داواکاری لەم پەڕەیەوە · کۆد')} ${ltr('SCAN-2K')}</small><button class="tb-btn y" data-act="r-promo">${I.bag} ${T('احجز ملصقك','Book your sticker','ستیکەرەکەت حیجز بکە')}</button></div></div>`;
+  return `<div class="sale"><span class="pics" aria-hidden="true">${stickerHTML('ev','white','EB5002',0.5)}${stickerHTML('ev','yellow','EB5002',0.5)}<span class="off">−2,000</span></span><div class="cp"><span class="tag">${T('عرض خاص لصفحة المسح','Scan-page offer','دیاری تایبەتی پەڕەی سکان')}</span><h4>${T('تريد ملصق لسيارتك؟','Want a sticker for your car?','ستیکەرێکت بۆ ئۆتۆمبێلەکەت دەوێت؟')}</h4><span class="pr"><span>${T('باقة إبلاغ · سنة','Eblagh plan · year','پلانی ئیبلاغ · ساڵ')}</span><s>${ltr('15,000')}</s><b>${ltr('13,000')} ${T('د.ع','IQD','دینار')}</b></span><span class="stx">${T('خلّي الناس توصلك بدون ما يعرفون رقمك.','Let people reach you without knowing your number.','با خەڵک بێ ژمارەکەت پەیوەندیت پێوە بکەن.')}</span><span class="cd">${T('كود الخصم','Code','کۆد')} <i>SCAN-2K</i> ${T('ينطبق تلقائياً','applied automatically','خۆکار جێبەجێ دەبێت')}</span></div><a class="go" href="order.html?plan=basic&code=SCAN-2K">${I.bag} ${T('اطلب ملصقك بالخصم','Order with the discount','بە داشکاندن داوا بکە')}</a><span class="apps">${T('التطبيق متوفر على','App available on','ئەپەکە لەسەر')} <span>${I.apple}App Store</span><span>${I.play}Google Play</span></span></div>`;
 }
 function rErr(kind){
   const scanAgain = `<button class="pbtn dark" data-act="r-go" data-s="camera">${I.scan} ${T('امسح مرة ثانية','Scan again','دووبارە سکان بکە')}</button>`;
