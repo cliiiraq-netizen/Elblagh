@@ -1,6 +1,8 @@
+# Builds site.html (website prototype) from index.html + tools/site.css + tools/site.js
+# Usage: python3 tools/build_site.py
 import sys, os
 D = os.path.dirname(os.path.abspath(__file__))
-s = open('/home/user/Elblagh/index.html', encoding='utf-8').read()
+s = open(os.path.join(D, '..', 'index.html'), encoding='utf-8').read()
 rd = lambda f: open(os.path.join(D, f), encoding='utf-8').read()
 def rep(a, b):
     global s
@@ -16,5 +18,5 @@ rep("    ${['delivered','seen'].includes(st) ? adStrip() : ''}", """    ${window
 i = s.rfind('setLang(LANG);\n}\n</script>')
 assert i > 0
 s = s[:i] + 'setLang(LANG);\n' + rd('site.js') + '\n}\n</script>' + s[i+len('setLang(LANG);\n}\n</script>'):]
-open('/home/user/Elblagh/site.html', 'w', encoding='utf-8').write(s)
+open(os.path.join(D, '..', 'site.html'), 'w', encoding='utf-8').write(s)
 print('built', len(s))
