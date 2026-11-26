@@ -683,7 +683,7 @@ textarea.inp{height:auto;min-height:92px;padding:12px 14px;resize:none;line-heig
 .stk .e-foot i{width:.3em;height:9em;background:currentColor;opacity:.9;border-radius:1em}
 .stk.eh .e-foot i{height:7em}
 .stk .e-url small{font-size:2.7em;font-weight:600}
-.stk .e-url b{font-size:2.9em;font-weight:800;letter-spacing:.04em}
+.stk .e-url .e-c{font-size:2.9em;font-weight:800;letter-spacing:.04em}
 .stk.er{width:76em;height:76em;border-radius:50%;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;padding-top:7.6em;background:var(--scard)!important;--sband:#FFC816;--sbandi:#111}
 .stk.er .e-h span{font-size:5em;line-height:1.14}
 .stk.er .e-band{width:40em;height:5.6em;margin-top:1.5em}
@@ -693,7 +693,7 @@ textarea.inp{height:auto;min-height:92px;padding:12px 14px;resize:none;line-heig
 .stk.er .e-foot .logo{font-size:4.2em}
 .stk.er .e-foot i{height:6.2em}
 .stk.er .e-url small{font-size:2em}
-.stk.er .e-url b{font-size:2.3em}
+.stk.er .e-url .e-c{font-size:2.3em}
 
 /* ============ Admin ============ */
 .adm{display:grid;grid-template-columns:230px 1fr;background:var(--surface);border:1px solid var(--line);border-radius:28px;overflow:hidden;min-height:720px;box-shadow:var(--shadow-s)}
@@ -2155,11 +2155,11 @@ function stickerHTML(type, variant, code, u=3){
   if (type==='cf') return `<div class="stk sc2 front v-${variant}" ${st}><div class="s-logo">${logo()}</div><div class="s-tag">${T('ملصقك جاهز — فعّله بدقيقة','Your sticker is ready — activate it in a minute','ستیکەرەکەت ئامادەیە — لە خولەکێکدا چالاکی بکە')}</div>${code$}<div class="s-secret"><small>${T('الرمز السري للتفعيل','Secret activation code','کۆدی نهێنیی چالاککردن')}</small><b>${secretOf(code)}</b></div></div>`;
   if (type==='cb') return `<div class="stk sc2 back" ${st}><div><h4>${T('شلون تفعّل ملصقك؟','How to activate your sticker','چۆن ستیکەرەکەت چالاک دەکەیت؟')}</h4><ol><li><i>1</i>${T('حمّل تطبيق إبلاغ','Download the Eblagh app','ئەپی ئیبلاغ دابگرە')}</li><li><i>2</i>${T('سجّل برقم هاتفك','Sign up with your phone number','بە ژمارەی تەلەفۆنەکەت خۆت تۆمار بکە')}</li><li><i>3</i>${T('امسح الملصق واختار سيارتك','Scan the sticker and pick your car','ستیکەرەکە سکان بکە و ئۆتۆمبێلەکەت هەڵبژێرە')}</li><li><i>4</i>${T('الصقه على الزجاج من برّه','Stick it on the outside of the glass','لە دەرەوەی شووشەکە بیلکێنە')}</li></ol></div><div class="bq"><div class="s-qr">${qrSVG('APP',{logo:false})}</div><small>${T('امسح للتحميل','Scan to download','سکان بکە بۆ داگرتن')}</small></div></div>`;
   if (type==='ev' || type==='eh' || type==='er'){
-    const h = `<b class="e-h"><span>${T('تحتــاج توصــل','Need to reach','پێویستە بگەیتە')}</span><span>${T('لصاحــب السيــارة؟','the car owner?','خاوەنی ئۆتۆمبێل؟')}</span></b>`;
+    const h = `<span class="e-h"><span>${T('تحتــاج توصــل','Need to reach','پێویستە بگەیتە')}</span><span>${T('لصاحــب السيــارة؟','the car owner?','خاوەنی ئۆتۆمبێل؟')}</span></span>`;
     const band = `<div class="e-band"><span>${T('سوّي سكان للكـــــود وبلّـغ','Scan the code & notify','کۆدەکە سکان بکە')}</span></div>`;
     const qr = `<div class="e-qr">${qrEyes(code)}</div>`;
     const note = `<div class="e-note"><span>${T('الكاميرا ما تشتغل؟ ادخل على الرابط اللي جوّه','Camera not working? Open the link below','کامێرا کار ناکات؟ بەستەرەکە بکەرەوە')}</span></div>`;
-    const foot = `<div class="e-foot"><span class="e-url"><small>eblagh.iq/r/</small><b>${fmtCode(code)}</b></span><i></i>${logo()}</div>`;
+    const foot = `<div class="e-foot"><span class="e-url"><small>eblagh.iq/r/</small><span class="e-c">${fmtCode(code)}</span></span><i></i>${logo()}</div>`;
     if (type==='ev') return `<div class="stk ev v-${variant}" ${st}>${foot}<div class="e-card">${h}${band}${qr}${note}</div></div>`;
     if (type==='eh') return `<div class="stk eh v-${variant}" ${st}>${foot}<div class="e-card"><div class="e-txt">${h}${band}${note}</div>${qr}</div></div>`;
     return `<div class="stk er v-${variant}" ${st}>${h}${band}${qr}${foot}</div>`;
