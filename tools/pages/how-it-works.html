@@ -128,9 +128,9 @@ main_class: hiw
 <section class="hiw-hero" aria-labelledby="hiw-title">
   <span class="hiw-tag">شلون يشتغل</span>
   <h1 id="hiw-title">أحد يحتاجك عند سيارتك؟ تعرف بثواني.</h1>
-  <p class="hiw-lead">يسوي سكان للملصق ويختار المشكلة. يوصلك إشعار فوري بنغمة إبلاغ، وإذا ما شفته خلال دقيقة نوصلك على واتساب ويا إبلاغ بلس. ومحد يشوف رقمك.</p>
+  <p class="hiw-lead">يصوّر رمز الملصق ويختار المشكلة. يوصلك إشعار فوري بنغمة إبلاغ، وإذا ما شفته خلال دقيقة نوصلك على واتساب ويا إبلاغ بلس. ومحد يشوف رقمك.</p>
   <ul class="hiw-facts">
-    <li><span data-ic="qr"></span>السكان بدون تطبيق</li>
+    <li><span data-ic="qr"></span>التصوير بدون تطبيق</li>
     <li><span data-ic="bell"></span>إشعار بنغمة إبلاغ</li>
     <li><span data-ic="eyeOff"></span>رقمك ما يبين لأحد</li>
   </ul>
@@ -140,8 +140,8 @@ main_class: hiw
 
 <section class="story" aria-labelledby="story-title">
   <header class="story__head">
-    <h2 id="story-title">شنو يصير لما أحد يسوي سكان</h2>
-    <p>من السكان لحد ما يوصلك، خطوة بخطوة.</p>
+    <h2 id="story-title">شنو يصير لما أحد يصوّر الرمز</h2>
+    <p>من التصوير لحد ما يوصلك، خطوة بخطوة.</p>
     <div class="tabs" role="tablist" aria-label="اختار الباقة">
       <button class="tab" type="button" role="tab" id="tab-basic" data-plan="basic" aria-selected="true" aria-controls="story-panel" tabindex="0"><span class="tab__em" data-mk></span><span class="tab__kind">باقة</span><b>إبلاغ</b></button>
       <button class="tab" type="button" role="tab" id="tab-plus" data-plan="plus" aria-selected="false" aria-controls="story-panel" tabindex="-1"><span class="tab__em" data-ic="users"></span><span class="tab__kind">باقة</span><b>إبلاغ <span class="tab__tier">بلس</span></b></button>
@@ -162,9 +162,9 @@ main_class: hiw
 /* story timeline: two plans, replays story-in on every tab switch */
 const chips = (list, cls = '') => `<div class="chips">${list.map(([t, on, ic]) => `<span class="chip${on ? ' chip--on' : ''}${cls}">${on ? IC.check : ic ? IC[ic] : ''}${t}</span>`).join('')}</div>`;
 const notif = who => `${who ? `<span class="who">${who}</span>` : ''}<div class="notif"><span class="notif__app">${markSVG}</span><span class="notif__body"><span class="notif__head"><b>EBLAGH</b><time>الآن</time></span><span class="notif__title">🚗 سيارتك سادّة الطريق</span><span class="notif__text">وصلك بلاغ بخصوص سيارتك</span></span></div>`;
-const S0 = { icon:'qr', time:'0:00', h:'أحد سوّى سكان للملصق', p:'يختار المشكلة، بدون أي تطبيق.', vis: chips([['سادّ عليّ', 1], ['الضوء شغّال'], ['الشباك مفتوح']]) };
+const S0 = { icon:'qr', time:'0:00', h:'أحد صوّر رمز الملصق', p:'يختار المشكلة، بدون أي تطبيق.', vis: chips([['سادّ عليّ', 1], ['الضوء شغّال'], ['الشباك مفتوح']]) };
 const SOK = { kind:'ok', icon:'check', time: IC.check, h:'ضغطة وحدة: «جاي هسّه»', p:'أو «خلال 5 دقايق» — واللي ينتظر يعرف إنك بالطريق.',
-  vis:`<div class="reply"><span class="reply__ok">${IC.check}جاي هسّه</span><span class="reply__alt">خلال 5 دقايق</span><small>يوصل ردّك للي سوّى سكان، بدون أي رقم</small></div>` };
+  vis:`<div class="reply"><span class="reply__ok">${IC.check}جاي هسّه</span><span class="reply__alt">خلال 5 دقايق</span><small>يوصل ردّك للي بلّغ، بدون أي رقم</small></div>` };
 const PLANS = {
   basic: { cta:'اطلب إبلاغ', href:'order.html?plan=basic', steps:[
     S0,

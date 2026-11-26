@@ -571,7 +571,7 @@ html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
     </div>
     <ol class="hx-steps rv">
       <li class="hx-step hx-step--scan">
-        <div class="hx-step__text"><span class="hx-step__tag"><b>1</b>سكان</span><h3>أحد يصوّر الملصق</h3><p>بكاميرا أي موبايل، بدون تطبيق</p></div>
+        <div class="hx-step__text"><span class="hx-step__tag"><b>1</b>تصوير</span><h3>أحد يصوّر الملصق</h3><p>بكاميرا أي موبايل، بدون تطبيق</p></div>
         <div class="hx-step__visual" aria-hidden="true">
           <div class="hx-phone hx-phone--dark"><span class="hx-phone__island"></span><div class="hx-phone__screen">
             <div class="hx-cam">
@@ -659,7 +659,7 @@ html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
         <h2 class="hx-title" id="hx-privacy-title">رقمك؟ <span class="hx-title__soft">محد راح يشوفه</span></h2>
       </header>
       <div class="hx-bridge rv" aria-hidden="true">
-        <div class="hx-bridge__node"><span class="hx-bridge__icon" data-ic="scan"></span><span>اللي يسوي سكان</span></div>
+        <div class="hx-bridge__node"><span class="hx-bridge__icon" data-ic="scan"></span><span>اللي يبلّغ</span></div>
         <span class="hx-bridge__wire"><i></i></span>
         <div class="hx-bridge__node hx-bridge__node--core"><span class="hx-bridge__mark" data-mk></span><span>إبلاغ</span></div>
         <span class="hx-bridge__wire w2"><i></i></span>
@@ -889,7 +889,7 @@ stage.addEventListener('pointerleave', () => { stage.style.setProperty('--tx','0
 /* ---------- FAQ: one open at a time ---------- */
 const FAQ = [
   ['إبلاغ شلون يشتغل؟','الزق الملصق على زجاج سيارتك واربطه بحسابك. إذا أحد احتاجك، يصوّر الرمز بكاميرا موبايله، يختار المشكلة ويبعث التنبيه — ويوصلك إشعار فوري بنغمة إبلاغ.'],
-  ['اللي يسوي سكان يشوف رقم موبايلي؟','لا. رقمك واسمك يبقون مخفيين، وهو ما يعرف منو صاحب السيارة. التواصل كله يمر من خلال إبلاغ.'],
+  ['اللي يبلّغ يشوف رقم موبايلي؟','لا. رقمك واسمك يبقون مخفيين، وهو ما يعرف منو صاحب السيارة. التواصل كله يمر من خلال إبلاغ.'],
   ['طيب، ممكن أي أحد يبعتلي أي شي ويمزح؟','لا. قبل ما يوصلك البلاغ في فلترة ذكية وحدّ لعدد البلاغات، وتذكير واحد بس. وتكدر تحظر أي أحد بضغطة، وتوقف الملصق مؤقتاً إذا تريد.'],
   ['لازم أحد ينزّل تطبيق؟','لا. اللي يبلّغ يستخدم كاميرا الموبايل والمتصفح بس. انت تستلم التنبيهات بتطبيق إبلاغ.'],
   ['شلون أطلب الملصق؟','اطلب أونلاين بخطوتين: اختار باقتك وعدد الملصقات واللون، واكتب عنوانك. التوصيل لكل المحافظات والدفع عند الاستلام.'],
@@ -932,13 +932,13 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.cla
 const EN = {
  'إبلاغ':'Eblagh','تسجيل الدخول':'Login','خلّي أي أحد يوصلك':'Let anyone reach you','بدون ما يعرف رقمك':'Without your number','راحة بال وانت بعيد عن سيارتك':'Peace of mind when you’re away from your car',
  'جـــرّب إبلاغ':'Try Eblagh','من':'From','د.ع / سنة · الدفع عند الاستلام':'IQD / year · Cash on delivery','شلون يشتغل':'How it works','ثلاث خطوات':'Three steps','وبدون تطبيق':'Zero apps',
- 'سكان':'Scan','أحد يصوّر الملصق':'They scan the sticker','بكاميرا أي موبايل، بدون تطبيق':'Any phone camera, no app','اختيار':'Choose','يختار المشكلة':'They pick the problem','ويصوّرها حتى يوضّحلك الموقف':'Then snap a photo of it',
+ 'تصوير':'Scan','أحد يصوّر الملصق':'They scan the sticker','بكاميرا أي موبايل، بدون تطبيق':'Any phone camera, no app','اختيار':'Choose','يختار المشكلة':'They pick the problem','ويصوّرها حتى يوضّحلك الموقف':'Then snap a photo of it',
  'ملصق':'Sticker','تحتـاج توصـل':'Need to reach','لصاحب السيـارة؟':'the car owner?','شنو المشكلة؟':'What’s happening?','صوّر المشكلة':'Take a photo','الصورة توضّح الموقف وتساعد صاحبها يتصرف أسرع.':'A clear photo helps the owner understand and act quickly.',
  'افتح الكاميرا':'Open camera','ابعث تنبيه لصاحب السيارة':'Send alert to owner','توصيل':'Delivered','يوصلك إشعار فوري':'You get it instantly','بثواني، ومحد يشوف رقمك':'In seconds, nobody sees your number',
  'الخميس، 26 تشرين الثاني':'Thursday, 26 November','الآن':'now','🚗 سيارتك سادّة الطريق':'🚗 Your car is blocking the way','وصلك بلاغ بخصوص سيارتك':'You got a report about your','— «سادّة باب الكراج»':'— “Blocking the garage door”','جاي هسّه':'On my way','خلال 5 دقايق':'In 5 min',
  'لكل موقف':'Every situation','ملصق واحد':'One sticker','لمواقف هواية':'Countless moments','أحد سادّ عليك؟':'Blocked in?','وصل لصاحبها بثواني':'Reach the owner in seconds','نسيت الضوء؟':'Lights left on?','الحق البطارية':'Save your battery',
  'الشباك مفتوح؟':'Window open?','سدّه قبل المطر والعجاج':'Close it before the rain','ضربة بالغلط؟':'A small scratch?','يكدر يعتذر ويوصلك':'They can own up and reach you','إبلاغ بلس':'Eblagh Plus','سيارة العائلة؟':'A family car?',
- 'شارك سيارتك ويا عائلتك، ويوصلهم التنبيه بنفس اللحظة':'Share it with your family, everyone gets the alert at once','خصوصيتك أولاً':'Privacy by design','رقمك؟':'Your number?','محد راح يشوفه':'Nobody sees it','اللي يسوي سكان':'Them','انت':'You',
+ 'شارك سيارتك ويا عائلتك، ويوصلهم التنبيه بنفس اللحظة':'Share it with your family, everyone gets the alert at once','خصوصيتك أولاً':'Privacy by design','رقمك؟':'Your number?','محد راح يشوفه':'Nobody sees it','اللي يبلّغ':'Them','انت':'You',
  'رقم موبايلك':'Your phone number','بدون تطبيق':'No app','يفتح من الكاميرا مباشرة':'Opens straight from the camera','رقمك مخفي':'Zero exposure','لا رقمك ولا رقمه يبين':'Neither number is ever shown','حماية من الإزعاج':'Spam shield',
  'فلترة ذكية، وتحظر أي أحد بضغطة':'Smart filtering, block anyone in a tap','التنبيهات':'Smart delivery','مستحيل':'Impossible','يفوتك':'to miss','الإشعار يوصلك بنغمة إبلاغ':'Alert with Eblagh’s tone','بعدك ما شفته؟':'Not seen yet?',
  'واتساب':'WhatsApp','نوصلك على واتساب':'We reach you on WhatsApp','تنبيه احتياطي بعد دقيقة، بموافقتك — ويا باقة إبلاغ بلس':'A backup alert after a minute, with your consent — on Eblagh Plus','الملصق':'The sticker','ثلاث ألوان':'Three colours','لكل سيارة':'For every car',

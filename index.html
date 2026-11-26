@@ -1908,7 +1908,7 @@ function stickerHTML(type, variant, code, u=3){
   if (type==='cb') return `<div class="stk sc2 back" ${st}><div><h4>${T('شلون تفعّل ملصقك؟','How to activate your sticker','چۆن ستیکەرەکەت چالاک دەکەیت؟')}</h4><ol><li><i>1</i>${T('حمّل تطبيق إبلاغ','Download the Eblagh app','ئەپی ئیبلاغ دابگرە')}</li><li><i>2</i>${T('سجّل برقم هاتفك','Sign up with your phone number','بە ژمارەی تەلەفۆنەکەت خۆت تۆمار بکە')}</li><li><i>3</i>${T('امسح الملصق واختار سيارتك','Scan the sticker and pick your car','ستیکەرەکە سکان بکە و ئۆتۆمبێلەکەت هەڵبژێرە')}</li><li><i>4</i>${T('الصقه على الزجاج من برّه','Stick it on the outside of the glass','لە دەرەوەی شووشەکە بیلکێنە')}</li></ol></div><div class="bq"><div class="s-qr">${qrSVG('APP',{logo:false})}</div><small>${T('امسح للتحميل','Scan to download','سکان بکە بۆ داگرتن')}</small></div></div>`;
   if (type==='ev' || type==='eh' || type==='er'){
     const h = `<span class="e-h"><span>${T('تحتــاج توصــل','Need to reach','پێویستە بگەیتە')}</span><span>${T('لصاحــب السيــارة؟','the car owner?','خاوەنی ئۆتۆمبێل؟')}</span></span>`;
-    const band = `<div class="e-band"><span>${T('سوّي سكان للكـــــود وبلّـغ','Scan the code & notify','کۆدەکە سکان بکە')}</span></div>`;
+    const band = `<div class="e-band"><span>${T('صوّر الرمـــز وبلّـغ صاحبها','Scan the code & notify','کۆدەکە سکان بکە')}</span></div>`;
     const qr = `<div class="e-qr">${qrEyes(code)}</div>`;
     const note = `<div class="e-note"><span>${T('الكاميرا ما تشتغل؟ ادخل على الرابط اللي جوّه','Camera not working? Open the link below','کامێرا کار ناکات؟ بەستەرەکە بکەرەوە')}</span></div>`;
     const foot = `<div class="e-foot"><span class="e-url"><small>eblagh.iq/r/</small><span class="e-c">${fmtCode(code)}</span></span><i></i>${logo()}</div>`;
