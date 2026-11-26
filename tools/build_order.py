@@ -1,10 +1,9 @@
-# Builds order.html (Eblagh order page) from tools/order.template.html,
+# Builds order.html and home.html from tools/order.template.html and tools/home.template.html,
 # pulling brand assets (fonts, sticker design, QR, logo, icons) from index.html.
-# Usage: python3 tools/build_order.py
+# Usage: python3 tools/build_order.py  (builds both pages)
 import os, re, sys
 D = os.path.dirname(os.path.abspath(__file__))
 src = open(os.path.join(D, '..', 'index.html'), encoding='utf-8').read()
-tpl = open(os.path.join(D, 'order.template.html'), encoding='utf-8').read()
 
 def between(a, b, s=src, inclusive_a=True):
     i = s.find(a); j = s.find(b, i + len(a))
@@ -23,10 +22,12 @@ js_qrsvg = between('function qrSVG(', '\nconst fmtCode')
 js_fmt = next(l for l in lines if l.startswith('const fmtCode = '))
 js_sticker = between('function stickerHTML(', '\nfunction renderStickers')
 
-out = (tpl.replace('/*@FONTS@*/', fonts)
-          .replace('/*@STICKER_CSS@*/', logo_css + '\n' + sticker_css)
-          .replace('/*@BRAND_JS@*/', '\n'.join([js_qr, js_icons, js_cls, js_logo, js_qrsvg, js_fmt, js_sticker])))
-for k in ['/*@FONTS@*/', '/*@STICKER_CSS@*/', '/*@BRAND_JS@*/']:
-    assert k not in out
-open(os.path.join(D, '..', 'order.html'), 'w', encoding='utf-8').write(out)
-print('built order.html', len(out))
+for name in ['order', 'home']:
+    tpl = open(os.path.join(D, name + '.template.html'), encoding='utf-8').read()
+    out = (tpl.replace('/*@FONTS@*/', fonts)
+              .replace('/*@STICKER_CSS@*/', logo_css + '\n' + sticker_css)
+              .replace('/*@BRAND_JS@*/', '\n'.join([js_qr, js_icons, js_cls, js_logo, js_qrsvg, js_fmt, js_sticker])))
+    for k in ['/*@FONTS@*/', '/*@STICKER_CSS@*/', '/*@BRAND_JS@*/']:
+        assert k not in out
+    open(os.path.join(D, '..', name + '.html'), 'w', encoding='utf-8').write(out)
+    print('built', name + '.html', len(out))

@@ -173,16 +173,19 @@ svg{display:block}
 .stk .e-url{display:flex;flex-direction:column;align-items:flex-start;direction:ltr;font-family:-apple-system,"Segoe UI",system-ui,sans-serif;border-left:.25em solid currentColor;padding-left:2.6em;line-height:1.25}
 .stk .e-url small{font-size:2.3em;font-weight:600;opacity:.8}
 .stk .e-url b{font-size:3.2em;font-weight:800;letter-spacing:.08em}
-.stk.er{width:70em;height:70em;border-radius:50%;background:var(--spb)!important;position:relative}
-.stk.er .e-ring{position:absolute;inset:0;width:100%;height:100%}
-.stk.er .e-ring text{font-family:var(--fh),var(--fb);font-weight:900;font-size:4.2px;fill:var(--spi)}
-.stk.er .e-ring circle{fill:var(--spi)}
-.stk.er .e-in{position:absolute;inset:8.6em;border-radius:50%;background:var(--sb);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.4em}
-.stk.er.v-yellow .e-in{background:radial-gradient(40em 40em at 70% 25%,#FFD84A 0%,#FFC816 45%,#F5B400 100%)}
-.stk.er.v-black .e-in{background:radial-gradient(40em 40em at 70% 20%,#262626,#0d0d0d)}
-.stk.er .e-in .logo{font-size:3.4em;color:var(--sa)}
-.stk.er .e-qr{align-self:auto;width:29em;margin:0;padding:2.2em;border-radius:3.2em}
-.stk.er .e-code{font-family:-apple-system,"Segoe UI",system-ui,sans-serif;font-size:2.4em;font-weight:800;letter-spacing:.1em;direction:ltr;color:var(--si);opacity:.8}
+.stk.er{width:76em;height:76em;border-radius:50%;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;padding-top:7.4em}
+.stk.er::after{content:"";position:absolute;inset:1.6em;border-radius:50%;border:.3em solid var(--sline);pointer-events:none}
+.stk.er .e-h span{font-size:5em;line-height:1.14}
+.stk.er .e-band{align-self:center;margin-top:1.4em;padding:.9em 3.6em;border-radius:99em}
+.stk.er .e-band span{font-size:3.1em}
+.stk.er .e-qr{align-self:center;width:31em;margin-top:1.6em;padding:2.3em;border-radius:3.6em}
+.stk.er .e-strip{position:absolute;left:0;right:0;bottom:0;height:13.6em;padding:0 0 2.2em;justify-content:center;gap:3em}
+.stk.er .e-strip .logo{font-size:4.3em}
+.stk.er .e-url{padding-left:2.2em}
+.stk.er .e-url small{font-size:2em}
+.stk.er .e-url b{font-size:2.8em}
+.stk.v-white .e-qr{box-shadow:0 0 0 .35em #111,0 .6em 1.8em rgba(0,0,0,.12)}
+.stk.v-white.ev,.stk.v-white.eh,.stk.v-white.er{box-shadow:inset 0 0 0 .3em rgba(0,0,0,.08)}
 
 
 
@@ -366,7 +369,7 @@ svg{display:block}
 .how-link .pl .ic{width:15px;height:15px}
 
 /* designs */
-.designs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.designs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
 .design{position:relative;padding:16px 12px 12px;border-radius:22px;background:var(--surface);border:1.5px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:10px;transition:border-color .15s,background .15s}
 .design.sel{border-color:var(--y);background:color-mix(in srgb,var(--ysoft) 50%,var(--surface))}
 .design .pv{height:132px;display:grid;place-items:center}
@@ -382,6 +385,7 @@ svg{display:block}
 .qty button:disabled{opacity:.35;cursor:not-allowed}
 .qty button .ic{width:18px;height:18px}
 .qty output{flex:1;text-align:center;font-weight:800;font-size:17px;font-variant-numeric:tabular-nums}
+@media (max-width:420px){.designs{gap:8px}.design{padding:14px 5px 8px}.qty{height:40px;border-radius:12px}.qty button{width:28px;flex:none}.qty button .ic{width:15px;height:15px}.qty output{min-width:0;font-size:15px}.design .badge{inset-inline-start:6px}}
 .incl{margin:10px 2px 0;font-size:13px;color:var(--ink3)}
 .assure{display:grid;gap:10px;margin-top:16px}
 .as{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:18px;background:var(--surface);border:1px solid var(--line)}
@@ -773,11 +777,7 @@ function stickerHTML(type, variant, code, u=3){
       : `<div class="stk eh v-${variant}" ${st}><div class="e-main"><div class="e-txt">${h}${band}${note}</div>${qr}</div>${strip}</div>`;
   }
   if (type==='er'){
-    const pid = `er-${code}-${variant}-${LANG}-${Math.round(u*10)}`;
-    const top = T('تحتاج صاحب السيارة؟ • صوّر الرمز وبلّغـه','NEED THE OWNER? • SCAN & NOTIFY','سکان بکە و ئاگادار بکەرەوە');
-    const bot = T('تواصل بلا أرقام • بدون رقم هاتف','NO NUMBERS • NO PHONE NUMBER','پەیوەندی بێ ژمارە');
-    return `<div class="stk er v-${variant}" ${st}><svg class="e-ring" viewBox="0 0 70 70" aria-hidden="true"><defs><path id="${pid}t" d="M4.3 35 a30.7 30.7 0 0 1 61.4 0"/><path id="${pid}b" d="M4.3 35 a30.7 30.7 0 0 0 61.4 0"/></defs><text dominant-baseline="central"><textPath href="#${pid}t" startOffset="50%" text-anchor="middle">${top}</textPath></text><text dominant-baseline="central"><textPath href="#${pid}b" startOffset="50%" text-anchor="middle">${bot}</textPath></text><circle cx="4.3" cy="35" r="1.1"/><circle cx="65.7" cy="35" r="1.1"/></svg>
-      <div class="e-in">${logo()}<div class="e-qr">${qrEyes(code)}</div><b class="e-code">${fmtCode(code)}</b></div></div>`;
+    return `<div class="stk er v-${variant}" ${st}><b class="e-h"><span>${T('تحتـاج توصـل','Need to reach','پێویستە بگەیتە')}</span><span>${T('لصاحـب السيـارة؟','the car owner?','خاوەنی ئۆتۆمبێل؟')}</span></b><div class="e-band"><span>${T('صوّر الرمز وبلّغـه','Scan & notify','سکان بکە و ئاگادار بکەرەوە')}</span></div><div class="e-qr">${qrEyes(code)}</div><div class="e-strip">${logo()}<span class="e-url"><small>eblagh.iq/r/</small><b>${fmtCode(code)}</b></span></div></div>`;
   }
   return '';
 }
@@ -805,7 +805,7 @@ const PLANS = {
     more:['أوقات هدوء مجدولة، والعاجل يتجاوزها','تنبيه عاجل يتكرر لحد ما أحد منكم يشوفه','إيقاف وبديل لكل ملصق على حدة','عربي · English · کوردی']},
 };
 const EXTRA = 3000, DELIVERY = 5000, DISCOUNT = 2000;
-const DESIGNS = [['yellow','أصفر'],['black','أسود']];
+const DESIGNS = [['white','أبيض'],['black','أسود'],['yellow','أصفر']];
 const GOVS = {
   'بغداد':['الكرادة','المنصور','الأعظمية','الكاظمية','زيونة','اليرموك','الدورة','البياع','الجادرية','الغدير','الشعب','مدينة الصدر','الحرية','الغزالية'],
   'البصرة':['العشار','البراضعية','الجزائر','الجمعيات','الزبير','أبو الخصيب','القرنة','شط العرب'],
@@ -830,9 +830,11 @@ const GOVS = {
 const ALERTS = ['سيارتك سادّة الطريق — ممكن تحركها؟','الأضوية شغّالة، البطارية راح تخلص','الشبّاك مفتوح والجو يمطر','أكو خدش جديد بالباب الخلفي','المرور يسحبون السيارات هسّه، الحق'];
 
 /* ---------- state ---------- */
-const S = { plan:null, qty:{yellow:1, black:0}, variant:'yellow', shape:'v', step:1, gov:'', area:'', name:'', phone:'', landmark:'', notes:'', code:'', codeOk:false, codeErr:false, codeOpen:false, showErr:false, upAdded:false, muted:false, sheetTab:'basic', done:null };
+const S = { plan:null, qty:{white:0, black:0, yellow:1}, variant:'yellow', shape:'v', step:1, gov:'', area:'', name:'', phone:'', landmark:'', notes:'', code:'', codeOk:false, codeErr:false, codeOpen:false, showErr:false, upAdded:false, muted:false, sheetTab:'basic', done:null };
 try { S.muted = localStorage.getItem('eb_order_muted') === '1'; } catch(e){}
-const count = () => S.qty.yellow + S.qty.black;
+const count = () => S.qty.white + S.qty.yellow + S.qty.black;
+const topV = () => Object.keys(S.qty).reduce((a, k) => S.qty[k] > S.qty[a] ? k : a, S.variant);
+const mixLabel = () => { const p = DESIGNS.filter(([k]) => S.qty[k]); return p.length > 1 ? ' (' + p.map(([k,t]) => `${S.qty[k]} ${t}`).join(' · ') + ')' : ''; };
 function totals(){
   if (!S.plan) return null;
   const P = PLANS[S.plan], n = count(), extra = Math.max(0, n - P.incl) * EXTRA;
@@ -872,7 +874,7 @@ function renderSticker(swap){
   $('#stkCard').classList.toggle('round', S.shape === 'r');
   if (swap){ $('#stkCard').classList.remove('swap'); void $('#stkCard').offsetWidth; $('#stkCard').classList.add('swap'); }
   $('#switch').innerHTML = `<div class="seg" role="group" aria-label="شكل الملصق">${SHAPES.map(([k,t]) => `<button type="button" aria-pressed="${S.shape===k}" data-shape="${k}">${shapeIc(k)}${t}</button>`).join('')}</div>
-    <div class="seg" role="group" aria-label="لون الملصق">${DESIGNS.map(([k,t]) => `<button type="button" aria-pressed="${S.variant===k}" data-v="${k}"><i style="background:${k==='yellow'?'#FFC816':'#111'}"></i>${t}</button>`).join('')}</div>`;
+    <div class="seg" role="group" aria-label="لون الملصق">${DESIGNS.map(([k,t]) => `<button type="button" aria-pressed="${S.variant===k}" data-v="${k}"><i style="background:${{yellow:'#FFC816',black:'#111',white:'#fff'}[k]}"></i>${t}</button>`).join('')}</div>`;
 }
 $('#switch').addEventListener('click', e => {
   const sh = e.target.closest('[data-shape]'); if (sh){ setShape(sh.dataset.shape); return; }
@@ -974,7 +976,7 @@ $('#p1').addEventListener('click', e => {
 });
 function selectPlan(k){
   const prevIncl = S.plan ? PLANS[S.plan].incl : 1; S.plan = k;
-  if (count() <= prevIncl || count() < PLANS[k].incl){ S.qty = {yellow:0, black:0}; S.qty[S.variant] = PLANS[k].incl; }
+  if (count() <= prevIncl || count() < PLANS[k].incl){ S.qty = {white:0, black:0, yellow:0}; S.qty[S.variant] = PLANS[k].incl; }
   renderP1(); renderBar(true);
   const ch = $('#qtyChip'); ch && ch.classList.add('pop');
 }
@@ -1024,7 +1026,7 @@ function renderP2(){
       : `<button type="button" class="code-t" id="codeOpen">${I.star}عندك كود خصم أو إحالة؟</button>`}
     <div class="pay" role="radio" aria-checked="true" tabindex="0"><span class="ck">${I.check}</span><span class="pi">${I.cash}</span><span><b>الدفع عند الاستلام</b><small>تدفع للمندوب نقداً لما يوصلك الطلب.</small></span></div>
     <div class="summary">
-      <div class="it">${stk(S.qty.black > S.qty.yellow ? 'black' : 'yellow', 'EB4471', .62)}<span class="lt"><b>باقة ${t.P.name}${t.P.em?' '+t.P.em:''} · سنة</b><small>${qtyLabel(n)} · ${shapeName()}${S.qty.yellow&&S.qty.black?` (${S.qty.yellow} أصفر · ${S.qty.black} أسود)`:''}</small></span><b class="num">${IQD(t.P.price)}</b></div>
+      <div class="it">${stk(topV(), 'EB4471', .62)}<span class="lt"><b>باقة ${t.P.name}${t.P.em?' '+t.P.em:''} · سنة</b><small>${qtyLabel(n)} · ${shapeName()}${mixLabel()}</small></span><b class="num">${IQD(t.P.price)}</b></div>
       ${t.extra ? `<div class="ln"><span>ملصقات إضافية × ${n - t.P.incl}</span><b>${IQD(t.extra)}</b></div>` : ''}
       <div class="ln"><span>التوصيل</span><b>${t.deliv === null ? '<span style="color:var(--ink3);font-weight:600">اختار المحافظة</span>' : t.deliv === 0 ? `<span class="free">مجاناً</span>` : IQD(t.deliv)}</b></div>
       ${t.disc ? `<div class="ln"><span>خصم · ${esc(S.code.toUpperCase())}</span><b class="free">− ${IQD(t.disc)}</b></div>` : ''}
@@ -1095,7 +1097,7 @@ function submit(){
       <h2 class="h">تم طلبك يا ${esc(first)}!</h2>
       <p class="lead">راح نتصل بيك قبل ما يطلع المندوب. ملصقك يوصلك خلال 2–3 أيام إلى ${esc(S.gov)} — ${esc(S.area)}.</p>
       <div class="receipt">
-        <div class="rh">${stk(S.qty.black > S.qty.yellow ? 'black' : 'yellow', 'EB4471', .7)}<span><small>رقم الطلب</small><b class="num ltr">${S.done.id}</b></span></div>
+        <div class="rh">${stk(topV(), 'EB4471', .7)}<span><small>رقم الطلب</small><b class="num ltr">${S.done.id}</b></span></div>
         <div class="ln"><span>باقة ${t.P.name}${t.P.em?' '+t.P.em:''} · سنة</span><b>${IQD(t.P.price)}</b></div>
         <div class="ln"><span>${qtyLabel(t.n)}</span><b>${t.extra ? IQD(t.extra) : 'مشمولة'}</b></div>
         <div class="ln"><span>التوصيل</span><b>${t.deliv ? IQD(t.deliv) : 'مجاناً'}</b></div>
@@ -1167,6 +1169,7 @@ let toastT = null;
 function toast(m){ $('.toast')?.remove(); const d = document.createElement('div'); d.className = 'toast'; d.setAttribute('role','status'); d.textContent = m; document.body.appendChild(d); clearTimeout(toastT); toastT = setTimeout(() => d.remove(), 2600); }
 
 renderSteps(); renderP1(); renderBar();
+try { const qp = new URLSearchParams(location.search).get('plan'); if (qp === 'basic' || qp === 'plus'){ selectPlan(qp); setTimeout(() => $('#order').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'start'}), 900); } } catch(e){}
 }
 </script>
 </body>
