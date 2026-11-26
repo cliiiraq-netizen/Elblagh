@@ -24,7 +24,7 @@ SHIM = r"""<script>(function(){
 var P=%s;window.__EBQ=%s;window.__EBF=%s+'.html';
 window.__EBGO=function(u){try{parent.postMessage({eb:'go',u:String(u)},'*')}catch(e){}};
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a||e.defaultPrevented||a.target==='_blank')return;
-var h=a.getAttribute('href'),m=/^(?:\.\/)?([a-z-]+)\.html(\?[^#]*)?(#.*)?$/.exec(h);if(!m||P.indexOf(m[1])<0)return;e.preventDefault();window.__EBGO(h);},true);
+var h=a.getAttribute('href')||'';if(h.charAt(0)==='#'){if(h.length>1){e.preventDefault();if(location.hash===h){try{dispatchEvent(new HashChangeEvent('hashchange'))}catch(_){}}else{location.hash=h;}}return;}var m=/^(?:\.\/)?([a-z-]+)\.html(\?[^#]*)?(#.*)?$/.exec(h);if(!m||P.indexOf(m[1])<0)return;e.preventDefault();window.__EBGO(h);},true);
 document.addEventListener('DOMContentLoaded',function(){try{parent.postMessage({eb:'ready'},'*')}catch(e){}});
 addEventListener('load',function(){try{parent.postMessage({eb:'title',t:document.title},'*')}catch(e){};var h=%s;if(h){try{var el=document.getElementById(h.slice(1));if(el)el.scrollIntoView();else location.hash=h}catch(e){}}});
 })();</script>"""
