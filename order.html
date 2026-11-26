@@ -230,6 +230,7 @@ svg{display:block}
 /* stage: alert + capsule + sticker */
 .stage{position:relative;max-width:360px;margin:14px auto 0;padding-top:0;transition:padding-top .65s var(--ease);min-height:360px}
 .stage.alerting{padding-top:150px}
+.stage.is-h{min-height:250px}
 .alert-slot{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;flex-direction:column;gap:10px;pointer-events:none}
 .alert{display:flex;gap:11px;align-items:flex-start;padding:12px 14px;border-radius:20px;background:color-mix(in srgb,var(--surface) 94%,transparent);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--line);box-shadow:var(--shadow);opacity:0;transform:translateY(-16px) scale(.97);transition:opacity .35s var(--ease),transform .45s var(--spring)}
 .alert.show{opacity:1;transform:none}
@@ -277,20 +278,20 @@ svg{display:block}
 @keyframes lift{0%{transform:none}35%{transform:translateY(-10px) rotate(-3deg) scale(1.03)}100%{transform:none}}
 @keyframes swap{0%{opacity:.2;transform:rotateY(70deg) scale(.96)}100%{opacity:1;transform:none}}
 @keyframes nudge{50%{transform:translateY(-3px)}}
-.switch{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:100%;margin:22px auto 0;opacity:0;animation:rise .7s var(--ease) 2.8s forwards;transform:translateY(10px)}
-.switch .seg{display:flex;padding:4px;border-radius:999px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow-s)}
-.switch .seg button svg{width:14px;height:16px;flex:none}
-.shape-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:-4px 0 14px}
+.switch{display:flex;flex-direction:column;align-items:center;gap:10px;width:min(360px,calc(100vw - 32px));margin:22px auto 0;opacity:0;animation:rise .7s var(--ease) 2.8s forwards;transform:translateY(10px)}
+.switch .seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;padding:4px;border-radius:999px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow-s)}
+.switch .seg button svg{width:16px;height:16px;flex:none}
+.shape-row{display:flex;flex-direction:column;align-items:stretch;gap:8px;margin:-4px 0 14px}
 .shape-row>span{font-size:14px;font-weight:700;color:var(--ink2)}
-.shape-seg{display:flex;padding:3px;border-radius:999px;background:var(--surface2);border:1px solid var(--line)}
-.shape-seg button{display:flex;align-items:center;gap:7px;height:38px;padding:0 14px;border-radius:999px;font-size:14px;font-weight:700;color:var(--ink2);transition:background-color .16s,color .16s}
-.shape-seg button svg{width:13px;height:15px}
+.shape-seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:3px;border-radius:999px;background:var(--surface2);border:1px solid var(--line)}
+.shape-seg button{display:flex;align-items:center;justify-content:center;gap:7px;min-width:0;white-space:nowrap;height:40px;padding:0 6px;border-radius:999px;font-size:14px;font-weight:700;color:var(--ink2);transition:background-color .16s,color .16s}
+.shape-seg button svg{width:16px;height:16px;flex:none}
 .shape-seg button[aria-pressed="true"]{background:var(--k);color:#fff}
 :root[data-theme="dark"] .shape-seg button[aria-pressed="true"]{background:var(--y);color:#111}
 .stk.er{border-radius:50%!important}
 .stk-btn .card.round{border-radius:50%}
 .designs .pv,.summary .it,.receipt .rh{transition:opacity .2s}
-.switch button{display:flex;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:999px;font-size:14px;font-weight:700;color:var(--ink2);transition:background-color .16s,color .16s}
+.switch button{display:flex;align-items:center;justify-content:center;gap:7px;min-width:0;white-space:nowrap;height:42px;padding:0 8px;border-radius:999px;font-size:14px;font-weight:700;color:var(--ink2);transition:background-color .16s,color .16s}
 .switch button i{width:14px;height:14px;border-radius:50%;border:1.5px solid rgba(128,128,128,.5)}
 .switch button[aria-pressed="true"]{background:var(--k);color:#fff}
 :root[data-theme="dark"] .switch button[aria-pressed="true"]{background:var(--y);color:#111}
@@ -862,17 +863,23 @@ $('#tapHint').innerHTML = icn(I.bolt) + 'اضغط على الملصق';
 $('#cta').innerHTML = 'اطلب ملصقك ' + cls(I.chev, '', 'transform:rotate(90deg)');
 $('#fcta').innerHTML = 'اطلب ملصقك ' + cls(I.chev, '', 'transform:rotate(90deg)');
 $('#trust').innerHTML = [[I.lock,'بخصوصية تامة'],[I.phoneOff,'بدون رقم هاتف'],[I.truck,'توصيل لكل المحافظات'],[I.cash,'الدفع عند الاستلام']].map(([i,t])=>`<span>${i}${t}</span>`).join('');
-const SHAPES = [['v','طولي'],['r','دائري']];
-const shapeIc = k => k === 'v' ? '<svg viewBox="0 0 14 16" aria-hidden="true"><rect x="3" y="1" width="8" height="14" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>' : '<svg viewBox="0 0 14 16" aria-hidden="true"><circle cx="7" cy="8" r="5.6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>';
-const shapeName = () => S.shape === 'r' ? 'دائري' : 'طولي';
-// one place decides which sticker art is shown: vertical scan card (ev) or round (er), sized to match
-const stk = (variant, code, u) => stickerHTML(S.shape === 'r' ? 'er' : 'ev', variant, code, u * (S.shape === 'r' ? 1.22 : 1));
-try { const q = new URLSearchParams(location.search).get('shape'); if (q === 'round' || q === 'r') S.shape = 'r'; } catch(e){}
+const SHAPES = [['v','طولي'],['h','مستطيل'],['r','دائري']];
+const SHAPE_IC = {
+  v:'<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="4.5" y="1" width="7" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>',
+  h:'<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="4" width="14" height="8" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>',
+  r:'<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>'};
+const shapeIc = k => SHAPE_IC[k];
+const shapeName = () => ({v:'طولي', h:'مستطيل', r:'دائري'})[S.shape];
+// one place decides which sticker art is shown: vertical (ev), rectangle (eh) or round (er), sized to the same visual weight
+const stk = (variant, code, u) => stickerHTML({v:'ev', h:'eh', r:'er'}[S.shape], variant, code, u * ({v:1, h:.62, r:1.22})[S.shape]);
+try { const q = new URLSearchParams(location.search).get('shape'); if (q === 'round' || q === 'r') S.shape = 'r'; if (q === 'rect' || q === 'h') S.shape = 'h'; } catch(e){}
 function setShape(k){ if (!k || k === S.shape) return; S.shape = k; renderSticker(true); if (typeof renderP1 === 'function' && $('#p1').innerHTML) { renderP1(); } if (S.step === 2 && typeof renderP2 === 'function') renderP2(); }
 function renderSticker(swap){
   const u = Math.min(2.9, Math.max(2.0, (innerWidth - 150) / 108));
-  $('#stkCard').innerHTML = stk(S.variant, 'EB4471', Math.min(u, (innerWidth - 40) / 85)) + '<span class="shine" aria-hidden="true"></span>';
+  const art = S.shape === 'h' ? stickerHTML('eh', S.variant, 'EB4471', Math.min(340, innerWidth - 56) / 112) : stk(S.variant, 'EB4471', Math.min(u, (innerWidth - 40) / 85));
+  $('#stkCard').innerHTML = art + '<span class="shine" aria-hidden="true"></span>';
   $('#stkCard').classList.toggle('round', S.shape === 'r');
+  $('#stage').classList.toggle('is-h', S.shape === 'h');
   if (swap){ $('#stkCard').classList.remove('swap'); void $('#stkCard').offsetWidth; $('#stkCard').classList.add('swap'); }
   $('#switch').innerHTML = `<div class="seg" role="group" aria-label="شكل الملصق">${SHAPES.map(([k,t]) => `<button type="button" aria-pressed="${S.shape===k}" data-shape="${k}">${shapeIc(k)}${t}</button>`).join('')}</div>
     <div class="seg" role="group" aria-label="لون الملصق">${DESIGNS.map(([k,t]) => `<button type="button" aria-pressed="${S.variant===k}" data-v="${k}"><i style="background:${{yellow:'#FFC816',black:'#111',white:'#fff'}[k]}"></i>${t}</button>`).join('')}</div>`;
