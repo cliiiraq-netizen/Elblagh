@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="dark">
+<html lang="ar" dir="rtl" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -2799,7 +2799,7 @@ function themeLabel(){
   $('#themeBtn').setAttribute('aria-label', T('تبديل الوضع الداكن والفاتح','Toggle dark / light','گۆڕینی تاریک / ڕووناک'));
 }
 const THEME_MQ = window.matchMedia ? matchMedia('(prefers-color-scheme: dark)') : {matches:true};
-function themePref(){ try { const p = localStorage.getItem('eb_theme_pref'); return p || 'auto'; } catch(e){ return 'auto'; } }
+function themePref(){ try { const p = localStorage.getItem('eb_theme_pref'); return p || 'light'; } catch(e){ return 'light'; } }
 const resolveTheme = p => p === 'auto' ? (THEME_MQ.matches ? 'dark' : 'light') : p;
 function setThemePref(p){ try { localStorage.setItem('eb_theme_pref', p); } catch(e){} applyTheme(resolveTheme(p)); render(); }
 const themeSeg = () => { const p = themePref(); return [['light',I.sun,T('نهاري','Light','ڕووناک')],['dark',I.moon,T('داكن','Dark','تاریک')],['auto',I.smartphone,T('تلقائي','Auto','خۆکار')]].map(([k,ic,t])=>`<button class="${p===k?'on':''}" data-act="theme-pref" data-t="${k}" aria-pressed="${p===k}">${ic}${t}</button>`).join(''); };

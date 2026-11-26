@@ -687,7 +687,7 @@ const wordmark = (P, k='') => `<span class="wm">${k === 'tab' ? `<span class="em
 
 /* ---------- theme ---------- */
 const MQ = matchMedia('(prefers-color-scheme: dark)');
-const pref = () => { try { return localStorage.getItem('eb_theme_pref') || 'auto'; } catch(e){ return 'auto'; } };
+const pref = () => { try { return localStorage.getItem('eb_theme_pref') || 'light'; } catch(e){ return 'light'; } }; // light is the default; dark only when the visitor picks it
 function applyTheme(){ const p = pref(), t = p === 'auto' ? (MQ.matches ? 'dark' : 'light') : p; document.documentElement.dataset.theme = t;
   $('meta[name=theme-color]').content = t === 'dark' ? '#0B0B0C' : '#FAF9F5';
   $('#themeBtn').innerHTML = t === 'dark' ? I.sun : I.moon; $('#themeBtn').setAttribute('aria-label', t === 'dark' ? 'الوضع النهاري' : 'الوضع الداكن'); }
