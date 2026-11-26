@@ -591,19 +591,20 @@ select.inp{-webkit-appearance:none;appearance:none;cursor:pointer;padding-inline
 @media (max-width:420px){.ocard{padding:12px 16px 20px}.steps{width:100%}}
 
 /* sticky bar */
-.bar{position:fixed;inset-inline:0;bottom:0;z-index:40;background:var(--surface);border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(41,37,36,.03);padding-bottom:env(safe-area-inset-bottom);transition:transform .42s var(--ease),opacity .3s}
-.bar.hid{opacity:0;pointer-events:none;transform:translateY(110%)}
-.bar-in{display:flex;align-items:center;justify-content:space-between;gap:24px;max-width:1120px;margin:0 auto;padding:14px 24px}
-.bar .tt{display:flex;flex-direction:column;gap:3px;min-width:0}
-.bar .tt small{font-size:11px;line-height:1.7;color:var(--ink3)}
-.bar .tt strong{font-size:24px;font-weight:650;line-height:1.3;color:var(--ink);font-variant-numeric:tabular-nums}
-.bar .tt strong.chg{animation:tchg .28s var(--ease2) both}
-@keyframes tchg{0%{opacity:.25;transform:translateY(6px)}100%{opacity:1;transform:none}}
-.bar .acts{display:flex;align-items:center;gap:12px}
-.bar .back{min-height:44px;padding:10px 8px;font-size:12px;font-weight:500;line-height:1.7;color:var(--ink3);background:none}
-.bar .go{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:220px;min-height:48px;padding:0 18px;border-radius:12px;background:var(--y);color:#111;font-size:15px;font-weight:600;line-height:1.7;box-shadow:0 1px 2px rgba(0,0,0,.08),0 4px 12px rgba(245,180,0,.22);transition:background .15s,box-shadow .15s,opacity .15s}
-.bar .go:hover{background:#F5B400}
-.bar .go .ic{width:16px;height:16px;stroke-width:2.2}
+.bar{position:fixed;inset-inline:0;bottom:calc(16px + env(safe-area-inset-bottom));z-index:40;pointer-events:none;transition:transform .42s var(--ease),opacity .3s}
+.bar.hid{opacity:0;transform:translateY(140%)}
+.bar.hid .bar-in{pointer-events:none}
+.bar-in{pointer-events:auto;display:flex;align-items:center;justify-content:center;gap:8px;width:fit-content;max-width:calc(100% - 24px);margin:0 auto}
+.bar .tt{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.bar .acts{display:contents}
+.bar .back{height:48px;min-width:72px;white-space:nowrap;padding:0 16px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--ink2);font-size:13px;font-weight:600;box-shadow:0 10px 24px -12px rgba(0,0,0,.35)}
+.bar .go{display:inline-flex;align-items:center;gap:10px;height:48px;padding-inline:20px 6px;border-radius:999px;background:linear-gradient(135deg,#FFD84A,#FFC816 55%,#F5B400);color:#111;font-size:14.5px;font-weight:700;line-height:1.6;white-space:nowrap;box-shadow:inset 0 1px rgba(255,255,255,.35),0 12px 28px -10px rgba(120,80,0,.55);transition:transform .15s}
+.bar .go:active{transform:scale(.97)}
+.bar .go small{font-size:12px;font-weight:600;color:rgba(17,17,17,.7);font-variant-numeric:tabular-nums}
+.bar .go small.chg{animation:tchg .28s var(--ease2) both}
+.bar .go .gc{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#111;color:#FFC816;flex:none}
+.bar .go .gc .ic{width:16px;height:16px;stroke-width:2.2}
+@media (min-width:801px){.bar{bottom:24px}}
 @media (max-width:800px){.bar .tt small{max-width:150px;font-size:10px}}
 @media (max-width:700px){.bar-in{gap:10px;padding:12px 16px}.bar .tt{flex:1}.bar .tt strong{font-size:21px}.bar .acts{gap:4px}.bar .go{min-width:0;min-height:46px;height:50px;padding:0 18px;font-size:14px}.bar .back{padding:10px 4px;font-size:11px}}
 
@@ -1315,7 +1316,7 @@ const GOVS = {
 const ALERTS = ['لو سمحت، سيارتك سادّة عليّ الطريق','انتبه، أضوية سيارتك شغّالة','شبّاك سيارتك مفتوح'];
 
 /* ---------- state ---------- */
-const S = { plan:null, qty:{white:0, black:0, yellow:1}, variant:'yellow', shape:'v', step:1, gov:'', area:'', name:'', phone:'', landmark:'', notes:'', code:'', codeOk:false, codeErr:false, codeOpen:false, showErr:false, upAdded:false, upShown:false, muted:false, sheetTab:'basic', done:null };
+const S = { plan:'basic', qty:{white:0, black:0, yellow:1}, variant:'yellow', shape:'v', step:1, gov:'', area:'', name:'', phone:'', landmark:'', notes:'', code:'', codeOk:false, codeErr:false, codeOpen:false, showErr:false, upAdded:false, upShown:false, muted:false, sheetTab:'basic', done:null };
 try { S.muted = localStorage.getItem('eb_order_muted') === '1'; } catch(e){}
 const count = () => S.qty.white + S.qty.yellow + S.qty.black;
 const topV = () => Object.keys(S.qty).reduce((a, k) => S.qty[k] > S.qty[a] ? k : a, S.variant);
@@ -1648,8 +1649,8 @@ function renderSums(anim){
 let lastTotal = null, inOrder = false, ctaAbove = false;
 function renderBar(anim){
   const t = totals(), go = $('#barGo'), back = $('#barBack'), tot = $('#barTotal');
-  const show = (!!S.plan || inOrder) && !S.done;
-  $('#bar').classList.toggle('hid', !show); document.body.classList.toggle('has-bar', !!S.plan && !S.done);
+  const show = inOrder && !S.done;
+  $('#bar').classList.toggle('hid', !show); document.body.classList.toggle('has-bar', show);
   const pill = ctaAbove && !show && !S.done, fp = $('#fpill');
   fp.classList.toggle('on', pill); fp.setAttribute('aria-hidden', String(!pill)); fp.tabIndex = pill ? 0 : -1;
   const txt = t ? IQD(t.total) : '—';
@@ -1657,8 +1658,10 @@ function renderBar(anim){
   lastTotal = txt;
   $('#barLbl').textContent = t && t.deliv !== null ? 'إجمالي الحساب' : 'المجموع';
   back.hidden = S.step !== 2;
-  if (S.step === 1) go.innerHTML = S.plan ? 'كمّل طلبك' + X.arrowFwd : 'اختار باقتك';
-  else go.innerHTML = icn(I.lock) + 'تأكيد الطلب';
+  const lbl = S.step === 1 ? (S.plan ? 'كمّل طلبك' : 'اختار باقتك') : 'تأكيد الطلب';
+  const ico = S.step === 1 ? X.arrowFwd : icn(I.lock);
+  go.innerHTML = `<span>${lbl}</span>${t ? `<small class="${anim ? 'chg' : ''}">${txt}</small>` : ''}<span class="gc" aria-hidden="true">${ico}</span>`;
+  go.setAttribute('aria-label', t ? `${lbl} — ${txt}` : lbl);
 }
 $('#barBack').onclick = () => goStep(1);
 // scroll position decides bar / pill (computed, not threshold events, so jumps and anchor links are handled too)
