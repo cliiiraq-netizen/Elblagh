@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>إبلاغ — خلّي أي أحد يوصلك بدون ما يعرف رقمك</title>
+<title>إبلاغ — الناس توصلك بثواني ورقمك يبقى إلك</title>
 <meta name="description" content="ملصق إبلاغ على زجاج سيارتك: أي أحد يصوّر الرمز ويبلّغك بثواني، بدون ما يعرف رقمك. اشتراك سنوي، توصيل لكل المحافظات، والدفع عند الاستلام.">
 <meta name="theme-color" content="#121110">
 <style>
@@ -123,6 +123,12 @@ svg{flex:none}
 .hx-sig .ic{width:22px;height:22px;stroke-width:1.75}
 .hx-sig::after{content:"";inset-inline:22%;background:var(--hx-accent);border-radius:2px;height:2px;animation:hx-sig-scan 2.8s ease-in-out infinite;position:absolute;top:30%;box-shadow:0 0 10px 1px rgba(255,200,22,.8)}
 @keyframes hx-sig-scan{0%,100%{opacity:0;top:28%}15%,85%{opacity:1}50%{top:70%}}
+/* plate tag: same 3rem footprint as the old icon badge */
+.hx-sig--plate{width:auto;height:3rem;background:none;border:0;box-shadow:none}
+.hx-sig--plate::after{content:none}
+.hx-plate{display:flex;align-items:stretch;height:1.95rem;border-radius:.4rem;background:#fff;border:1.5px solid #111;overflow:hidden;box-shadow:0 12px 30px -12px rgba(255,200,22,.55)}
+.hx-plate__tab{width:.7rem;background:var(--hx-accent);border-inline-end:1.5px solid #111}
+.hx-plate__txt{display:flex;align-items:center;padding:0 .7rem 0 .75rem;color:#111;font-family:var(--fh);font-size:.95rem;font-weight:700;line-height:1}
 
 /* hero demo: sticker + alert + call */
 .hxd{display:flex;flex-direction:column;align-items:center;gap:1.5rem}
@@ -135,13 +141,13 @@ svg{flex:none}
 .hxd__stage.is-alert .hxd__sticker{transform:translateY(.5rem) scale(.82)}
 .hxd__sticker:focus-visible{outline:2px solid rgba(255,200,22,.7);outline-offset:6px;border-radius:1.25rem}
 .hxd__float{display:block;position:relative;transform:rotateX(var(--tx)) rotateY(var(--ty));transition:transform .4s var(--hx-ease);filter:drop-shadow(0 40px 50px rgba(0,0,0,.6)) drop-shadow(0 0 60px rgba(255,200,22,.16));animation:hx-float 6s ease-in-out infinite}
-.hxd__art{display:block;line-height:0}
-.hxd__art .stk{display:block}
+.hxd__art{display:block}
 .hxd__ripple{aspect-ratio:1;border:2px solid var(--hx-accent);pointer-events:none;border-radius:50%;width:80%;margin:-40% 0 0 -40%;animation:hxd-ripple .9s ease-out both;position:absolute;top:50%;left:50%}
 .hxd__slot{z-index:3;pointer-events:none;display:grid;gap:.5rem;width:min(21rem,96%);position:absolute;top:0;left:50%;transform:translateX(-50%)}
 .hxd__alert,.hxd__call{display:flex;align-items:center;gap:.7rem;text-align:start;border-radius:1.2rem;padding:.7rem .8rem;transition:opacity .3s,transform .3s;animation:hxd-drop .42s cubic-bezier(.2,.8,.2,1) backwards}
 .hxd__alert{color:#292524;background:#fff;border:1px solid rgba(255,255,255,.7);box-shadow:0 22px 44px -18px rgba(0,0,0,.65)}
 .hxd__alert.is-missed{background:#ebe6e1;transform:scale(.95)}
+.hxd__alert.is-back{transform:scale(.95)}
 .hxd__alert.is-missed .hxd__alert-text{color:#78716c}
 .hxd__avatar{flex:none;position:relative;width:2.3rem;height:2.3rem;border-radius:.65rem;background:var(--cta);display:grid;place-items:center;color:#111}
 .hxd__avatar svg.mk{width:1.65rem;height:auto}
@@ -158,6 +164,10 @@ svg{flex:none}
 .hxd__call-body{flex:1;min-width:0;display:grid;gap:1px;text-align:start}
 .hxd__call-body strong{font-size:.875rem}
 .hxd__call-body span{color:#a8a29e;font-size:.6875rem}
+.hxd__ring--ok{background:var(--hx-accent);color:#111;animation:none}
+.hxd__ring--ok::before{border-color:var(--hx-accent)}
+.hxd__ring--ok .ic{width:17px;height:17px;stroke-width:2.6}
+.hxd__eta{flex:none;align-self:center;padding:.2rem .55rem;border-radius:999px;background:rgba(255,200,22,.14);color:#FFD966;font-family:var(--latin);font-size:.75rem;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.4;direction:ltr}
 .hxd__slot.is-leaving>*{animation:hxd-lift .34s cubic-bezier(.4,0,.2,1) both}
 .hxd__slot.is-leaving>:nth-child(2){animation-delay:40ms}
 @keyframes hxd-drop{0%{opacity:0;transform:translateY(-14px) scale(.96)}100%{opacity:1;transform:none}}
@@ -184,8 +194,7 @@ svg{flex:none}
 /* step 1: camera */
 .hx-cam{position:relative;height:100%;display:flex;flex-direction:column;align-items:center;padding-top:2.4rem;background:radial-gradient(80% 50% at 50% 35%,rgba(255,255,255,.08),transparent 70%),linear-gradient(#2a2622,#121010)}
 .hx-cam__target{width:43%;position:relative;transform:rotate(-2deg)}
-.hx-cam__sticker{line-height:0;box-shadow:0 20px 30px rgba(0,0,0,.45);border-radius:.55rem}
-.hx-cam__sticker .stk{display:block}
+.hx-cam__sticker{box-shadow:0 20px 30px rgba(0,0,0,.45);border-radius:.55rem}
 .hx-cam__corners{position:absolute;top:31%;left:-4%;width:108%;height:52%;animation:hx-lock 2.8s var(--hx-ease) infinite}
 .hx-cam__corners i{position:absolute;width:15px;height:15px;border:3px solid #FFC816}
 .hx-cam__corners i:nth-child(1){top:0;left:0;border-right:0;border-bottom:0;border-top-left-radius:6px}
@@ -234,6 +243,14 @@ svg{flex:none}
 .rs-note{font-size:14px;line-height:1.7;color:#625c56}
 .rs-cam{display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 12px;border-radius:16px;border:1px solid #e8e2d6;font-size:14px;line-height:20px;font-weight:500}
 .rs-cam .ic{color:#8a5f00}
+.rs-reply{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:44px 24px 0}
+.rs-reply__ok{width:64px;height:64px;border-radius:50%;background:#FFC816;color:#111;display:grid;place-items:center;box-shadow:0 0 0 10px #fff6d6}
+.rs-reply__ok .ic{width:30px;height:30px;stroke-width:2.6}
+.rs-reply__t{margin-top:10px;font-size:23px;font-weight:800;line-height:1.5;color:#1b1714}
+.rs-reply__eta{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;background:#141414;color:#FFC816;font-size:17px;font-weight:700;line-height:1.5}
+.rs-reply__eta .ic{width:18px;height:18px}
+.rs-reply__dot{width:4px;height:4px;border-radius:50%;background:currentColor;opacity:.6}
+.rs-reply__note{font-size:14px;line-height:1.7;color:#8f8676}
 .rs-bar{position:absolute;inset-inline:0;bottom:0;padding:12px 20px .85rem;background:#fff;border-top:1px solid #e8e2d6;box-shadow:0 -8px 22px rgba(27,22,20,.08)}
 .rs-bar span{display:flex;align-items:center;justify-content:center;height:48px;border-radius:16px;background:#FFC816;color:#111;font-size:16px;line-height:1.5;font-weight:700;box-shadow:0 10px 28px rgba(245,170,0,.25)}
 /* step 3: lock screen + Eblagh notification */
@@ -272,6 +289,8 @@ svg{flex:none}
 .hx-tile__people{flex:none;width:5.5rem;height:5.5rem;position:relative}
 .hx-tile__pulse{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:3rem;height:3rem;border-radius:50%;display:grid;place-items:center;background:var(--hx-accent);color:#111;animation:hx-heart 1.8s ease-out infinite}
 .hx-tile__pulse .ic{width:22px;height:22px;stroke-width:1.9}
+.hx-tile__echo{position:absolute;top:50%;left:50%;width:3rem;height:3rem;margin:-1.5rem 0 0 -1.5rem;border-radius:50%;border:1.5px solid rgba(255,200,22,.55);animation:hx-ring 2.4s ease-out infinite}
+.hx-tile__echo+.hx-tile__echo{animation-delay:1.2s}
 .hx-tile__person{position:absolute;width:1.75rem;height:1.75rem;border-radius:50%;display:grid;place-items:center;background:#fff;color:#151311}
 .hx-tile__person .ic{width:14px;height:14px}
 .hx-tile__person:nth-of-type(2){top:0;left:50%;transform:translateX(-50%)}
@@ -327,26 +346,25 @@ html[dir="ltr"] .hx-bridge__wire{transform:scaleX(-1)}
 
 /* ---------- timeline ---------- */
 .hx-timeline{display:grid;gap:1.75rem;padding-inline-start:.25rem;position:relative}
-.hx-timeline::before{content:"";position:absolute;top:1.5rem;bottom:3rem;inset-inline-start:calc(1.75rem - .5px);width:1px;background:linear-gradient(180deg,#FFC816,var(--hx-line) 45%,#25b543)}
+.hx-timeline::before{content:"";position:absolute;top:1.5rem;bottom:3rem;inset-inline-start:calc(1.75rem - .5px);width:1px;background:linear-gradient(180deg,#FFC816,var(--hx-line) 45%,#FFC816)}
 .hx-timeline__item{display:grid;grid-template-columns:3rem 1fr;grid-template-areas:"icon time" "icon title" ". copy";align-items:center;column-gap:1rem;position:relative}
 .hx-timeline__icon{grid-area:icon;align-self:start;width:3rem;height:3rem;border-radius:50%;display:grid;place-items:center;position:relative;background:var(--hx-surface);box-shadow:0 0 0 1px var(--hx-line),0 8px 18px -10px rgba(0,0,0,.2)}
 .hx-timeline__icon .ic{stroke-width:1.9}
 .hx-timeline__icon--bell{background:var(--hx-accent);color:#111;box-shadow:none}
 .hx-timeline__icon--wait{color:var(--hx-ink-3)}
-.hx-timeline__icon--wa{background:#25b543;color:#fff;box-shadow:none}
-.hx-timeline__icon--wa svg{width:1.4rem;height:1.4rem}
-.hx-ring{position:absolute;inset:0;border-radius:50%;border:2px solid #25b543;animation:hx-ring 1.8s ease-out infinite}
+.hx-timeline__icon--wa{background:var(--hx-accent);color:#111;box-shadow:none}
+.hx-timeline__icon--wa svg{width:1.3rem;height:1.3rem;stroke-width:2.2}
+.hx-ring{position:absolute;inset:0;border-radius:50%;border:2px solid #FFC816;animation:hx-ring 1.8s ease-out infinite}
 .hx-timeline__time{grid-area:time;justify-self:start;color:var(--hx-ink-3);font-size:.8125rem;font-weight:600}
 .hx-timeline__item h3{grid-area:title;font-size:1.25rem;font-weight:700;line-height:1.4}
 .hx-timeline__item p{grid-area:copy;color:var(--hx-ink-2);margin-top:.3rem;font-size:.9375rem;line-height:1.6}
-.hx-timeline__item--wa .hx-timeline__time{color:#1c8f36}
+.hx-timeline__item--wa .hx-timeline__time{color:var(--hx-accent-ink)}
 @keyframes hx-ring{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(1.9)}}
 
 /* ---------- sticker trio ---------- */
 .hx-duo{position:relative;overflow:hidden;display:flex;justify-content:center;align-items:center;gap:clamp(.6rem,4vw,4rem);padding:clamp(2.5rem,8vw,4.5rem) 1rem;border-radius:2rem;background:radial-gradient(60% 70%,#fff 0%,transparent 70%),linear-gradient(#ebe8e4,#e2ded9)}
 .hx-duo__item{display:flex;flex-direction:column;align-items:center;gap:1.1rem;margin:0}
-.hx-duo__art{line-height:0;filter:drop-shadow(0 24px 30px rgba(40,25,15,.22));transition:transform .6s var(--hx-ease)}
-.hx-duo__art .stk{display:block}
+.hx-duo__art{filter:drop-shadow(0 24px 30px rgba(40,25,15,.22));transition:transform .6s var(--hx-ease)}
 .hx-duo__item--white .hx-duo__art{transform:rotate(-4deg)}
 .hx-duo__item--black .hx-duo__art{transform:rotate(4deg) translateY(1rem)}
 .hx-duo__item--yellow .hx-duo__art{transform:rotate(-3deg)}
@@ -404,8 +422,7 @@ html[dir="ltr"] .hx-bridge__wire{transform:scaleX(-1)}
 .hx-final{text-align:center;padding-block:clamp(5rem,14vw,9rem)}
 .hx-final__inner{display:flex;flex-direction:column;align-items:center;gap:1.75rem}
 .hx-final__stickers{width:9rem;height:10.5rem;margin-bottom:.5rem;position:relative}
-.hx-final__art{position:absolute;top:0;line-height:0;filter:drop-shadow(0 18px 24px rgba(40,25,15,.25))}
-.hx-final__art .stk{display:block}
+.hx-final__art{position:absolute;top:0;filter:drop-shadow(0 18px 24px rgba(40,25,15,.25))}
 .hx-final__art--back{left:.4rem;transform:rotate(-9deg)}
 .hx-final__art--front{top:.6rem;right:.4rem;transform:rotate(7deg)}
 .site-footer{padding:.75rem 0 1.25rem}
@@ -471,7 +488,7 @@ html[dir="ltr"] .hx-bridge__wire{transform:scaleX(-1)}
   .hx-plans{grid-template-columns:repeat(2,minmax(0,1fr));max-width:56rem;margin-inline:auto}
   .hx-plan{padding:2.25rem}
   .hx-timeline{grid-template-columns:repeat(3,1fr);gap:2rem;padding:0}
-  .hx-timeline::before{top:1.5rem;bottom:auto;inset-inline:1.5rem 30%;width:auto;height:1px;background:linear-gradient(270deg,#FFC816,var(--hx-line) 50%,#25b543)}
+  .hx-timeline::before{top:1.5rem;bottom:auto;inset-inline:1.5rem 30%;width:auto;height:1px;background:linear-gradient(270deg,#FFC816,var(--hx-line) 50%,#FFC816)}
   .hx-timeline__item{grid-template-columns:1fr;grid-template-areas:"icon" "time" "title" "copy";align-items:start;row-gap:.4rem}
   .hx-timeline__icon{margin-bottom:.9rem}
   .hx-masked{padding:2rem 2.25rem}
@@ -514,7 +531,7 @@ html[dir=ltr] .drawer aside{transform:translateX(-100%)}
 html[dir=ltr] .drawer.open aside{transform:none}
 html[dir=ltr] .hx-tile--plus{background:radial-gradient(90% 120% at 100% 100%,rgba(255,200,22,.32),transparent 60%),#151311}
 html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
-@media (min-width:768px){html[dir=ltr] .hx-timeline::before{background:linear-gradient(90deg,#FFC816,var(--hx-line) 50%,#25b543)}}
+@media (min-width:768px){html[dir=ltr] .hx-timeline::before{background:linear-gradient(90deg,#FFC816,var(--hx-line) 50%,#FFC816)}}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition-duration:.01ms!important;animation:none!important}
   .rv-ready{opacity:1;transition:none;transform:none}
@@ -538,9 +555,9 @@ html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
   <section class="hx-hero" aria-labelledby="hx-hero-title">
     <div class="shell hx-hero__grid">
       <div class="hx-hero__copy">
-        <span class="hx-sig" data-ic="qr"></span>
-        <h1 class="hx-display" id="hx-hero-title"><span>خلّي أي أحد يوصلك</span><span class="hx-display__soft">بدون ما يعرف رقمك</span></h1>
-        <p class="hx-lead">راحة بال وانت بعيد عن سيارتك</p>
+        <span class="hx-sig hx-sig--plate" aria-hidden="true"><span class="hx-plate"><span class="hx-plate__tab"></span><span class="hx-plate__txt">إبلاغ</span></span></span>
+        <h1 class="hx-display" id="hx-hero-title"><span>الناس توصلك بثواني</span><span class="hx-display__soft">ورقمك يبقى إلك</span></h1>
+        <p class="hx-lead">اطمّن على سيارتك وانت بعيد عنها</p>
         <div class="hx-hero__actions" id="hx-hero-cta">
           <a class="hx-btn hx-btn--primary hx-btn--lg" href="order.html">جـــرّب إبلاغ <span data-ic="arrowL"></span></a>
           <p class="hx-hero__price">من <span class="hx-latin">15,000</span> د.ع / سنة · الدفع عند الاستلام</p>
@@ -566,12 +583,12 @@ html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
     <div class="shell">
       <header class="hx-head rv">
         <p class="hx-eyebrow">شلون يشتغل</p>
-        <h2 class="hx-title" id="hx-how-title">ثلاث خطوات <span class="hx-title__soft">وبدون تطبيق</span></h2>
+        <h2 class="hx-title" id="hx-how-title">ثلاث خطوات <span class="hx-title__soft">وتنحل السالفة</span></h2>
       </header>
     </div>
     <ol class="hx-steps rv">
       <li class="hx-step hx-step--scan">
-        <div class="hx-step__text"><span class="hx-step__tag"><b>1</b>تصوير</span><h3>أحد يصوّر الملصق</h3><p>بكاميرا أي موبايل، بدون تطبيق</p></div>
+        <div class="hx-step__text"><span class="hx-step__tag"><b>1</b>تصوير</span><h3>يصوّر الملصق</h3><p>بأي موبايل، وما يحتاج تطبيق</p></div>
         <div class="hx-step__visual" aria-hidden="true">
           <div class="hx-phone hx-phone--dark"><span class="hx-phone__island"></span><div class="hx-phone__screen">
             <div class="hx-cam">
@@ -583,7 +600,7 @@ html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
         </div>
       </li>
       <li class="hx-step hx-step--choose">
-        <div class="hx-step__text"><span class="hx-step__tag"><b>2</b>اختيار</span><h3>يختار المشكلة</h3><p>ويصوّرها حتى يوضّحلك الموقف</p></div>
+        <div class="hx-step__text"><span class="hx-step__tag"><b>2</b>اختيار</span><h3>يحدد شنو صاير</h3><p>ويرفق صورة توضّح الموقف</p></div>
         <div class="hx-step__visual" aria-hidden="true">
           <div class="hx-phone hx-phone--light"><span class="hx-phone__island"></span><div class="hx-phone__screen">
             <div class="hx-real" dir="rtl">
@@ -612,20 +629,21 @@ html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
         </div>
       </li>
       <li class="hx-step hx-step--deliver">
-        <div class="hx-step__text"><span class="hx-step__tag"><b>3</b>توصيل</span><h3>يوصلك إشعار فوري</h3><p>بثواني، ومحد يشوف رقمك</p></div>
+        <div class="hx-step__text"><span class="hx-step__tag"><b>3</b>ردّ</span><h3>ويوصله ردّك</h3><p>بنقرة وحدة، ورقمك يبقى مخفي</p></div>
         <div class="hx-step__visual" aria-hidden="true">
-          <div class="hx-phone hx-phone--dark"><span class="hx-phone__island"></span><div class="hx-phone__screen">
-            <div class="hx-lock">
-              <span class="hx-lock__date">الخميس، 26 تشرين الثاني</span>
-              <span class="hx-lock__time">9:41</span>
-              <div class="hx-note">
-                <span class="hx-note__head"><i data-mk></i><b>EBLAGH</b><time>الآن</time></span>
-                <b>🚗 سيارتك سادّة الطريق</b>
-                <span>وصلك بلاغ بخصوص سيارتك <b class="hx-latin">Toyota Camry</b> — «سادّة باب الكراج»</span>
-                <span class="hx-note__acts"><span>جاي هسّه</span><span>خلال 5 دقايق</span></span>
+          <div class="hx-phone hx-phone--light"><span class="hx-phone__island"></span><div class="hx-phone__screen">
+            <div class="hx-real" dir="rtl">
+              <div class="hx-real__status"><span class="hx-latin">9:42</span><span class="sig hx-real__signals" data-ics="signal wifi battery"></span></div>
+              <section class="rs-top">
+                <div class="rs-brand"><span class="brand-mk" data-mk></span>إبلاغ</div>
+                <div class="rs-hero"><div class="rs-car" style="margin-bottom:0"><i data-ic="car"></i><div><p class="hx-latin">Toyota Camry</p><small>ملصق <span>EB-4471</span></small></div></div></div>
+              </section>
+              <div class="rs-reply">
+                <span class="rs-reply__ok" data-ic="check"></span>
+                <p class="rs-reply__t">وصل ردّ صاحب السيارة</p>
+                <span class="rs-reply__eta"><span data-ic="clock"></span><span>جاي هسّه</span><i class="rs-reply__dot"></i><span>5 دقايق</span></span>
+                <p class="rs-reply__note">شكراً لأنك بلّغت</p>
               </div>
-              <div class="hx-lock__bottom"><i data-ic="flash"></i><i data-ic="camera"></i></div>
-              <span class="hx-lock__bar"></span>
             </div>
           </div></div>
         </div>
@@ -640,13 +658,13 @@ html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
         <h2 class="hx-title" id="hx-moments-title">ملصق واحد <span class="hx-title__soft">لمواقف هواية</span></h2>
       </header>
       <div class="hx-bento rv">
-        <article class="hx-tile"><span class="hx-tile__icon" data-ic="car"></span><h3>أحد سادّ عليك؟</h3><p>وصل لصاحبها بثواني</p></article>
-        <article class="hx-tile"><span class="hx-tile__icon" data-ic="bulb"></span><h3>نسيت الضوء؟</h3><p>الحق البطارية</p></article>
-        <article class="hx-tile"><span class="hx-tile__icon" data-ic="door"></span><h3>الشباك مفتوح؟</h3><p>سدّه قبل المطر والعجاج</p></article>
-        <article class="hx-tile"><span class="hx-tile__icon" data-ic="tri"></span><h3>ضربة بالغلط؟</h3><p>يكدر يعتذر ويوصلك</p></article>
+        <article class="hx-tile"><span class="hx-tile__icon" data-ic="car"></span><h3>سادّين عليك؟</h3><p>صاحبها يدري بثواني</p></article>
+        <article class="hx-tile"><span class="hx-tile__icon" data-ic="bulb"></span><h3>الضوء بقى شغّال؟</h3><p>قبل لا تخلص البطارية</p></article>
+        <article class="hx-tile"><span class="hx-tile__icon" data-ic="door"></span><h3>الجامة مفتوحة؟</h3><p>سدّها قبل المطر والعجاج</p></article>
+        <article class="hx-tile"><span class="hx-tile__icon" data-ic="tri"></span><h3>أحد دعم سيارتك؟</h3><p>يكدر يبلّغك ويتفاهم وياك</p></article>
         <article class="hx-tile hx-tile--plus">
-          <div class="hx-tile__plus-copy"><span class="hx-tile__badge">إبلاغ بلس</span><h3>سيارة العائلة؟</h3><p>شارك سيارتك ويا عائلتك، ويوصلهم التنبيه بنفس اللحظة</p></div>
-          <div class="hx-tile__people" aria-hidden="true"><span class="hx-tile__pulse" data-ic="bell"></span><span class="hx-tile__person" data-ic="user"></span><span class="hx-tile__person" data-ic="user"></span><span class="hx-tile__person" data-ic="user"></span></div>
+          <div class="hx-tile__plus-copy"><span class="hx-tile__badge">الوضع العاجل</span><h3>طفل أو حيوان بالسيارة؟</h3><p>التنبيه يتكرر لحد ما ينشاف</p></div>
+          <div class="hx-tile__people" aria-hidden="true"><span class="hx-tile__echo"></span><span class="hx-tile__echo"></span><span class="hx-tile__pulse" data-ic="bell"></span></div>
         </article>
       </div>
     </div>
@@ -656,7 +674,7 @@ html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
     <div class="shell">
       <header class="hx-head rv">
         <p class="hx-eyebrow">خصوصيتك أولاً</p>
-        <h2 class="hx-title" id="hx-privacy-title">رقمك؟ <span class="hx-title__soft">محد راح يشوفه</span></h2>
+        <h2 class="hx-title" id="hx-privacy-title">رقمك؟ <span class="hx-title__soft">ولا أحد يشوفه</span></h2>
       </header>
       <div class="hx-bridge rv" aria-hidden="true">
         <div class="hx-bridge__node"><span class="hx-bridge__icon" data-ic="scan"></span><span>اللي يبلّغ</span></div>
@@ -682,12 +700,12 @@ html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
     <div class="shell">
       <header class="hx-head rv">
         <p class="hx-eyebrow">التنبيهات</p>
-        <h2 class="hx-title" id="hx-alerts-title">مستحيل <span class="hx-title__soft">يفوتك</span></h2>
+        <h2 class="hx-title" id="hx-alerts-title">ما راح <span class="hx-title__soft">يفوتك شي</span></h2>
       </header>
       <ol class="hx-timeline rv">
-        <li class="hx-timeline__item"><span class="hx-timeline__icon hx-timeline__icon--bell" data-ic="bell"></span><span class="hx-timeline__time hx-latin">0:00</span><h3>الإشعار يوصلك بنغمة إبلاغ</h3></li>
-        <li class="hx-timeline__item"><span class="hx-timeline__icon hx-timeline__icon--wait" data-ic="clock"></span><span class="hx-timeline__time hx-latin">1:00</span><h3>بعدك ما شفته؟</h3></li>
-        <li class="hx-timeline__item hx-timeline__item--wa"><span class="hx-timeline__icon hx-timeline__icon--wa"><span class="hx-ring"></span><span data-ic="wa"></span></span><span class="hx-timeline__time">واتساب</span><h3>نوصلك على واتساب</h3><p>تنبيه احتياطي بعد دقيقة، بموافقتك — ويا باقة إبلاغ بلس</p></li>
+        <li class="hx-timeline__item"><span class="hx-timeline__icon hx-timeline__icon--bell" data-ic="bell"></span><span class="hx-timeline__time hx-latin">0:00</span><h3>إشعار فوري بنغمة إبلاغ</h3></li>
+        <li class="hx-timeline__item"><span class="hx-timeline__icon hx-timeline__icon--wait" data-ic="clock"></span><span class="hx-timeline__time hx-latin">1:00</span><h3>تذكير واحد بس</h3></li>
+        <li class="hx-timeline__item hx-timeline__item--wa"><span class="hx-timeline__icon hx-timeline__icon--wa"><span class="hx-ring"></span><span data-ic="reply"></span></span><span class="hx-timeline__time">دورك</span><h3>ردّك يوصل له بنقرة</h3><p>جاي هسّه أو خلال 5 دقايق، وهو يعرف متى توصل</p></li>
       </ol>
     </div>
   </section>
@@ -696,7 +714,7 @@ html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
     <div class="shell">
       <header class="hx-head rv">
         <p class="hx-eyebrow">الملصق</p>
-        <h2 class="hx-title" id="hx-sticker-title">ثلاث ألوان <span class="hx-title__soft">لكل سيارة</span></h2>
+        <h2 class="hx-title" id="hx-sticker-title">اختار لونه <span class="hx-title__soft">على ذوق سيارتك</span></h2>
       </header>
       <div class="hx-duo rv" id="trio"></div>
       <ul class="hx-specs rv">
@@ -711,7 +729,7 @@ html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
     <div class="shell">
       <header class="hx-head rv">
         <p class="hx-eyebrow">الباقات</p>
-        <h2 class="hx-title" id="hx-plans-title">اشتراك سنوي <span class="hx-title__soft">وسعر بسيط</span></h2>
+        <h2 class="hx-title" id="hx-plans-title">سنة كاملة <span class="hx-title__soft">بسعر واحد</span></h2>
       </header>
       <div class="hx-plans rv">
         <article class="hx-plan">
@@ -736,7 +754,7 @@ html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
   <section class="hx-section hx-section--soft hx-faq" aria-labelledby="hx-faq-title">
     <div class="shell hx-faq__inner rv">
       <section class="hx-faq__sec">
-        <h2 id="hx-faq-title">أسئلة شائعة</h2>
+        <h2 id="hx-faq-title">عندك سؤال؟</h2>
         <div class="faq" id="faq"></div>
       </section>
     </div>
@@ -745,7 +763,7 @@ html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
   <section class="hx-final" id="hx-final" aria-labelledby="hx-final-title">
     <div class="shell hx-final__inner rv">
       <div class="hx-final__stickers" id="finalArt" aria-hidden="true"></div>
-      <h2 class="hx-title hx-title--xl" id="hx-final-title"><span>خلّي الناس</span> <span class="hx-title__soft">تكدر توصلك</span></h2>
+      <h2 class="hx-title hx-title--xl" id="hx-final-title"><span>ركّب الملصق</span> <span class="hx-title__soft">وخلّي بالك مرتاح</span></h2>
       <a class="hx-btn hx-btn--primary hx-btn--lg" href="order.html">جـــرّب إبلاغ <span data-ic="arrowL"></span></a>
     </div>
   </section>
@@ -794,6 +812,7 @@ const L = (d, sw = 2) => `<svg class="ic" viewBox="0 0 24 24" fill="none" stroke
 const IC = {
   menu: L('<path d="M4 6h16M4 12h16M4 18h16"/>'),
   x: L('<path d="M18 6 6 18M6 6l12 12"/>'),
+  reply: L('<path d="M20 18v-2a4 4 0 0 0-4-4H4"/><path d="m9 17-5-5 5-5"/>'),
   qr: L('<rect x="3" y="3" width="5" height="5" rx="1"/><rect x="16" y="3" width="5" height="5" rx="1"/><rect x="3" y="16" width="5" height="5" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3M21 21v.01M12 7v3a2 2 0 0 1-2 2H7M3 12h.01M12 3h.01M12 16v.01M16 12h1M21 12v.01M12 21v-1"/>'),
   arrowL: L('<path d="m12 19-7-7 7-7M19 12H5"/>'),
   chevL: L('<path d="m15 18-6-6 6-6"/>'),
@@ -862,23 +881,26 @@ let mi = 0, active = false, userTapped = false, timers = [];
 const stage = $('#stage'), slot = $('#slot');
 const later = (ms, f) => timers.push(setTimeout(f, ms));
 const alertHTML = (i, missed) => `<div class="hxd__alert${missed ? ' is-missed' : ''}" dir="ltr"><span class="hxd__avatar">${markSVG}<span class="hxd__app">${IC.bell}</span></span><span class="hxd__alert-body"><span class="hxd__alert-head"><strong class="hx-latin">Eblagh</strong><span>${missed ? T('ما انشاف','not seen') : T('هسّه','now')}</span></span><span class="hxd__alert-text" dir="${T('rtl','ltr')}">${msgAt(i)}</span></span></div>`;
-const callHTML = () => `<div class="hxd__call" dir="ltr"><span class="hxd__ring" aria-hidden="true">${IC.wa}</span><span class="hxd__call-body" dir="${T('rtl','ltr')}"><strong>${T('إبلاغ يذكّرك على واتساب…','Eblagh reminds you on WhatsApp…')}</strong><span>${T('تنبيه احتياطي لأن الإشعار ما انشاف','Backup alert, the notification wasn’t seen')}</span></span></div>`;
+let eta = 299, etaT = null;
+const etaTxt = () => Math.floor(eta / 60) + ':' + String(eta % 60).padStart(2, '0');
+const callHTML = () => `<div class="hxd__call hxd__reply" dir="ltr"><span class="hxd__ring hxd__ring--ok" aria-hidden="true">${IC.check}</span><span class="hxd__call-body" dir="${T('rtl','ltr')}"><strong>${T('صاحب السيارة ردّ: جاي هسّه','The owner replied: on my way')}</strong><span>${T('باقي على وصوله','Arriving in')}</span></span><span class="hxd__eta">${etaTxt()}</span></div>`;
+const startEta = () => { clearInterval(etaT); eta = 299; if (RM.matches) return; etaT = setInterval(() => { if (eta > 0) eta--; const e = $('.hxd__eta', slot); if (e) e.textContent = etaTxt(); }, 1000); };
 function ripple(){ $('.hxd__ripple')?.remove(); const r = document.createElement('span'); r.className = 'hxd__ripple'; r.setAttribute('aria-hidden','true'); $('.hxd__float').appendChild(r); }
 function cycle(i, byUser){
-  timers.forEach(clearTimeout); timers = [];
+  timers.forEach(clearTimeout); timers = []; clearInterval(etaT);
   if (byUser) userTapped = true;
   mi = i; active = true;
   slot.className = 'hxd__slot'; slot.innerHTML = ''; stage.classList.remove('is-alert');
   ripple();
   later(300, () => { stage.classList.add('is-alert'); slot.innerHTML = alertHTML(i, false); });
-  later(2900, () => { slot.innerHTML = alertHTML(i, true) + callHTML(); });
+  later(2900, () => { startEta(); $('.hxd__alert', slot)?.classList.add('is-back'); slot.insertAdjacentHTML('beforeend', callHTML()); });
   later(6300, () => { slot.classList.add('is-leaving'); stage.classList.remove('is-alert'); });
   later(6640, () => {
-    slot.className = 'hxd__slot'; slot.innerHTML = ''; $('.hxd__ripple')?.remove(); active = false;
+    slot.className = 'hxd__slot'; slot.innerHTML = ''; clearInterval(etaT); $('.hxd__ripple')?.remove(); active = false;
     if (!userTapped && document.visibilityState === 'visible') later(3500, () => cycle((i + 1) % MSGS.length, false));
   });
 }
-if (RM.matches){ ripple(); stage.classList.add('is-alert'); slot.innerHTML = alertHTML(0, true) + callHTML(); }
+if (RM.matches){ ripple(); stage.classList.add('is-alert'); slot.innerHTML = alertHTML(0, false) + callHTML(); $('.hxd__alert', slot).classList.add('is-back'); }
 else later(1400, () => cycle(0, false));
 /* tap: replays the shown alert, or moves to the next one while a cycle is running; stops the auto loop */
 $('#stkBtn').addEventListener('click', () => cycle((mi + (active ? 1 : 0)) % MSGS.length, true));
@@ -890,18 +912,18 @@ stage.addEventListener('pointerleave', () => { stage.style.setProperty('--tx','0
 const FAQ = [
   ['إبلاغ شلون يشتغل؟','الزق الملصق على زجاج سيارتك واربطه بحسابك. إذا أحد احتاجك، يصوّر الرمز بكاميرا موبايله، يختار المشكلة ويبعث التنبيه — ويوصلك إشعار فوري بنغمة إبلاغ.'],
   ['اللي يبلّغ يشوف رقم موبايلي؟','لا. رقمك واسمك يبقون مخفيين، وهو ما يعرف منو صاحب السيارة. التواصل كله يمر من خلال إبلاغ.'],
-  ['طيب، ممكن أي أحد يبعتلي أي شي ويمزح؟','لا. قبل ما يوصلك البلاغ في فلترة ذكية وحدّ لعدد البلاغات، وتذكير واحد بس. وتكدر تحظر أي أحد بضغطة، وتوقف الملصق مؤقتاً إذا تريد.'],
+  ['إذا أحد يريد يزعجني أو يمزح؟','ما يمشي وياه. البلاغات تمر بفلترة ذكية وإلها حدّ، والتذكير مرة وحدة بس. وتكدر تحظر أي أحد بضغطة، أو توقف الملصق مؤقتاً.'],
   ['لازم أحد ينزّل تطبيق؟','لا. اللي يبلّغ يستخدم كاميرا الموبايل والمتصفح بس. انت تستلم التنبيهات بتطبيق إبلاغ.'],
   ['شلون أطلب الملصق؟','اطلب أونلاين بخطوتين: اختار باقتك وعدد الملصقات واللون، واكتب عنوانك. التوصيل لكل المحافظات والدفع عند الاستلام.'],
-  ['التنبيه شلون يوصلني؟','إشعار فوري بتطبيق إبلاغ. ويا باقة إبلاغ بلس، إذا ما شفت الإشعار خلال دقيقة نوصلك تنبيه احتياطي على واتساب — بموافقتك.']
+  ['التنبيه شلون يوصلني؟','إشعار فوري بتطبيق إبلاغ بنغمة خاصة، وإذا ما شفته يوصلك تذكير واحد بعد دقيقة. تردّ بنقرة، وصاحب البلاغ يعرف متى توصل. ويا إبلاغ بلس تكدر تفعّل تنبيه احتياطي على واتساب.']
 ];
 const FAQ_EN = [
   ['How does Eblagh work?','Stick the sticker on your car window and link it to your account. If someone needs you, they scan the code with their phone camera, pick the problem and send the alert — and you get an instant notification with Eblagh’s tone.'],
   ['Will they see my phone number?','No. Your name and number stay hidden, and they never know who owns the car. Everything goes through Eblagh.'],
-  ['Can anyone send me messages just to joke around?','No. Before a report reaches you there is smart filtering and a limit on how many reports can be sent, with a single reminder. You can block anyone in a tap and pause your sticker whenever you want.'],
+  ['What if someone just wants to annoy me?','It won’t work. Reports go through smart filtering with a limit, and there is only one reminder. You can block anyone in a tap, or pause your sticker for a while.'],
   ['Does anyone need to download an app?','No. The person reporting only uses their phone camera and browser. You receive alerts in the Eblagh app.'],
   ['How do I get a sticker?','Order online in two steps: choose your plan, how many stickers and the colour, then add your address. Delivery to all governorates, cash on delivery.'],
-  ['How do I receive alerts?','An instant notification in the Eblagh app. With Eblagh Plus, if you don’t see it within a minute we send a backup alert on WhatsApp — with your consent.']
+  ['How do I receive alerts?','An instant notification in the Eblagh app with its own tone, and one reminder after a minute if you miss it. You reply in a tap and the reporter knows when you’ll arrive. With Eblagh Plus you can also turn on a WhatsApp backup alert.']
 ];
 function renderFaq(){ $('#faq').innerHTML = (LANG === 'en' ? FAQ_EN : FAQ).map(([q,a]) => `<details><summary><span>${q}</span><i>${IC.chevD}</i></summary><p>${a}</p></details>`).join('');
 $$('#faq details').forEach(d => d.addEventListener('toggle', () => { if (d.open) $$('#faq details').forEach(o => { if (o !== d) o.open = false; }); })); }
@@ -947,6 +969,14 @@ const EN = {
  'ردّ بنقرة مع وقت وصولك':'One-tap reply with your ETA','اختار الباقة':'Choose this plan','بلس':'Plus','الأكمل':'Most complete','للعائلة والسيارات الثانية: كلكم توصلكم التنبيهات':'For family and second cars, everyone gets alerts','كل مزايا إبلاغ':'Everything in Eblagh',
  'لحد 3 سيارات بحساب واحد':'Up to 3 cars on one account','شارك السيارة ويا عائلتك':'Share the car with your family','واتساب احتياطي إذا ما شفت الإشعار':'WhatsApp backup if you miss it','الدفع عند الاستلام · توصيل لكل المحافظات':'Cash on delivery · Delivery to all governorates',
  'أسئلة شائعة':'Common questions','خلّي الناس':'Ready when','تكدر توصلك':'they need you','EN':'AR','الأسعار':'Pricing','اطلب أونلاين':'Order online','تواصل ويانا':'Contact us','الخصوصية':'Privacy','الشروط':'Terms','سياسة التواصل':'Communication policy',
+ 'الناس توصلك بثواني':'People reach you in seconds','ورقمك يبقى إلك':'Your number stays yours','اطمّن على سيارتك وانت بعيد عنها':'Peace of mind while you’re away from your car',
+ 'وتنحل السالفة':'Sorted','يصوّر الملصق':'They scan the sticker','بأي موبايل، وما يحتاج تطبيق':'Any phone, no app needed','يحدد شنو صاير':'They say what’s up','ويرفق صورة توضّح الموقف':'And add a photo of it',
+ 'ردّ':'Reply','ويوصله ردّك':'Your reply reaches them','بنقرة وحدة، ورقمك يبقى مخفي':'In one tap, your number stays hidden','وصل ردّ صاحب السيارة':'The owner replied','5 دقايق':'5 min','شكراً لأنك بلّغت':'Thanks for letting them know',
+ 'سادّين عليك؟':'Blocked in?','صاحبها يدري بثواني':'The owner knows in seconds','الضوء بقى شغّال؟':'Lights left on?','قبل لا تخلص البطارية':'Before the battery dies','الجامة مفتوحة؟':'Window open?','سدّها قبل المطر والعجاج':'Close it before the rain and dust',
+ 'أحد دعم سيارتك؟':'Someone bumped your car?','يكدر يبلّغك ويتفاهم وياك':'They can tell you and sort it out','الوضع العاجل':'Urgent mode','طفل أو حيوان بالسيارة؟':'A child or pet in the car?','التنبيه يتكرر لحد ما ينشاف':'The alert repeats until it’s seen',
+ 'ولا أحد يشوفه':'Nobody sees it','ما راح':'You won’t','يفوتك شي':'miss a thing','إشعار فوري بنغمة إبلاغ':'Instant alert with Eblagh’s tone','تذكير واحد بس':'Just one reminder','دورك':'Your turn','ردّك يوصل له بنقرة':'Your reply reaches them in a tap',
+ 'جاي هسّه أو خلال 5 دقايق، وهو يعرف متى توصل':'On my way, or in 5 minutes — they know when you’ll arrive','اختار لونه':'Pick a colour','على ذوق سيارتك':'To suit your car','سنة كاملة':'A whole year','بسعر واحد':'One price','عندك سؤال؟':'Got a question?',
+ 'ركّب الملصق':'Stick it on','وخلّي بالك مرتاح':'and relax',
  'يبدأ من':'From','اطلب هسّه':'Order now','القائمة':'Menu',
  'إبلاغ — الرئيسية':'Eblagh — Home','افتح القائمة':'Open menu','اضغط على الملصق وشوف التنبيه':'Tap the sticker to see the alert','ملصق إبلاغ الأبيض':'Eblagh white sticker','English':'Switch to Arabic','روابط الموقع':'Site links','أغلق القائمة':'Close menu','تنقل الموقع':'Site navigation','قانوني':'Legal'
 };
@@ -964,10 +994,10 @@ function swapText(){
 function setLang(l, save){
   LANG = l; const h = document.documentElement; h.lang = l; h.dir = l === 'en' ? 'ltr' : 'rtl';
   $$('.hx-real').forEach(e => e.dir = h.dir);
-  document.title = T(AR_TITLE, 'Eblagh — Let anyone reach you without your number');
+  document.title = T(AR_TITLE, 'Eblagh — People reach you in seconds, your number stays yours');
   $('meta[name=description]').content = T(AR_DESC, 'An Eblagh sticker on your car window: anyone scans the code and alerts you in seconds, without knowing your number. Yearly plan, delivery to all Iraqi governorates, cash on delivery.');
   swapText(); renderOpts(); renderFaq(); paintStickers();
-  if (slot.innerHTML){ const missed = !!$('.hxd__call', slot); slot.innerHTML = alertHTML(mi, missed) + (missed ? callHTML() : ''); }
+  if (slot.innerHTML){ const replied = !!$('.hxd__reply', slot); slot.innerHTML = alertHTML(mi, false) + (replied ? callHTML() : ''); if (replied) $('.hxd__alert', slot).classList.add('is-back'); }
   if (save) try { localStorage.setItem('eb-lang', l); } catch (e) {}
 }
 $('#langBtn').onclick = () => setLang(LANG === 'en' ? 'ar' : 'en', true);
