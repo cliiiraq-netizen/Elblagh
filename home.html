@@ -23,9 +23,12 @@
 }
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent;scroll-behavior:smooth}
-body{margin:0;min-height:100vh;font-family:var(--fb),system-ui,sans-serif;background:radial-gradient(70% 520px at 50% 0%,rgba(255,200,22,.08),transparent 75%) no-repeat,var(--hx-bg);color:var(--hx-ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{margin:0;min-height:100vh;line-height:1.7;text-rendering:optimizeLegibility;font-family:var(--fb),system-ui,sans-serif;background:radial-gradient(70% 520px at 50% 0%,rgba(255,200,22,.08),transparent 75%) no-repeat,var(--hx-bg);color:var(--hx-ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 h1,h2,h3,p,ul,ol,figure{margin:0;padding:0}
 ul,ol{list-style:none}
+:where(p,label,a,li,input,textarea,select,button){line-height:1.7}
+:where(h1,h2,h3,h4,h5,h6){line-height:1.4}
+.site-header :where(button,a){line-height:normal}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
 svg{flex:none}
@@ -169,7 +172,7 @@ svg{flex:none}
 
 
 
-.shell{width:min(1120px,calc(100% - 1.5rem));margin-inline:auto;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.shell{width:min(1120px,calc(100% - 2rem));margin-inline:auto;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
 .hx-latin{font-family:var(--latin);unicode-bidi:isolate}
 
 /* ---------- type ---------- */
@@ -178,12 +181,13 @@ svg{flex:none}
 .hx-title{text-wrap:balance;font-size:clamp(2rem,8vw,3.75rem);font-weight:700;line-height:1.35}
 .hx-title__soft{color:var(--hx-ink-3)}
 .hx-title--xl{font-size:clamp(2.4rem,10vw,4.75rem)}
-.hx-eyebrow{letter-spacing:-.01em;color:var(--hx-accent-ink);margin-bottom:.9rem;font-size:.9375rem;font-weight:600}
+.hx-eyebrow{color:var(--hx-accent-ink);margin-bottom:.9rem;font-size:.9375rem;font-weight:600}
 .hx-lead{max-width:34rem;color:var(--hx-ink-2);text-wrap:pretty;font-size:clamp(1.0625rem,3.9vw,1.25rem);line-height:1.7}
 
 /* ---------- buttons ---------- */
 .hx-btn{white-space:nowrap;transition:transform .25s var(--hx-ease),background-color .2s ease,box-shadow .25s ease;border-radius:999px;justify-content:center;align-items:center;gap:.6rem;font-weight:700;display:inline-flex}
 .hx-btn:active{transform:scale(.97)}
+.hx-btn:focus-visible{outline:3px solid rgba(245,170,0,.35);outline-offset:3px}
 .hx-btn .ic{width:1.15rem;height:1.15rem}
 .hx-btn [data-ic],.hx-plan__list [data-ic],.hx-masked__lock{display:inline-flex}
 .hx-btn--lg{min-height:3.5rem;padding:0 1.75rem;font-size:1.0625rem}
@@ -197,9 +201,9 @@ svg{flex:none}
 .hx-section--soft{background:var(--hx-soft)}
 .hx-head{max-width:46rem;margin-bottom:clamp(2.25rem,6vw,3.75rem)}
 
-/* reveal */
-.rv{opacity:0;transform:translateY(2rem);transition:opacity .68s,transform .68s cubic-bezier(.22,1,.36,1)}
-.rv.is-visible{opacity:1;transform:none}
+/* reveal (JS adds .rv-ready, like ewsali's home-reveal-ready) */
+.rv-ready{opacity:0;transform:translateY(2rem);transition:opacity .68s,transform .68s cubic-bezier(.22,1,.36,1)}
+.rv-ready.is-visible{opacity:1;transform:none}
 
 /* ---------- top (header + hero) ---------- */
 .hx-top{isolation:isolate;position:relative;overflow:hidden;background:radial-gradient(90% 55% at 50% -10%,rgba(255,226,140,.14),transparent 65%),radial-gradient(70% 45% at 85% 70%,rgba(255,200,22,.17),transparent 70%),radial-gradient(60% 40% at 10% 90%,rgba(160,120,30,.16),transparent 70%),linear-gradient(#1c1b18 0%,#141311 55%,#0e0d0c 100%)}
@@ -209,31 +213,35 @@ svg{flex:none}
 .brand{display:inline-flex;align-items:center;gap:.625rem;border-radius:.5rem}
 .brand-mk{width:2.5rem;height:2.5rem;border-radius:50%;background:var(--cta);display:grid;place-items:center;color:#111;box-shadow:inset 0 1px 0 rgba(255,255,255,.5)}
 .brand-mk svg.mk{width:1.7rem;height:auto}
-.brand-name{font-size:1.35rem;font-weight:700;line-height:1;color:#fff;letter-spacing:-.01em}
+.brand-name{font-size:1.35rem;font-weight:700;line-height:1;color:#fff;letter-spacing:-.025em}
 .nav-actions{display:flex;align-items:center;gap:.375rem}
-.menu-btn{width:2.25rem;height:2.25rem;border-radius:50%;display:grid;place-items:center;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);transition:background-color .2s}
+.menu-btn{width:2.25rem;height:2.25rem;border-radius:50%;display:grid;place-items:center;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);transition:all .15s cubic-bezier(.4,0,.2,1)}
+.menu-btn:active,.login-btn:active,.drawer-foot a:active,.lang-btn:active,.drawer-x:active{transform:scale(.98)}
 .menu-btn:hover{background:rgba(255,255,255,.14)}
 .menu-btn .ic{width:1rem;height:1rem}
-.login-btn{display:none;height:2.25rem;padding:0 1rem;border-radius:999px;align-items:center;font-size:.875rem;font-weight:600;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12);transition:background-color .2s}
-.login-btn:hover{background:rgba(255,255,255,.16)}
+.login-btn{display:none;height:2.25rem;padding:0 1rem;border-radius:999px;align-items:center;justify-content:center;gap:.5rem;font-size:.75rem;font-weight:500;color:#fff;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);transition:all .15s cubic-bezier(.4,0,.2,1)}
+.login-btn:hover{background:rgba(255,255,255,.1);box-shadow:0 1px 2px rgba(0,0,0,.05)}
 /* drawer */
 .drawer{position:fixed;inset:0;z-index:50;pointer-events:none;opacity:0;transition:opacity .3s}
 .drawer.open{pointer-events:auto;opacity:1}
 .drawer-bg{position:absolute;inset:0;background:rgba(26,26,26,.42);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
-.drawer aside{position:absolute;inset-block:0;inset-inline-start:0;width:min(90vw,23rem);display:flex;flex-direction:column;background:#fff;border-inline-end:1px solid #eee7e1;box-shadow:0 24px 80px rgba(26,26,26,.18);transform:translateX(100%);transition:transform .3s ease-out}
+.drawer aside{position:absolute;inset-block:0;inset-inline-start:0;width:min(90vw,23rem);display:flex;flex-direction:column;padding-top:max(.75rem,env(safe-area-inset-top,0px));padding-bottom:max(1rem,env(safe-area-inset-bottom,0px));background:#fff;border-inline-end:1px solid #eee7e1;box-shadow:0 24px 80px rgba(26,26,26,.18);transform:translateX(100%);transition:transform .3s ease-out}
 .drawer.open aside{transform:none}
 .drawer-head{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:1rem 1.25rem;border-bottom:1px solid #eee7e1}
 .drawer-head p{font-size:1.125rem;font-weight:700}
-.drawer-x{width:2.5rem;height:2.5rem;border-radius:50%;display:grid;place-items:center;border:1px solid #eee7e1}
+.drawer-x{width:2.5rem;height:2.5rem;border-radius:50%;display:grid;place-items:center;background:#fff;border:1px solid #eee7e1;transition:all .15s cubic-bezier(.4,0,.2,1)}
+.drawer-x:hover{background:var(--hx-accent-soft)}
 .drawer nav{flex:1;overflow-y:auto;padding:1.25rem .75rem}
 .drawer nav ul{display:grid;gap:.375rem}
 .drawer nav a{display:flex;align-items:center;gap:.75rem;padding:.75rem;border-radius:1rem;transition:background-color .15s}
 .drawer nav a:hover{background:#faf7f2}
 .drawer nav .di{width:2.5rem;height:2.5rem;border-radius:.75rem;display:grid;place-items:center;background:var(--hx-accent-soft);color:var(--hx-accent-ink)}
-.drawer nav span.t{flex:1;font-size:1rem;font-weight:600}
+.drawer nav span.t{flex:1;font-size:1rem;line-height:1.5;font-weight:600}
 .drawer nav .ch{width:1rem;height:1rem;opacity:.4}
 .drawer-foot{padding:1rem 1.25rem;border-top:1px solid #eee7e1}
-.drawer-foot a{display:flex;align-items:center;justify-content:center;gap:.5rem;height:3rem;border-radius:999px;background:var(--cta);color:#111;font-weight:600;font-size:1rem;box-shadow:0 10px 24px -10px rgba(245,170,0,.7)}
+.drawer-foot a{display:flex;align-items:center;justify-content:center;gap:.5rem;height:3rem;line-height:normal;padding:0 1.5rem;border-radius:1rem;background:var(--cta);color:#111;font-weight:600;font-size:1rem;box-shadow:0 10px 30px rgba(245,170,0,.18);transition:background-image .15s,box-shadow .15s,transform .15s}
+.drawer-foot a:hover{box-shadow:0 14px 36px rgba(245,170,0,.26)}
+.drawer-foot a .ic{transform:scaleX(-1)}
 
 .hx-hero{color:#f5f3f0;padding-top:clamp(1.75rem,7vw,4rem);padding-bottom:clamp(1.5rem,6vw,4rem);position:relative}
 .hx-hero__grid{display:grid;align-items:center;gap:clamp(2rem,7vw,3.5rem)}
@@ -247,7 +255,7 @@ svg{flex:none}
 .hx-hero__price .hx-latin{color:#fff;font-weight:700}
 .hx-hero__visual{width:100%}
 .hx-sig{color:#fff;background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.14);border-radius:.95rem;place-items:center;width:3rem;height:3rem;display:grid;position:relative;box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 12px 30px -12px rgba(255,200,22,.6)}
-.hx-sig .ic{width:1.5rem;height:1.5rem}
+.hx-sig .ic{width:22px;height:22px;stroke-width:1.75}
 .hx-sig::after{content:"";inset-inline:22%;background:var(--hx-accent);border-radius:2px;height:2px;animation:hx-sig-scan 2.8s ease-in-out infinite;position:absolute;top:30%;box-shadow:0 0 10px 1px rgba(255,200,22,.8)}
 @keyframes hx-sig-scan{0%,100%{opacity:0;top:28%}15%,85%{opacity:1}50%{top:70%}}
 
@@ -280,7 +288,7 @@ svg{flex:none}
 .hxd__alert-text{color:#292524;font-size:.875rem;line-height:1.45}
 .hxd__call{color:#fff;background:#1c1917;border:1px solid rgba(255,255,255,.12);box-shadow:0 22px 44px -18px rgba(0,0,0,.8)}
 .hxd__ring{flex:none;width:2.3rem;height:2.3rem;border-radius:50%;background:#16a34a;display:grid;place-items:center;position:relative;animation:hxd-shake 1.1s ease-in-out infinite}
-.hxd__ring .ic{width:1.15rem;height:1.15rem}
+.hxd__ring .ic{width:15px;height:15px}
 .hxd__ring::before{content:"";position:absolute;inset:0;border:2px solid #22c55e;border-radius:50%;animation:hxd-ping 1.4s ease-out infinite}
 .hxd__call-body{flex:1;min-width:0;display:grid;gap:1px;text-align:start}
 .hxd__call-body strong{font-size:.875rem}
@@ -329,7 +337,7 @@ svg{flex:none}
 .hx-real__status .sig{display:inline-flex;gap:6px;align-items:center}
 .hx-real__status .ic{width:17px;height:17px}
 .rs-top{background:#141414}
-.rs-brand{display:flex;align-items:center;gap:8px;padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.15);color:#fff;font-size:16px;font-weight:700}
+.rs-brand{display:flex;align-items:center;gap:8px;padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.15);color:#fff;font-size:16px;font-weight:700;line-height:1}
 .rs-brand .brand-mk{width:28px;height:28px}
 .rs-brand .brand-mk svg.mk{width:19px}
 .rs-hero{padding:24px 20px}
@@ -337,19 +345,19 @@ svg{flex:none}
 .rs-car i{width:30px;height:30px;border-radius:8px;background:#FFC816;display:grid;place-items:center;color:#111}
 .rs-car i .ic{width:18px;height:18px}
 .rs-car p{font-size:14px;font-weight:700;color:#fff}
-.rs-car small{display:block;margin-top:2px;font-size:11px;line-height:1;color:#d8d2c4}
+.rs-car small{display:block;margin-top:2px;font-size:11px;line-height:1.7;color:#d8d2c4}
 .rs-car small span{font-family:ui-monospace,monospace;direction:ltr;unicode-bidi:isolate}
-.rs-big{font-size:33px;font-weight:900;line-height:1.25;letter-spacing:-.01em;color:#fff}
+.rs-big{font-size:33px;font-weight:900;letter-spacing:-.01em;color:#fff}
 .rs-big span{display:block}
 .rs-body{display:flex;flex-direction:column;gap:28px;padding:20px 20px 0}
 .rs-sec{display:grid;gap:10px}
-.rs-h{display:flex;align-items:center;gap:8px}
+.rs-h{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:16px;font-weight:700;letter-spacing:-.025em;color:#1b1714}
 .rs-h>span:first-child{background:#fff1bf;color:#3a2d00;padding:4px 10px;font-weight:700;font-size:18px;line-height:1.65}
 .rs-h b{font-weight:900;color:#8a5f00;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
 .rs-h em{font-style:normal;margin:0 6px;color:#b99a52;font-weight:400}
 .rs-h .req{color:#dc2626}
 .rs-opts{display:grid;gap:8px}
-.rs-opt{display:flex;align-items:center;gap:12px;min-height:3.75rem;padding:12px 16px;border-radius:16px;border:1px solid #e8e2d6;font-size:.95rem;line-height:1.35;color:#1b1714;font-weight:500}
+.rs-opt{display:flex;align-items:center;gap:12px;min-height:3.75rem;padding:12px 16px;border-radius:16px;border:1px solid #e8e2d6;font-size:.95rem;line-height:1.375;color:#1b1714;font-weight:500}
 .rs-opt>i{width:28px;height:28px;display:grid;place-items:center;color:#8f8676}
 .rs-opt>i .ic{width:20px;height:20px}
 .rs-opt>span{flex:1}
@@ -359,10 +367,10 @@ svg{flex:none}
 .rs-opt.on>u{border-color:#111;background:#111;display:grid;place-items:center}
 .rs-opt.on>u::after{content:"";width:6px;height:6px;border-radius:50%;background:#FFC816}
 .rs-note{font-size:14px;line-height:1.7;color:#625c56}
-.rs-cam{display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 12px;border-radius:16px;border:1px solid #e8e2d6;font-size:14px;font-weight:500}
+.rs-cam{display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 12px;border-radius:16px;border:1px solid #e8e2d6;font-size:14px;line-height:20px;font-weight:500}
 .rs-cam .ic{color:#8a5f00}
-.rs-bar{position:absolute;inset-inline:0;bottom:0;padding:12px 20px 14px;background:#fff;border-top:1px solid #e8e2d6;box-shadow:0 -8px 22px rgba(27,22,20,.08)}
-.rs-bar span{display:flex;align-items:center;justify-content:center;height:48px;border-radius:16px;background:#FFC816;color:#111;font-size:16px;font-weight:700;box-shadow:0 10px 28px rgba(245,170,0,.25)}
+.rs-bar{position:absolute;inset-inline:0;bottom:0;padding:12px 20px .85rem;background:#fff;border-top:1px solid #e8e2d6;box-shadow:0 -8px 22px rgba(27,22,20,.08)}
+.rs-bar span{display:flex;align-items:center;justify-content:center;height:48px;border-radius:16px;background:#FFC816;color:#111;font-size:16px;line-height:1.5;font-weight:700;box-shadow:0 10px 28px rgba(245,170,0,.25)}
 /* step 3: lock screen + Eblagh notification */
 .hx-lock{position:relative;height:100%;display:flex;flex-direction:column;align-items:center;padding:2.3rem .6rem 0;color:#fff;background:radial-gradient(90% 60% at 30% 20%,rgba(255,200,22,.35),transparent 60%),radial-gradient(80% 50% at 80% 90%,rgba(120,90,20,.55),transparent 60%),linear-gradient(#2b2720,#141210)}
 .hx-lock__date{font-size:.625rem;opacity:.8;margin-top:.15rem}
@@ -387,6 +395,7 @@ svg{flex:none}
 /* ---------- moments bento ---------- */
 .hx-bento{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
 .hx-tile{background:var(--hx-surface);min-height:11rem;border-radius:1.5rem;display:flex;flex-direction:column;gap:.3rem;padding:1.25rem;transition:transform .35s var(--hx-ease),box-shadow .35s var(--hx-ease)}
+.hx-tile__icon .ic{width:22px;height:22px;stroke-width:1.8}
 .hx-tile__icon{width:2.75rem;height:2.75rem;border-radius:50%;display:grid;place-items:center;background:var(--hx-accent-soft);color:var(--hx-accent-ink);margin-bottom:auto}
 .hx-tile h3{margin-top:1.25rem;font-size:1.125rem;font-weight:700;line-height:1.35}
 .hx-tile p{color:var(--hx-ink-2);font-size:.8125rem;line-height:1.55}
@@ -397,9 +406,9 @@ svg{flex:none}
 .hx-tile__badge{align-self:flex-start;padding:.2rem .6rem;border-radius:999px;background:rgba(255,255,255,.1);color:#FFD966;font-size:.75rem;font-weight:700}
 .hx-tile__people{flex:none;width:5.5rem;height:5.5rem;position:relative}
 .hx-tile__pulse{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:3rem;height:3rem;border-radius:50%;display:grid;place-items:center;background:var(--hx-accent);color:#111;animation:hx-heart 1.8s ease-out infinite}
-.hx-tile__pulse .ic{width:1.4rem;height:1.4rem}
+.hx-tile__pulse .ic{width:22px;height:22px;stroke-width:1.9}
 .hx-tile__person{position:absolute;width:1.75rem;height:1.75rem;border-radius:50%;display:grid;place-items:center;background:#fff;color:#151311}
-.hx-tile__person .ic{width:.95rem;height:.95rem}
+.hx-tile__person .ic{width:14px;height:14px}
 .hx-tile__person:nth-of-type(2){top:0;left:50%;transform:translateX(-50%)}
 .hx-tile__person:nth-of-type(3){bottom:.2rem;left:0}
 .hx-tile__person:nth-of-type(4){bottom:.2rem;right:0}
@@ -411,42 +420,27 @@ svg{flex:none}
 .hx-dark .hx-eyebrow{color:#FFC816}
 .hx-bridge{display:flex;align-items:center;justify-content:space-between;gap:.5rem;max-width:34rem;margin-bottom:2.25rem}
 .hx-bridge__node{flex:none;display:flex;flex-direction:column;align-items:center;gap:.5rem;color:rgba(255,255,255,.6);font-size:.75rem}
-.hx-bridge__icon{width:3rem;height:3rem;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);color:#fff;transition:background-color .3s,color .3s}
+.hx-bridge__icon{width:3rem;height:3rem;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);color:#fff}
 .hx-bridge__node--core{color:#fff;font-weight:700}
 .hx-bridge__mark{position:relative;width:3.75rem;height:3.75rem;border-radius:50%;background:var(--cta);display:grid;place-items:center;color:#111;filter:drop-shadow(0 0 22px rgba(255,200,22,.5))}
 .hx-bridge__mark svg.mk{width:2.5rem;height:auto}
-.hx-bridge__wire{flex:1;height:1px;margin-bottom:1.6rem;position:relative;background:rgba(255,255,255,.14)}
-/* one message, one timeline (3.6s): scanner sends → wire 1 → Eblagh receives → wire 2 → you get it */
-.hx-bridge{--bt:3.6s}
-.hx-bridge__wire::after{content:"";position:absolute;inset:0;background:linear-gradient(to left,rgba(255,200,22,.15),rgba(255,200,22,.75));transform-origin:100% 50%;transform:scaleX(0);animation:bw1 var(--bt) linear infinite}
-.hx-bridge__wire.w2::after{animation-name:bw2}
-.hx-bridge__wire i{position:absolute;top:-1px;right:0;width:28px;height:3px;border-radius:3px;background:linear-gradient(to left,#FFC816,rgba(255,200,22,0));opacity:0;animation:bd1 var(--bt) cubic-bezier(.45,0,.25,1) infinite}
-.hx-bridge__wire i::before{content:"";position:absolute;left:-2px;top:50%;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:#FFE27A;box-shadow:0 0 10px 2px rgba(255,200,22,.85)}
-.hx-bridge__wire.w2 i{animation-name:bd2}
-.hx-bridge__node:first-child .hx-bridge__icon{animation:bsrc var(--bt) ease-out infinite}
-.hx-bridge__node:last-child .hx-bridge__icon{animation:bdst var(--bt) ease-out infinite}
-.hx-bridge__mark{animation:bcore var(--bt) ease-out infinite}
-.hx-bridge__mark::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #FFC816;opacity:0;animation:bring var(--bt) ease-out infinite}
+.hx-bridge__wire{flex:1;height:1px;margin-bottom:1.6rem;position:relative;background:rgba(255,255,255,.18)}
+.hx-bridge__wire i{position:absolute;top:-2px;width:5px;height:5px;border-radius:50%;background:var(--hx-accent);box-shadow:0 0 10px var(--hx-accent);animation:hx-travel 2.4s linear infinite}
+.hx-bridge__wire:last-of-type i{animation-delay:1.2s}
+@keyframes hx-travel{0%{inset-inline-start:0}100%{inset-inline-start:calc(100% - 5px)}}
 .hx-masked{position:relative;display:flex;flex-direction:column;gap:.6rem;padding:1.5rem;border-radius:var(--hx-radius);background:linear-gradient(rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1)}
 .hx-masked__label{color:rgba(255,255,255,.55);font-size:.8125rem}
-.hx-masked__digits{letter-spacing:.04em;white-space:nowrap;font-size:clamp(1.7rem,8.2vw,3.75rem);font-weight:600;line-height:1.1;direction:ltr;text-align:left}
+.hx-masked__digits{white-space:nowrap;font-size:clamp(1.5rem,min(9vw,(100vw - 5.25rem) / 8.6),3.75rem);font-weight:600;line-height:1.1;direction:ltr;text-align:left}
 .hx-masked__digits i{font-style:normal;color:var(--hx-accent);animation:hx-blink 2.6s ease-in-out infinite}
 .hx-masked__digits i:nth-of-type(2n){animation-delay:.3s}
 .hx-masked__digits i:nth-of-type(3n){animation-delay:.6s}
 .hx-masked__lock{position:absolute;top:1.5rem;inset-inline-end:1.5rem;color:rgba(255,255,255,.5)}
-.hx-facts{display:grid;margin-top:1.5rem}
+.hx-facts{display:grid;gap:0;margin-top:1.5rem}
 .hx-facts li{display:grid;grid-template-columns:auto 1fr;grid-template-areas:"icon tag" "icon copy";column-gap:.9rem;padding:1.1rem 0;border-top:1px solid rgba(255,255,255,.1)}
 .hx-facts li>span:first-child{grid-area:icon;margin-top:.15rem;color:#FFC816;display:inline-flex}
-.hx-facts b{grid-area:tag;justify-self:start;font-size:1rem;font-weight:700}
+.hx-facts .ic{stroke-width:1.7}
+.hx-facts b{grid-area:tag;justify-self:start;text-align:start;font-size:1rem;font-weight:700}
 .hx-facts li>span:last-child{grid-area:copy;color:rgba(255,255,255,.6);font-size:.875rem}
-@keyframes bsrc{0%{background:rgba(255,255,255,.08);color:#fff;transform:scale(1)}5%{background:rgba(255,200,22,.22);color:#FFC816;transform:scale(1.07)}16%,100%{background:rgba(255,255,255,.08);color:#fff;transform:scale(1)}}
-@keyframes bd1{0%,6%{right:0;opacity:0}10%{opacity:1}38%{right:calc(100% - 28px);opacity:1}42%,100%{right:calc(100% - 28px);opacity:0}}
-@keyframes bw1{0%,6%{transform:scaleX(0);opacity:1}38%{transform:scaleX(1);opacity:1}62%,100%{transform:scaleX(1);opacity:0}}
-@keyframes bcore{0%,38%{transform:scale(1)}44%{transform:scale(1.1)}52%,100%{transform:scale(1)}}
-@keyframes bring{0%,39%{opacity:0;transform:scale(1)}41%{opacity:.9;transform:scale(1)}62%,100%{opacity:0;transform:scale(1.4)}}
-@keyframes bd2{0%,48%{right:0;opacity:0}52%{opacity:1}80%{right:calc(100% - 28px);opacity:1}84%,100%{right:calc(100% - 28px);opacity:0}}
-@keyframes bw2{0%,48%{transform:scaleX(0);opacity:0}49%{opacity:1}80%{transform:scaleX(1);opacity:1}96%,100%{transform:scaleX(1);opacity:0}}
-@keyframes bdst{0%,80%{background:rgba(255,255,255,.08);color:#fff;transform:scale(1)}85%{background:#FFC816;color:#111;transform:scale(1.1)}94%{background:#FFC816;color:#111;transform:scale(1)}100%{background:rgba(255,255,255,.08);color:#fff;transform:scale(1)}}
 @keyframes hx-blink{0%,100%{opacity:1}50%{opacity:.35}}
 
 /* ---------- timeline ---------- */
@@ -454,6 +448,7 @@ svg{flex:none}
 .hx-timeline::before{content:"";position:absolute;top:1.5rem;bottom:3rem;inset-inline-start:calc(1.75rem - .5px);width:1px;background:linear-gradient(180deg,#FFC816,var(--hx-line) 45%,#25b543)}
 .hx-timeline__item{display:grid;grid-template-columns:3rem 1fr;grid-template-areas:"icon time" "icon title" ". copy";align-items:center;column-gap:1rem;position:relative}
 .hx-timeline__icon{grid-area:icon;align-self:start;width:3rem;height:3rem;border-radius:50%;display:grid;place-items:center;position:relative;background:var(--hx-surface);box-shadow:0 0 0 1px var(--hx-line),0 8px 18px -10px rgba(0,0,0,.2)}
+.hx-timeline__icon .ic{stroke-width:1.9}
 .hx-timeline__icon--bell{background:var(--hx-accent);color:#111;box-shadow:none}
 .hx-timeline__icon--wait{color:var(--hx-ink-3)}
 .hx-timeline__icon--wa{background:#25b543;color:#fff;box-shadow:none}
@@ -466,7 +461,7 @@ svg{flex:none}
 @keyframes hx-ring{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(1.9)}}
 
 /* ---------- sticker trio ---------- */
-.hx-duo{position:relative;overflow:hidden;display:flex;justify-content:center;align-items:center;gap:clamp(.6rem,4vw,3.5rem);padding:clamp(2.5rem,8vw,4.5rem) .75rem;border-radius:2rem;background:radial-gradient(60% 70%,#fff 0%,transparent 70%),linear-gradient(#ebe8e4,#e2ded9)}
+.hx-duo{position:relative;overflow:hidden;display:flex;justify-content:center;align-items:center;gap:clamp(.6rem,4vw,4rem);padding:clamp(2.5rem,8vw,4.5rem) 1rem;border-radius:2rem;background:radial-gradient(60% 70%,#fff 0%,transparent 70%),linear-gradient(#ebe8e4,#e2ded9)}
 .hx-duo__item{display:flex;flex-direction:column;align-items:center;gap:1.1rem;margin:0}
 .hx-duo__art{line-height:0;filter:drop-shadow(0 24px 30px rgba(40,25,15,.22));transition:transform .6s var(--hx-ease)}
 .hx-duo__art .stk{display:block}
@@ -483,7 +478,7 @@ svg{flex:none}
 .hx-plans{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem}
 .hx-plan{display:flex;flex-direction:column;padding:1.75rem;border-radius:var(--hx-radius);background:var(--hx-surface);box-shadow:0 0 0 1px var(--hx-line)}
 .hx-plan__top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem}
-.hx-plan__name{font-size:1.5rem}
+.hx-plan__name{font-size:1.5rem;font-weight:inherit}
 .pw{display:inline-flex;align-items:center;gap:.45em;white-space:nowrap;line-height:1}
 .pw__em{width:1.6em;height:1.6em;border-radius:50%;display:inline-grid;place-items:center;background:var(--cta);color:#111}
 .pw__em .ic{width:62%;height:62%;stroke-width:2.2}
@@ -499,7 +494,7 @@ svg{flex:none}
 .hx-plan__list{flex:1;display:grid;gap:.75rem;margin:1.5rem 0 1.75rem;padding-top:1.5rem;border-top:1px solid var(--hx-line);font-size:.9375rem}
 .hx-plan__list li{display:flex;gap:.6rem;line-height:1.5}
 .hx-plan__list svg{flex:none;margin-top:.2rem;width:1rem;height:1rem;color:var(--hx-accent-ink);stroke-width:2.4}
-.hx-plan--plus{color:#fff;background:radial-gradient(80% 60% at 0 0,rgba(255,200,22,.24),transparent 60%),#121110;box-shadow:0 30px 60px -30px rgba(18,17,16,.55)}
+.hx-plan--plus{color:#fff;background:radial-gradient(80% 60% at 100% 0,rgba(255,200,22,.24),transparent 60%),#121110;box-shadow:0 30px 60px -30px rgba(18,17,16,.55)}
 .hx-plan--plus .pw__brand{color:#fff}
 .hx-plan--plus .hx-plan__audience,.hx-plan--plus .hx-plan__price small{color:rgba(255,255,255,.62)}
 .hx-plan--plus .hx-plan__list{border-color:rgba(255,255,255,.12)}
@@ -508,7 +503,8 @@ svg{flex:none}
 
 /* ---------- FAQ ---------- */
 .hx-faq__inner{max-width:48rem}
-.hx-faq h2{font-size:clamp(2rem,8vw,3rem);font-weight:700;line-height:1.4;margin-bottom:1rem}
+.hx-faq__sec{display:flex;flex-direction:column;gap:.875rem}
+.hx-faq h2{font-size:clamp(2rem,8vw,3rem);font-weight:700;margin-bottom:1rem}
 .faq{display:grid;gap:.75rem}
 .faq details{background:var(--hx-surface);border:1px solid transparent;border-radius:1.375rem;overflow:hidden;transition:border-color .15s,box-shadow .15s}
 .faq details:hover{border-color:rgba(245,170,0,.3);box-shadow:0 14px 34px rgba(245,170,0,.12)}
@@ -517,10 +513,10 @@ svg{flex:none}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary span{flex:1;min-width:0;font-size:1.0625rem;font-weight:700;line-height:1.35;color:#1a1a1a}
 .faq summary i{flex-shrink:0;width:2rem;height:2rem;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;background:var(--hx-accent-soft);color:var(--hx-accent-ink);transition:background-color .15s,color .15s}
-.faq summary i .ic{width:1rem;height:1rem;transition:transform .2s;stroke-width:2.2}
+.faq summary i .ic{width:1rem;height:1rem;transition:transform .2s}
 .faq details[open] summary i{background:var(--cta);color:#111}
 .faq details[open] summary i .ic{transform:rotate(180deg)}
-.faq details p{padding:0 1rem 1rem;color:#6b5f52;font-size:.875rem;line-height:1.7}
+.faq details p{padding:0 1rem 1rem;color:#6b5f52;font-size:.875rem}
 
 /* ---------- final + footer ---------- */
 .hx-final{text-align:center;padding-block:clamp(5rem,14vw,9rem)}
@@ -530,19 +526,20 @@ svg{flex:none}
 .hx-final__art .stk{display:block}
 .hx-final__art--back{left:.4rem;transform:rotate(-9deg)}
 .hx-final__art--front{top:.6rem;right:.4rem;transform:rotate(7deg)}
-.site-footer{padding:0 .75rem calc(5.5rem + env(safe-area-inset-bottom,0px))}
-.foot-card{max-width:1120px;margin:0 auto;border-radius:1.5rem;border:1px solid #efe9e0;overflow:hidden;background:#fff;box-shadow:0 16px 50px rgba(87,62,20,.08)}
-.foot-main{padding:1rem;background:radial-gradient(circle at 0 0,rgba(255,200,22,.09),transparent 40%),linear-gradient(#fff,#fffcf3)}
+.site-footer{padding:.75rem 0 1.25rem}
+.foot-card{border-radius:1rem;border:1px solid rgba(245,170,0,.14);overflow:hidden;background:#fff;box-shadow:0 16px 50px rgba(87,62,20,.08)}
+.foot-main{padding:1rem;background:radial-gradient(circle at 100% 0,rgba(255,200,22,.09),transparent 40%),linear-gradient(#fff,#fffcf3)}
 .foot-row{display:flex;align-items:center;justify-content:space-between;gap:.75rem}
 .foot-brand{display:inline-flex;align-items:center;gap:.6rem}
 .foot-brand .brand-mk{width:2.5rem;height:2.5rem}
-.foot-brand b{font-size:1.35rem;font-weight:700}
-.lang-btn{display:inline-flex;align-items:center;gap:.4rem;height:2rem;padding:0 .75rem;border-radius:999px;border:1px solid #e9e2d6;font-size:.6875rem;font-weight:600;font-family:var(--latin)}
-.lang-btn .ic{width:.9rem;height:.9rem}
-.foot-nav{display:flex;flex-wrap:wrap;gap:.35rem 1.25rem;margin-top:1rem}
+.foot-brand b{font-size:1.35rem;font-weight:700;line-height:1;letter-spacing:-.025em}
+.lang-btn{display:inline-flex;align-items:center;justify-content:center;gap:.375rem;width:3.75rem;height:2rem;padding:0;border-radius:999px;background:#fff;border:1px solid rgba(245,170,0,.14);font-size:.6875rem;font-weight:600;font-variant-numeric:tabular-nums;font-family:var(--latin);transition:all .15s cubic-bezier(.4,0,.2,1)}
+.lang-btn:hover{background:var(--hx-accent-soft);border-color:rgba(255,200,22,.4);box-shadow:0 1px 2px rgba(0,0,0,.05)}
+.lang-btn .ic{width:.75rem;height:.75rem}
+.foot-nav{display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;margin-top:1rem}
 .foot-nav a{font-size:.8125rem;color:#6b5f52;line-height:1.7;transition:color .15s}
 .foot-nav a:hover{color:#111}
-.foot-bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem;padding:.6rem 1rem;border-top:1px solid #efe9e0;background:rgba(255,250,235,.6)}
+.foot-bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.375rem 1rem;padding:.625rem 1rem;border-top:1px solid #efe9e0;background:rgba(255,250,235,.6)}
 .foot-bottom p{font-size:.75rem;color:#6b5f52;font-variant-numeric:tabular-nums}
 .foot-legal{display:flex;flex-wrap:wrap;gap:.25rem}
 .foot-legal a{min-height:1.75rem;display:inline-flex;align-items:center;padding:.125rem .625rem;border-radius:999px;font-size:.75rem;color:#6b5f52;border:1px solid transparent;transition:color .15s,background-color .15s,border-color .15s}
@@ -555,6 +552,7 @@ svg{flex:none}
 .hx-sticky__price{display:flex;flex-direction:column;line-height:1.3}
 .hx-sticky__label{color:var(--hx-ink-2);font-size:.6875rem}
 .hx-sticky__amount{font-size:.9375rem;font-weight:700}
+.hx-sticky .hx-btn .ic{width:16px;height:16px}
 .toast{position:fixed;left:50%;bottom:calc(5.5rem + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:60;background:#121110;color:#fff;padding:.7rem 1.1rem;border-radius:999px;font-size:.875rem;font-weight:600;box-shadow:0 16px 40px -12px rgba(0,0,0,.5);animation:hxd-drop .35s var(--hx-ease)}
 
 @media (hover:hover){
@@ -580,12 +578,15 @@ svg{flex:none}
   .hx-specs span{text-align:start}
   .hx-final__stickers{width:11rem;height:12.5rem}
   .foot-main{padding:1.25rem 1.5rem}
-  .foot-bottom{padding:.75rem 1.5rem}
+  .foot-bottom{padding:.625rem 1.5rem}
+  .site-footer{padding:1rem 0 1.75rem}
+  .foot-brand .brand-mk{width:2.75rem;height:2.75rem}
+  .menu-btn{width:2.5rem;height:2.5rem}
+  .foot-brand{gap:.75rem}.foot-brand b{font-size:1.5rem}
 }
 @media (min-width:768px){
   .site-header{padding-top:1.25rem}
   .hx-sticky{display:none}
-  .site-footer{padding-bottom:calc(1.25rem + env(safe-area-inset-bottom,0px))}
   .hx-plans{grid-template-columns:repeat(2,minmax(0,1fr));max-width:56rem;margin-inline:auto}
   .hx-plan{padding:2.25rem}
   .hx-timeline{grid-template-columns:repeat(3,1fr);gap:2rem;padding:0}
@@ -621,7 +622,7 @@ svg{flex:none}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition-duration:.01ms!important;animation:none!important}
-  .rv{opacity:1;transform:none}
+  .rv-ready{opacity:1;transition:none;transform:none}
 }
 </style>
 </head>
@@ -674,7 +675,7 @@ svg{flex:none}
       </header>
     </div>
     <ol class="hx-steps rv">
-      <li class="hx-step">
+      <li class="hx-step hx-step--scan">
         <div class="hx-step__text"><span class="hx-step__tag"><b>1</b>سكان</span><h3>أحد يصوّر الملصق</h3><p>بكاميرا أي موبايل، بدون تطبيق</p></div>
         <div class="hx-step__visual" aria-hidden="true">
           <div class="hx-phone hx-phone--dark"><span class="hx-phone__island"></span><div class="hx-phone__screen">
@@ -686,12 +687,12 @@ svg{flex:none}
           </div></div>
         </div>
       </li>
-      <li class="hx-step">
+      <li class="hx-step hx-step--choose">
         <div class="hx-step__text"><span class="hx-step__tag"><b>2</b>اختيار</span><h3>يختار المشكلة</h3><p>ويصوّرها حتى يوضّحلك الموقف</p></div>
         <div class="hx-step__visual" aria-hidden="true">
-          <div class="hx-phone"><span class="hx-phone__island"></span><div class="hx-phone__screen">
+          <div class="hx-phone hx-phone--light"><span class="hx-phone__island"></span><div class="hx-phone__screen">
             <div class="hx-real" dir="rtl">
-              <div class="hx-real__status"><span class="hx-latin">9:41</span><span class="sig" data-ics="signal wifi battery"></span></div>
+              <div class="hx-real__status"><span class="hx-latin">9:41</span><span class="sig hx-real__signals" data-ics="signal wifi battery"></span></div>
               <section class="rs-top">
                 <div class="rs-brand"><span class="brand-mk" data-mk></span>إبلاغ</div>
                 <div class="rs-hero">
@@ -710,12 +711,12 @@ svg{flex:none}
                   <span class="rs-cam"><span data-ic="camera"></span>افتح الكاميرا</span>
                 </section>
               </div>
-              <div class="rs-bar"><span>ابعث تنبيه لصاحب السيارة</span></div>
+              <div class="rs-bar hx-real__bar"><span>ابعث تنبيه لصاحب السيارة</span></div>
             </div>
           </div></div>
         </div>
       </li>
-      <li class="hx-step">
+      <li class="hx-step hx-step--deliver">
         <div class="hx-step__text"><span class="hx-step__tag"><b>3</b>توصيل</span><h3>يوصلك إشعار فوري</h3><p>بثواني، ومحد يشوف رقمك</p></div>
         <div class="hx-step__visual" aria-hidden="true">
           <div class="hx-phone hx-phone--dark"><span class="hx-phone__island"></span><div class="hx-phone__screen">
@@ -749,7 +750,7 @@ svg{flex:none}
         <article class="hx-tile"><span class="hx-tile__icon" data-ic="door"></span><h3>الشباك مفتوح؟</h3><p>سدّه قبل المطر والعجاج</p></article>
         <article class="hx-tile"><span class="hx-tile__icon" data-ic="tri"></span><h3>ضربة بالغلط؟</h3><p>يكدر يعتذر ويوصلك</p></article>
         <article class="hx-tile hx-tile--plus">
-          <div class="hx-tile__plus-copy"><span class="hx-tile__badge">إبلاغ بلس</span><h3>سيارة العائلة؟</h3><p>شارك السيارة ويا عائلتك، وكلكم توصلكم التنبيهات بنفس اللحظة</p></div>
+          <div class="hx-tile__plus-copy"><span class="hx-tile__badge">إبلاغ بلس</span><h3>سيارة العائلة؟</h3><p>شارك سيارتك ويا عائلتك، ويوصلهم التنبيه بنفس اللحظة</p></div>
           <div class="hx-tile__people" aria-hidden="true"><span class="hx-tile__pulse" data-ic="bell"></span><span class="hx-tile__person" data-ic="user"></span><span class="hx-tile__person" data-ic="user"></span><span class="hx-tile__person" data-ic="user"></span></div>
         </article>
       </div>
@@ -774,7 +775,7 @@ svg{flex:none}
         <span class="hx-masked__digits hx-latin">+964 7<i>•</i><i>•</i> <i>•</i><i>•</i><i>•</i> <i>•</i><i>•</i><i>•</i><i>•</i></span>
         <span class="hx-masked__lock" data-ic="lock"></span>
       </div>
-      <ul class="hx-facts">
+      <ul class="hx-facts rv">
         <li><span data-ic="phone"></span><b>بدون تطبيق</b><span>يفتح من الكاميرا مباشرة</span></li>
         <li><span data-ic="eyeOff"></span><b>رقمك مخفي</b><span>لا رقمك ولا رقمه يبين</span></li>
         <li><span data-ic="shield"></span><b>حماية من الإزعاج</b><span>فلترة ذكية، وتحظر أي أحد بضغطة</span></li>
@@ -803,7 +804,7 @@ svg{flex:none}
         <h2 class="hx-title" id="hx-sticker-title">ثلاث ألوان <span class="hx-title__soft">لكل سيارة</span></h2>
       </header>
       <div class="hx-duo rv" id="trio"></div>
-      <ul class="hx-specs">
+      <ul class="hx-specs rv">
         <li><b class="hx-latin" dir="ltr">6 × 12 cm</b><span>مقاس يناسب أي زجاج</span></li>
         <li><b>QR + رابط</b><span>رابط احتياطي إذا الكاميرا ما تشتغل</span></li>
         <li><b>ملصق واحد</b><span>ينربط بسيارتك بدقيقة</span></li>
@@ -819,54 +820,56 @@ svg{flex:none}
       </header>
       <div class="hx-plans rv">
         <article class="hx-plan">
-          <div class="hx-plan__top"><span class="hx-plan__name pw"><span class="pw__em" data-ic="bell"></span><span class="pw__txt"><span class="pw__kind">باقة</span><span class="pw__brand">إبلاغ</span></span></span></div>
+          <div class="hx-plan__top"><h3 class="hx-plan__name"><span class="pw"><span class="pw__em" data-ic="bell"></span><span class="pw__txt"><span class="pw__kind">باقة</span><span class="pw__brand">إبلاغ</span></span></span></h3></div>
           <p class="hx-plan__audience">تنبيه فوري لسيارتك، ورقمك يبقى إلك</p>
           <p class="hx-plan__price"><span class="hx-latin">20,000</span><small>د.ع / سنة</small></p>
           <ul class="hx-plan__list"><li><span data-ic="check"></span>إشعار فوري بنغمة إبلاغ المميزة</li><li><span data-ic="check"></span>رقمك واسمك ما يظهرون لأي أحد</li><li><span data-ic="check"></span>ردّ بنقرة مع وقت وصولك</li></ul>
           <a class="hx-btn hx-btn--ink hx-btn--lg hx-btn--block" href="order.html?plan=basic">اختار الباقة <span data-ic="arrowL"></span></a>
         </article>
         <article class="hx-plan hx-plan--plus">
-          <div class="hx-plan__top"><span class="hx-plan__name pw"><span class="pw__em" data-ic="users"></span><span class="pw__txt"><span class="pw__kind">باقة</span><span class="pw__brand">إبلاغ</span><span class="pw__tier">بلس</span></span></span><span class="hx-plan__badge">الأكمل</span></div>
+          <div class="hx-plan__top"><h3 class="hx-plan__name"><span class="pw"><span class="pw__em" data-ic="users"></span><span class="pw__txt"><span class="pw__kind">باقة</span><span class="pw__brand">إبلاغ</span><span class="pw__tier">بلس</span></span></span></h3><span class="hx-plan__badge">الأكمل</span></div>
           <p class="hx-plan__audience">للعائلة والسيارات الثانية: كلكم توصلكم التنبيهات</p>
           <p class="hx-plan__price"><span class="hx-latin">50,000</span><small>د.ع / سنة</small></p>
           <ul class="hx-plan__list"><li><span data-ic="check"></span>كل مزايا إبلاغ</li><li><span data-ic="check"></span>لحد 3 سيارات و3 ملصقات</li><li><span data-ic="check"></span>شارك السيارة ويا عائلتك</li><li><span data-ic="check"></span>واتساب احتياطي إذا ما شفت الإشعار</li></ul>
           <a class="hx-btn hx-btn--primary hx-btn--lg hx-btn--block" href="order.html?plan=plus">اختار الباقة <span data-ic="arrowL"></span></a>
         </article>
       </div>
-      <p class="hx-plans__note">الدفع عند الاستلام · توصيل لكل المحافظات</p>
+      <p class="hx-plans__note rv">الدفع عند الاستلام · توصيل لكل المحافظات</p>
     </div>
   </section>
 
   <section class="hx-section hx-section--soft hx-faq" aria-labelledby="hx-faq-title">
-    <div class="shell hx-faq__inner">
-      <h2 id="hx-faq-title" class="rv">أسئلة شائعة</h2>
-      <div class="faq rv" id="faq"></div>
+    <div class="shell hx-faq__inner rv">
+      <section class="hx-faq__sec">
+        <h2 id="hx-faq-title">أسئلة شائعة</h2>
+        <div class="faq" id="faq"></div>
+      </section>
     </div>
   </section>
 
-  <section class="hx-final" aria-labelledby="hx-final-title">
-    <div class="shell hx-final__inner">
-      <div class="hx-final__stickers rv" id="finalArt" aria-hidden="true"></div>
-      <h2 class="hx-title hx-title--xl rv" id="hx-final-title"><span>خلّي الناس</span> <span class="hx-title__soft">تكدر توصلك</span></h2>
-      <a class="hx-btn hx-btn--primary hx-btn--lg rv" href="order.html">جـــرّب إبلاغ <span data-ic="arrowL"></span></a>
+  <section class="hx-final" id="hx-final" aria-labelledby="hx-final-title">
+    <div class="shell hx-final__inner rv">
+      <div class="hx-final__stickers" id="finalArt" aria-hidden="true"></div>
+      <h2 class="hx-title hx-title--xl" id="hx-final-title"><span>خلّي الناس</span> <span class="hx-title__soft">تكدر توصلك</span></h2>
+      <a class="hx-btn hx-btn--primary hx-btn--lg" href="order.html">جـــرّب إبلاغ <span data-ic="arrowL"></span></a>
     </div>
   </section>
 </main>
 
 <footer class="site-footer">
-  <div class="foot-card">
+  <div class="shell"><div class="foot-card">
     <div class="foot-main">
       <div class="foot-row"><a class="foot-brand" href="home.html"><span class="brand-mk" data-mk></span><b>إبلاغ</b></a><button class="lang-btn" id="langBtn" type="button" aria-label="English"><span data-ic="lang"></span>EN</button></div>
       <nav class="foot-nav" aria-label="روابط الموقع"><a href="#how">شلون يشتغل</a><a href="#plans">الأسعار</a><a href="order.html">اطلب أونلاين</a><a href="site.html#contact">تواصل ويانا</a></nav>
     </div>
     <div class="foot-bottom"><p>© 2026 Eblagh</p><div class="foot-legal"><a href="site.html#privacy">الخصوصية</a><a href="site.html#terms">الشروط</a><a href="site.html#privacy">سياسة التواصل</a></div></div>
-  </div>
+  </div></div>
 </footer>
 
 <div class="hx-sticky" id="sticky" aria-hidden="true">
   <div class="hx-sticky__bar">
     <span class="hx-sticky__price"><span class="hx-sticky__label">يبدأ من</span><span class="hx-sticky__amount"><span class="hx-latin">20,000</span> د.ع / سنة</span></span>
-    <a class="hx-btn hx-btn--primary hx-btn--sm" href="order.html" tabindex="-1">اطلب هسّه</a>
+    <a class="hx-btn hx-btn--primary hx-btn--sm" href="order.html" tabindex="-1">اطلب هسّه <span data-ic="arrowL"></span></a>
   </div>
 </div>
 
@@ -1071,7 +1074,8 @@ function paintStickers(){
   const q = $('#camArt .e-qr'), tg = $('.hx-cam__target');
   if (q){ let x = 0, y = 0, e = q; while (e && e !== tg){ x += e.offsetLeft; y += e.offsetTop; e = e.offsetParent; }
     const pad = 6, k = $('.hx-cam__corners'); Object.assign(k.style, {left:(x-pad)+'px', top:(y-pad)+'px', width:(q.offsetWidth+pad*2)+'px', height:(q.offsetHeight+pad*2)+'px'}); }
-  const tw = Math.max(88, Math.min(176, (innerWidth - 80) / 3.25));
+  const vw = innerWidth, gap = Math.max(9.6, Math.min(64, vw * .04)), row = Math.min(1120, vw - 32) - 32;
+  const tw = Math.min(216, Math.max(120, vw * .33), (row - 2 * gap) / 3 * .94);
   $('#trio').innerHTML = [['white','أبيض'],['black','أسود'],['yellow','أصفر']].map(([k,t]) => `<figure class="hx-duo__item hx-duo__item--${k}"><span class="hx-duo__art">${fit('ev', k, 'EB4471', tw)}</span><figcaption>${t}</figcaption></figure>`).join('');
   const fw = innerWidth >= 640 ? 104 : 84;
   $('#finalArt').innerHTML = `<span class="hx-final__art hx-final__art--back">${fit('ev','black','EB2208',fw)}</span><span class="hx-final__art hx-final__art--front">${fit('ev','white','EB4471',fw)}</span>`;
@@ -1083,42 +1087,42 @@ let rz; addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(pai
 $('#rsOpts').innerHTML = [['car','السيارة سادّة الطريق',1],['bulb','الضوء شغّال'],['door','السيارة مفتوحة'],['tri','ضربت سيارتك بالغلط'],['dots','شي ثاني']]
   .map(([i,t,on]) => `<span class="rs-opt${on?' on':''}"><i>${IC[i]}</i><span>${t}</span><u></u></span>`).join('');
 
-/* ---------- hero sequence: ripple → alert → missed + reminder → leave (≈10s loop) ---------- */
-const MSGS = ['رجاءً، سيارتك سادّة عليّ الطريق','انتبه، ضوء سيارتك شغّال','شباك سيارتك مفتوح وراح تمطر'];
-let mi = 0, timers = [];
+/* ---------- hero sequence (ewsali HxHeroDemo timings): ripple → alert 300ms → missed + reminder 2.9s → leave 6.3s → clear 6.64s → next +3.5s ---------- */
+const MSGS = ['رجاءً، سيارتك سادّة عليّ الطريق','انتبه، ضوء سيارتك شغّال','شباك سيارتك مفتوح'];
+let mi = 0, active = false, userTapped = false, timers = [];
 const stage = $('#stage'), slot = $('#slot');
 const later = (ms, f) => timers.push(setTimeout(f, ms));
-function ripple(){ $('.hxd__ripple')?.remove(); const r = document.createElement('span'); r.className = 'hxd__ripple'; $('.hxd__float').appendChild(r); }
-function cycle(){
+const alertHTML = (msg, missed) => `<div class="hxd__alert${missed ? ' is-missed' : ''}" dir="ltr"><span class="hxd__avatar">${markSVG}<span class="hxd__app">${IC.bell}</span></span><span class="hxd__alert-body"><span class="hxd__alert-head"><strong class="hx-latin">Eblagh</strong><span>${missed ? 'ما انشاف' : 'هسّه'}</span></span><span class="hxd__alert-text" dir="rtl">${msg}</span></span></div>`;
+const callHTML = () => `<div class="hxd__call" dir="ltr"><span class="hxd__ring" aria-hidden="true">${IC.wa}</span><span class="hxd__call-body" dir="rtl"><strong>إبلاغ يذكّرك على واتساب…</strong><span>تنبيه احتياطي لأن الإشعار ما انشاف</span></span></div>`;
+function ripple(){ $('.hxd__ripple')?.remove(); const r = document.createElement('span'); r.className = 'hxd__ripple'; r.setAttribute('aria-hidden','true'); $('.hxd__float').appendChild(r); }
+function cycle(i, byUser){
   timers.forEach(clearTimeout); timers = [];
+  if (byUser) userTapped = true;
+  mi = i; active = true;
   slot.className = 'hxd__slot'; slot.innerHTML = ''; stage.classList.remove('is-alert');
   ripple();
-  const msg = MSGS[mi++ % MSGS.length];
-  later(310, () => {
-    stage.classList.add('is-alert');
-    slot.innerHTML = `<div class="hxd__alert" dir="ltr"><span class="hxd__avatar">${markSVG}<span class="hxd__app">${IC.bell}</span></span><span class="hxd__alert-body"><span class="hxd__alert-head"><strong class="hx-latin">Eblagh</strong><span>الآن</span></span><span class="hxd__alert-text" dir="rtl">${msg}</span></span></div>`;
-  });
-  later(2930, () => {
-    const a = $('.hxd__alert', slot); if (a){ a.classList.add('is-missed'); $('.hxd__alert-head span', a).textContent = 'ما انشاف'; }
-    slot.insertAdjacentHTML('beforeend', `<div class="hxd__call" dir="ltr"><span class="hxd__ring">${IC.wa}</span><span class="hxd__call-body" dir="rtl"><strong>إبلاغ يذكّرك على واتساب…</strong><span>تنبيه احتياطي لأن الإشعار ما انشاف</span></span></div>`);
-  });
+  const msg = MSGS[i];
+  later(300, () => { stage.classList.add('is-alert'); slot.innerHTML = alertHTML(msg, false); });
+  later(2900, () => { slot.innerHTML = alertHTML(msg, true) + callHTML(); });
   later(6300, () => { slot.classList.add('is-leaving'); stage.classList.remove('is-alert'); });
-  later(6650, () => { slot.className = 'hxd__slot'; slot.innerHTML = ''; $('.hxd__ripple')?.remove(); });
-  later(10100, cycle);
+  later(6640, () => {
+    slot.className = 'hxd__slot'; slot.innerHTML = ''; $('.hxd__ripple')?.remove(); active = false;
+    if (!userTapped && document.visibilityState === 'visible') later(3500, () => cycle((i + 1) % MSGS.length, false));
+  });
 }
-if (!RM.matches) later(1500, cycle);
-$('#stkBtn').addEventListener('click', cycle);
-/* gentle tilt on pointer devices */
-if (matchMedia('(hover:hover)').matches && !RM.matches){
-  stage.addEventListener('pointermove', e => { const r = stage.getBoundingClientRect(); const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; stage.style.setProperty('--ty', (x * 14).toFixed(1) + 'deg'); stage.style.setProperty('--tx', (-y * 10).toFixed(1) + 'deg'); });
-  stage.addEventListener('pointerleave', () => { stage.style.setProperty('--tx','0deg'); stage.style.setProperty('--ty','0deg'); });
-}
+if (RM.matches){ ripple(); stage.classList.add('is-alert'); slot.innerHTML = alertHTML(MSGS[0], true) + callHTML(); }
+else later(1400, () => cycle(0, false));
+/* tap: replays the shown alert, or moves to the next one while a cycle is running; stops the auto loop */
+$('#stkBtn').addEventListener('click', () => cycle((mi + (active ? 1 : 0)) % MSGS.length, true));
+/* tilt (mouse only): rotateX = -12·y, rotateY = 16·x */
+stage.addEventListener('pointermove', e => { if (e.pointerType !== 'mouse') return; const r = stage.getBoundingClientRect(); const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; stage.style.setProperty('--tx', (-(12 * y)).toFixed(2) + 'deg'); stage.style.setProperty('--ty', (16 * x).toFixed(2) + 'deg'); });
+stage.addEventListener('pointerleave', () => { stage.style.setProperty('--tx','0deg'); stage.style.setProperty('--ty','0deg'); });
 
 /* ---------- FAQ: one open at a time ---------- */
 const FAQ = [
   ['إبلاغ شلون يشتغل؟','الزق الملصق على زجاج سيارتك واربطه بحسابك. إذا أحد احتاجك، يصوّر الرمز بكاميرا موبايله، يختار المشكلة ويبعث التنبيه — ويوصلك إشعار فوري بنغمة إبلاغ.'],
-  ['اللي يسوي سكان راح يشوف رقم موبايلي؟','لا. رقمك واسمك يبقون مخفيين، وهو ما يعرف منو صاحب السيارة. التواصل كله يمر من خلال إبلاغ.'],
-  ['ممكن أي أحد يبعتلي أي شي ويمزح؟','لا. قبل ما يوصلك البلاغ في فلترة ذكية وحدّ لعدد البلاغات، وتذكير واحد بس. وتكدر تحظر أي أحد بضغطة، وتوقف الملصق مؤقتاً إذا تريد.'],
+  ['اللي يسوي سكان يشوف رقم موبايلي؟','لا. رقمك واسمك يبقون مخفيين، وهو ما يعرف منو صاحب السيارة. التواصل كله يمر من خلال إبلاغ.'],
+  ['طيب، ممكن أي أحد يبعتلي أي شي ويمزح؟','لا. قبل ما يوصلك البلاغ في فلترة ذكية وحدّ لعدد البلاغات، وتذكير واحد بس. وتكدر تحظر أي أحد بضغطة، وتوقف الملصق مؤقتاً إذا تريد.'],
   ['لازم أحد ينزّل تطبيق؟','لا. اللي يبلّغ يستخدم كاميرا الموبايل والمتصفح بس. انت تستلم التنبيهات بتطبيق إبلاغ.'],
   ['شلون أطلب الملصق؟','اطلب أونلاين بخطوتين: اختار باقتك وعدد الملصقات واللون، واكتب عنوانك. التوصيل لكل المحافظات والدفع عند الاستلام.'],
   ['التنبيه شلون يوصلني؟','إشعار فوري بتطبيق إبلاغ. ويا باقة إبلاغ بلس، إذا ما شفت الإشعار خلال دقيقة نوصلك تنبيه احتياطي على واتساب — بموافقتك.']
@@ -1126,13 +1130,18 @@ const FAQ = [
 $('#faq').innerHTML = FAQ.map(([q,a]) => `<details><summary><span>${q}</span><i>${IC.chevD}</i></summary><p>${a}</p></details>`).join('');
 $$('#faq details').forEach(d => d.addEventListener('toggle', () => { if (d.open) $$('#faq details').forEach(o => { if (o !== d) o.open = false; }); }));
 
-/* ---------- reveal on scroll ---------- */
-const rio = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting){ en.target.classList.add('is-visible'); rio.unobserve(en.target); } }), {rootMargin:'0px 0px -10% 0px', threshold:.08});
-$$('.rv').forEach(e => rio.observe(e));
+/* ---------- reveal on scroll (threshold .12, -10% bottom margin) ---------- */
+const rvs = $$('.rv');
+if (RM.matches || !('IntersectionObserver' in window)) rvs.forEach(e => e.classList.add('is-visible'));
+else { const rio = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting){ en.target.classList.add('is-visible'); rio.unobserve(en.target); } }), {rootMargin:'0px 0px -10% 0px', threshold:.12});
+  rvs.forEach(e => { e.classList.add('rv-ready'); rio.observe(e); }); }
 
-/* ---------- sticky bar after the hero CTA ---------- */
-const sticky = $('#sticky');
-new IntersectionObserver(([en]) => { const show = !en.isIntersecting && en.boundingClientRect.top < 0; sticky.classList.toggle('is-shown', show); sticky.setAttribute('aria-hidden', String(!show)); $('a', sticky).tabIndex = show ? 0 : -1; }).observe($('#hx-hero-cta'));
+/* ---------- sticky bar: after the hero CTA has scrolled away, until the final CTA section ---------- */
+const sticky = $('#sticky'), heroCta = $('#hx-hero-cta'), finalSec = $('#hx-final');
+let ctaIn = true, ctaAbove = false, atFinal = false;
+const stio = new IntersectionObserver(es => { for (const en of es){ if (en.target === heroCta){ ctaIn = en.isIntersecting; ctaAbove = en.boundingClientRect.top < 0; } else atFinal = en.isIntersecting || en.boundingClientRect.top < 0; }
+  const show = !ctaIn && ctaAbove && !atFinal; sticky.classList.toggle('is-shown', show); sticky.setAttribute('aria-hidden', String(!show)); $('a', sticky).tabIndex = show ? 0 : -1; });
+stio.observe(heroCta); stio.observe(finalSec);
 
 /* ---------- drawer ---------- */
 const drawer = $('#drawer');
