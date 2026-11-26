@@ -1162,7 +1162,7 @@ function playSequence(withSound){
   const txt = ALERTS[alertIx % ALERTS.length];
   slot.innerHTML = ''; slot.classList.remove('slot-out'); st.classList.remove('is-call'); st.classList.add('is-alert'); hero.classList.add('scan');
   ripple(); if (withSound) chime();
-  const at = (ms, fn) => seqTimers.push(setTimeout(fn, ms));
+  const at = (ms, fn) => seqTimers.push(setTimeout(() => { if (heroAway()){ stopSequence(); return; } fn(); }, ms));
   at(300, () => { slot.innerHTML = alertHTML(txt, false); $('#alert').classList.add('show'); });
   at(2600, () => { st.classList.remove('is-alert'); st.classList.add('is-call'); });
   at(2900, () => { const a = $('#alert'); if (a){ a.classList.add('missed'); $('#alertWhen').textContent = 'ما انشاف'; } slot.insertAdjacentHTML('beforeend', callHTML); $('#capsule').classList.add('show'); if (withSound) ringTone(); });
@@ -1170,6 +1170,17 @@ function playSequence(withSound){
   at(6640, () => { slot.innerHTML = ''; slot.classList.remove('slot-out'); st.classList.remove('is-alert','is-call'); hero.classList.remove('scan'); cycleDone = true; });
 }
 $('#stkBtn').onclick = () => playSequence(true);
+/* the stage grows while an alert shows; with content below the hero, never let that move what the visitor is reading */
+const heroAway = () => $('#stage').getBoundingClientRect().bottom < 0;
+function stopSequence(){
+  seqTimers.forEach(clearTimeout); seqTimers = [];
+  const st = $('#stage'); if (!st.classList.contains('is-alert') && !st.classList.contains('is-call') && !$('#slot').innerHTML) return;
+  const ref = $('#how'), y0 = ref.getBoundingClientRect().top; st.style.transition = 'none';
+  $('#slot').innerHTML = ''; $('#slot').classList.remove('slot-out'); st.classList.remove('is-alert','is-call'); $('#hero').classList.remove('scan'); cycleDone = true;
+  const d = ref.getBoundingClientRect().top - y0; if (d) scrollBy({top:d, behavior:'instant'});
+  requestAnimationFrame(() => { st.style.transition = ''; });
+}
+addEventListener('scroll', () => { if (seqTimers.length && heroAway()) stopSequence(); }, {passive:true});
 // pointer tilt + moving light, like the reference stage
 $('#stage').addEventListener('pointermove', e => { if (e.pointerType === 'touch' || RM()) return; const r = $('#stkBtn').getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
   const st = $('#stage').style; st.setProperty('--tilt-y', (x * 12).toFixed(2) + 'deg'); st.setProperty('--tilt-x', (-y * 10).toFixed(2) + 'deg'); st.setProperty('--shine-x', (50 + x * 60).toFixed(1) + '%');
@@ -1177,7 +1188,7 @@ $('#stage').addEventListener('pointermove', e => { if (e.pointerType === 'touch'
   $('.cast').style.setProperty('--lean-x', (-x * 16).toFixed(1) + 'px'); });
 $('#stage').addEventListener('pointerleave', () => { const st = $('#stage').style; ['--tilt-x','--tilt-y'].forEach(p => st.setProperty(p, '0deg')); st.setProperty('--shine-x', '50%'); $('.cast').style.setProperty('--lean-x', '0px'); });
 renderSticker(false); renderSound();
-setTimeout(() => playSequence(false), 2400);
+setTimeout(() => { if (!heroAway() && scrollY < $('#hero').offsetTop + $('#hero').offsetHeight * .5) playSequence(false); }, 2400);
 
 /* ---------- steps ---------- */
 function renderSteps(){
@@ -1378,10 +1389,12 @@ function renderBar(anim){
   else go.innerHTML = icn(I.lock) + 'تأكيد الطلب';
 }
 $('#barBack').onclick = () => goStep(1);
-if ('IntersectionObserver' in window){
-  new IntersectionObserver(es => { inOrder = es[es.length-1].isIntersecting; renderBar(); }, {rootMargin:'0px 0px -35% 0px'}).observe($('#order'));
-  new IntersectionObserver(es => { const en = es[es.length-1]; ctaAbove = !en.isIntersecting && en.boundingClientRect.top < 0; renderBar(); }).observe($('#cta'));
-}
+// scroll position decides bar / pill (computed, not threshold events, so jumps and anchor links are handled too)
+{ let raf = 0; const upd = () => { raf = 0; const o = $('#order').getBoundingClientRect(), vh = innerHeight;
+    const io = o.top < vh * .65 && o.bottom > 0, ca = $('#cta').getBoundingClientRect().bottom < 0;
+    if (io !== inOrder || ca !== ctaAbove){ inOrder = io; ctaAbove = ca; renderBar(); } };
+  const req = () => { if (!raf) raf = requestAnimationFrame(upd); };
+  addEventListener('scroll', req, {passive:true}); addEventListener('resize', req); req(); }
 $('#fpill').addEventListener('click', e => { e.preventDefault(); scrollToEl($('#orderHead'), 16); });
 $('#barGo').onclick = () => {
   if (S.step === 1){ if (!S.plan){ scrollToEl($('.plans'), 120); return; } goStep(2); return; }
