@@ -44,8 +44,8 @@ svg{flex:none}
 :focus-visible{outline:3px solid rgba(242,170,0,.75);outline-offset:3px}
 .latin{font-family:var(--latin);unicode-bidi:isolate}
 .ltr{direction:ltr;unicode-bidi:isolate}
-.skip{position:fixed;top:.5rem;inset-inline-start:.5rem;z-index:100;padding:.5rem 1rem;border-radius:999px;background:var(--ink);color:#fff;font-size:.875rem;font-weight:600;transform:translateY(-200%);transition:transform .2s}
-.skip:focus{transform:none}
+.skip{position:absolute;top:-200px;inset-inline-start:.5rem;z-index:100;padding:.5rem 1rem;border-radius:999px;background:var(--ink);color:#fff;font-size:.875rem;font-weight:600}
+.skip:focus{top:.5rem}
 
 .shell{width:min(1120px,calc(100% - 24px));margin-inline:auto}
 
@@ -204,7 +204,8 @@ svg{flex:none}
 .btn-wa:hover{background:#2fe072}
 .btn-wa:active{transform:scale(.97)}
 .btn-wa .ic{width:16px;height:16px}
-.contact-grid{display:grid;gap:28px}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:28px}
+.contact-sec{min-width:0}
 .contact-sec{display:flex;flex-direction:column;gap:14px}
 .contact-sec h2{font-size:13px;line-height:1.4;font-weight:800;color:var(--ink-2)}
 .contact-sec ul{display:flex;flex-direction:column;gap:14px}
@@ -214,10 +215,15 @@ svg{flex:none}
 .cc-ic .ic{width:22px;height:22px}
 .cc-txt{flex:1;min-width:0;display:flex;flex-direction:column}
 .cc-txt small{font-size:12px;line-height:1.5;font-weight:600;color:var(--ink-2)}
-.cc-txt b{font-size:17px;line-height:1.5;font-weight:700;color:var(--ink);font-family:var(--latin);direction:ltr;unicode-bidi:isolate;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cc-txt b{font-size:17px;line-height:1.5;font-weight:700;color:var(--ink);font-family:var(--latin);direction:ltr;unicode-bidi:isolate;text-align:right;overflow-wrap:anywhere}
 .cc-go{width:32px;height:32px;border-radius:50%;flex:none;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent-ink);transition:transform .2s var(--ease)}
 .cc-go .ic{width:16px;height:16px}
 .contact-card:hover .cc-go{transform:translateX(-3px)}
+@media (max-width:359px){
+  .cc-txt b{font-size:15px}
+  .contact-card{gap:10px;padding-inline:12px}
+  .cc-go{display:none}
+}
 @media (min-width:768px){
   .contact-wrap{gap:40px}
   .contact-featured{flex-direction:row;align-items:center;gap:18px;padding:18px 20px}
@@ -225,7 +231,7 @@ svg{flex:none}
   .cf-text p{margin-top:2px}
 }
 @media (min-width:1024px){
-  .contact-grid{grid-template-columns:1fr 1fr;column-gap:24px}
+  .contact-grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px}
   .contact-card{min-height:84px;padding:17px 18px}
 }
 </style>

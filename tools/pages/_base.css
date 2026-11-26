@@ -32,8 +32,8 @@ svg{flex:none}
 :focus-visible{outline:3px solid rgba(242,170,0,.75);outline-offset:3px}
 .latin{font-family:var(--latin);unicode-bidi:isolate}
 .ltr{direction:ltr;unicode-bidi:isolate}
-.skip{position:fixed;top:.5rem;inset-inline-start:.5rem;z-index:100;padding:.5rem 1rem;border-radius:999px;background:var(--ink);color:#fff;font-size:.875rem;font-weight:600;transform:translateY(-200%);transition:transform .2s}
-.skip:focus{transform:none}
+.skip{position:absolute;top:-200px;inset-inline-start:.5rem;z-index:100;padding:.5rem 1rem;border-radius:999px;background:var(--ink);color:#fff;font-size:.875rem;font-weight:600}
+.skip:focus{top:.5rem}
 
 .shell{width:min(1120px,calc(100% - 24px));margin-inline:auto}
 
