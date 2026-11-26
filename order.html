@@ -183,12 +183,15 @@ svg{display:block}
 .stk.eh .e-foot i{height:7em}
 .stk .e-url small{font-size:2.7em;font-weight:600}
 .stk .e-url .e-c{font-size:2.9em;font-weight:800;letter-spacing:.04em}
-.stk.er{width:76em;height:76em;border-radius:50%;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;padding-top:7.6em;background:var(--scard)!important;--sband:#FFC816;--sbandi:#111}
+.stk.er{width:76em;height:76em;border-radius:50%;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;padding-top:7.6em;background:var(--spb)!important;--sband:#FFC816;--sbandi:#111}
 .stk.er .e-h span{font-size:5em;line-height:1.14}
 .stk.er .e-band{width:40em;height:5.6em;margin-top:1.5em}
 .stk.er .e-band span{font-size:2.8em}
 .stk.er .e-qr{width:30em;margin-top:1.6em;padding:2.2em;border-radius:2.4em}
-.stk.er .e-foot{height:13.8em;background:var(--spb);padding-bottom:2em;gap:2.6em}
+/* the face ends in a soft curve over the strip, like the card corners on the vertical/rectangle stickers */
+.stk.er .e-cap{position:absolute;left:0;right:0;top:0;height:62.6em;background:var(--scard);border-radius:0 0 50% 50%/0 0 21% 21%}
+.stk.er .e-h,.stk.er .e-band,.stk.er .e-qr{position:relative;z-index:1}
+.stk.er .e-foot{height:13.4em;background:none;z-index:1;padding-bottom:1.8em;gap:2.6em}
 .stk.er .e-foot .logo{font-size:4.2em}
 .stk.er .e-foot i{height:6.2em}
 .stk.er .e-url small{font-size:2em}
@@ -879,7 +882,7 @@ function stickerHTML(type, variant, code, u=3){
     const foot = `<div class="e-foot"><span class="e-url"><small>eblagh.iq/r/</small><span class="e-c">${fmtCode(code)}</span></span><i></i>${logo()}</div>`;
     if (type==='ev') return `<div class="stk ev v-${variant}" ${st}>${foot}<div class="e-card">${h}${band}${qr}${note}</div></div>`;
     if (type==='eh') return `<div class="stk eh v-${variant}" ${st}>${foot}<div class="e-card"><div class="e-txt">${h}${band}${note}</div>${qr}</div></div>`;
-    return `<div class="stk er v-${variant}" ${st}>${h}${band}${qr}${foot}</div>`;
+    return `<div class="stk er v-${variant}" ${st}><i class="e-cap" aria-hidden="true"></i>${h}${band}${qr}${foot}</div>`;
   }
   return '';
 }
