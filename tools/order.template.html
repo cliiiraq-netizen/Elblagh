@@ -263,7 +263,7 @@ svg{display:block}
 .designs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .design{position:relative;display:grid;justify-items:center;align-content:start;gap:10px;padding:12px 10px;text-align:center;border-radius:14px;background:var(--surface);border:1px solid var(--line);transition:border-color .15s,background .15s}
 .design.sel{border-color:var(--y);box-shadow:0 0 0 1px var(--y)}
-.design .pv{height:96px;display:grid;place-items:center;transition:opacity .2s}
+.design .pv{width:100%;min-width:0;height:96px;display:grid;place-items:center;transition:opacity .2s}
 .design:not(.sel) .pv{opacity:.6}
 .design .pv .stk{filter:drop-shadow(0 3px 3px rgba(37,21,11,.1))}
 :root[data-theme="dark"] .design .pv .stk.v-black,:root[data-theme="dark"] .msum .stk.v-black,:root[data-theme="dark"] .side .stk.v-black,:root[data-theme="dark"] .receipt .stk.v-black,:root[data-theme="dark"] .upsell .stk.v-black{box-shadow:0 0 0 1px rgba(255,255,255,.18)}
@@ -708,7 +708,11 @@ const shapeName = () => ({v:'طولي', h:'مستطيل', r:'دائري'})[S.sha
 // one place decides which sticker art is shown: vertical (ev), rectangle (eh) or round (er); u = px per mm, same visual area for all shapes
 const SHAPE_U = {v:1, h:1, r:1.1};
 const stk = (variant, code, u) => stickerHTML({v:'ev', h:'eh', r:'er'}[S.shape], variant, code, u * SHAPE_U[S.shape]);
-const stkMini = (variant, h) => stk(variant, 'EB4471', h / ({v:120, h:64, r:76})[S.shape] / SHAPE_U[S.shape]);
+// small previews fit inside a box: at most h tall and w wide (the rectangle is wide, so width usually decides)
+const stkMini = (variant, h, w = h) => stk(variant, 'EB4471', Math.min(h / ({v:120, h:64, r:76})[S.shape], w / ({v:60, h:112, r:76})[S.shape]) / SHAPE_U[S.shape]);
+// after render, shrink any colour-card preview still wider than its card (exact, whatever the screen width)
+function fitMinis(){ document.querySelectorAll('.design .pv').forEach(pv => { const st = pv.querySelector('.stk'); if (!st) return; const room = pv.clientWidth - 4, w = st.offsetWidth;
+  if (room > 0 && w > room){ const u = parseFloat(st.style.getPropertyValue('--u')) || 1; st.style.setProperty('--u', (u * room / w).toFixed(4)); } }); }
 try { const q = new URLSearchParams(location.search).get('shape'); if (q === 'round' || q === 'r') S.shape = 'r'; if (q === 'rect' || q === 'h') S.shape = 'h'; } catch(e){}
 const segHTML = (label, items, cls='') => `<div class="seg ${cls}" role="radiogroup" aria-label="${label}">${items}</div>`;
 const shapeSeg = cls => segHTML('شكل الملصق', SHAPES.map(([k,t]) => `<button type="button" role="radio" aria-checked="${S.shape===k}" data-shape="${k}">${SHAPE_IC[k]}${t}</button>`).join(''), cls);
@@ -817,7 +821,7 @@ function planCard(k){
 function designCard([k,t]){
   const n = S.qty[k], tot = count();
   return `<div class="design ${n?'sel':''}" data-d="${k}"><span class="badge" id="bd-${k}" aria-hidden="true">×${n}</span>
-    <span class="pv">${stkMini(k, 92)}</span><b class="nm" id="dn-${k}">${t}</b>
+    <span class="pv">${stkMini(k, 92, 120)}</span><b class="nm" id="dn-${k}">${t}</b>
     <div class="qty" role="group" aria-labelledby="dn-${k}">
       <button type="button" data-q="-1" data-k="${k}" aria-label="نقّص ${t}" ${n===0 || tot<=1 ? 'disabled' : ''}>${I.minus}</button>
       <output aria-live="polite">${n}</output>
@@ -839,6 +843,7 @@ function renderP1(){
       <div class="as">${I.shield}<b>ضمان استبدال لعيوب الطباعة</b><small>استبدال مجاني لأي عيب طباعة أو لصق.</small></div>
     </section>
     <a class="help" id="helpBtn" href="#" role="button">${X.wa}عندك سؤال؟ كلّمنا واتساب</a>`;
+  fitMinis();
 }
 $('#p1').addEventListener('click', e => {
   const pl = e.target.closest('[data-plan]');
@@ -903,7 +908,7 @@ function renderP2(){
 }
 function upsellHTML(){
   const won = count() >= 2 && S.upAdded;
-  return `<div class="upsell ${won ? 'won' : ''}"><span class="pics" aria-hidden="true">${stkMini('yellow', 44)}${stkMini('black', 44)}<span class="x2">${won ? I.check : '2×'}</span></span>
+  return `<div class="upsell ${won ? 'won' : ''}"><span class="pics" aria-hidden="true">${stkMini('yellow', 44, 46)}${stkMini('black', 44, 46)}<span class="x2">${won ? I.check : '2×'}</span></span>
     <div class="cp">${won ? `<span class="ub2">توصيل مجاني</span><h4>طلبك صار بتوصيل مجاني 🎉</h4><p class="dl"><span>التوصيل</span><s>${IQD(DELIVERY)}</s><em>مجاناً</em></p>`
       : `<span class="ub2">توصيل مجاني</span><h4>زوّد ملصق ثاني ووفّر التوصيل</h4><p class="dl"><span>التوصيل</span><b>${IQD(DELIVERY)}</b></p><span class="sb">خلّيه لسيارة ثانية، أو انطيه لأحد يهمك</span>`}</div>
     <button type="button" class="ub" id="upBtn" ${won ? 'disabled' : ''}>${won ? I.check + 'تمت الإضافة' : I.plus + 'زوّد ملصق'}</button></div>`;
@@ -938,7 +943,7 @@ function renderSums(anim){
   const t = totals(), n = count();
   // desktop aside
   const benefit = t && t.deliv === 0 ? 'التوصيل المجاني تفعّل' : 'توصيل مجاني من ملصقين أو أكثر';
-  $('#side').innerHTML = `<div class="pd"><div class="art">${stkMini(topV(), 76)}</div><div><h3>ملصق إبلاغ</h3><p>يشمل الملصق وسنة من الباقة اللي تختارها.</p></div></div>
+  $('#side').innerHTML = `<div class="pd"><div class="art">${stkMini(topV(), 76, 96)}</div><div><h3>ملصق إبلاغ</h3><p>يشمل الملصق وسنة من الباقة اللي تختارها.</p></div></div>
     <dl aria-live="polite" aria-atomic="true">
       <div><dt>${t ? `${n} × ${t.P.name}${t.P.em ? ' ' + t.P.em : ''}` : 'الباقة'}</dt><dd>${t ? IQD(t.P.price) : 'بعدك ما اخترت'}</dd></div>
       ${t && t.extra ? `<div><dt>ملصقات إضافية × ${n - t.P.incl}</dt><dd>${IQD(t.extra)}</dd></div>` : ''}
@@ -950,7 +955,7 @@ function renderSums(anim){
   // mobile invoice card (appears once a plan is picked)
   if (!t || S.done){ $('#msum').innerHTML = ''; $('#safe').hidden = true; return; }
   const key = [S.plan, n, t.deliv, t.disc, S.shape, topV()].join('|'), doAnim = anim && key !== lastSum && lastSum !== ''; lastSum = key;
-  $('#msum').innerHTML = `<div class="msum" aria-live="polite" aria-atomic="true"><div class="pr">${stkMini(topV(), 48)}<div class="lns${doAnim ? ' anim' : ''}">
+  $('#msum').innerHTML = `<div class="msum" aria-live="polite" aria-atomic="true"><div class="pr">${stkMini(topV(), 48, 64)}<div class="lns${doAnim ? ' anim' : ''}">
     <div class="r1"><span>${t.P.name}${t.P.em ? ' ' + t.P.em : ''} × ${n}</span><b>${IQD(t.P.price)}</b></div>
     ${t.extra ? `<div class="r2"><span>ملصقات إضافية × ${n - t.P.incl}</span><b>${IQD(t.extra)}</b></div>` : ''}
     ${t.disc ? `<div class="r2"><span>خصم · ${esc(S.code.toUpperCase())}</span><b class="free">− ${IQD(t.disc)}</b></div>` : ''}
@@ -994,7 +999,7 @@ function submit(){
       <h2>تم طلبك يا ${esc(first)}!</h2>
       <p class="lead">راح نتصل بيك قبل ما يطلع المندوب. ملصقك يوصلك خلال 2–3 أيام إلى ${esc(S.gov)} — ${esc(S.area)}.</p>
       <div class="receipt">
-        <div class="rh">${stkMini(topV(), 64)}<span><small>رقم الطلب</small><b class="num ltr">${S.done.id}</b></span></div>
+        <div class="rh">${stkMini(topV(), 64, 84)}<span><small>رقم الطلب</small><b class="num ltr">${S.done.id}</b></span></div>
         <div class="ln"><span>${planLabel(t.P)} · سنة</span><b>${IQD(t.P.price)}</b></div>
         <div class="ln"><span>${qtyLabel(t.n)} · ${shapeName()}${mixLabel()}</span><b>${t.extra ? IQD(t.extra) : 'مشمولة'}</b></div>
         <div class="ln"><span>التوصيل</span><b>${t.deliv ? IQD(t.deliv) : 'مجاناً'}</b></div>
@@ -1060,7 +1065,7 @@ document.addEventListener('keydown', e => {
 
 /* ---------- CTA: smooth scroll to the order card ---------- */
 $('#cta').addEventListener('click', e => { e.preventDefault(); scrollToEl($('#ohead'), 56); });
-addEventListener('resize', () => renderSticker(false));
+addEventListener('resize', () => { renderSticker(false); if (document.querySelector('#p1').innerHTML) renderP1(); });
 
 /* ---------- toast ---------- */
 let toastT = null;
