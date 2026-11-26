@@ -203,6 +203,10 @@ svg{flex:none}
 .forgot-link{font-size:12px;line-height:1.7;font-weight:500;color:var(--ink);border-radius:4px}
 .forgot-link:hover{text-decoration:underline;text-underline-offset:3px}
 .auth-submit{margin-top:4px;height:48px}
+.demo-box{margin-top:18px;padding:12px 14px;border-radius:14px;background:#FFF8E0;border:1px dashed rgba(190,140,0,.45);font-size:13.5px;line-height:1.7;color:#4a4030}
+.demo-box b{display:block;color:#8a5f00;font-size:13px}
+.demo-links{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:6px}
+.demo-links .text-link{font-weight:600}
 .auth-note{margin-top:20px;padding-top:4px;font-size:14px;line-height:1.7;color:var(--ink-2)}
 .auth-note b{font-weight:500;color:var(--ink)}
 .auth-order{margin-top:6px;font-size:14px;line-height:1.7;color:var(--ink-2)}
@@ -266,6 +270,8 @@ svg{flex:none}
       <button class="btn btn-primary btn-pill btn-block auth-submit" type="submit">تسجيل الدخول <span data-ic="arrowL"></span></button>
       <div class="demo-done" id="demoDone" role="status" hidden></div>
     </form>
+    <div class="demo-box"><b>للتجربة</b>اكتب أي رقم عراقي (مثل 770 123 4567) وأي كلمة سر، وراح تنفتح لوحة تحكم صاحب السيارة.
+      <span class="demo-links"><a class="text-link" href="site.html#/app">لوحة صاحب السيارة</a><a class="text-link" href="site.html#/admin">لوحة الإدارة</a><a class="text-link" href="site.html#/business">لوحة الشركات</a></span></div>
     <p class="auth-note">عندك ملصق وما عندك حساب؟ <b>امسح رمز الـQR اللي عليه بكاميرا تلفونك حتى تسوي حساب.</b></p>
     <p class="auth-order">ما عندك ملصق؟ <a class="text-link" href="order.html">اطلبه هنا</a></p>
   </section>
@@ -407,9 +413,11 @@ lf.addEventListener('submit', e => {
   const a = phoneErr(lPhone.value), b = pwErr(lPw.value);
   setErr(lPhone, a); setErr(lPw, b);
   if (a || b){ done.hidden = true; (a ? lPhone : lPw).focus(); return; }
-  done.innerHTML = `${IC.info}<span><b>هذي نسخة تجريبية — الدخول الفعلي داخل تطبيق إبلاغ</b>ما انرسل أي شي. تكدر تجرّب التطبيق التجريبي من هنا: <a href="site.html">افتح التطبيق التجريبي ${IC.arrowL}</a></span>`;
+  // demo: any valid Iraqi number + any password signs in and opens the owner dashboard
+  done.innerHTML = `${IC.info}<span><b>تم تسجيل الدخول</b>جاري فتح لوحة التحكم…</span>`;
   done.hidden = false;
-  toast('هذي نسخة تجريبية — الدخول الفعلي داخل تطبيق إبلاغ');
+  const go = u => (window.__EBGO ? window.__EBGO(u) : (location.href = u));
+  setTimeout(() => go('site.html#/app'), 600);
 });
 }
 </script>
