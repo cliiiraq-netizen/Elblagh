@@ -145,6 +145,46 @@ svg{display:block}
 .cutmode .stk .corner{display:none}
 
 
+/* ---- Scan-card stickers (ev vertical · eh horizontal · er round) — 1em = 1mm ---- */
+.stk.ev,.stk.eh{display:flex;flex-direction:column;border-radius:5em;overflow:hidden}
+.stk.ev{width:60em;height:104em}
+.stk.eh{width:104em;height:62em}
+.stk .e-main{flex:1;display:flex;flex-direction:column;align-items:center;padding:6.2em 4.6em 2.6em;min-height:0}
+.stk.eh .e-main{flex-direction:row;align-items:center;gap:5em;padding:4.4em 5em 3em}
+.stk.eh .e-txt{flex:1;display:flex;flex-direction:column;align-items:stretch;min-width:0}
+.stk .e-h{display:block;font-size:1em;text-align:center;color:var(--si);font-weight:900;line-height:1.16}
+.stk .e-h span{display:block;font-size:6.5em}
+.stk.eh .e-h{text-align:start}
+.stk.eh .e-h span{font-size:6em}
+.stk .e-band{align-self:stretch;margin-top:3.2em;background:var(--spb);color:var(--spi);text-align:center;padding:1.5em 2em;border-radius:1.2em}
+.stk .e-band span{display:block;font-size:3.9em;font-weight:900;line-height:1.2}
+.stk .e-qr{align-self:stretch;margin-top:3.4em;background:#fff;border-radius:4.4em;padding:3.4em;box-shadow:0 .6em 1.8em rgba(0,0,0,.16);aspect-ratio:1}
+.stk .e-qr svg{width:100%;height:100%}
+.stk.ev .e-qr{align-self:center;width:45em;padding:3em;border-radius:4em}
+.stk.ev .e-strip{height:15em}
+.stk.eh .e-qr{flex:none;width:44em;margin:0;padding:3.2em}
+.stk .e-note{margin-top:2.6em;text-align:center;color:var(--si);opacity:.75}
+.stk .e-note span{font-size:2.35em;font-weight:700}
+.stk.eh .e-note{text-align:start;margin-top:2.4em}
+.stk .e-strip{flex:none;height:17em;display:flex;align-items:center;justify-content:space-between;gap:3em;padding:0 5.2em;background:var(--spb);color:var(--spi)}
+.stk.eh .e-strip{height:13.5em}
+.stk .e-strip .logo{font-size:5.6em;color:var(--spi)}
+.stk.eh .e-strip .logo{font-size:4.6em}
+.stk .e-url{display:flex;flex-direction:column;align-items:flex-start;direction:ltr;font-family:-apple-system,"Segoe UI",system-ui,sans-serif;border-left:.25em solid currentColor;padding-left:2.6em;line-height:1.25}
+.stk .e-url small{font-size:2.3em;font-weight:600;opacity:.8}
+.stk .e-url b{font-size:3.2em;font-weight:800;letter-spacing:.08em}
+.stk.er{width:70em;height:70em;border-radius:50%;background:var(--spb)!important;position:relative}
+.stk.er .e-ring{position:absolute;inset:0;width:100%;height:100%}
+.stk.er .e-ring text{font-family:var(--fh),var(--fb);font-weight:900;font-size:4.2px;fill:var(--spi)}
+.stk.er .e-ring circle{fill:var(--spi)}
+.stk.er .e-in{position:absolute;inset:8.6em;border-radius:50%;background:var(--sb);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.4em}
+.stk.er.v-yellow .e-in{background:radial-gradient(40em 40em at 70% 25%,#FFD84A 0%,#FFC816 45%,#F5B400 100%)}
+.stk.er.v-black .e-in{background:radial-gradient(40em 40em at 70% 20%,#262626,#0d0d0d)}
+.stk.er .e-in .logo{font-size:3.4em;color:var(--sa)}
+.stk.er .e-qr{align-self:auto;width:29em;margin:0;padding:2.2em;border-radius:3.2em}
+.stk.er .e-code{font-family:-apple-system,"Segoe UI",system-ui,sans-serif;font-size:2.4em;font-weight:800;letter-spacing:.1em;direction:ltr;color:var(--si);opacity:.8}
+
+
 
 /* ============ Header ============ */
 .top{position:relative;z-index:40;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
@@ -230,7 +270,19 @@ svg{display:block}
 @keyframes lift{0%{transform:none}35%{transform:translateY(-10px) rotate(-3deg) scale(1.03)}100%{transform:none}}
 @keyframes swap{0%{opacity:.2;transform:rotateY(70deg) scale(.96)}100%{opacity:1;transform:none}}
 @keyframes nudge{50%{transform:translateY(-3px)}}
-.switch{display:flex;width:fit-content;margin:22px auto 0;padding:4px;border-radius:999px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow-s);opacity:0;animation:rise .7s var(--ease) 2.8s forwards;transform:translateY(10px)}
+.switch{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:100%;margin:22px auto 0;opacity:0;animation:rise .7s var(--ease) 2.8s forwards;transform:translateY(10px)}
+.switch .seg{display:flex;padding:4px;border-radius:999px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow-s)}
+.switch .seg button svg{width:14px;height:16px;flex:none}
+.shape-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:-4px 0 14px}
+.shape-row>span{font-size:14px;font-weight:700;color:var(--ink2)}
+.shape-seg{display:flex;padding:3px;border-radius:999px;background:var(--surface2);border:1px solid var(--line)}
+.shape-seg button{display:flex;align-items:center;gap:7px;height:38px;padding:0 14px;border-radius:999px;font-size:14px;font-weight:700;color:var(--ink2);transition:background-color .16s,color .16s}
+.shape-seg button svg{width:13px;height:15px}
+.shape-seg button[aria-pressed="true"]{background:var(--k);color:#fff}
+:root[data-theme="dark"] .shape-seg button[aria-pressed="true"]{background:var(--y);color:#111}
+.stk.er{border-radius:50%!important}
+.stk-btn .card.round{border-radius:50%}
+.designs .pv,.summary .it,.receipt .rh{transition:opacity .2s}
 .switch button{display:flex;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:999px;font-size:14px;font-weight:700;color:var(--ink2);transition:background-color .16s,color .16s}
 .switch button i{width:14px;height:14px;border-radius:50%;border:1.5px solid rgba(128,128,128,.5)}
 .switch button[aria-pressed="true"]{background:var(--k);color:#fff}
@@ -559,7 +611,7 @@ select.inp{-webkit-appearance:none;appearance:none;cursor:pointer;padding-inline
           <span class="tap" id="tapHint"></span>
         </button>
       </div>
-      <div class="switch" role="group" aria-label="لون الملصق" id="switch"></div>
+      <div class="switch" id="switch"></div>
       <a class="cta" id="cta" href="#order"></a>
       <div class="trust" id="trust"></div>
     </div>
@@ -680,6 +732,20 @@ function qrSVG(code, o={}){
   const c = n/2, ms = 6.2/LOGO_W, mh = MARK_H*ms, Lg = o.logo===false ? '' : `<rect x="${c-4.2}" y="${c-4.2}" width="8.4" height="8.4" rx="1.6" fill="${bg}"/><rect x="${c-3.6}" y="${c-3.6}" width="7.2" height="7.2" rx="1.4" fill="#FFC816"/><path transform="translate(${c-3.1} ${c-mh/2}) scale(${ms})" fill="#111" fill-rule="evenodd" d="${MARK_D}"/>`;
   return `<svg viewBox="0 0 ${n} ${n}" shape-rendering="crispEdges" ${o.attrs||''} role="img" aria-label="QR ${code}"><path d="${d}" fill="${fg}"/><g shape-rendering="geometricPrecision">${Lg}</g></svg>`;
 }
+function qrEyes(code, o={}){
+  const m = QR[code] || QR.EB4471, n = m.length, fg = o.fg || '#111', eye = o.eye || '#FFC816', bg = o.bg || '#fff';
+  const inF = (x, y) => (x < 7 && y < 7) || (x >= n - 7 && y < 7) || (x < 7 && y >= n - 7);
+  const c = n / 2, half = o.logo === false ? 0 : 4.4;
+  const inL = (x, y) => half && Math.abs(x + .5 - c) < half + .7 && Math.abs(y + .5 - c) < half + .7;
+  const on = (x, y) => m[y][x] === '1' && !inF(x, y) && !inL(x, y);
+  let d = '';
+  for (let y = 0; y < n; y++){ let x = 0;
+    while (x < n){ if (on(x, y)){ let l = 1; while (x + l < n && on(x + l, y)) l++; d += `M${x} ${y}h${l}v1h-${l}z`; x += l; } else x++; } }
+  const E = (x, y) => `<rect x="${x}" y="${y}" width="7" height="7" rx="2.2" fill="${fg}"/><rect x="${x+1}" y="${y+1}" width="5" height="5" rx="1.6" fill="${eye}"/><rect x="${x+2}" y="${y+2}" width="3" height="3" rx=".95" fill="${fg}"/>`;
+  const mw = half * 1.62, ms = mw / LOGO_W, mh = MARK_H * ms;
+  const L = half ? `<rect x="${c-half-.5}" y="${c-half-.5}" width="${2*half+1}" height="${2*half+1}" rx="2.2" fill="${bg}"/><rect x="${c-half}" y="${c-half}" width="${2*half}" height="${2*half}" rx="1.9" fill="${eye}"/><path transform="translate(${c-mw/2} ${c-mh/2}) scale(${ms})" fill="#111" fill-rule="evenodd" d="${MARK_D}"/>` : '';
+  return `<svg viewBox="0 0 ${n} ${n}" shape-rendering="crispEdges" role="img" aria-label="QR ${code}"><path d="${d}" fill="${fg}"/><g shape-rendering="geometricPrecision">${E(0,0)}${E(n-7,0)}${E(0,n-7)}${L}</g></svg>`;
+}
 const fmtCode = c => c.replace(/^EB/,'EB-');
 function stickerHTML(type, variant, code, u=3){
   const q = `<div class="s-qr">${qrSVG(code)}</div>`;
@@ -696,6 +762,23 @@ function stickerHTML(type, variant, code, u=3){
   if (type==='ss') return `<div class="stk ss v-${variant}" ${st}><div class="s-logo">${logo()}</div><div class="mid"><b>${need} <em>${scanTxt}</em></b><small>${T('بدون اتصال · بدون كشف رقم الهاتف','No calls · No phone number shared','بێ پەیوەندیی تەلەفۆنی · ژمارەکەت ئاشکرا ناکرێت')} · eblagh.iq</small></div>${q}</div>`;
   if (type==='cf') return `<div class="stk sc2 front v-${variant}" ${st}><div class="s-logo">${logo()}</div><div class="s-tag">${T('ملصقك جاهز — فعّله بدقيقة','Your sticker is ready — activate it in a minute','ستیکەرەکەت ئامادەیە — لە خولەکێکدا چالاکی بکە')}</div>${code$}<div class="s-secret"><small>${T('الرمز السري للتفعيل','Secret activation code','کۆدی نهێنیی چالاککردن')}</small><b>${secretOf(code)}</b></div></div>`;
   if (type==='cb') return `<div class="stk sc2 back" ${st}><div><h4>${T('شلون تفعّل ملصقك؟','How to activate your sticker','چۆن ستیکەرەکەت چالاک دەکەیت؟')}</h4><ol><li><i>1</i>${T('حمّل تطبيق إبلاغ','Download the Eblagh app','ئەپی ئیبلاغ دابگرە')}</li><li><i>2</i>${T('سجّل برقم هاتفك','Sign up with your phone number','بە ژمارەی تەلەفۆنەکەت خۆت تۆمار بکە')}</li><li><i>3</i>${T('امسح الملصق واختار سيارتك','Scan the sticker and pick your car','ستیکەرەکە سکان بکە و ئۆتۆمبێلەکەت هەڵبژێرە')}</li><li><i>4</i>${T('الصقه على الزجاج من برّه','Stick it on the outside of the glass','لە دەرەوەی شووشەکە بیلکێنە')}</li></ol></div><div class="bq"><div class="s-qr">${qrSVG('APP',{logo:false})}</div><small>${T('امسح للتحميل','Scan to download','سکان بکە بۆ داگرتن')}</small></div></div>`;
+  if (type==='ev' || type==='eh'){
+    const h = `<b class="e-h"><span>${T('تحتـاج توصـل','Need to reach','پێویستە بگەیتە')}</span><span>${T('لصاحـب السيـارة؟','the car owner?','خاوەنی ئۆتۆمبێل؟')}</span></b>`;
+    const band = `<div class="e-band"><span>${T('صوّر الرمز وبلّغـه','Scan the code & notify','کۆدەکە سکان بکە و ئاگاداری بکەرەوە')}</span></div>`;
+    const qr = `<div class="e-qr">${qrEyes(code)}</div>`;
+    const note = `<div class="e-note"><span>${T('الكاميرا ما تشتغل؟ افتح الرابط اللي جوّه','Camera not working? Open the link below','کامێرا کار ناکات؟ بەستەرەکەی خوارەوە بکەرەوە')}</span></div>`;
+    const strip = `<div class="e-strip">${logo()}<span class="e-url"><small>eblagh.iq/r/</small><b>${fmtCode(code)}</b></span></div>`;
+    return type==='ev'
+      ? `<div class="stk ev v-${variant}" ${st}><div class="e-main">${h}${band}${qr}${note}</div>${strip}</div>`
+      : `<div class="stk eh v-${variant}" ${st}><div class="e-main"><div class="e-txt">${h}${band}${note}</div>${qr}</div>${strip}</div>`;
+  }
+  if (type==='er'){
+    const pid = `er-${code}-${variant}-${LANG}-${Math.round(u*10)}`;
+    const top = T('تحتاج صاحب السيارة؟ • صوّر الرمز وبلّغـه','NEED THE OWNER? • SCAN & NOTIFY','سکان بکە و ئاگادار بکەرەوە');
+    const bot = T('تواصل بلا أرقام • بدون رقم هاتف','NO NUMBERS • NO PHONE NUMBER','پەیوەندی بێ ژمارە');
+    return `<div class="stk er v-${variant}" ${st}><svg class="e-ring" viewBox="0 0 70 70" aria-hidden="true"><defs><path id="${pid}t" d="M4.3 35 a30.7 30.7 0 0 1 61.4 0"/><path id="${pid}b" d="M4.3 35 a30.7 30.7 0 0 0 61.4 0"/></defs><text dominant-baseline="central"><textPath href="#${pid}t" startOffset="50%" text-anchor="middle">${top}</textPath></text><text dominant-baseline="central"><textPath href="#${pid}b" startOffset="50%" text-anchor="middle">${bot}</textPath></text><circle cx="4.3" cy="35" r="1.1"/><circle cx="65.7" cy="35" r="1.1"/></svg>
+      <div class="e-in">${logo()}<div class="e-qr">${qrEyes(code)}</div><b class="e-code">${fmtCode(code)}</b></div></div>`;
+  }
   return '';
 }
 const $ = (s, r=document) => r.querySelector(s), $$ = (s, r=document) => [...r.querySelectorAll(s)];
@@ -747,7 +830,7 @@ const GOVS = {
 const ALERTS = ['سيارتك سادّة الطريق — ممكن تحركها؟','الأضوية شغّالة، البطارية راح تخلص','الشبّاك مفتوح والجو يمطر','أكو خدش جديد بالباب الخلفي','المرور يسحبون السيارات هسّه، الحق'];
 
 /* ---------- state ---------- */
-const S = { plan:null, qty:{yellow:1, black:0}, variant:'yellow', step:1, gov:'', area:'', name:'', phone:'', landmark:'', notes:'', code:'', codeOk:false, codeErr:false, codeOpen:false, showErr:false, upAdded:false, muted:false, sheetTab:'basic', done:null };
+const S = { plan:null, qty:{yellow:1, black:0}, variant:'yellow', shape:'v', step:1, gov:'', area:'', name:'', phone:'', landmark:'', notes:'', code:'', codeOk:false, codeErr:false, codeOpen:false, showErr:false, upAdded:false, muted:false, sheetTab:'basic', done:null };
 try { S.muted = localStorage.getItem('eb_order_muted') === '1'; } catch(e){}
 const count = () => S.qty.yellow + S.qty.black;
 function totals(){
@@ -776,13 +859,24 @@ $('#tapHint').innerHTML = icn(I.bolt) + 'اضغط على الملصق';
 $('#cta').innerHTML = 'اطلب ملصقك ' + cls(I.chev, '', 'transform:rotate(90deg)');
 $('#fcta').innerHTML = 'اطلب ملصقك ' + cls(I.chev, '', 'transform:rotate(90deg)');
 $('#trust').innerHTML = [[I.lock,'بخصوصية تامة'],[I.phoneOff,'بدون رقم هاتف'],[I.truck,'توصيل لكل المحافظات'],[I.cash,'الدفع عند الاستلام']].map(([i,t])=>`<span>${i}${t}</span>`).join('');
+const SHAPES = [['v','طولي'],['r','دائري']];
+const shapeIc = k => k === 'v' ? '<svg viewBox="0 0 14 16" aria-hidden="true"><rect x="3" y="1" width="8" height="14" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>' : '<svg viewBox="0 0 14 16" aria-hidden="true"><circle cx="7" cy="8" r="5.6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>';
+const shapeName = () => S.shape === 'r' ? 'دائري' : 'طولي';
+// one place decides which sticker art is shown: vertical scan card (ev) or round (er), sized to match
+const stk = (variant, code, u) => stickerHTML(S.shape === 'r' ? 'er' : 'ev', variant, code, u * (S.shape === 'r' ? 1.22 : 1.12));
+try { const q = new URLSearchParams(location.search).get('shape'); if (q === 'round' || q === 'r') S.shape = 'r'; } catch(e){}
+function setShape(k){ if (!k || k === S.shape) return; S.shape = k; renderSticker(true); if (typeof renderP1 === 'function' && $('#p1').innerHTML) { renderP1(); } if (S.step === 2 && typeof renderP2 === 'function') renderP2(); }
 function renderSticker(swap){
   const u = Math.min(2.9, Math.max(2.0, (innerWidth - 150) / 108));
-  $('#stkCard').innerHTML = stickerHTML('sv', S.variant, 'EB4471', u) + '<span class="shine" aria-hidden="true"></span>';
+  $('#stkCard').innerHTML = stk(S.variant, 'EB4471', Math.min(u, (innerWidth - 40) / 85)) + '<span class="shine" aria-hidden="true"></span>';
+  $('#stkCard').classList.toggle('round', S.shape === 'r');
   if (swap){ $('#stkCard').classList.remove('swap'); void $('#stkCard').offsetWidth; $('#stkCard').classList.add('swap'); }
-  $('#switch').innerHTML = DESIGNS.map(([k,t]) => `<button type="button" aria-pressed="${S.variant===k}" data-v="${k}"><i style="background:${k==='yellow'?'#FFC816':'#111'}"></i>${t}</button>`).join('');
+  $('#switch').innerHTML = `<div class="seg" role="group" aria-label="شكل الملصق">${SHAPES.map(([k,t]) => `<button type="button" aria-pressed="${S.shape===k}" data-shape="${k}">${shapeIc(k)}${t}</button>`).join('')}</div>
+    <div class="seg" role="group" aria-label="لون الملصق">${DESIGNS.map(([k,t]) => `<button type="button" aria-pressed="${S.variant===k}" data-v="${k}"><i style="background:${k==='yellow'?'#FFC816':'#111'}"></i>${t}</button>`).join('')}</div>`;
 }
-$('#switch').addEventListener('click', e => { const b = e.target.closest('[data-v]'); if (!b || b.dataset.v === S.variant) return; S.variant = b.dataset.v; renderSticker(true); });
+$('#switch').addEventListener('click', e => {
+  const sh = e.target.closest('[data-shape]'); if (sh){ setShape(sh.dataset.shape); return; }
+  const b = e.target.closest('[data-v]'); if (!b || b.dataset.v === S.variant) return; S.variant = b.dataset.v; renderSticker(true); });
 function renderSound(){ $('#sound').innerHTML = S.muted ? I.bellOff : I.bell; $('#sound').setAttribute('aria-label', S.muted ? 'شغّل صوت التنبيه' : 'اكتم صوت التنبيه'); $('#sound').setAttribute('aria-pressed', String(!S.muted)); }
 $('#sound').onclick = () => { S.muted = !S.muted; try { localStorage.setItem('eb_order_muted', S.muted ? '1' : '0'); } catch(e){} renderSound(); if (!S.muted) chime(); };
 let AC = null;
@@ -848,7 +942,7 @@ function planCard(k){
 function designCard([k,t]){
   const n = S.qty[k], tot = count();
   return `<div class="design ${n?'sel':''}" data-d="${k}"><span class="badge" id="bd-${k}">${n}×</span>
-    <span class="pv">${stickerHTML('sv', k, 'EB4471', 1.6)}</span><b>${t}</b>
+    <span class="pv">${stk(k, 'EB4471', 1.1)}</span><b>${t}</b>
     <div class="qty" role="group" aria-label="عدد الملصقات ${t}">
       <button type="button" data-q="-1" data-k="${k}" aria-label="نقّص ${t}" ${n===0 || tot<=1 ? 'disabled' : ''}>${I.minus}</button>
       <output aria-live="polite">${n}</output>
@@ -861,6 +955,7 @@ function renderP1(){
     <div class="plans" role="radiogroup" aria-label="الباقات">${planCard('basic')}${planCard('plus')}</div>
     <button type="button" class="how-link" id="howBtn"><span class="pl">${I.play}</span>شوف شلون يشتغل، خطوة بخطوة</button>
     <div class="sec-h"><h2 class="h" style="font-size:20px">اختار ملصقاتك</h2><span class="chip" id="qtyChip">${qtyLabel(n || 1)}</span></div>
+    <div class="shape-row"><span>شكل الملصق</span><div class="shape-seg" role="group" aria-label="شكل الملصق">${SHAPES.map(([k,t]) => `<button type="button" aria-pressed="${S.shape===k}" data-shape="${k}">${shapeIc(k)}${t}</button>`).join('')}</div></div>
     <div class="designs">${DESIGNS.map(designCard).join('')}</div>
     <p class="incl">${P ? `باقتك تشمل ${qtyLabel(P.incl)}${n > P.incl ? ` · ${n - P.incl} إضافي × ${IQD(EXTRA)}` : ''}. التوصيل مجاني من ملصقين.` : 'كل ملصق إضافي بـ 3,000 د.ع. التوصيل مجاني من ملصقين.'}</p>
     <div class="assure">
@@ -873,6 +968,7 @@ $('#p1').addEventListener('click', e => {
   const pl = e.target.closest('[data-plan]');
   if (pl && !e.target.closest('details')){ e.preventDefault(); selectPlan(pl.dataset.plan); return; }
   const q = e.target.closest('[data-q]'); if (q && !q.disabled){ changeQty(q.dataset.k, +q.dataset.q); return; }
+  const sh = e.target.closest('[data-shape]'); if (sh){ const y = sh.getBoundingClientRect().top; setShape(sh.dataset.shape); const nb = $(`#p1 [data-shape="${sh.dataset.shape}"]`); if (nb){ scrollBy(0, nb.getBoundingClientRect().top - y); nb.focus({preventScroll:true}); } return; }
   if (e.target.closest('#howBtn')) openSheet();
   if (e.target.closest('#helpBtn')) toast('رقم دعم واتساب يتحدد قبل الإطلاق — هذا نموذج تجريبي');
 });
@@ -928,7 +1024,7 @@ function renderP2(){
       : `<button type="button" class="code-t" id="codeOpen">${I.star}عندك كود خصم أو إحالة؟</button>`}
     <div class="pay" role="radio" aria-checked="true" tabindex="0"><span class="ck">${I.check}</span><span class="pi">${I.cash}</span><span><b>الدفع عند الاستلام</b><small>تدفع للمندوب نقداً لما يوصلك الطلب.</small></span></div>
     <div class="summary">
-      <div class="it">${stickerHTML('sv', S.qty.black > S.qty.yellow ? 'black' : 'yellow', 'EB4471', .62)}<span class="lt"><b>باقة ${t.P.name}${t.P.em?' '+t.P.em:''} · سنة</b><small>${qtyLabel(n)}${S.qty.yellow&&S.qty.black?` (${S.qty.yellow} أصفر · ${S.qty.black} أسود)`:''}</small></span><b class="num">${IQD(t.P.price)}</b></div>
+      <div class="it">${stk(S.qty.black > S.qty.yellow ? 'black' : 'yellow', 'EB4471', .62)}<span class="lt"><b>باقة ${t.P.name}${t.P.em?' '+t.P.em:''} · سنة</b><small>${qtyLabel(n)} · ${shapeName()}${S.qty.yellow&&S.qty.black?` (${S.qty.yellow} أصفر · ${S.qty.black} أسود)`:''}</small></span><b class="num">${IQD(t.P.price)}</b></div>
       ${t.extra ? `<div class="ln"><span>ملصقات إضافية × ${n - t.P.incl}</span><b>${IQD(t.extra)}</b></div>` : ''}
       <div class="ln"><span>التوصيل</span><b>${t.deliv === null ? '<span style="color:var(--ink3);font-weight:600">اختار المحافظة</span>' : t.deliv === 0 ? `<span class="free">مجاناً</span>` : IQD(t.deliv)}</b></div>
       ${t.disc ? `<div class="ln"><span>خصم · ${esc(S.code.toUpperCase())}</span><b class="free">− ${IQD(t.disc)}</b></div>` : ''}
@@ -938,7 +1034,7 @@ function renderP2(){
 }
 function upsellHTML(){
   const won = count() >= 2;
-  return `<div class="upsell ${won && S.upAdded ? 'won' : ''}"><span class="pics">${stickerHTML('sv','yellow','EB4471',.62)}${stickerHTML('sv','black','EB2208',.62)}<span class="x2">×2</span></span>
+  return `<div class="upsell ${won && S.upAdded ? 'won' : ''}"><span class="pics">${stk('yellow','EB4471',.62)}${stk('black','EB2208',.62)}<span class="x2">×2</span></span>
     <span>${won ? `<small>توصيل مجاني</small><h4>طلبك صار بتوصيل مجاني 🎉</h4><span class="dl">التوصيل <s>${IQD(DELIVERY)}</s> <b>مجاناً</b></span>`
       : `<small>توصيل مجاني</small><h4>زود ملصق بـ ${IQD(EXTRA)} ووفّر التوصيل</h4><span class="dl">التوصيل ${IQD(DELIVERY)}</span><p>خلّيه لسيارة ثانية، أو انطيه لأحد يهمك.</p>`}</span>
     <button type="button" class="ub ${won?'done':''}" id="upBtn">${won ? I.check + ' تمت الإضافة' : I.plus + ' زود ملصق'}</button></div>`;
@@ -999,7 +1095,7 @@ function submit(){
       <h2 class="h">تم طلبك يا ${esc(first)}!</h2>
       <p class="lead">راح نتصل بيك قبل ما يطلع المندوب. ملصقك يوصلك خلال 2–3 أيام إلى ${esc(S.gov)} — ${esc(S.area)}.</p>
       <div class="receipt">
-        <div class="rh">${stickerHTML('sv', S.qty.black > S.qty.yellow ? 'black' : 'yellow', 'EB4471', .7)}<span><small>رقم الطلب</small><b class="num ltr">${S.done.id}</b></span></div>
+        <div class="rh">${stk(S.qty.black > S.qty.yellow ? 'black' : 'yellow', 'EB4471', .7)}<span><small>رقم الطلب</small><b class="num ltr">${S.done.id}</b></span></div>
         <div class="ln"><span>باقة ${t.P.name}${t.P.em?' '+t.P.em:''} · سنة</span><b>${IQD(t.P.price)}</b></div>
         <div class="ln"><span>${qtyLabel(t.n)}</span><b>${t.extra ? IQD(t.extra) : 'مشمولة'}</b></div>
         <div class="ln"><span>التوصيل</span><b>${t.deliv ? IQD(t.deliv) : 'مجاناً'}</b></div>
