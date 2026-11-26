@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>إبلاغ — لا تخلّي أحد يدوّر عليك بالشارع</title>
+<meta name="description" content="ملصق إبلاغ على زجاج سيارتك: أي أحد يصوّره ويبلّغك بثواني بدون ما يعرف رقمك، وانت تردّ عليه بنقرة ويشوف وقت وصولك. توصيل لكل المحافظات والدفع عند الاستلام.">
+<meta name="theme-color" content="#121110">
+<style>
+/*@FONTS@*/
+
+:root{
+  --fh:'Expo Arabic';--fb:'Thmanyah Sans';
+  --hx-bg:#fbfaf8;--hx-surface:#fff;--hx-soft:#f3f1ee;--hx-ink:#121110;--hx-ink-2:#5f5955;--hx-ink-3:#736c66;--hx-line:#12111014;
+  --hx-accent:#FFC816;--hx-accent-ink:#8a5f00;--hx-accent-soft:#fff4cc;--hx-dark:#0c0b0a;--hx-radius:28px;
+  --hx-red:#e5484d;--hx-green:#1f9d47;
+  --hx-ease:cubic-bezier(.22,1,.36,1);--hx-gutter:max(1rem,calc((100% - 1120px) / 2));
+  --cta:linear-gradient(135deg,#FFDD55 0%,#FFC816 45%,#F2AA00 100%);
+  --cta-hover:linear-gradient(135deg,#FFE26A 0%,#FFCE2E 45%,#F5B000 100%);
+  --kerb:repeating-linear-gradient(90deg,#FFC816 0 34px,#121110 34px 68px);
+  --latin:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent;scroll-behavior:smooth;line-height:1.5}
+html[lang=ar] body{line-height:1.7;text-rendering:optimizeLegibility}
+body{margin:0;min-height:100vh;font-family:var(--fb),system-ui,sans-serif;background:var(--hx-bg);color:var(--hx-ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,p,ul,ol,figure,dl,dd{margin:0;padding:0}
+ul,ol{list-style:none}
+:where(html[lang=ar]) :where(p,label,a,li,input,textarea,select,button){line-height:1.7}
+:where(html[lang=ar]) :where(h1,h2,h3,h4,h5,h6){line-height:1.4}
+html[lang=en] body{font-family:var(--latin)}
+.site-header :where(button,a){line-height:normal}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+svg{flex:none}
+.ic{width:1.25rem;height:1.25rem}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid rgba(255,200,22,.7);outline-offset:3px}
+/*@STICKER_CSS@*/
+
+.shell{width:min(1120px,calc(100% - 2rem));margin-inline:auto}
+.hx-latin{font-family:var(--latin);unicode-bidi:isolate}
+.num{font-family:var(--latin);font-variant-numeric:tabular-nums;unicode-bidi:isolate;direction:ltr;display:inline-block}
+
+/* ---------- type ---------- */
+.hx-display{display:flex;flex-direction:column;text-wrap:balance;font-family:var(--fh),var(--fb),sans-serif;font-size:clamp(2.15rem,9.6vw,5rem);font-weight:800;line-height:1.3;letter-spacing:-.005em}
+.hx-display em{font-style:normal;color:var(--hx-accent)}
+.hx-title{text-wrap:balance;font-family:var(--fh),var(--fb),sans-serif;font-size:clamp(2rem,8vw,3.6rem);font-weight:800;line-height:1.35}
+.hx-title__soft{color:var(--hx-ink-3)}
+.hx-title--xl{font-size:clamp(2.3rem,10vw,4.5rem)}
+.hx-eyebrow{display:inline-flex;align-items:center;gap:.55rem;color:var(--hx-accent-ink);margin-bottom:.9rem;font-size:.9375rem;font-weight:700}
+.hx-eyebrow::before{content:"";width:1.6rem;height:.5rem;border-radius:2px;background:var(--kerb);background-size:16px 100%;background-image:repeating-linear-gradient(90deg,#FFC816 0 8px,#121110 8px 16px)}
+.hx-lead{max-width:34rem;color:var(--hx-ink-2);text-wrap:pretty;font-size:clamp(1.0625rem,3.9vw,1.25rem);line-height:1.7}
+.hx-sub{max-width:36rem;margin-top:1rem;color:var(--hx-ink-2);font-size:1.0625rem;text-wrap:pretty}
+html[lang=en] .hx-display,html[lang=en] .hx-title{font-family:var(--latin);letter-spacing:-.04em;line-height:1.08}
+
+/* plate tag (Iraqi plate: white plate, black frame, yellow tab) */
+.plate{max-width:100%;display:inline-flex;align-items:stretch;flex-direction:row;border:2px solid #121110;border-radius:.55rem;overflow:hidden;background:#fff;color:#121110;font-weight:800;line-height:1;box-shadow:0 1px 0 rgba(255,255,255,.4) inset}
+.plate>span{display:flex;align-items:center;padding:.38rem .7rem .42rem;font-size:.875rem;white-space:nowrap}
+.plate>i{font-style:normal;display:flex;align-items:center;justify-content:center;background:var(--hx-accent);padding:.38rem .6rem .42rem;border-inline-start:2px solid #121110;font-size:.8125rem;white-space:nowrap}
+.plate>i.num{display:flex;letter-spacing:.04em}
+.plate--dark{box-shadow:0 0 0 1px rgba(255,255,255,.22),0 10px 24px -12px rgba(0,0,0,.8)}
+.plate--lg>span{font-size:1.15rem;padding:.45rem .85rem .5rem}
+.plate--lg>i{font-size:.95rem;padding:.45rem .7rem .5rem}
+.kerb{height:10px;background:var(--kerb)}
+
+/* ---------- buttons ---------- */
+.hx-btn{white-space:nowrap;transition:transform .25s var(--hx-ease),background-color .2s ease,box-shadow .25s ease;border-radius:999px;justify-content:center;align-items:center;gap:.6rem;font-weight:700;display:inline-flex}
+.hx-btn:active{transform:scale(.97)}
+.hx-btn:focus-visible{outline:3px solid rgba(245,170,0,.55);outline-offset:3px}
+.hx-btn .ic{width:1.15rem;height:1.15rem}
+.hx-btn [data-ic]{display:inline-flex}
+.hx-btn--lg{min-height:3.5rem;padding:0 1.75rem;font-size:1.0625rem}
+.hx-btn--sm{min-height:2.75rem;padding:0 1.1rem;font-size:.9375rem}
+.hx-btn--block{width:100%}
+.hx-btn--primary{background:var(--cta);color:#111;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 -1px 0 rgba(140,90,0,.25),0 10px 28px -8px rgba(245,170,0,.6)}
+.hx-btn--primary:hover{background:var(--cta-hover)}
+.hx-btn--ink{background:var(--hx-ink);color:#fff}
+.hx-btn--ink:hover{background:#2a2826}
+.hx-btn--ghost{color:#fff;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.04)}
+.hx-btn--ghost:hover{background:rgba(255,255,255,.1)}
+.hx-section{padding-block:clamp(4.5rem,13vw,8rem)}
+.hx-section--soft{background:var(--hx-soft)}
+.hx-head{max-width:46rem;margin-bottom:clamp(2.25rem,6vw,3.5rem)}
+
+.rv-ready{opacity:0;transform:translateY(2rem);transition:opacity .68s,transform .68s cubic-bezier(.22,1,.36,1)}
+.rv-ready.is-visible{opacity:1;transform:none}
+
+/* ---------- header + drawer ---------- */
+.hx-top{isolation:isolate;position:relative;overflow:hidden;background:radial-gradient(90% 55% at 50% -10%,rgba(255,226,140,.13),transparent 65%),radial-gradient(70% 45% at 85% 70%,rgba(255,200,22,.15),transparent 70%),radial-gradient(60% 40% at 10% 90%,rgba(160,120,30,.14),transparent 70%),linear-gradient(#1c1b18 0%,#141311 55%,#0e0d0c 100%)}
+.hx-top::after{content:"";z-index:-1;pointer-events:none;position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:22px 22px;-webkit-mask-image:radial-gradient(70% 60% at 50% 30%,#000,transparent 75%);mask-image:radial-gradient(70% 60% at 50% 30%,#000,transparent 75%)}
+.site-header{padding-top:.75rem;position:relative;z-index:10}
+.nav-pill{display:flex;align-items:center;justify-content:space-between;gap:.5rem;padding:.5rem;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.06);overflow:hidden}
+.brand{display:inline-flex;align-items:center;gap:.625rem;border-radius:.5rem}
+.brand-mk{width:2.5rem;height:2.5rem;border-radius:50%;background:var(--cta);display:grid;place-items:center;color:#111;box-shadow:inset 0 1px 0 rgba(255,255,255,.5)}
+.brand-mk svg.mk{width:1.7rem;height:auto}
+.brand-name{font-size:1.35rem;font-weight:700;line-height:1;color:#fff;letter-spacing:-.025em}
+.nav-actions{display:flex;align-items:center;gap:.375rem}
+.menu-btn{width:2.25rem;height:2.25rem;border-radius:50%;display:grid;place-items:center;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);transition:all .15s}
+.menu-btn:hover{background:rgba(255,255,255,.14)}
+.menu-btn .ic{width:1rem;height:1rem}
+.login-btn{display:none;height:2.25rem;padding:0 1rem;border-radius:999px;align-items:center;justify-content:center;gap:.5rem;font-size:.8125rem;font-weight:500;color:#fff;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);transition:all .15s}
+.login-btn:hover{background:rgba(255,255,255,.1)}
+.drawer{position:fixed;inset:0;z-index:50;pointer-events:none;opacity:0;transition:opacity .3s}
+.drawer.open{pointer-events:auto;opacity:1}
+.drawer-bg{position:absolute;inset:0;background:rgba(26,26,26,.42);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.drawer aside{position:absolute;inset-block:0;inset-inline-start:0;width:min(90vw,23rem);display:flex;flex-direction:column;padding-top:max(.75rem,env(safe-area-inset-top,0px));padding-bottom:max(1rem,env(safe-area-inset-bottom,0px));background:#fff;border-inline-end:1px solid #eee7e1;box-shadow:0 24px 80px rgba(26,26,26,.18);transform:translateX(100%);transition:transform .3s ease-out}
+.drawer.open aside{transform:none}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:1rem 1.25rem;border-bottom:1px solid #eee7e1}
+.drawer-head p{font-size:1.125rem;font-weight:700}
+.drawer-x{width:2.5rem;height:2.5rem;border-radius:50%;display:grid;place-items:center;background:#fff;border:1px solid #eee7e1}
+.drawer-x:hover{background:var(--hx-accent-soft)}
+.drawer nav{flex:1;overflow-y:auto;padding:1.25rem .75rem}
+.drawer nav ul{display:grid;gap:.375rem}
+.drawer nav a{display:flex;align-items:center;gap:.75rem;padding:.75rem;border-radius:1rem;transition:background-color .15s}
+.drawer nav a:hover{background:#faf7f2}
+.drawer nav .di{width:2.5rem;height:2.5rem;border-radius:.75rem;display:grid;place-items:center;background:var(--hx-accent-soft);color:var(--hx-accent-ink)}
+.drawer nav span.t{flex:1;font-size:1rem;line-height:1.5;font-weight:600}
+.drawer nav .ch{width:1rem;height:1rem;opacity:.4}
+.drawer-foot{padding:1rem 1.25rem;border-top:1px solid #eee7e1}
+.drawer-foot a{display:flex;align-items:center;justify-content:center;gap:.5rem;height:3rem;line-height:normal;padding:0 1.5rem;border-radius:1rem;background:var(--cta);color:#111;font-weight:600;font-size:1rem;box-shadow:0 10px 30px rgba(245,170,0,.18)}
+.drawer-foot a .ic{transform:scaleX(-1)}
+
+/* ---------- hero ---------- */
+.hx-hero{color:#f5f3f0;padding-top:clamp(1.75rem,7vw,4rem);padding-bottom:calc(clamp(2rem,7vw,4.5rem) + 10px);position:relative}
+.hx-hero__grid{display:grid;align-items:center;gap:clamp(1.5rem,6vw,3.5rem)}
+.hx-hero__copy{text-align:center;display:flex;flex-direction:column;align-items:center;gap:1.25rem}
+.hx-hero__copy .hx-lead{margin-inline:auto;color:rgba(255,255,255,.66);text-wrap:balance}
+.hx-top .hx-display{color:#fff}
+.hx-hero__actions{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.75rem;margin-top:.35rem}
+.hx-hero__actions .hx-btn--primary{min-width:14rem}
+.hx-hero__price{color:rgba(255,255,255,.6);font-size:.8125rem;width:100%;text-align:center}
+.hx-hero__price .hx-latin{color:#fff;font-weight:700}
+.hx-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:min(100%,27rem);margin-top:.4rem;border-radius:1.25rem;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1)}
+.hx-stats>div{display:flex;flex-direction:column;align-items:center;gap:.1rem;padding:.8rem .4rem .75rem;min-width:0}
+.hx-stats>div+div{border-inline-start:1px solid rgba(255,255,255,.1)}
+.hx-stats dd{font-family:var(--latin);font-size:clamp(1.25rem,5.4vw,1.6rem);font-weight:700;color:#fff;line-height:1.2;font-variant-numeric:tabular-nums;transition:color .4s}
+.hx-stats dd.is-bump{color:var(--hx-accent)}
+.hx-stats dd small{font-size:.6em;font-weight:600;color:rgba(255,255,255,.62);margin-inline-start:.15em}
+.hx-stats dt{order:2;font-size:.75rem;color:rgba(255,255,255,.64);display:inline-flex;align-items:center;gap:.35rem;text-align:center;line-height:1.4}
+.live{width:.45rem;height:.45rem;border-radius:50%;background:#3ddc6f;box-shadow:0 0 0 0 rgba(61,220,111,.6);animation:live 2s ease-out infinite;flex:none}
+@keyframes live{0%{box-shadow:0 0 0 0 rgba(61,220,111,.55)}100%{box-shadow:0 0 0 8px rgba(61,220,111,0)}}
+.hx-hero__kerb{position:absolute;inset-inline:0;bottom:0;height:10px;background:var(--kerb);opacity:.92;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.hx-hero__kerb::before{content:"";position:absolute;inset:-1px 0 auto;height:1px;background:rgba(255,255,255,.18)}
+
+/* hero demo */
+.hx-hero__visual{width:100%}
+.hxd{display:flex;flex-direction:column;align-items:center}
+.hxd__stage{--tx:0deg;--ty:0deg;display:grid;justify-items:center;width:min(100%,22rem);padding-top:2.25rem;padding-bottom:1rem;position:relative}
+.hxd__rings{aspect-ratio:1;pointer-events:none;width:150%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+.hxd__rings i{position:absolute;inset:0;border-radius:50%;background:radial-gradient(closest-side,rgba(255,200,22,.14),transparent);border:1px solid rgba(255,255,255,.06)}
+.hxd__rings i:nth-child(2){background:none;border-color:rgba(255,255,255,.08);inset:16%}
+.hxd__rings i:nth-child(3){background:none;border-color:rgba(255,200,22,.22);inset:32%}
+.hxd__sticker{cursor:pointer;perspective:900px;transform-origin:50% 100%;width:min(58vw,14rem);position:relative;transition:transform .9s cubic-bezier(.22,1,.36,1)}
+.hxd__stage.is-alert .hxd__sticker{transform:translateY(.75rem) scale(.8)}
+.hxd__sticker:focus-visible{outline:2px solid rgba(255,200,22,.8);outline-offset:6px;border-radius:1.25rem}
+.hxd__float{display:block;position:relative;transform:rotateX(var(--tx)) rotateY(var(--ty));transition:transform .4s var(--hx-ease);filter:drop-shadow(0 40px 50px rgba(0,0,0,.6)) drop-shadow(0 0 60px rgba(255,200,22,.14));animation:hx-float 6s ease-in-out infinite}
+.hxd__art{display:block}
+.hxd__ripple{aspect-ratio:1;border:2px solid var(--hx-accent);pointer-events:none;border-radius:50%;width:80%;margin:-40% 0 0 -40%;animation:hxd-ripple .9s ease-out both;position:absolute;top:50%;left:50%}
+.hxd__hint{display:inline-flex;align-items:center;gap:.4rem;margin-top:.4rem;color:rgba(255,255,255,.62);font-size:.8125rem}
+.hxd__hint .ic{width:.95rem;height:.95rem}
+.hxd__slot{z-index:3;pointer-events:none;display:grid;gap:.55rem;width:min(21rem,96%);position:absolute;top:0;left:50%;transform:translateX(-50%)}
+.hxc{display:flex;align-items:center;gap:.7rem;text-align:start;border-radius:1.2rem;padding:.7rem .8rem;animation:hxd-drop .42s cubic-bezier(.2,.8,.2,1) backwards;transition:opacity .35s,transform .35s,background-color .35s}
+.hxc--owner{color:#292524;background:#fff;box-shadow:0 22px 44px -18px rgba(0,0,0,.65);flex-wrap:wrap}
+.hxc--owner.is-done{transform:scale(.96);background:#f7f5f2}
+.hxc__avatar{flex:none;position:relative;width:2.3rem;height:2.3rem;border-radius:.65rem;background:var(--cta);display:grid;place-items:center;color:#111}
+.hxc__avatar svg.mk{width:1.65rem;height:auto}
+.hxc__body{flex:1;min-width:0;display:grid;gap:1px}
+.hxc__head{display:flex;justify-content:space-between;gap:.5rem;color:#6f6862;font-size:.6875rem;line-height:1.5}
+.hxc__head strong{color:#1c1917;font-size:.75rem}
+.hxc__text{color:#292524;font-size:.875rem;line-height:1.45}
+.hxc__acts{flex-basis:100%;display:grid;grid-template-columns:1fr 1fr;gap:.4rem}
+.hxc__acts span{position:relative;display:flex;align-items:center;justify-content:center;gap:.3rem;border-radius:.7rem;padding:.4rem .3rem;font-size:.75rem;font-weight:700;background:#f1eeea;color:#3b3632;line-height:1.4;transition:transform .2s,background-color .25s}
+.hxc__acts span:first-child{background:#121110;color:#FFC816}
+.hxc__acts span.is-tap{transform:scale(.94);background:#2b2925}
+.hxc__acts span.is-tap::after{content:"";position:absolute;inset:-3px;border-radius:.85rem;border:2px solid #FFC816;animation:hxd-ping .7s ease-out both}
+.hxc__acts .ic{width:.85rem;height:.85rem}
+.hxc--reply{color:#fff;background:linear-gradient(160deg,#232120,#151413);border:1px solid rgba(255,200,22,.35);box-shadow:0 22px 44px -18px rgba(0,0,0,.85),0 0 40px -12px rgba(255,200,22,.45)}
+.hxc--reply .hxc__head{color:rgba(255,255,255,.66)}
+.hxc--reply .hxc__head strong{color:#FFC816}
+.hxc__big{font-size:1.125rem;font-weight:800;line-height:1.35;color:#fff}
+.hxc__eta{font-size:.75rem;color:rgba(255,255,255,.7)}
+.ring{position:relative;flex:none;width:3.3rem;height:3.3rem;display:grid;place-items:center}
+.ring svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:3.2}
+.ring .tr{stroke:rgba(255,255,255,.14)}
+.ring .fg{stroke:#FFC816;stroke-linecap:round;transition:stroke-dashoffset 1s linear}
+.ring b{font-family:var(--latin);font-size:.72rem;font-weight:700;font-variant-numeric:tabular-nums;direction:ltr}
+.ring--light .tr{stroke:rgba(18,17,16,.1)}
+.ring--light .fg{stroke:#e0a800}
+.hxd__slot.is-leaving>*{animation:hxd-lift .34s cubic-bezier(.4,0,.2,1) both}
+.hxd__slot.is-leaving>:nth-child(2){animation-delay:40ms}
+@keyframes hxd-drop{0%{opacity:0;transform:translateY(-14px) scale(.96)}100%{opacity:1;transform:none}}
+@keyframes hxd-lift{100%{opacity:0;transform:translateY(-12px) scale(.96)}}
+@keyframes hxd-ping{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(1.25)}}
+@keyframes hxd-ripple{0%{opacity:.9;transform:scale(.5)}100%{opacity:0;transform:scale(2.2)}}
+@keyframes hx-float{0%,100%{translate:0 0}50%{translate:0 -10px}}
+
+/* ---------- 4-step path ---------- */
+.hx-path{display:grid;gap:0;counter-reset:st}
+.hx-pstep{display:grid;grid-template-columns:3rem minmax(0,1fr);column-gap:1rem;position:relative;padding-bottom:2.25rem}
+.hx-pstep:last-child{padding-bottom:0}
+.hx-pstep__rail{position:relative;display:flex;flex-direction:column;align-items:center}
+.hx-pstep__no{position:relative;z-index:1;width:3rem;height:3rem;border-radius:.9rem;display:grid;place-items:center;background:#fff;border:2px solid var(--hx-ink);font-family:var(--latin);font-weight:800;font-size:1.05rem;box-shadow:0 8px 18px -10px rgba(0,0,0,.35)}
+.hx-pstep:last-child .hx-pstep__no{background:var(--hx-accent)}
+.hx-pstep__line{position:absolute;top:3rem;bottom:-2.25rem;width:3px;border-radius:3px;background:#e7e2dc;overflow:hidden}
+.hx-pstep:last-child .hx-pstep__line{display:none}
+.hx-pstep__line::after{content:"";position:absolute;inset:0;background:linear-gradient(#FFC816,#e0a800);transform:scaleY(0);transform-origin:50% 0;transition:transform 1s var(--hx-ease) .35s}
+.hx-pstep.is-visible .hx-pstep__line::after{transform:none}
+.hx-pstep__tag{display:inline-flex;align-items:center;gap:.4rem;color:var(--hx-accent-ink);font-size:.8125rem;font-weight:700;margin-top:.15rem}
+.hx-pstep h3{font-family:var(--fh),var(--fb),sans-serif;font-size:1.375rem;font-weight:800;line-height:1.4;margin-top:.1rem}
+.hx-pstep p{color:var(--hx-ink-2);margin-top:.25rem;font-size:.9375rem;line-height:1.6;max-width:28rem}
+.hx-pstep__vis{position:relative;margin-top:.9rem;height:9rem;border-radius:1.4rem;background:var(--hx-soft);overflow:hidden;display:grid;place-items:center;max-width:24rem}
+/* v1 viewfinder */
+.v-cam{position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(70% 60% at 50% 40%,rgba(255,255,255,.1),transparent 70%),linear-gradient(#2a2622,#121010)}
+.v-cam__t{position:relative;transform:rotate(-2deg)}
+.v-cam__t .stk{box-shadow:0 14px 24px rgba(0,0,0,.45)}
+.v-cam__c{position:absolute;inset:-9px;animation:hx-lock 2.8s var(--hx-ease) infinite}
+.v-cam__c i{position:absolute;width:14px;height:14px;border:3px solid #FFC816}
+.v-cam__c i:nth-child(1){top:0;left:0;border-right:0;border-bottom:0;border-top-left-radius:6px}
+.v-cam__c i:nth-child(2){top:0;right:0;border-left:0;border-bottom:0;border-top-right-radius:6px}
+.v-cam__c i:nth-child(3){bottom:0;left:0;border-right:0;border-top:0;border-bottom-left-radius:6px}
+.v-cam__c i:nth-child(4){bottom:0;right:0;border-left:0;border-top:0;border-bottom-right-radius:6px}
+.v-cam__url{position:absolute;bottom:.7rem;left:50%;transform:translateX(-50%);padding:.15rem .65rem;border-radius:999px;background:#FFC816;color:#111;font-family:var(--latin);font-size:.75rem;font-weight:700;line-height:1.5;animation:hx-pop 2.8s var(--hx-ease) infinite;white-space:nowrap}
+@keyframes hx-lock{0%,15%{opacity:0;transform:scale(1.15)}35%,85%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1)}}
+@keyframes hx-pop{0%,30%{opacity:0;transform:translate(-50%,6px) scale(.9)}45%,85%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,0)}}
+/* v2 options */
+.v-opts{display:grid;gap:.4rem;width:min(86%,17rem)}
+.v-opts>span{display:flex;align-items:center;gap:.55rem;padding:.45rem .7rem;border-radius:.8rem;background:#fff;border:1px solid #e6e0d8;font-size:.8125rem;font-weight:600;line-height:1.4}
+.v-opts>span .ic{width:1rem;height:1rem;color:#8f8676}
+.v-opts>span u{margin-inline-start:auto;width:1rem;height:1rem;border-radius:50%;border:2px solid #cdc6b8}
+.v-opts>span.on{border-color:#FFC816;background:#fffaea}
+.v-opts>span.on .ic{color:#8a5f00}
+.v-opts>span.on u{border:5px solid #121110;background:#FFC816}
+/* v3 notification */
+.v-lock{position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(90% 70% at 30% 10%,rgba(255,200,22,.35),transparent 60%),radial-gradient(80% 60% at 90% 100%,rgba(120,90,20,.55),transparent 60%),linear-gradient(#2b2720,#141210)}
+.v-note{width:min(86%,17rem);display:flex;gap:.6rem;align-items:center;padding:.6rem .7rem;border-radius:1rem;background:rgba(250,248,244,.92);box-shadow:0 14px 30px -12px rgba(0,0,0,.6);animation:v-note 3.2s var(--hx-ease) infinite}
+.v-note>i{flex:none;width:2rem;height:2rem;border-radius:.55rem;background:var(--cta);display:grid;place-items:center;color:#111}
+.v-note>i svg.mk{width:1.4rem;height:auto}
+.v-note b{display:block;font-size:.8125rem;line-height:1.4}
+.v-note small{display:block;font-size:.6875rem;color:#5f5955;line-height:1.4}
+.v-note time{margin-inline-start:auto;align-self:flex-start;font-size:.625rem;color:#5f5955}
+@keyframes v-note{0%,8%{opacity:0;transform:translateY(-12px) scale(.96)}18%,88%{opacity:1;transform:none}100%{opacity:0;transform:none}}
+/* v4 reply (reporter view) */
+.hx-pstep--reply .hx-pstep__vis{background:#121110}
+.v-reply{width:min(88%,18rem);display:flex;align-items:center;gap:.75rem;padding:.75rem .85rem;border-radius:1.1rem;background:linear-gradient(160deg,#252321,#181716);border:1px solid rgba(255,200,22,.35);color:#fff}
+.v-reply small{display:block;font-size:.6875rem;color:rgba(255,255,255,.66);line-height:1.4}
+.v-reply b{display:block;font-size:1.0625rem;line-height:1.4}
+.v-reply span.e{display:block;font-size:.6875rem;color:rgba(255,255,255,.7)}
+.v-reply .ring{margin-inline-start:auto}
+
+/* ---------- try it ---------- */
+.hx-try{display:grid;gap:1.75rem;align-items:start}
+.hx-chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.hx-chip{display:inline-flex;align-items:center;gap:.45rem;min-height:2.75rem;padding:.35rem 1rem;border-radius:999px;background:#fff;border:1px solid #e3ddd5;font-size:.9375rem;font-weight:600;line-height:1.4;transition:background-color .2s,border-color .2s,color .2s,transform .2s}
+.hx-chip .ic{width:1.05rem;height:1.05rem;color:#8a5f00}
+.hx-chip:hover{border-color:#d8c78f}
+.hx-chip[aria-pressed=true]{background:#121110;border-color:#121110;color:#fff}
+.hx-chip[aria-pressed=true] .ic{color:#FFC816}
+.hx-chip--urgent .ic{color:#c4282d}
+.hx-chip--urgent em{font-style:normal;font-size:.6875rem;font-weight:800;padding:.05rem .45rem;border-radius:999px;background:#fde4e4;color:#a81c21}
+.hx-chip--urgent[aria-pressed=true]{background:#b3171c;border-color:#b3171c}
+.hx-chip--urgent[aria-pressed=true] .ic{color:#fff}
+.hx-chip--urgent[aria-pressed=true] em{background:rgba(255,255,255,.2);color:#fff}
+.hx-try__note{margin-top:1.25rem;display:grid;gap:.6rem;color:var(--hx-ink-2);font-size:.9375rem}
+.hx-try__note li{display:flex;gap:.55rem;align-items:flex-start}
+.hx-try__note li>span:first-child{display:inline-flex;margin-top:.2rem;color:var(--hx-accent-ink)}
+.hx-try__note .ic{width:1.05rem;height:1.05rem}
+.hx-chat{border-radius:1.75rem;background:#fff;box-shadow:0 0 0 1px var(--hx-line),0 30px 60px -36px rgba(40,25,15,.35);overflow:hidden}
+.hx-chat__bar{display:flex;align-items:center;gap:.6rem;padding:.8rem 1rem;border-bottom:1px solid #efeae4}
+.hx-chat__bar .brand-mk{width:2rem;height:2rem}
+.hx-chat__bar .brand-mk svg.mk{width:1.35rem}
+.hx-chat__bar b{font-size:.9375rem}
+.hx-chat__bar small{display:block;font-size:.75rem;color:var(--hx-ink-2);line-height:1.3}
+.hx-chat__bar .plate{margin-inline-start:auto}
+.hx-chat__bar .plate>span{font-size:.75rem;padding:.25rem .5rem}
+.hx-chat__bar .plate>i{font-size:.6875rem;padding:.25rem .45rem}
+.hx-chat__bar>div{min-width:0}
+@media (max-width:459px){.hx-chat__bar .plate>span{display:none}.hx-chat__bar .plate>i{border:0}}
+.hx-chat__body{display:flex;flex-direction:column;gap:.7rem;padding:1.1rem 1rem 1.25rem;min-height:21rem}
+.hx-chat__sys{align-self:center;padding:.2rem .75rem;border-radius:999px;background:#f3f0ec;color:#5f5955;font-size:.75rem}
+.hx-urgent{display:flex;align-items:center;gap:.6rem;padding:.6rem .8rem;border-radius:1rem;background:#fdeceb;color:#8f1317;font-size:.8125rem;font-weight:700;line-height:1.45}
+.hx-urgent__dot{position:relative;flex:none;width:.7rem;height:.7rem;border-radius:50%;background:#d42a30}
+.hx-urgent__dot::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid #d42a30;animation:hxd-ping2 1.2s ease-out infinite}
+@keyframes hxd-ping2{0%{opacity:.9;transform:scale(.7)}100%{opacity:0;transform:scale(1.8)}}
+.hx-urgent b{margin-inline-start:auto;font-family:var(--latin);font-weight:800;white-space:nowrap}
+.bub{max-width:86%;padding:.65rem .9rem;border-radius:1.15rem;font-size:.9375rem;line-height:1.55;animation:hxd-drop .4s var(--hx-ease) backwards}
+.bub small{display:block;font-size:.6875rem;font-weight:700;margin-bottom:.1rem}
+.bub--me{align-self:flex-start;background:#f3f0ec;color:#1c1917;border-start-start-radius:.35rem}
+.bub--me small{color:#6a625c}
+.bub--them{align-self:flex-end;background:#121110;color:#fff;border-start-end-radius:.35rem;display:grid;gap:.55rem}
+.bub--them small{color:rgba(255,255,255,.66);margin:0}
+.bub--them>span{font-weight:700;font-size:1rem}
+.bub__eta{display:flex;align-items:center;gap:.6rem;padding:.45rem .55rem;border-radius:.9rem;background:rgba(255,200,22,.13)}
+.bub__eta .ring{width:2.6rem;height:2.6rem}
+.bub__eta .ring b{font-size:.64rem}
+.bub__eta span{font-size:.8125rem;color:rgba(255,255,255,.82);line-height:1.4}
+.hx-chat__seen{align-self:flex-start;display:inline-flex;align-items:center;gap:.3rem;color:#5f5955;font-size:.75rem;animation:hxd-drop .3s backwards}
+.hx-chat__seen .ic{width:.9rem;height:.9rem;color:var(--hx-green)}
+.typing{align-self:flex-end;display:inline-flex;gap:.25rem;padding:.7rem .9rem;border-radius:1rem;background:#121110}
+.typing i{width:.4rem;height:.4rem;border-radius:50%;background:#FFC816;animation:typ 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes typ{0%,100%{opacity:.3;transform:none}50%{opacity:1;transform:translateY(-3px)}}
+.hx-chat__foot{display:flex;align-items:center;justify-content:center;gap:.4rem;padding:.7rem 1rem;border-top:1px solid #efeae4;background:#fcfbf9;color:#5f5955;font-size:.8125rem}
+.hx-chat__foot .ic{width:1rem;height:1rem;color:var(--hx-green)}
+
+/* ---------- features ---------- */
+.hx-feats{display:grid;grid-template-columns:minmax(0,1fr);gap:.875rem}
+.hx-feat{position:relative;display:flex;flex-direction:column;gap:.35rem;padding:1.5rem;border-radius:1.6rem;background:var(--hx-surface);box-shadow:0 0 0 1px var(--hx-line);overflow:hidden;transition:transform .35s var(--hx-ease),box-shadow .35s var(--hx-ease)}
+.hx-feat__ic{width:2.75rem;height:2.75rem;border-radius:.85rem;display:grid;place-items:center;background:var(--hx-accent-soft);color:var(--hx-accent-ink);margin-bottom:.75rem}
+.hx-feat__ic .ic{width:22px;height:22px;stroke-width:1.8}
+.hx-feat h3{font-family:var(--fh),var(--fb),sans-serif;font-size:1.25rem;font-weight:800;line-height:1.4}
+.hx-feat p{color:var(--hx-ink-2);font-size:.9375rem;line-height:1.6}
+.hx-feat .plus{position:absolute;top:1.25rem;inset-inline-end:1.25rem}
+.hx-feat .plus>span{font-size:.75rem;padding:.25rem .5rem}.hx-feat .plus>i{font-size:.6875rem;padding:.25rem .45rem}
+.hx-feat__vis{margin-top:1.1rem}
+.fv-note{display:flex;align-items:center;gap:.75rem;padding:.85rem 1rem;border-radius:1.1rem;background:#fffaea;border:1.5px dashed #e5bf3c}
+.fv-note>span:first-child{flex:none;width:2.4rem;height:2.4rem;border-radius:50%;display:grid;place-items:center;background:#121110;color:#FFC816}
+.fv-note small{display:block;font-size:.75rem;color:#6b5a2e;line-height:1.4}
+.fv-note b{display:block;font-size:1.0625rem;line-height:1.45}
+.hx-feat--dark{background:radial-gradient(90% 80% at 100% 0,rgba(229,72,77,.28),transparent 60%),#151311;color:#fff;box-shadow:none}
+.hx-feat--dark p{color:rgba(255,255,255,.7)}
+.hx-feat--dark .hx-feat__ic{background:rgba(229,72,77,.18);color:#ff8f92}
+.fv-urg{display:flex;align-items:center;gap:.7rem;padding:.7rem .9rem;border-radius:1rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);font-size:.875rem;font-weight:700}
+.fv-urg .hx-urgent__dot{background:#ff5a5f}.fv-urg .hx-urgent__dot::after{border-color:#ff5a5f}
+.fv-urg b{margin-inline-start:auto;font-family:var(--latin);color:#ff9c9f}
+.fv-tl{display:flex;align-items:center;gap:.6rem}
+.fv-tl__s{display:flex;align-items:center;gap:.5rem;font-size:.8125rem;font-weight:700;line-height:1.35}
+.fv-tl__s>i{flex:none;width:2.2rem;height:2.2rem;border-radius:50%;display:grid;place-items:center;background:var(--hx-accent);color:#111}
+.fv-tl__s>i .ic{width:1.05rem;height:1.05rem}
+.fv-tl__s small{display:block;font-family:var(--latin);font-weight:600;color:var(--hx-ink-2);font-size:.75rem}
+.fv-tl__s--wa>i{background:#1f9d47;color:#fff}
+.fv-tl__w{flex:1;height:2px;min-width:1.5rem;background:repeating-linear-gradient(90deg,#d8d0c6 0 6px,transparent 6px 11px)}
+.fv-sw{display:flex;align-items:center;gap:.7rem;font-size:.875rem;font-weight:700}
+.fv-sw>span:first-child{position:relative;width:3rem;height:1.75rem;border-radius:999px;background:#d9d3cc}
+.fv-sw>span:first-child::after{content:"";position:absolute;top:.2rem;inset-inline-start:.2rem;width:1.35rem;height:1.35rem;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25)}
+.fv-sw em{font-style:normal;margin-inline-start:auto;padding:.2rem .6rem;border-radius:999px;background:#e7f6ec;color:#16703a;font-size:.75rem}
+.fv-quiet{display:flex;align-items:center;gap:.6rem;font-family:var(--latin);font-weight:700;font-size:1.05rem}
+.fv-quiet>span{padding:.35rem .7rem;border-radius:.7rem;background:var(--hx-soft)}
+.fv-quiet i{color:var(--hx-ink-3);font-style:normal}
+.fv-fam{display:flex;align-items:center}
+.fv-fam span{width:2.4rem;height:2.4rem;border-radius:50%;display:grid;place-items:center;background:#121110;color:#fff;border:3px solid #fff;margin-inline-end:-.6rem}
+.fv-fam span:first-child{background:var(--hx-accent);color:#111}
+.fv-fam span .ic{width:1rem;height:1rem}
+.fv-fam small{margin-inline-start:1.2rem;font-size:.8125rem;color:var(--hx-ink-2);font-weight:600}
+.hx-biz{display:flex;flex-direction:column;gap:1rem;padding:1.75rem 1.5rem;border-radius:1.6rem;background:#121110;color:#fff;position:relative;overflow:hidden}
+.hx-biz::after{content:"";position:absolute;inset-inline:0;bottom:0;height:8px;background:var(--kerb);opacity:.9}
+.hx-biz h3{font-family:var(--fh),var(--fb),sans-serif;font-size:1.375rem;font-weight:800;line-height:1.4}
+.hx-biz p{color:rgba(255,255,255,.7);font-size:.9375rem}
+.hx-biz .hx-btn{align-self:flex-start}
+@media (max-width:639px){.hx-feat{padding:1.25rem 1.25rem 1.4rem}.hx-feat__ic{width:2.4rem;height:2.4rem;margin-bottom:.35rem}.hx-feat__ic .ic{width:20px;height:20px}.hx-hero__actions .hx-btn--ghost{min-height:2.75rem;padding:0 1rem;font-size:.9375rem;border-color:transparent;background:none;text-decoration:underline;text-underline-offset:.35em;text-decoration-color:rgba(255,200,22,.6)}.hx-hero__actions{gap:.35rem}}
+
+/* ---------- privacy (dark) ---------- */
+.hx-dark{background:var(--hx-dark);color:#f5f3f0}
+.hx-dark .hx-title__soft{color:#948d87}
+.hx-dark .hx-eyebrow{color:#FFC816}
+.hx-dark .hx-eyebrow::before{background-image:repeating-linear-gradient(90deg,#FFC816 0 8px,#4a4642 8px 16px)}
+.hx-title__soft--b{display:block}
+.hx-dark .hx-sub{color:rgba(255,255,255,.66)}
+.hx-bridge{display:flex;align-items:center;justify-content:space-between;gap:.5rem;max-width:34rem;margin-bottom:2.25rem;--bt:3.6s}
+.hx-bridge__node{flex:none;display:flex;flex-direction:column;align-items:center;gap:.5rem;color:rgba(255,255,255,.66);font-size:.75rem}
+.hx-bridge__icon{width:3rem;height:3rem;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);color:#fff}
+.hx-bridge__node--core{color:#fff;font-weight:700}
+.hx-bridge__mark{position:relative;width:3.75rem;height:3.75rem;border-radius:50%;background:var(--cta);display:grid;place-items:center;color:#111;filter:drop-shadow(0 0 22px rgba(255,200,22,.5));animation:bcore var(--bt) ease-out infinite}
+.hx-bridge__mark svg.mk{width:2.5rem;height:auto}
+.hx-bridge__wire{flex:1;height:1px;margin-bottom:1.6rem;position:relative;background:rgba(255,255,255,.14)}
+.hx-bridge__wire::after{content:"";position:absolute;inset:0;background:linear-gradient(to left,rgba(255,200,22,.15),rgba(255,200,22,.75));transform-origin:100% 50%;transform:scaleX(0);animation:bw1 var(--bt) linear infinite}
+.hx-bridge__wire.w2::after{animation-name:bw2}
+.hx-bridge__wire i{position:absolute;top:-1px;right:0;width:28px;height:3px;border-radius:3px;background:linear-gradient(to left,#FFC816,rgba(255,200,22,0));opacity:0;animation:bd1 var(--bt) cubic-bezier(.45,0,.25,1) infinite}
+.hx-bridge__wire i::before{content:"";position:absolute;left:-2px;top:50%;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:#FFE27A;box-shadow:0 0 10px 2px rgba(255,200,22,.85)}
+.hx-bridge__wire.w2 i{animation-name:bd2}
+.hx-bridge__node:first-child .hx-bridge__icon{animation:bsrc var(--bt) ease-out infinite}
+.hx-bridge__node:last-child .hx-bridge__icon{animation:bdst var(--bt) ease-out infinite}
+.hx-bridge__mark::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #FFC816;opacity:0;animation:bring var(--bt) ease-out infinite}
+@keyframes bsrc{0%{background:rgba(255,255,255,.08);color:#fff;transform:scale(1)}5%{background:rgba(255,200,22,.22);color:#FFC816;transform:scale(1.07)}16%,100%{background:rgba(255,255,255,.08);color:#fff;transform:scale(1)}}
+@keyframes bd1{0%,6%{right:0;opacity:0}10%{opacity:1}38%{right:calc(100% - 28px);opacity:1}42%,100%{right:calc(100% - 28px);opacity:0}}
+@keyframes bw1{0%,6%{transform:scaleX(0);opacity:1}38%{transform:scaleX(1);opacity:1}62%,100%{transform:scaleX(1);opacity:0}}
+@keyframes bcore{0%,38%{transform:scale(1)}44%{transform:scale(1.1)}52%,100%{transform:scale(1)}}
+@keyframes bring{0%,39%{opacity:0;transform:scale(1)}41%{opacity:.9;transform:scale(1)}62%,100%{opacity:0;transform:scale(1.4)}}
+@keyframes bd2{0%,48%{right:0;opacity:0}52%{opacity:1}80%{right:calc(100% - 28px);opacity:1}84%,100%{right:calc(100% - 28px);opacity:0}}
+@keyframes bw2{0%,48%{transform:scaleX(0);opacity:0}49%{opacity:1}80%{transform:scaleX(1);opacity:1}96%,100%{transform:scaleX(1);opacity:0}}
+@keyframes bdst{0%,80%{background:rgba(255,255,255,.08);color:#fff;transform:scale(1)}85%{background:#FFC816;color:#111;transform:scale(1.1)}94%{background:#FFC816;color:#111;transform:scale(1)}100%{background:rgba(255,255,255,.08);color:#fff;transform:scale(1)}}
+html[dir="ltr"] .hx-bridge__wire{transform:scaleX(-1)}
+.hx-masked{position:relative;display:flex;flex-direction:column;gap:.6rem;padding:1.5rem;border-radius:var(--hx-radius);background:linear-gradient(rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1)}
+.hx-masked__label{color:rgba(255,255,255,.62);font-size:.8125rem}
+.hx-masked__digits{white-space:nowrap;font-size:clamp(1.5rem,min(9vw,(100vw - 5.25rem) / 8.6),3.75rem);font-weight:600;line-height:1.1;direction:ltr;text-align:left}
+.hx-masked__digits i{font-style:normal;color:var(--hx-accent);animation:hx-blink 2.6s ease-in-out infinite}
+.hx-masked__digits i:nth-of-type(2n){animation-delay:.3s}
+.hx-masked__digits i:nth-of-type(3n){animation-delay:.6s}
+.hx-masked__lock{position:absolute;top:1.5rem;inset-inline-end:1.5rem;color:rgba(255,255,255,.5);display:inline-flex}
+.hx-facts{display:grid;margin-top:1.5rem}
+.hx-facts li{display:grid;grid-template-columns:auto 1fr;grid-template-areas:"icon tag" "icon copy";column-gap:.9rem;padding:1.1rem 0;border-top:1px solid rgba(255,255,255,.1)}
+.hx-facts li>span:first-child{grid-area:icon;margin-top:.15rem;color:#FFC816;display:inline-flex}
+.hx-facts .ic{stroke-width:1.7}
+.hx-facts b{grid-area:tag;font-size:1rem;font-weight:700}
+.hx-facts li>span:last-child{grid-area:copy;color:rgba(255,255,255,.66);font-size:.875rem}
+@keyframes hx-blink{0%,100%{opacity:1}50%{opacity:.35}}
+
+/* ---------- sticker preview ---------- */
+.hx-stk{display:grid;gap:1.5rem;align-items:center}
+.car{position:relative;width:100%;aspect-ratio:7/5;border-radius:2rem;overflow:hidden;background:radial-gradient(80% 60% at 50% 0,#fff,transparent 70%),linear-gradient(#e9e6e1,#d7d2cb 70%,#c9c3bb)}
+.car__road{position:absolute;inset-inline:0;bottom:0;height:14%;background:linear-gradient(#55524e,#3d3a37)}
+.car__road::before{content:"";position:absolute;inset-inline:0;top:-8px;height:8px;background:var(--kerb);background-size:auto}
+.car__shadow{position:absolute;left:5%;right:5%;bottom:10%;height:9%;z-index:0;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.45),transparent)}
+.car__body{position:absolute;left:7%;right:7%;top:7%;bottom:15%;border-radius:22% 22% 9% 9% / 26% 26% 12% 12%;background:linear-gradient(#fbfbfa,#e2e0dc 55%,#cfccc7);box-shadow:inset 0 2px 0 #fff,inset 0 -10px 24px rgba(0,0,0,.08),0 2px 0 rgba(0,0,0,.05)}
+.car__win{position:absolute;left:12%;right:12%;top:7%;height:52%;border-radius:20% 20% 5% 5% / 34% 34% 8% 8%;background:linear-gradient(170deg,#56606a 0%,#2b3138 45%,#1b1f24 100%);box-shadow:inset 0 0 0 4px #1d2125,inset 0 10px 24px rgba(0,0,0,.4);overflow:hidden}
+.car__win::before{content:"";position:absolute;top:-30%;bottom:-30%;left:18%;width:22%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.11),transparent);transform:skewX(-18deg)}
+.car__brake{position:absolute;top:5%;left:50%;width:22%;height:3%;transform:translateX(-50%);border-radius:4px;background:#b3221b;box-shadow:0 0 10px rgba(255,60,50,.35)}
+.car__lt{position:absolute;top:64%;width:20%;height:9%;border-radius:999px;background:linear-gradient(90deg,#ff6a5f,#b3221b);box-shadow:0 0 22px rgba(255,80,70,.45),inset 0 1px 0 rgba(255,255,255,.4)}
+.car__lt--l{left:4%}.car__lt--r{right:4%}
+.car__plate{position:absolute;left:50%;top:72%;transform:translateX(-50%)}
+.car__plate .plate{direction:rtl}
+.car__plate .plate>span{font-size:clamp(.7rem,2.6vw,.95rem);padding:.25rem .55rem}
+.car__plate .plate>i{font-size:clamp(.65rem,2.4vw,.85rem);padding:.25rem .45rem}
+.car__bumper{position:absolute;left:0;right:0;bottom:0;height:12%;border-radius:0 0 40px 40px/0 0 30px 30px;background:linear-gradient(#bdb9b3,#a8a39c)}
+.car__stk{position:absolute;bottom:8%;right:6%;filter:drop-shadow(0 4px 8px rgba(0,0,0,.35));transition:opacity .25s}
+.car__stk.is-swap{opacity:0}
+.car__tag{position:absolute;bottom:3.5%;inset-inline-start:.9rem;z-index:2;padding:.25rem .75rem;border-radius:999px;background:rgba(255,255,255,.85);font-size:.8125rem;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.opt-g{display:grid;gap:.6rem}
+.opt-g+.opt-g{margin-top:1.25rem}
+.opt-g>span{font-size:.875rem;font-weight:700;color:var(--hx-ink-2)}
+.seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem}
+.seg button{display:flex;align-items:center;justify-content:center;gap:.5rem;min-height:3.1rem;padding:.4rem .5rem;border-radius:1rem;background:#fff;border:1.5px solid #e3ddd5;font-weight:700;font-size:.9375rem;line-height:1.3;transition:border-color .2s,box-shadow .2s}
+.seg button:hover{border-color:#d1c49a}
+.seg button[aria-pressed=true]{border-color:#121110;box-shadow:inset 0 0 0 1px #121110}
+.sw{width:1.1rem;height:1.1rem;border-radius:50%;border:1.5px solid rgba(0,0,0,.25);flex:none}
+.shp{flex:none;border:2px solid currentColor;border-radius:3px}
+.shp--v{width:.65rem;height:1.1rem}.shp--h{width:1.2rem;height:.7rem}.shp--r{width:1.05rem;height:1.05rem;border-radius:50%}
+.hx-specs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 1rem;margin-top:1.5rem}
+.hx-specs li{display:flex;flex-direction:column;gap:.1rem;padding:.9rem 0;border-top:1px solid #e1dbd3}
+.hx-specs b{font-size:1rem;font-weight:700}
+.hx-specs span{color:var(--hx-ink-2);font-size:.8125rem}
+
+/* ---------- coverage ---------- */
+.hx-covsec{overflow-x:clip}
+.hx-cov{display:grid;gap:2rem;align-items:center}
+.map{position:relative;width:100%;max-width:34rem;margin-inline:auto;aspect-ratio:1280/1305}
+.map svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.map__land{fill:rgba(255,200,22,.055);stroke:rgba(255,200,22,.55);stroke-width:3;stroke-linejoin:round}
+.map__river{fill:none;stroke:rgba(140,180,220,.32);stroke-width:4;stroke-linecap:round}
+.map__pin{position:absolute;width:0;height:0}
+.map__pin>i{position:absolute;width:.7rem;height:.7rem;margin:-.35rem 0 0 -.35rem;border-radius:50%;background:#FFC816;box-shadow:0 0 0 3px rgba(255,200,22,.18),0 0 14px 2px rgba(255,200,22,.55)}
+.map__pin>i::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1.5px solid rgba(255,200,22,.7);animation:pinp 2.6s ease-out infinite;animation-delay:var(--d,0s)}
+.map__pin--cap>i{width:1.1rem;height:1.1rem;margin:-.55rem 0 0 -.55rem;box-shadow:0 0 0 6px rgba(255,200,22,.2),0 0 30px 8px rgba(255,200,22,.5)}
+.map__pin--sm>i{width:.5rem;height:.5rem;margin:-.25rem 0 0 -.25rem;background:#e9b313}
+.map__pin--sm>i::after{display:none}
+@keyframes pinp{0%{opacity:.9;transform:scale(.6)}100%{opacity:0;transform:scale(2.1)}}
+.map__lab{position:absolute;top:0;transform:translateY(-50%);display:inline-flex;align-items:center;gap:.3rem;padding:.12rem .5rem;border-radius:.55rem;background:rgba(20,19,17,.88);border:1px solid rgba(255,255,255,.14);color:#fff;font-size:.75rem;font-weight:700;line-height:1.5;white-space:nowrap}
+.map__lab b{color:#FFC816;font-family:var(--latin);font-weight:700}
+.map__lab--e{left:.75rem}.map__lab--w{right:.75rem}
+.map__pin--cap .map__lab{font-size:.875rem;padding:.2rem .6rem;border-color:rgba(255,200,22,.5)}
+.map__pin--cap .map__lab--w{right:1.1rem}
+.hx-cov__side{display:grid;gap:1.25rem}
+.cov-facts{display:grid;gap:.6rem}
+.cov-facts li{display:flex;align-items:center;gap:.8rem;padding:.85rem 1rem;border-radius:1.1rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);font-weight:700;font-size:.9375rem}
+.cov-facts li>span:first-child{flex:none;width:2.4rem;height:2.4rem;border-radius:.75rem;display:grid;place-items:center;background:rgba(255,200,22,.14);color:#FFC816}
+.cov-facts small{display:block;font-weight:500;color:rgba(255,255,255,.64);font-size:.8125rem}
+.cov-list{display:flex;flex-wrap:wrap;gap:.35rem}
+.cov-list li{padding:.15rem .55rem;border-radius:999px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.8);font-size:.75rem;line-height:1.6}
+.cov-list li b{font-family:var(--latin);color:#FFC816;font-weight:600;margin-inline-start:.25rem}
+.ticker{display:flex;align-items:center;gap:.7rem;padding:.75rem .9rem;border-radius:1.1rem;background:#fff;color:#121110;min-height:4rem}
+.ticker .brand-mk{flex:none;width:2.4rem;height:2.4rem}
+.ticker b{display:block;font-size:.9375rem;line-height:1.4}
+.ticker small{display:block;font-size:.8125rem;color:#5f5955;line-height:1.4}
+.ticker>div{animation:hxd-drop .45s var(--hx-ease) backwards}
+.cov-note{font-size:.75rem;color:rgba(255,255,255,.5)}
+
+/* ---------- plans ---------- */
+.qty{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.75rem;margin-bottom:1.5rem}
+.qty>span{font-weight:700;color:var(--hx-ink-2);font-size:.9375rem}
+.qty .seg{grid-template-columns:repeat(3,3.25rem)}
+.qty .seg button{min-height:2.75rem;font-family:var(--latin)}
+.hx-plans{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem}
+.hx-plan{display:flex;flex-direction:column;padding:1.75rem;border-radius:var(--hx-radius);background:var(--hx-surface);box-shadow:0 0 0 1px var(--hx-line)}
+.hx-plan__top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem}
+.hx-plan__badge{white-space:nowrap;padding:.25rem .65rem;border-radius:999px;background:rgba(255,200,22,.16);color:#FFD966;font-size:.75rem;font-weight:700}
+.hx-plan__aud{margin-top:.9rem;color:var(--hx-ink-2);font-size:.9375rem}
+.hx-plan__price{display:flex;align-items:baseline;gap:.5rem;margin-top:1.1rem}
+.hx-plan__price .num{letter-spacing:-.04em;font-size:3.25rem;font-weight:700;line-height:1.05}
+.hx-plan__price small{color:var(--hx-ink-2);font-size:.9375rem}
+.hx-plan__total{margin-top:.6rem;display:flex;flex-wrap:wrap;gap:.25rem .6rem;align-items:center;padding:.55rem .8rem;border-radius:.9rem;background:var(--hx-soft);font-size:.8125rem;color:var(--hx-ink-2)}
+.hx-plan__total b{color:var(--hx-ink);font-family:var(--latin)}
+.hx-plan__total em{font-style:normal;color:#16703a;font-weight:700}
+.hx-plan__list{flex:1;display:grid;gap:.7rem;margin:1.4rem 0 1.6rem;padding-top:1.4rem;border-top:1px solid var(--hx-line);font-size:.9375rem}
+.hx-plan__list li{display:flex;gap:.6rem;line-height:1.5}
+.hx-plan__list li>span:first-child{display:inline-flex;flex:none;margin-top:.2rem}
+.hx-plan__list svg{width:1rem;height:1rem;color:var(--hx-accent-ink);stroke-width:2.4}
+.hx-plan__list li.no{color:#6b645e}
+.hx-plan__list li.no svg{color:#b5ada6}
+.hx-plan--plus{color:#fff;background:radial-gradient(80% 60% at 100% 0,rgba(255,200,22,.22),transparent 60%),#121110;box-shadow:0 30px 60px -30px rgba(18,17,16,.55)}
+.hx-plan--plus .hx-plan__aud,.hx-plan--plus .hx-plan__price small{color:rgba(255,255,255,.68)}
+.hx-plan--plus .hx-plan__total{background:rgba(255,255,255,.07);color:rgba(255,255,255,.72)}
+.hx-plan--plus .hx-plan__total b{color:#fff}
+.hx-plan--plus .hx-plan__total em{color:#6ee29a}
+.hx-plan--plus .hx-plan__list{border-color:rgba(255,255,255,.12)}
+.hx-plan--plus .hx-plan__list svg{color:#FFC816}
+.hx-plans__note{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-top:1.4rem}
+.hx-plans__note li{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .8rem;border-radius:999px;background:var(--hx-soft);color:var(--hx-ink-2);font-size:.8125rem;line-height:1.5}
+.hx-plans__note li>span:first-child{display:inline-flex;color:var(--hx-accent-ink)}
+.hx-plans__note .ic{width:.95rem;height:.95rem}
+
+/* ---------- FAQ ---------- */
+.hx-faq__inner{max-width:48rem}
+.faq{display:grid;gap:.75rem}
+.faq details{background:var(--hx-surface);border:1px solid transparent;border-radius:1.375rem;overflow:hidden;transition:border-color .15s,box-shadow .15s}
+.faq details:hover{border-color:rgba(245,170,0,.3);box-shadow:0 14px 34px rgba(245,170,0,.12)}
+.faq details[open]{border-color:rgba(245,170,0,.35)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:.875rem;padding:1rem 1.1rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary span{flex:1;min-width:0;font-size:1.0625rem;font-weight:700;line-height:1.4;color:#1a1a1a}
+.faq summary i{flex-shrink:0;width:2rem;height:2rem;border-radius:.6rem;display:inline-flex;align-items:center;justify-content:center;background:var(--hx-accent-soft);color:var(--hx-accent-ink);transition:background-color .15s}
+.faq summary i .ic{width:1rem;height:1rem;transition:transform .2s}
+.faq details[open] summary i{background:var(--cta);color:#111}
+.faq details[open] summary i .ic{transform:rotate(45deg)}
+.faq details p{padding:0 1.1rem 1.1rem;color:#5f5650;font-size:.9375rem}
+
+/* ---------- final + footer ---------- */
+.hx-final{position:relative;text-align:center;padding-block:calc(clamp(5rem,13vw,8.5rem) + 10px) clamp(5rem,13vw,8.5rem)}
+.hx-final::before{content:"";position:absolute;top:0;inset-inline:0;height:10px;background:var(--kerb)}
+.hx-final__inner{display:flex;flex-direction:column;align-items:center;gap:1.5rem}
+.hx-final__stickers{width:9rem;height:10.5rem;margin-bottom:.5rem;position:relative}
+.hx-final__art{position:absolute;top:0;filter:drop-shadow(0 18px 24px rgba(40,25,15,.25))}
+.hx-final__art--back{left:.4rem;transform:rotate(-9deg)}
+.hx-final__art--front{top:.6rem;right:.4rem;transform:rotate(7deg)}
+.hx-final p{color:var(--hx-ink-2);font-size:.9375rem}
+.site-footer{padding:.75rem 0 1.25rem}
+.foot-card{border-radius:1rem;border:1px solid rgba(245,170,0,.14);overflow:hidden;background:#fff;box-shadow:0 16px 50px rgba(87,62,20,.08)}
+.foot-main{padding:1rem;background:radial-gradient(circle at 100% 0,rgba(255,200,22,.09),transparent 40%),linear-gradient(#fff,#fffcf3)}
+.foot-row{display:flex;align-items:center;justify-content:space-between;gap:.75rem}
+.foot-brand{display:inline-flex;align-items:center;gap:.6rem}
+.foot-brand b{font-size:1.35rem;font-weight:700;line-height:1;letter-spacing:-.025em}
+.lang-btn{display:inline-flex;align-items:center;justify-content:center;gap:.375rem;width:3.75rem;height:2rem;border-radius:999px;background:#fff;border:1px solid rgba(245,170,0,.25);font-size:.6875rem;font-weight:600;font-family:var(--latin)}
+.lang-btn:hover{background:var(--hx-accent-soft)}
+.lang-btn .ic{width:.75rem;height:.75rem}
+.foot-nav{display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;margin-top:1rem}
+.foot-nav a{font-size:.8125rem;color:#5f5650;line-height:1.7}
+.foot-nav a:hover{color:#111}
+.foot-bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.375rem 1rem;padding:.625rem 1rem;border-top:1px solid #efe9e0;background:rgba(255,250,235,.6)}
+.foot-bottom p{font-size:.75rem;color:#5f5650}
+.foot-legal{display:flex;flex-wrap:wrap;gap:.25rem .5rem}
+.foot-legal a{margin-inline:-.375rem;min-height:1.75rem;display:inline-flex;align-items:center;padding:.125rem .625rem;border-radius:999px;font-size:.75rem;color:#5f5650}
+.foot-legal a:hover{color:#111;background:#fff8e0}
+
+/* ---------- sticky bar (mobile) ---------- */
+.hx-sticky{position:fixed;inset-inline:.75rem;bottom:calc(.75rem + env(safe-area-inset-bottom,0px));z-index:40;opacity:0;pointer-events:none;transform:translateY(calc(100% + 2rem));transition:transform .5s var(--hx-ease),opacity .3s ease}
+.hx-sticky.is-shown{opacity:1;pointer-events:auto;transform:none}
+.hx-sticky__bar{display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.5rem .5rem .5rem .5rem;padding-inline-start:.85rem;border-radius:1.4rem;background:rgba(18,17,16,.92);backdrop-filter:saturate(1.4) blur(16px);-webkit-backdrop-filter:saturate(1.4) blur(16px);box-shadow:0 0 0 1px rgba(255,255,255,.08),0 20px 40px -16px rgba(0,0,0,.5);color:#fff}
+.hx-sticky__price{display:flex;flex-direction:column;line-height:1.3}
+.hx-sticky__label{color:rgba(255,255,255,.64);font-size:.6875rem}
+.hx-sticky__amount{font-size:.9375rem;font-weight:700}
+.hx-sticky__amount .hx-latin{color:#FFC816}
+.hx-sticky .hx-btn .ic{width:16px;height:16px}
+
+@media (hover:hover){
+  .hx-feat:hover{transform:translateY(-4px);box-shadow:0 0 0 1px var(--hx-line),0 24px 40px -24px rgba(40,25,15,.25)}
+  .hx-feat--dark:hover{box-shadow:0 24px 40px -24px rgba(0,0,0,.5)}
+  .hx-btn--primary:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 -1px 0 rgba(140,90,0,.25),0 14px 32px -8px rgba(245,170,0,.65)}
+}
+@media (min-width:640px){
+  .site-header{padding-top:1rem}
+  .nav-pill{padding:.625rem;gap:.75rem}
+  .brand-mk{width:2.75rem;height:2.75rem}
+  .brand-name{font-size:1.5rem}
+  .menu-btn{width:2.5rem;height:2.5rem}
+  .hx-feats{grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+  .hx-feat--wide,.hx-biz{grid-column:1/-1}
+  .hx-biz{flex-direction:row;align-items:center;justify-content:space-between;padding:2rem 2.25rem 2.25rem}
+  .hx-biz .hx-btn{align-self:center}
+  .hx-facts{grid-template-columns:repeat(3,1fr);gap:2rem}
+  .hx-specs{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .hx-final__stickers{width:11rem;height:12.5rem}
+  .foot-main{padding:1.25rem 1.5rem}
+  .foot-bottom{padding:.625rem 1.5rem}
+  .site-footer{padding:1rem 0 1.75rem}
+  .faq summary{padding:1.1rem 1.25rem}
+  .faq details p{padding:0 1.25rem 1.2rem}
+}
+@media (min-width:768px){
+  .site-header{padding-top:1.25rem}
+  .hx-sticky{display:none}
+  .hx-plans{grid-template-columns:repeat(2,minmax(0,1fr));max-width:56rem;margin-inline:auto}
+  .hx-plan{padding:2.25rem}
+  .hx-masked{padding:2rem 2.25rem}
+  .hx-try{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:3rem}
+  .hx-stk{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:3rem}
+  .hx-specs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hx-cov{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:3rem}
+}
+@media (min-width:1024px){
+  .site-header{padding-top:1.5rem}
+  .menu-btn{display:none}
+  .login-btn{display:inline-flex}
+  .hx-hero{padding-top:3rem}
+  .hx-hero__grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:3.5rem}
+  .hxd__sticker{width:15rem}
+  .hxd__stage{width:min(100%,24rem)}
+  .hx-hero__copy{text-align:start;align-items:flex-start}
+  .hx-display{font-size:clamp(3rem,4.6vw,4.6rem)}
+  .hx-hero__copy .hx-lead{margin-inline:0}
+  .hx-hero__actions{justify-content:flex-start}
+  .hx-hero__price{text-align:start}
+  /* path → horizontal */
+  .hx-path{grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem}
+  .hx-pstep{grid-template-columns:1fr;padding-bottom:0;row-gap:1rem}
+  .hx-pstep__rail{flex-direction:row;align-items:center;height:3rem}
+  .hx-pstep__line{top:50%;bottom:auto;height:3px;width:auto;inset-inline-start:3.75rem;inset-inline-end:-.5rem;transform:translateY(-50%)}
+  .hx-pstep__line::after{transform:scaleX(0);transform-origin:100% 50%}
+  html[dir=ltr] .hx-pstep__line::after{transform-origin:0 50%}
+  .hx-pstep.is-visible .hx-pstep__line::after{transform:none}
+  .hx-pstep__vis{max-width:none;height:11rem}
+  .hx-feats{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}
+  .hx-feat--wide,.hx-biz{grid-column:span 2}
+  .hx-feat{padding:1.75rem}
+  .hx-dark .shell{display:grid;grid-template-columns:1fr 1fr;align-items:end;column-gap:4rem}
+  .hx-dark .hx-head{grid-area:1/1;margin-bottom:2.5rem}
+  .hx-bridge{grid-area:1/2;margin-bottom:2.75rem}
+  .hx-masked,.hx-facts{grid-column:1/-1}
+}
+html[dir=ltr] .hx-btn [data-ic=arrowL] svg,html[dir=ltr] .drawer nav .ch svg{transform:scaleX(-1)}
+html[dir=ltr] .drawer-foot a .ic{transform:none}
+html[dir=ltr] .drawer aside{transform:translateX(-100%)}
+html[dir=ltr] .drawer.open aside{transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.01ms!important;animation:none!important}
+  .rv-ready{opacity:1;transition:none;transform:none}
+  .hx-pstep__line::after{transform:none!important}
+}
+</style>
+</head>
+<body>
+<div class="hx-top">
+  <header class="site-header">
+    <div class="shell">
+      <div class="nav-pill">
+        <a class="brand" href="home2.html" aria-label="إبلاغ — الرئيسية"><span class="brand-mk" data-mk></span><span class="brand-name">إبلاغ</span></a>
+        <div class="nav-actions">
+          <a class="login-btn" href="login.html">تسجيل الدخول</a>
+          <button class="menu-btn" id="menuBtn" type="button" aria-label="افتح القائمة" aria-expanded="false" aria-controls="drawer" data-ic="menu"></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hx-hero" aria-labelledby="hx-hero-title">
+    <div class="shell hx-hero__grid">
+      <div class="hx-hero__copy">
+        <span class="plate plate--dark"><span>بلاغ يوصلك بثواني</span><i class="num">EB-4471</i></span>
+        <h1 class="hx-display" id="hx-hero-title"><span>لا تخلّي أحد</span><span><em>يدوّر عليك</em> بالشارع</span></h1>
+        <p class="hx-lead">ملصق على زجاج سيارتك: أي أحد يبلّغك بثواني بدون ما يعرف رقمك، وانت تردّ عليه بنقرة.</p>
+        <div class="hx-hero__actions" id="hx-hero-cta">
+          <a class="hx-btn hx-btn--primary hx-btn--lg" href="order.html">اطلب ملصقك <span data-ic="arrowL"></span></a>
+          <a class="hx-btn hx-btn--ghost hx-btn--lg" href="#try">جرّبها بنفسك</a>
+          <p class="hx-hero__price">من <span class="hx-latin">15,000</span> د.ع / سنة · الدفع عند الاستلام</p>
+        </div>
+        <dl class="hx-stats" aria-label="أرقام إبلاغ">
+          <div><dt><span class="live" aria-hidden="true"></span>بلاغ انحل اليوم</dt><dd id="stSolved">1,284</dd></div>
+          <div><dt>متوسط الرد</dt><dd>2:10<small>د</small></dd></div>
+          <div><dt>محافظة</dt><dd>19</dd></div>
+        </dl>
+      </div>
+      <div class="hx-hero__visual">
+        <div class="hxd">
+          <div class="hxd__stage" id="stage">
+            <span class="hxd__rings" aria-hidden="true"><i></i><i></i><i></i></span>
+            <button class="hxd__sticker" id="stkBtn" type="button" aria-label="اضغط على الملصق وشوف شلون يوصل الرد">
+              <span class="hxd__float"><span class="hxd__art" id="heroArt" role="img" aria-label="ملصق إبلاغ الأبيض"></span></span>
+            </button>
+            <div class="hxd__slot" id="slot"></div>
+          </div>
+          <p class="hxd__hint" aria-hidden="true"><span data-ic="tap"></span>دوس على الملصق</p>
+          <p class="sr" id="heroLive" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+    <span class="hx-hero__kerb" aria-hidden="true"></span>
+  </section>
+</div>
+
+<main>
+  <section class="hx-section" id="how" aria-labelledby="hx-how-title">
+    <div class="shell">
+      <header class="hx-head rv">
+        <p class="hx-eyebrow">الطريقة</p>
+        <h2 class="hx-title" id="hx-how-title">من الصورة للرد <span class="hx-title__soft">بأربع خطوات</span></h2>
+      </header>
+      <ol class="hx-path">
+        <li class="hx-pstep rv">
+          <div class="hx-pstep__rail"><span class="hx-pstep__no">1</span><span class="hx-pstep__line"></span></div>
+          <div>
+            <span class="hx-pstep__tag">تصوير</span>
+            <h3>أحد يصوّر الملصق</h3>
+            <p>بكاميرا موبايله، بلا تطبيق ولا تسجيل</p>
+            <div class="hx-pstep__vis" aria-hidden="true"><div class="v-cam"><div class="v-cam__t"><span id="camArt"></span><span class="v-cam__c"><i></i><i></i><i></i><i></i></span></div><span class="v-cam__url">eblagh.iq/r/EB-4471</span></div></div>
+          </div>
+        </li>
+        <li class="hx-pstep rv">
+          <div class="hx-pstep__rail"><span class="hx-pstep__no">2</span><span class="hx-pstep__line"></span></div>
+          <div>
+            <span class="hx-pstep__tag">اختيار المشكلة</span>
+            <h3>يختار شنو صاير</h3>
+            <p>وإذا يريد يرفق صورة توضّح الموقف</p>
+            <div class="hx-pstep__vis" aria-hidden="true"><div class="v-opts"><span class="on"><span data-ic="car"></span>سادّة الطريق<u></u></span><span><span data-ic="bulb"></span>الضوء شغّال<u></u></span><span><span data-ic="door"></span>الشباك مفتوح<u></u></span></div></div>
+          </div>
+        </li>
+        <li class="hx-pstep rv">
+          <div class="hx-pstep__rail"><span class="hx-pstep__no">3</span><span class="hx-pstep__line"></span></div>
+          <div>
+            <span class="hx-pstep__tag">إشعار فوري</span>
+            <h3>يوصلك تنبيه بلحظتها</h3>
+            <p>بنغمة إبلاغ، ورقمك ما ينكشف لأحد</p>
+            <div class="hx-pstep__vis" aria-hidden="true"><div class="v-lock"><div class="v-note"><i data-mk></i><div><b>سيارتك سادّة الطريق</b><small>«سادّة باب الكراج»</small></div><time>هسّه</time></div></div></div>
+          </div>
+        </li>
+        <li class="hx-pstep hx-pstep--reply rv">
+          <div class="hx-pstep__rail"><span class="hx-pstep__no">4</span><span class="hx-pstep__line"></span></div>
+          <div>
+            <span class="hx-pstep__tag">الرد يوصله</span>
+            <h3>تردّ «جاي هسّه» بنقرة</h3>
+            <p>وهو يشوف عدّاد وصولك، فيرتاح وينتظر</p>
+            <div class="hx-pstep__vis" aria-hidden="true"><div class="v-reply"><div><small>صاحب السيارة ردّ عليك</small><b>جاي هسّه</b><span class="e">يوصل خلال 5 دقايق</span></div><span class="ring" data-ring="292" data-max="300"></span></div></div>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="hx-section hx-section--soft" id="try" aria-labelledby="hx-try-title">
+    <div class="shell">
+      <header class="hx-head rv">
+        <p class="hx-eyebrow">جرّبها بنفسك</p>
+        <h2 class="hx-title" id="hx-try-title">اختار الموقف <span class="hx-title__soft">وشوف شلون ينحل</span></h2>
+      </header>
+      <div class="hx-try">
+        <div class="rv">
+          <div class="hx-chips" id="tryChips" role="group" aria-label="اختار الموقف"></div>
+          <ul class="hx-try__note">
+            <li><span data-ic="check"></span><span>رسالة جاهزة، فما يحتاج يكتب شي</span></li>
+            <li><span data-ic="check"></span><span>صاحب السيارة يرد بنقرة، ويبين وقت وصوله</span></li>
+            <li><span data-ic="check"></span><span>العاجل يتكرر لحد ما ينشاف</span></li>
+          </ul>
+        </div>
+        <div class="hx-chat rv">
+          <div class="hx-chat__bar"><span class="brand-mk" data-mk></span><div><b>صفحة البلاغ</b><small>اللي يشوفه اللي صوّر الملصق</small></div><span class="plate"><span>تويوتا</span><i class="num">EB-4471</i></span></div>
+          <div class="hx-chat__body" id="tryChat"></div>
+          <p class="sr" id="tryLive" aria-live="polite"></p>
+          <div class="hx-chat__foot"><span data-ic="shield"></span><span>رقمك ورقمه ما بانوا لأحد</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hx-section" aria-labelledby="hx-feat-title">
+    <div class="shell">
+      <header class="hx-head rv">
+        <p class="hx-eyebrow">بس ويا إبلاغ</p>
+        <h2 class="hx-title" id="hx-feat-title">تفاصيل صغيرة <span class="hx-title__soft">تسوّي الفرق</span></h2>
+      </header>
+      <div class="hx-feats">
+        <article class="hx-feat hx-feat--wide rv">
+          <span class="hx-feat__ic" data-ic="note"></span>
+          <h3>ملاحظة على السيارة</h3>
+          <p>اكتب ملاحظة قصيرة وتبين للي يصوّر الملصق قبل ما يبلّغ، فيعرف وينتظر بدون عصبية.</p>
+          <div class="hx-feat__vis" aria-hidden="true"><div class="fv-note"><span data-ic="clock"></span><div><small>ملاحظة من صاحب السيارة</small><b>راجع خلال 10 دقائق</b></div></div></div>
+        </article>
+        <article class="hx-feat hx-feat--dark rv">
+          <span class="hx-feat__ic" data-ic="siren"></span>
+          <h3>الوضع العاجل</h3>
+          <p>طفل أو حيوان بالسيارة؟ التنبيه يتكرر بنغمة عالية لحد ما تشوفه.</p>
+          <div class="hx-feat__vis" aria-hidden="true"><div class="fv-urg"><span class="hx-urgent__dot"></span>تنبيه عاجل<b>×3</b></div></div>
+        </article>
+        <article class="hx-feat rv">
+          <span class="hx-feat__ic" data-ic="bell"></span>
+          <h3>ما يفوتك بلاغ</h3>
+          <p>إشعار فوري بالتطبيق، وإذا ما شفته خلال دقيقة يوصلك على واتساب ويا بلس.</p>
+          <div class="hx-feat__vis" aria-hidden="true"><div class="fv-tl"><span class="fv-tl__s"><i data-ic="bell"></i><span>إشعار<small>0:00</small></span></span><span class="fv-tl__w"></span><span class="fv-tl__s fv-tl__s--wa"><i data-ic="wa"></i><span>واتساب<small>1:00</small></span></span></div></div>
+        </article>
+        <article class="hx-feat rv">
+          <span class="hx-feat__ic" data-ic="pause"></span>
+          <h3>وقّف الملصق ببديل فوري</h3>
+          <p>ضاع أو انسرق؟ توقفه بنقرة من التطبيق ونطلعلك بديل على طول.</p>
+          <div class="hx-feat__vis" aria-hidden="true"><div class="fv-sw"><span></span>الملصق القديم موقوف<em>البديل بالطريق</em></div></div>
+        </article>
+        <article class="hx-feat rv">
+          <span class="hx-feat__ic" data-ic="moon"></span>
+          <h3>أوقات هدوء</h3>
+          <p>حدّد ساعات نومك، وما يزعجك بيها غير العاجل.</p>
+          <div class="hx-feat__vis" aria-hidden="true"><div class="fv-quiet"><span dir="ltr">12:00 AM</span><i>←</i><span dir="ltr">7:00 AM</span></div></div>
+        </article>
+        <article class="hx-feat rv">
+          <span class="plate plus"><span>إبلاغ</span><i>بلس</i></span>
+          <span class="hx-feat__ic" data-ic="users"></span>
+          <h3>سيارة وحدة، عائلة كاملة</h3>
+          <p>شارك السيارة ويا أهلك، والتنبيه يوصل الكل بنفس اللحظة.</p>
+          <div class="hx-feat__vis" aria-hidden="true"><div class="fv-fam"><span data-ic="user"></span><span data-ic="user"></span><span data-ic="user"></span><small>3 أشخاص · سيارة وحدة</small></div></div>
+        </article>
+        <article class="hx-biz rv">
+          <div><h3>شركات، مجمعات، وكراجات؟</h3><p>باقات خاصة للأساطيل والمجمعات السكنية ومواقف السيارات.</p></div>
+          <a class="hx-btn hx-btn--primary hx-btn--sm" href="site.html#/business">باقات الشركات <span data-ic="arrowL"></span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="hx-section hx-dark" aria-labelledby="hx-privacy-title">
+    <div class="shell">
+      <header class="hx-head rv">
+        <p class="hx-eyebrow">الخصوصية</p>
+        <h2 class="hx-title" id="hx-privacy-title">رقمك يبقى إلك <span class="hx-title__soft hx-title__soft--b">حتى إحنا ما ننطيه لأحد</span></h2>
+      </header>
+      <div class="hx-bridge rv" aria-hidden="true">
+        <div class="hx-bridge__node"><span class="hx-bridge__icon" data-ic="scan"></span><span>اللي يبلّغ</span></div>
+        <span class="hx-bridge__wire"><i></i></span>
+        <div class="hx-bridge__node hx-bridge__node--core"><span class="hx-bridge__mark" data-mk></span><span>إبلاغ</span></div>
+        <span class="hx-bridge__wire w2"><i></i></span>
+        <div class="hx-bridge__node"><span class="hx-bridge__icon" data-ic="user"></span><span>انت</span></div>
+      </div>
+      <div class="hx-masked rv">
+        <span class="hx-masked__label">رقم موبايلك</span>
+        <span class="hx-masked__digits hx-latin">+964 7<i>•</i><i>•</i> <i>•</i><i>•</i><i>•</i> <i>•</i><i>•</i><i>•</i><i>•</i></span>
+        <span class="hx-masked__lock" data-ic="lock"></span>
+      </div>
+      <ul class="hx-facts rv">
+        <li><span data-ic="phone"></span><b>من الكاميرا مباشرة</b><span>اللي يبلّغ ما يحتاج ينزّل شي</span></li>
+        <li><span data-ic="eyeOff"></span><b>لا رقمك ولا رقمه</b><span>الكلام كله يمر من خلال إبلاغ</span></li>
+        <li><span data-ic="shield"></span><b>درع ضد الإزعاج</b><span>فلترة ذكية، وتحظر أي أحد بنقرة</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="hx-section hx-section--soft" aria-labelledby="hx-sticker-title">
+    <div class="shell">
+      <header class="hx-head rv">
+        <p class="hx-eyebrow">الملصق</p>
+        <h2 class="hx-title" id="hx-sticker-title">شوفه على سيارتك <span class="hx-title__soft hx-title__soft--b">قبل ما تطلب</span></h2>
+      </header>
+      <div class="hx-stk">
+        <div class="car rv" id="carScene" role="img" aria-label="معاينة الملصق على الزجاج الخلفي">
+          <span class="car__shadow"></span>
+          <div class="car__body">
+            <div class="car__win" id="carWin"><span class="car__brake"></span><span class="car__stk" id="carStk"></span></div>
+            <span class="car__lt car__lt--l"></span><span class="car__lt car__lt--r"></span>
+            <span class="car__plate"><span class="plate"><span>بغداد 12345</span><i>أ</i></span></span>
+            <span class="car__bumper"></span>
+          </div>
+          <span class="car__road"></span>
+          <span class="car__tag">معاينة على الزجاج الخلفي</span>
+        </div>
+        <div class="rv">
+          <div class="opt-g"><span id="lbColor">اللون</span><div class="seg" id="segColor" role="group" aria-labelledby="lbColor"></div></div>
+          <div class="opt-g"><span id="lbShape">الشكل</span><div class="seg" id="segShape" role="group" aria-labelledby="lbShape"></div></div>
+          <ul class="hx-specs" id="specs"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hx-section hx-dark hx-covsec" aria-labelledby="hx-cov-title">
+    <div class="shell" style="display:block">
+      <header class="hx-head rv">
+        <p class="hx-eyebrow">التغطية</p>
+        <h2 class="hx-title" id="hx-cov-title">من دهوك للبصرة <span class="hx-title__soft hx-title__soft--b">نوصلك لباب البيت</span></h2>
+      </header>
+      <div class="hx-cov">
+        <div class="map rv" id="map" role="img" aria-label="خريطة العراق بالمحافظات الـ19"></div>
+        <div class="hx-cov__side rv">
+          <ul class="cov-facts">
+            <li><span data-ic="truck"></span><div>توصيل لكل المحافظات<small>من دهوك لحد البصرة</small></div></li>
+            <li><span data-ic="cash"></span><div>الدفع عند الاستلام بس<small>ما تدفع شي قبل ما يوصلك</small></div></li>
+            <li><span data-ic="gift"></span><div>التوصيل <span class="hx-latin">5,000</span> د.ع<small>ومجاني من ملصقين وفوك</small></div></li>
+          </ul>
+          <div class="ticker" id="ticker" aria-live="off"></div>
+          <ul class="cov-list" id="covList" aria-label="ملصقات فعّالة حسب المحافظة"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hx-section" id="plans" aria-labelledby="hx-plans-title">
+    <div class="shell">
+      <header class="hx-head rv">
+        <p class="hx-eyebrow">الباقات</p>
+        <h2 class="hx-title" id="hx-plans-title">سنة كاملة <span class="hx-title__soft">بسعر واضح</span></h2>
+      </header>
+      <div class="qty rv"><span id="lbQty">كم ملصق تريد؟</span><div class="seg" id="segQty" role="group" aria-labelledby="lbQty"></div></div>
+      <div class="hx-plans rv">
+        <article class="hx-plan">
+          <div class="hx-plan__top"><h3 class="plate plate--lg"><span>إبلاغ</span><i>أساسي</i></h3></div>
+          <p class="hx-plan__aud">لسيارتك: تنبيه فوري ورقمك يبقى إلك</p>
+          <p class="hx-plan__price"><span class="num">15,000</span><small>د.ع / سنة</small></p>
+          <p class="hx-plan__total" data-total="basic"></p>
+          <ul class="hx-plan__list">
+            <li><span data-ic="check"></span><span>إشعار فوري بنغمة إبلاغ</span></li>
+            <li><span data-ic="check"></span><span>رقمك واسمك مخفيين</span></li>
+            <li><span data-ic="check"></span><span>ردّ بنقرة ويا وقت وصولك</span></li>
+            <li><span data-ic="check"></span><span>ملاحظة على السيارة والوضع العاجل</span></li>
+            <li class="no"><span data-ic="minus"></span><span>عائلة ولحد 3 سيارات</span></li>
+            <li class="no"><span data-ic="minus"></span><span>واتساب احتياطي</span></li>
+          </ul>
+          <a class="hx-btn hx-btn--ink hx-btn--lg hx-btn--block" href="order.html?plan=basic">اطلب إبلاغ <span data-ic="arrowL"></span></a>
+        </article>
+        <article class="hx-plan hx-plan--plus">
+          <div class="hx-plan__top"><h3 class="plate plate--lg plate--dark"><span>إبلاغ</span><i>بلس</i></h3><span class="hx-plan__badge">الأكمل</span></div>
+          <p class="hx-plan__aud">للعائلة وأكثر من سيارة: التنبيه يوصل الكل</p>
+          <p class="hx-plan__price"><span class="num">22,000</span><small>د.ع / سنة</small></p>
+          <p class="hx-plan__total" data-total="plus"></p>
+          <ul class="hx-plan__list">
+            <li><span data-ic="check"></span><span>إشعار فوري بنغمة إبلاغ</span></li>
+            <li><span data-ic="check"></span><span>رقمك واسمك مخفيين</span></li>
+            <li><span data-ic="check"></span><span>ردّ بنقرة ويا وقت وصولك</span></li>
+            <li><span data-ic="check"></span><span>ملاحظة على السيارة والوضع العاجل</span></li>
+            <li><span data-ic="check"></span><span>عائلة ولحد 3 سيارات</span></li>
+            <li><span data-ic="check"></span><span>واتساب احتياطي بعد دقيقة</span></li>
+          </ul>
+          <a class="hx-btn hx-btn--primary hx-btn--lg hx-btn--block" href="order.html?plan=plus">اطلب إبلاغ بلس <span data-ic="arrowL"></span></a>
+        </article>
+      </div>
+      <ul class="hx-plans__note rv">
+        <li><span data-ic="plus"></span><span>كل ملصق إضافي = سنة ثانية من نفس الباقة</span></li>
+        <li><span data-ic="truck"></span><span>التوصيل <span class="hx-latin">5,000</span> د.ع، ومجاني من ملصقين</span></li>
+        <li><span data-ic="cash"></span><span>الدفع عند الاستلام بس</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="hx-section hx-section--soft hx-faq" aria-labelledby="hx-faq-title">
+    <div class="shell hx-faq__inner rv">
+      <header class="hx-head" style="margin-bottom:1.5rem"><p class="hx-eyebrow">أسئلة</p><h2 class="hx-title" id="hx-faq-title">عندك سؤال؟</h2></header>
+      <div class="faq" id="faq"></div>
+    </div>
+  </section>
+
+  <section class="hx-final" id="hx-final" aria-labelledby="hx-final-title">
+    <div class="shell hx-final__inner rv">
+      <div class="hx-final__stickers" id="finalArt" aria-hidden="true"></div>
+      <h2 class="hx-title hx-title--xl" id="hx-final-title"><span>جاهز للشارع؟</span> <span class="hx-title__soft hx-title__soft--b">ملصقك يوصلك لباب البيت</span></h2>
+      <a class="hx-btn hx-btn--primary hx-btn--lg" href="order.html">اطلب ملصقك <span data-ic="arrowL"></span></a>
+      <p>الدفع عند الاستلام · توصيل لكل المحافظات</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="shell"><div class="foot-card">
+    <div class="foot-main">
+      <div class="foot-row"><a class="foot-brand" href="home2.html"><span class="brand-mk" data-mk></span><b>إبلاغ</b></a><button class="lang-btn" id="langBtn" type="button" aria-label="English"><span data-ic="lang"></span>EN</button></div>
+      <nav class="foot-nav" aria-label="روابط الموقع"><a href="how-it-works.html">شلون يشتغل</a><a href="order.html">الأسعار</a><a href="order.html">اطلب أونلاين</a><a href="contact.html">تواصل ويانا</a></nav>
+    </div>
+    <div class="foot-bottom"><p>© 2026 Eblagh</p><nav class="foot-legal" aria-label="قانوني"><a href="privacy.html">الخصوصية</a><a href="terms.html">الشروط</a><a href="communications.html">سياسة التواصل</a></nav></div>
+  </div></div>
+</footer>
+
+<div class="hx-sticky" id="sticky" aria-hidden="true">
+  <div class="hx-sticky__bar">
+    <span class="hx-sticky__price"><span class="hx-sticky__label">يبدأ من</span><span class="hx-sticky__amount"><span class="hx-latin">15,000</span> د.ع / سنة</span></span>
+    <a class="hx-btn hx-btn--primary hx-btn--sm" href="order.html" tabindex="-1">اطلب هسّه <span data-ic="arrowL"></span></a>
+  </div>
+</div>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-bg" id="drawerBg"></div>
+  <aside role="dialog" aria-modal="true" aria-label="القائمة">
+    <div class="drawer-head"><p>القائمة</p><button class="drawer-x" id="drawerX" type="button" aria-label="أغلق القائمة" data-ic="x"></button></div>
+    <nav aria-label="تنقل الموقع"><ul>
+      <li><a href="how-it-works.html"><span class="di" data-ic="bulb"></span><span class="t">شلون يشتغل</span><span class="ch" data-ic="chevL"></span></a></li>
+      <li><a href="order.html" data-close><span class="di" data-ic="tag"></span><span class="t">الأسعار</span><span class="ch" data-ic="chevL"></span></a></li>
+      <li><a href="order.html"><span class="di" data-ic="bag"></span><span class="t">اطلب أونلاين</span><span class="ch" data-ic="chevL"></span></a></li>
+    </ul></nav>
+    <div class="drawer-foot"><a href="login.html"><span data-ic="login"></span>تسجيل الدخول</a></div>
+  </aside>
+</div>
+
+<script>
+{
+/*@BRAND_JS@*/
+let LANG = 'ar';
+const T = (ar, en) => LANG === 'en' ? en : ar;
+const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const RM = matchMedia('(prefers-reduced-motion: reduce)');
+const nf = n => n.toLocaleString('en-US');
+const mmss = s => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
+
+/* Demo figures shown on the page. PLACEHOLDERS: replace with real data before launch. */
+const DATA = {
+  solvedToday: 1284,
+  gov: [ /* [ar, en, x, y, count, label side e|w|-] — x,y in the 1280×1305 map space */
+    ['دهوك','Duhok',580,90,310,'-'],['نينوى','Nineveh',490,235,960,'w'],['أربيل','Erbil',698,200,1210,'e'],['السليمانية','Sulaimani',845,298,840,'e'],
+    ['حلبجة','Halabja',925,353,90,'-'],['كركوك','Kirkuk',698,320,580,'-'],['صلاح الدين','Saladin',620,445,350,'-'],['ديالى','Diyala',797,532,390,'-'],
+    ['الأنبار','Anbar',340,635,420,'w'],['بغداد','Baghdad',750,612,4120,'w'],['واسط','Wasit',875,700,260,'-'],['بابل','Babylon',738,712,530,'-'],
+    ['كربلاء','Karbala',650,743,610,'-'],['القادسية','Qadisiyyah',816,815,300,'-'],['ميسان','Maysan',1040,808,240,'-'],['النجف','Najaf',640,903,770,'w'],
+    ['ذي قار','Dhi Qar',948,893,450,'-'],['المثنى','Muthanna',800,1005,180,'-'],['البصرة','Basra',1080,1027,1380,'w']
+  ]
+};
+
+const L = (d, sw = 2) => `<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+const IC = {
+  menu: L('<path d="M4 6h16M4 12h16M4 18h16"/>'),
+  x: L('<path d="M18 6 6 18M6 6l12 12"/>'),
+  arrowL: L('<path d="m12 19-7-7 7-7M19 12H5"/>'),
+  chevL: L('<path d="m15 18-6-6 6-6"/>'),
+  plus: L('<path d="M12 5v14M5 12h14"/>'),
+  minus: L('<path d="M5 12h14"/>'),
+  car: L('<path d="m21 8-2 2-1.5-3.7A2 2 0 0 0 15.646 5H8.4a2 2 0 0 0-1.903 1.257L5 10 3 8M7 14h.01M17 14h.01"/><rect width="18" height="8" x="3" y="10" rx="2"/><path d="M5 18v2M19 18v2"/>'),
+  bulb: L('<path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5M9 18h6M10 22h4"/>'),
+  door: L('<path d="M13 4h3a2 2 0 0 1 2 2v14M2 20h3M13 20h9M10 12v.01M13 4.562v16.157a1 1 0 0 1-1.242.97L5 20V5.562a2 2 0 0 1 1.515-1.94l4-1A2 2 0 0 1 13 4.561Z"/>'),
+  tri: L('<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3M12 9v4M12 17h.01"/>'),
+  baby: L('<path d="M9 12h.01M15 12h.01M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1"/>'),
+  user: L('<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>'),
+  users: L('<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>'),
+  scan: L('<path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 12h10"/>'),
+  phone: L('<rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/>'),
+  eyeOff: L('<path d="M10.73 5.08A10.4 10.4 0 0 1 12 5c7 0 10 7 10 7a13 13 0 0 1-1.67 2.68M6.61 6.61A13.5 13.5 0 0 0 2 12s3 7 10 7a9.7 9.7 0 0 0 5.39-1.61M2 2l20 20M14.12 14.12a3 3 0 1 1-4.24-4.24"/>'),
+  shield: L('<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>'),
+  lock: L('<rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>'),
+  bell: L('<path d="M10.27 21a2 2 0 0 0 3.46 0M3.26 15.33A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.67C19.41 13.96 18 12.5 18 8A6 6 0 0 0 6 8c0 4.5-1.41 5.96-2.74 7.33"/>'),
+  clock: L('<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>'),
+  check: L('<path d="M20 6 9 17l-5-5"/>'),
+  checks: L('<path d="M18 6 7 17l-5-5M22 10l-7.5 7.5L13 16"/>'),
+  note: L('<path d="M15.5 3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V8.5L15.5 3Z"/><path d="M15 3v6h6M8 13h8M8 17h5"/>'),
+  siren: L('<path d="M7 18v-6a5 5 0 1 1 10 0v6M5 21a1 1 0 0 1-1-1v-1a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1zM21 12h1M18.5 4.5 18 5M2 12h1M12 2v1M4.93 4.93l.71.71"/>'),
+  pause: L('<rect x="14" y="4" width="4" height="16" rx="1"/><rect x="6" y="4" width="4" height="16" rx="1"/>'),
+  moon: L('<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>'),
+  truck: L('<path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2M15 18H9M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/>'),
+  cash: L('<rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/>'),
+  gift: L('<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/>'),
+  tap: L('<path d="M9 9V4.5a1.5 1.5 0 0 1 3 0V12M12 10.5a1.5 1.5 0 0 1 3 0V12M15 11a1.5 1.5 0 0 1 3 0v3a6 6 0 0 1-6 6h-1.2a6 6 0 0 1-4.3-1.8L4 15.6a1.6 1.6 0 0 1 2.3-2.2L9 16"/>'),
+  tag: L('<path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/>'),
+  bag: L('<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/>'),
+  login: L('<path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/>'),
+  lang: L('<path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/>'),
+  wa: '<svg class="ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3M12 21.8a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8m8.4-18.2A11.8 11.8 0 0 0 1.7 17.9L0 24l6.3-1.6A11.8 11.8 0 0 0 24 12c0-3.2-1.2-6.1-3.6-8.4"/></svg>'
+};
+$$('[data-ic]').forEach(e => { const i = IC[e.dataset.ic]; if (i) e.insertAdjacentHTML('afterbegin', i); });
+$$('[data-mk]').forEach(e => { e.innerHTML = markSVG; });
+
+/* countdown ring */
+const RC = 2 * Math.PI * 19;
+const ringHTML = (left, max, light) => `<span class="ring${light ? ' ring--light' : ''}" aria-hidden="true"><svg viewBox="0 0 44 44"><circle class="tr" cx="22" cy="22" r="19"/><circle class="fg" cx="22" cy="22" r="19" stroke-dasharray="${RC.toFixed(2)}" stroke-dashoffset="${(RC * (1 - left / max)).toFixed(2)}"/></svg><b>${mmss(left)}</b></span>`;
+function setRing(el, left, max){ const fg = $('.fg', el); if (fg) fg.style.strokeDashoffset = (RC * (1 - left / max)).toFixed(2); const b = $('b', el); if (b) b.textContent = mmss(Math.max(0, left)); }
+$$('[data-ring]').forEach(e => { e.outerHTML = ringHTML(+e.dataset.ring, +e.dataset.max); });
+
+/* ---------- stickers ---------- */
+const MMW = {ev:60, eh:104, er:76};
+const fit = (type, variant, code, px) => stickerHTML(type, variant, code, px / MMW[type]);
+let STK = {variant:'yellow', type:'ev'};
+function paintStickers(){
+  const keep = LANG; LANG = 'ar'; /* the physical sticker art stays Arabic */
+  const hw = $('#stkBtn').getBoundingClientRect().width || 224;
+  $('#heroArt').innerHTML = fit('ev', 'white', 'EB4471', hw);
+  $('#camArt').innerHTML = fit('eh', 'black', 'EB4471', 132);
+  const fw = innerWidth >= 640 ? 104 : 84;
+  $('#finalArt').innerHTML = `<span class="hx-final__art hx-final__art--back">${fit('ev','black','EB2208',fw)}</span><span class="hx-final__art hx-final__art--front">${fit('ev','yellow','EB4471',fw)}</span>`;
+  paintCar();
+  LANG = keep;
+}
+/* same physical scale for every shape: ev is 120mm tall ≈ 62% of the window height */
+function paintCar(){
+  const win = $('#carWin'), h = win.clientHeight || 160;
+  const pxPerMm = h * .7 / 120;
+  const real = {ev:60, eh:112, er:76}[STK.type];
+  const keep = LANG; LANG = 'ar';
+  $('#carStk').innerHTML = fit(STK.type, STK.variant, 'EB4471', real * pxPerMm);
+  LANG = keep;
+}
+paintStickers();
+let rz; addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(paintStickers, 120); });
+
+/* ---------- hero: report → owner taps «جاي هسّه» → reply + live ETA reaches the reporter ---------- */
+const HERO = [
+  {msg:['سيارتك سادّة باب الكراج','Your car is blocking the garage'], reply:['جاي هسّه','On my way'], eta:300},
+  {msg:['ضوء سيارتك بعده شغّال','Your headlights are still on'], reply:['تسلم! نازل أطفيه','Thanks! Coming down'], eta:120},
+  {msg:['شباك سيارتك مفتوح','Your car window is open'], reply:['خلال 10 دقايق أكون هناك','There in 10 minutes'], eta:600}
+];
+let hi = 0, active = false, userTapped = false, timers = [], tick = null;
+const stage = $('#stage'), slot = $('#slot');
+const later = (ms, f) => timers.push(setTimeout(f, ms));
+const etaTxt = s => s < 120 ? T('يوصل خلال دقيقة','Arriving in a minute') : T(`يوصل خلال ${Math.round(s / 60)} دقايق`, `Arriving in ${Math.round(s / 60)} min`);
+const ownerHTML = (h, done) => `<div class="hxc hxc--owner${done ? ' is-done' : ''}"><span class="hxc__avatar">${markSVG}</span><span class="hxc__body"><span class="hxc__head"><strong>${T('بلاغ جديد','New report')}</strong><span>${T('هسّه','now')}</span></span><span class="hxc__text">${T(h.msg[0], h.msg[1])}</span></span><span class="hxc__acts"><span>${done ? IC.check : ''}${T(h.reply[0], h.reply[1])}</span><span>${T('خلال 10 دقايق','In 10 min')}</span></span></div>`;
+const replyHTML = (h, left) => `<div class="hxc hxc--reply"><span class="hxc__body"><span class="hxc__head"><strong>${T('صاحب السيارة ردّ عليك','The owner replied')}</strong></span><span class="hxc__big">${T(h.reply[0], h.reply[1])}</span><span class="hxc__eta">${etaTxt(h.eta)}</span></span>${ringHTML(left, h.eta)}</div>`;
+function ripple(){ $('.hxd__ripple')?.remove(); const r = document.createElement('span'); r.className = 'hxd__ripple'; r.setAttribute('aria-hidden','true'); $('.hxd__float').appendChild(r); }
+function heroCycle(i, byUser){
+  timers.forEach(clearTimeout); timers = []; clearInterval(tick);
+  if (byUser) userTapped = true;
+  hi = i; active = true; const h = HERO[i];
+  slot.className = 'hxd__slot'; slot.innerHTML = ''; stage.classList.remove('is-alert');
+  ripple();
+  later(300, () => { stage.classList.add('is-alert'); slot.innerHTML = ownerHTML(h, false); });
+  later(1800, () => { $('.hxc__acts span', slot)?.classList.add('is-tap'); });
+  later(2350, () => {
+    let left = h.eta - 1;
+    slot.innerHTML = ownerHTML(h, true) + replyHTML(h, left);
+    $('#heroLive').textContent = T(`صاحب السيارة ردّ: ${h.reply[0]}، ${etaTxt(h.eta)}`, `The owner replied: ${h.reply[1]}, ${etaTxt(h.eta)}`);
+    tick = setInterval(() => { left--; const r = $('.hxc--reply .ring', slot); if (r) setRing(r, left, h.eta); }, 1000);
+  });
+  later(8200, () => { slot.classList.add('is-leaving'); stage.classList.remove('is-alert'); });
+  later(8540, () => {
+    clearInterval(tick); slot.className = 'hxd__slot'; slot.innerHTML = ''; $('.hxd__ripple')?.remove(); active = false;
+    if (!userTapped && document.visibilityState === 'visible') later(3000, () => heroCycle((i + 1) % HERO.length, false));
+  });
+}
+function heroStatic(){ stage.classList.add('is-alert'); slot.innerHTML = ownerHTML(HERO[hi], true) + replyHTML(HERO[hi], HERO[hi].eta - 8); }
+if (RM.matches) heroStatic(); else later(1200, () => heroCycle(0, false));
+$('#stkBtn').addEventListener('click', () => { const n = (hi + (active ? 1 : 0)) % HERO.length; if (RM.matches){ hi = n; heroStatic(); $('#heroLive').textContent = T(`صاحب السيارة ردّ: ${HERO[n].reply[0]}`, `The owner replied: ${HERO[n].reply[1]}`); } else heroCycle(n, true); });
+stage.addEventListener('pointermove', e => { if (e.pointerType !== 'mouse') return; const r = stage.getBoundingClientRect(); const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; stage.style.setProperty('--tx', (-(12 * y)).toFixed(2) + 'deg'); stage.style.setProperty('--ty', (16 * x).toFixed(2) + 'deg'); });
+stage.addEventListener('pointerleave', () => { stage.style.setProperty('--tx','0deg'); stage.style.setProperty('--ty','0deg'); });
+
+/* live counter (demo) */
+const stEl = $('#stSolved'); let solved = DATA.solvedToday;
+function bump(){ solved += 1 + Math.floor(Math.random() * 2); stEl.textContent = nf(solved); stEl.classList.add('is-bump'); setTimeout(() => stEl.classList.remove('is-bump'), 700); setTimeout(bump, 6000 + Math.random() * 6000); }
+stEl.textContent = nf(solved);
+if (!RM.matches) setTimeout(bump, 5000);
+
+/* ---------- try it ---------- */
+const SCN = [
+  {k:'block', ic:'car', chip:['سادّة الطريق','Blocking the way'], msg:['سيارتك سادّة باب الكراج، ممكن تحرّكها؟','Your car is blocking my garage, could you move it?'], reply:['آسف! جاي هسّه','Sorry! On my way'], eta:300},
+  {k:'lights', ic:'bulb', chip:['الضوء شغّال','Lights on'], msg:['ضوء سيارتك شغّال، لا تخلص البطارية','Your lights are on, your battery will die'], reply:['تسلم! نازل أطفيه','Thanks! Coming to switch them off'], eta:120},
+  {k:'window', ic:'door', chip:['الشباك مفتوح','Window open'], msg:['شباك سيارتك مفتوح والدنيا راح تمطر','Your window is open and it is about to rain'], reply:['شكراً إلك، خلال 10 دقايق أكون هناك','Thank you, I will be there in 10 minutes'], eta:600},
+  {k:'hit', ic:'tri', chip:['ضربة بالغلط','A small knock'], msg:['ضربت سيارتك بالغلط، أريد أتفاهم وياك','I knocked your car by mistake, let us sort it out'], reply:['مشكور على أمانتك، جاي خلال 5 دقايق','Thanks for your honesty, coming in 5 minutes'], eta:300},
+  {k:'urgent', ic:'baby', urgent:true, chip:['طفل أو حيوان بالسيارة','Child or pet inside'], msg:['أكو طفل بالسيارة والشبابيك مسدودة!','There is a child inside and the windows are shut!'], reply:['نازل هسّه! دقيقة وأكون عندك','Coming now! One minute'], eta:60}
+];
+let si = 0, tryTimers = [], tryTick = null, urgTick = null;
+function renderChips(){ $('#tryChips').innerHTML = SCN.map((s, i) => `<button type="button" class="hx-chip${s.urgent ? ' hx-chip--urgent' : ''}" aria-pressed="${i === si}" data-i="${i}">${IC[s.ic]}<span>${T(s.chip[0], s.chip[1])}</span>${s.urgent ? `<em>${T('عاجل','Urgent')}</em>` : ''}</button>`).join(''); }
+function runTry(animate){
+  tryTimers.forEach(clearTimeout); tryTimers = []; clearInterval(tryTick); clearInterval(urgTick);
+  const s = SCN[si], c = $('#tryChat');
+  const urg = n => s.urgent ? `<div class="hx-urgent"><span class="hx-urgent__dot"></span><span>${T('تنبيه عاجل: يتكرر لحد ما ينشاف','Urgent alert: repeats until seen')}</span><b id="urgN">×${n}</b></div>` : '';
+  const me = `<div class="bub bub--me"><small>${T('انت','You')}</small>${T(s.msg[0], s.msg[1])}</div>`;
+  const seen = `<span class="hx-chat__seen">${IC.checks}${T('وصل · صاحب السيارة شافه','Delivered · seen by the owner')}</span>`;
+  const them = left => `<div class="bub bub--them"><small>${T('صاحب السيارة','Car owner')}</small><span>${T(s.reply[0], s.reply[1])}</span><span class="bub__eta">${ringHTML(left, s.eta)}<span>${etaTxt(s.eta)}<br>${T('العدّاد يشتغل قدّامك','The countdown runs on your screen')}</span></span></div>`;
+  const sys = `<span class="hx-chat__sys">${T('صوّرت الملصق','You scanned the sticker')} · <span class="hx-latin">9:41</span></span>`;
+  const done = () => { $('#tryLive').textContent = T(`صاحب السيارة ردّ: ${s.reply[0]}، ${etaTxt(s.eta)}`, `The owner replied: ${s.reply[1]}, ${etaTxt(s.eta)}`); };
+  if (!animate || RM.matches){ c.innerHTML = sys + urg(s.urgent ? 3 : 0) + me + seen + them(s.eta - 8); done(); return; }
+  c.innerHTML = sys + urg(1) + me;
+  let n = 1; if (s.urgent) urgTick = setInterval(() => { n++; const e = $('#urgN'); if (e) e.textContent = '×' + n; }, 700);
+  tryTimers.push(setTimeout(() => { if (!s.urgent) c.insertAdjacentHTML('beforeend', seen); c.insertAdjacentHTML('beforeend', '<span class="typing" aria-hidden="true"><i></i><i></i><i></i></span>'); }, s.urgent ? 1500 : 700));
+  tryTimers.push(setTimeout(() => {
+    clearInterval(urgTick); $('.typing', c)?.remove(); if (s.urgent) c.insertAdjacentHTML('beforeend', seen);
+    let left = s.eta; c.insertAdjacentHTML('beforeend', them(left)); done();
+    tryTick = setInterval(() => { left--; const r = $('.bub--them .ring', c); if (r && left >= 0) setRing(r, left, s.eta); else clearInterval(tryTick); }, 1000);
+  }, s.urgent ? 2300 : 1700));
+}
+$('#tryChips').addEventListener('click', e => { const b = e.target.closest('.hx-chip'); if (!b) return; si = +b.dataset.i; $$('.hx-chip').forEach(x => x.setAttribute('aria-pressed', String(x === b))); runTry(true); });
+renderChips(); runTry(false);
+/* first play when the section comes into view */
+const tio = new IntersectionObserver(es => { if (es[0].isIntersecting){ tio.disconnect(); runTry(true); } }, {threshold:.4}); tio.observe($('.hx-chat'));
+
+/* ---------- sticker configurator ---------- */
+const COLORS = [['white',['أبيض','White'],'#fff'],['black',['أسود','Black'],'#121110'],['yellow',['أصفر','Yellow'],'#FFC816']];
+const SHAPES = [['ev',['طولي','Vertical'],'v'],['eh',['مستطيل','Landscape'],'h'],['er',['دائري','Round'],'r']];
+function renderStkUI(){
+  $('#segColor').innerHTML = COLORS.map(([k,t,h]) => `<button type="button" aria-pressed="${STK.variant === k}" data-v="${k}"><span class="sw" style="background:${h}"></span>${T(t[0], t[1])}</button>`).join('');
+  $('#segShape').innerHTML = SHAPES.map(([k,t,c]) => `<button type="button" aria-pressed="${STK.type === k}" data-t="${k}"><span class="shp shp--${c}"></span>${T(t[0], t[1])}</button>`).join('');
+  const size = {ev:'6 × 12', eh:'11.2 × 6.4', er:'Ø 7.6'}[STK.type];
+  $('#specs').innerHTML = [[`<span class="num">${size}</span> ${T('سم','cm')}`, T('المقاس','Size')],[T('فينيل + حماية UV','Vinyl + UV coat'), T('يتحمّل الشمس والمطر','Sun and rain proof')],[T('QR + رابط','QR + link'), T('رابط احتياطي إذا الكاميرا ما تشتغل','Backup link if the camera fails')],[T('يلزق من برّه','Sticks outside'), T('على الزجاج الخلفي أو الجانبي','On the rear or side glass')]].map(([b,s]) => `<li><b>${b}</b><span>${s}</span></li>`).join('');
+}
+function setStk(p){ Object.assign(STK, p); renderStkUI(); const el = $('#carStk'); if (RM.matches){ paintCar(); return; } el.classList.add('is-swap'); setTimeout(() => { paintCar(); el.classList.remove('is-swap'); }, 180); }
+$('#segColor').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setStk({variant:b.dataset.v}); });
+$('#segShape').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setStk({type:b.dataset.t}); });
+renderStkUI();
+
+/* ---------- coverage map ---------- */
+const OUTLINE = '480,88 520,48 570,45 690,55 715,70 752,62 762,110 810,165 840,185 850,240 905,262 968,268 955,300 918,315 950,372 905,395 878,470 920,580 950,640 990,680 1100,740 1155,825 1135,880 1135,940 1175,940 1175,1060 1230,1085 1160,1070 1080,1070 1000,1200 980,1210 770,1192 660,1095 455,930 245,808 100,780 108,760 78,750 48,605 280,470 315,460 345,365 350,290 345,180 370,160 420,155';
+const TIGRIS = 'M480 88 C520 140 590 200 605 300 S650 440 720 520 S760 640 830 690 S1000 730 1050 820 S1120 960 1150 1010 S1210 1070 1230 1085';
+const EUPH = 'M318 462 C400 470 470 490 520 540 S640 620 690 660 S735 760 760 820 S860 905 960 930 S1080 960 1120 990';
+function renderMap(){
+  const g = DATA.gov.map(([ar,en,x,y,n,side], i) => {
+    const cap = ar === 'بغداد', sm = side === '-' && !cap;
+    const lab = side !== '-' ? `<span class="map__lab map__lab--${side}">${T(ar,en)} <b>${nf(n)}</b></span>` : '';
+    return `<span class="map__pin${cap ? ' map__pin--cap' : ''}${sm ? ' map__pin--sm' : ''}" style="left:${(x / 12.8).toFixed(2)}%;top:${(y / 13.05).toFixed(2)}%;--d:${(i * .27 % 2.6).toFixed(2)}s" title="${T(ar,en)}: ${nf(n)}"><i></i>${lab}</span>`;
+  }).join('');
+  $('#map').innerHTML = `<svg viewBox="0 0 1280 1305" aria-hidden="true"><polygon class="map__land" points="${OUTLINE}"/><path class="map__river" d="${TIGRIS}"/><path class="map__river" d="${EUPH}"/></svg>${g}`;
+  $('#covList').innerHTML = [...DATA.gov].sort((a, b) => b[4] - a[4]).map(([ar,en,,,n]) => `<li>${T(ar,en)}<b>${nf(n)}</b></li>`).join('');
+}
+renderMap();
+const TICK = [
+  [['بلاغ انحل بالكرادة، بغداد','Report solved in Karrada, Baghdad'],['«جاي هسّه» خلال دقيقة و20 ثانية','“On my way” in 1 min 20 s']],
+  [['بلاغ انحل بالعشار، البصرة','Report solved in Ashar, Basra'],['«نازل أطفي الضوء» خلال 40 ثانية','“Switching the lights off” in 40 s']],
+  [['بلاغ انحل بعين كاوة، أربيل','Report solved in Ainkawa, Erbil'],['«خلال 5 دقايق» خلال دقيقة','“In 5 minutes” within a minute']],
+  [['بلاغ انحل بحي الأمير، النجف','Report solved in Al-Ameer, Najaf'],['«جاي هسّه» خلال 55 ثانية','“On my way” in 55 s']]
+];
+let ti = 0;
+function renderTicker(){ const [a, b] = TICK[ti]; $('#ticker').innerHTML = `<span class="brand-mk">${markSVG}</span><div><b>${T(a[0], a[1])}</b><small>${T(b[0], b[1])}</small></div>`; }
+renderTicker();
+if (!RM.matches) setInterval(() => { if (document.visibilityState !== 'visible') return; ti = (ti + 1) % TICK.length; renderTicker(); }, 4200);
+
+/* ---------- plans calculator ---------- */
+let qty = 1;
+function renderQty(){
+  $('#segQty').innerHTML = [1,2,3].map(n => `<button type="button" aria-pressed="${qty === n}" data-q="${n}">${n}</button>`).join('');
+  $$('[data-total]').forEach(e => { const p = e.dataset.total === 'plus' ? 22000 : 15000; const del = qty >= 2 ? 0 : 5000; const tot = p * qty + del;
+    e.innerHTML = `<span>${qty === 1 ? T('ملصق واحد','1 sticker') : T(`${qty} ملصقات = ${qty} سنوات`, `${qty} stickers = ${qty} years`)}:</span><span><b>${nf(tot)}</b> ${T('د.ع','IQD')}</span>${del ? `<span>${T('ويا التوصيل','incl. delivery')}</span>` : `<em>${T('والتوصيل مجاني','free delivery')}</em>`}`; });
+}
+$('#segQty').addEventListener('click', e => { const b = e.target.closest('button'); if (b){ qty = +b.dataset.q; renderQty(); } });
+renderQty();
+
+/* ---------- FAQ: one open at a time ---------- */
+const FAQ = [
+  ['شنو يصير من أحد يصوّر الملصق؟','How does it work when someone scans it?','تنفتح عنده صفحة البلاغ بالمتصفح، يختار شنو صاير ويدوس إرسال. يوصلك إشعار بلحظتها، وتردّ عليه بنقرة ويشوف وقت وصولك.','A report page opens in their browser. They pick what is happening and tap send. You get a notification right away, reply in one tap, and they see when you will arrive.'],
+  ['يكدر يعرف رقمي أو اسمي؟','Can they find out my number or name?','لا. لا رقمك ولا اسمك يبين، ولا رقمه يبين إلك. الكلام كله يمر من خلال إبلاغ.','No. Neither your number nor your name is shown, and theirs is not shown to you. Everything goes through Eblagh.'],
+  ['وإذا أحد ظل يبعث بلاغات مزعجة؟','What if someone keeps sending annoying reports?','أكو فلترة ذكية وحد لعدد البلاغات، وتكدر تحظر أي أحد بنقرة، وتحط أوقات هدوء ما يزعجك بيها غير العاجل.','There is smart filtering and a report limit. You can block anyone in one tap and set quiet hours where only urgent alerts get through.'],
+  ['إذا ضاع الملصق أو انسرق؟','What if my sticker is lost or stolen?','توقفه بنقرة من التطبيق فما يشتغل بعد، ونطلعلك بديل على طول بنفس اشتراكك.','Pause it in one tap from the app so it stops working, and we issue a replacement on the same subscription.'],
+  ['شنو الفرق بين إبلاغ وإبلاغ بلس؟','What is the difference between Eblagh and Eblagh Plus?','إبلاغ لسيارة وحدة بكل الأساسيات. بلس يضيف مشاركة السيارة ويا العائلة، لحد 3 سيارات بحساب واحد، وتنبيه احتياطي على واتساب إذا ما شفت الإشعار خلال دقيقة.','Eblagh covers one car with all the essentials. Plus adds family sharing, up to 3 cars on one account, and a WhatsApp backup if you miss the notification for a minute.'],
+  ['شلون أطلب وشلون أدفع؟','How do I order and pay?','اطلب أونلاين: اختار الباقة واللون والشكل واكتب عنوانك. نوصلك لكل المحافظات، والدفع عند الاستلام بس. التوصيل 5,000 د.ع ومجاني من ملصقين.','Order online: pick your plan, colour and shape, then your address. We deliver to every governorate and you pay cash on delivery. Delivery is 5,000 IQD, free from two stickers.'],
+  ['الملصق يتحمّل الشمس والمطر؟','Does the sticker survive sun and rain?','إي. فينيل مطبوع ويا طبقة حماية UV، ويلزق من برّه الزجاج حتى يبقى الرمز واضح للكاميرا.','Yes. Printed vinyl with a UV coat, stuck on the outside of the glass so the code stays clear for any camera.']
+];
+function renderFaq(){ $('#faq').innerHTML = FAQ.map(([q,qe,a,ae]) => `<details><summary><span>${T(q,qe)}</span><i>${IC.plus}</i></summary><p>${T(a,ae)}</p></details>`).join('');
+  $$('#faq details').forEach(d => d.addEventListener('toggle', () => { if (d.open) $$('#faq details').forEach(o => { if (o !== d) o.open = false; }); })); }
+renderFaq();
+
+/* ---------- reveal on scroll ---------- */
+const rvs = $$('.rv');
+if (RM.matches || !('IntersectionObserver' in window)) rvs.forEach(e => e.classList.add('is-visible'));
+else { const rio = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting){ en.target.classList.add('is-visible'); rio.unobserve(en.target); } }), {rootMargin:'0px 0px -10% 0px', threshold:.12});
+  rvs.forEach(e => { e.classList.add('rv-ready'); rio.observe(e); }); }
+
+/* ---------- sticky bar ---------- */
+const sticky = $('#sticky'), heroCta = $('#hx-hero-cta'), finalSec = $('#hx-final');
+let ctaIn = true, ctaAbove = false, atFinal = false;
+const stio = new IntersectionObserver(es => { for (const en of es){ if (en.target === heroCta){ ctaIn = en.isIntersecting; ctaAbove = en.boundingClientRect.top < 0; } else atFinal = en.isIntersecting || en.boundingClientRect.top < 0; }
+  const show = !ctaIn && ctaAbove && !atFinal; sticky.classList.toggle('is-shown', show); sticky.setAttribute('aria-hidden', String(!show)); $('a', sticky).tabIndex = show ? 0 : -1; });
+stio.observe(heroCta); stio.observe(finalSec);
+
+/* ---------- drawer ---------- */
+const drawer = $('#drawer');
+drawer.inert = true;
+function setDrawer(open){ drawer.inert = !open; drawer.classList.toggle('open', open); drawer.setAttribute('aria-hidden', String(!open)); $('#menuBtn').setAttribute('aria-expanded', String(open)); document.body.style.overflow = open ? 'hidden' : ''; if (open) setTimeout(() => $('#drawerX').focus(), 60); else $('#menuBtn').focus({preventScroll:true}); }
+$('#menuBtn').onclick = () => setDrawer(true);
+$('#drawerX').onclick = $('#drawerBg').onclick = () => setDrawer(false);
+$$('[data-close]').forEach(a => a.addEventListener('click', () => setDrawer(false)));
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('open')) setDrawer(false); });
+
+/* ---------- language: EN switches static text in place; dynamic parts re-render with T() ---------- */
+const EN = {
+ 'إبلاغ':'Eblagh','تسجيل الدخول':'Login','بلاغ يوصلك بثواني':'Alerts in seconds','لا تخلّي أحد':'Nobody should','يدوّر عليك':'hunt for you','بالشارع':'on the street',
+ 'ملصق على زجاج سيارتك: أي أحد يبلّغك بثواني بدون ما يعرف رقمك، وانت تردّ عليه بنقرة.':'A sticker on your car window: anyone can alert you in seconds without your number, and you reply in one tap.',
+ 'اطلب ملصقك':'Get your sticker','جرّبها بنفسك':'Try it yourself','من':'From','د.ع / سنة · الدفع عند الاستلام':'IQD / year · Cash on delivery',
+ 'بلاغ انحل اليوم':'Solved today','متوسط الرد':'Avg. reply','د':'m','محافظة':'Governorates','دوس على الملصق':'Tap the sticker',
+ 'الطريقة':'How it works','من الصورة للرد':'From scan to reply','بأربع خطوات':'in four steps',
+ 'تصوير':'Scan','أحد يصوّر الملصق':'Someone scans it','بكاميرا موبايله، بلا تطبيق ولا تسجيل':'With any phone camera, no app, no sign-up',
+ 'اختيار المشكلة':'Pick the problem','يختار شنو صاير':'They pick what’s up','وإذا يريد يرفق صورة توضّح الموقف':'And can attach a photo if they want',
+ 'سادّة الطريق':'Blocking the way','الضوء شغّال':'Lights on','الشباك مفتوح':'Window open',
+ 'إشعار فوري':'Instant alert','يوصلك تنبيه بلحظتها':'You’re alerted instantly','بنغمة إبلاغ، ورقمك ما ينكشف لأحد':'With Eblagh’s tone, your number stays hidden',
+ 'سيارتك سادّة الطريق':'Your car is blocking the way','«سادّة باب الكراج»':'“Blocking the garage”','هسّه':'now',
+ 'الرد يوصله':'The reply reaches them','تردّ «جاي هسّه» بنقرة':'Reply “On my way” in one tap','وهو يشوف عدّاد وصولك، فيرتاح وينتظر':'They see your countdown and wait calmly',
+ 'صاحب السيارة ردّ عليك':'The owner replied','جاي هسّه':'On my way','يوصل خلال 5 دقايق':'Arriving in 5 min',
+ 'اختار الموقف':'Pick a situation','وشوف شلون ينحل':'and see how it’s solved','رسالة جاهزة، فما يحتاج يكتب شي':'Ready-made messages, nothing to type',
+ 'صاحب السيارة يرد بنقرة، ويبين وقت وصوله':'The owner replies in one tap with an ETA','العاجل يتكرر لحد ما ينشاف':'Urgent alerts repeat until seen',
+ 'صفحة البلاغ':'Report page','اللي يشوفه اللي صوّر الملصق':'What the person scanning sees','تويوتا':'Toyota','رقمك ورقمه ما بانوا لأحد':'Neither number was shown',
+ 'بس ويا إبلاغ':'Only with Eblagh','تفاصيل صغيرة':'Small details','تسوّي الفرق':'that make the difference',
+ 'ملاحظة على السيارة':'A note on your car','اكتب ملاحظة قصيرة وتبين للي يصوّر الملصق قبل ما يبلّغ، فيعرف وينتظر بدون عصبية.':'Leave a short note that shows before anyone reports, so they know to wait.',
+ 'ملاحظة من صاحب السيارة':'Note from the owner','راجع خلال 10 دقائق':'Back in 10 minutes',
+ 'الوضع العاجل':'Urgent mode','طفل أو حيوان بالسيارة؟ التنبيه يتكرر بنغمة عالية لحد ما تشوفه.':'A child or pet inside? The alert repeats loudly until you see it.','تنبيه عاجل':'Urgent alert',
+ 'ما يفوتك بلاغ':'Never miss a report','إشعار فوري بالتطبيق، وإذا ما شفته خلال دقيقة يوصلك على واتساب ويا بلس.':'An instant app notification, and a WhatsApp backup after one minute with Plus.',
+ 'إشعار':'Alert','واتساب':'WhatsApp',
+ 'وقّف الملصق ببديل فوري':'Pause it, get a replacement','ضاع أو انسرق؟ توقفه بنقرة من التطبيق ونطلعلك بديل على طول.':'Lost or stolen? Pause it in one tap and we send a replacement right away.',
+ 'الملصق القديم موقوف':'Old sticker paused','البديل بالطريق':'Replacement on its way',
+ 'أوقات هدوء':'Quiet hours','حدّد ساعات نومك، وما يزعجك بيها غير العاجل.':'Set your sleeping hours; only urgent alerts get through.',
+ 'بلس':'Plus','سيارة وحدة، عائلة كاملة':'One car, the whole family','شارك السيارة ويا أهلك، والتنبيه يوصل الكل بنفس اللحظة.':'Share the car with family, and everyone gets the alert at once.','3 أشخاص · سيارة وحدة':'3 people · one car',
+ 'شركات، مجمعات، وكراجات؟':'Companies, compounds, car parks?','باقات خاصة للأساطيل والمجمعات السكنية ومواقف السيارات.':'Special plans for fleets, residential compounds and car parks.','باقات الشركات':'Business plans',
+ 'الخصوصية':'Privacy','رقمك يبقى إلك':'Your number stays yours','حتى إحنا ما ننطيه لأحد':'we never hand it out','اللي يبلّغ':'Them','انت':'You','رقم موبايلك':'Your phone number',
+ 'من الكاميرا مباشرة':'Straight from the camera','اللي يبلّغ ما يحتاج ينزّل شي':'Nobody needs to download anything','لا رقمك ولا رقمه':'Neither number','الكلام كله يمر من خلال إبلاغ':'Everything goes through Eblagh',
+ 'درع ضد الإزعاج':'Spam shield','فلترة ذكية، وتحظر أي أحد بنقرة':'Smart filtering, block anyone in a tap',
+ 'الملصق':'The sticker','شوفه على سيارتك':'See it on your car','قبل ما تطلب':'before you order','معاينة الملصق على الزجاج الخلفي':'Sticker preview on a rear window',
+ 'بغداد 12345':'Baghdad 12345','أ':'A','معاينة على الزجاج الخلفي':'Rear window preview','اللون':'Colour','الشكل':'Shape',
+ 'التغطية':'Coverage','من دهوك للبصرة':'From Duhok to Basra','نوصلك لباب البيت':'delivered to your door','خريطة العراق بالمحافظات الـ19':'Map of Iraq’s 19 governorates',
+ 'توصيل لكل المحافظات':'Delivery to every governorate','من دهوك لحد البصرة':'From Duhok all the way to Basra','الدفع عند الاستلام بس':'Cash on delivery only','ما تدفع شي قبل ما يوصلك':'Pay nothing until it arrives',
+ 'التوصيل':'Delivery','د.ع':'IQD','ومجاني من ملصقين وفوك':'Free from two stickers','ملصقات فعّالة حسب المحافظة':'Active stickers by governorate',
+ 'الباقات':'Plans','سنة كاملة':'A whole year','بسعر واضح':'one clear price','كم ملصق تريد؟':'How many stickers?','أساسي':'Basic',
+ 'لسيارتك: تنبيه فوري ورقمك يبقى إلك':'For your car: instant alerts, private number','د.ع / سنة':'IQD / year',
+ 'إشعار فوري بنغمة إبلاغ':'Instant alert with Eblagh’s tone','رقمك واسمك مخفيين':'Your name and number hidden','ردّ بنقرة ويا وقت وصولك':'One-tap reply with your ETA',
+ 'ملاحظة على السيارة والوضع العاجل':'Car note and urgent mode','عائلة ولحد 3 سيارات':'Family and up to 3 cars','واتساب احتياطي':'WhatsApp backup','اطلب إبلاغ':'Order Eblagh',
+ 'الأكمل':'Most complete','للعائلة وأكثر من سيارة: التنبيه يوصل الكل':'For families and several cars: everyone gets alerts','واتساب احتياطي بعد دقيقة':'WhatsApp backup after a minute','اطلب إبلاغ بلس':'Order Eblagh Plus',
+ 'كل ملصق إضافي = سنة ثانية من نفس الباقة':'Each extra sticker = another year of the same plan','د.ع، ومجاني من ملصقين':'IQD, free from two stickers',
+ 'أسئلة':'Questions','عندك سؤال؟':'Got a question?','جاهز للشارع؟':'Ready for the street?','ملصقك يوصلك لباب البيت':'Your sticker comes to your door',
+ 'الدفع عند الاستلام · توصيل لكل المحافظات':'Cash on delivery · Delivery to every governorate',
+ 'EN':'AR','شلون يشتغل':'How it works','الأسعار':'Pricing','اطلب أونلاين':'Order online','تواصل ويانا':'Contact us','الشروط':'Terms','سياسة التواصل':'Communication policy',
+ 'يبدأ من':'From','اطلب هسّه':'Order now','القائمة':'Menu',
+ 'إبلاغ — الرئيسية':'Eblagh — Home','افتح القائمة':'Open menu','اضغط على الملصق وشوف شلون يوصل الرد':'Tap the sticker to see how the reply arrives','ملصق إبلاغ الأبيض':'Eblagh white sticker',
+ 'أرقام إبلاغ':'Eblagh numbers','English':'Switch to Arabic','روابط الموقع':'Site links','أغلق القائمة':'Close menu','تنقل الموقع':'Site navigation','قانوني':'Legal'
+};
+const AR_TITLE = document.title, AR_DESC = $('meta[name=description]').content;
+const DYN = 'script,style,.stk,#slot,#faq,#tryChips,#tryChat,#segColor,#segShape,#specs,#map,#covList,#ticker,#segQty,[data-total],#heroLive,#tryLive,#stSolved';
+const orig = new Map(), origAttr = new Map();
+function swapText(){
+  const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, { acceptNode: n => n.parentElement.closest(DYN) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT });
+  let n; while ((n = w.nextNode())){
+    if (!orig.has(n)) orig.set(n, n.textContent);
+    const o = orig.get(n), k = o.trim();
+    n.textContent = LANG === 'en' && EN[k] !== undefined ? o.replace(k, EN[k]) : o;
+  }
+  $$('[aria-label]').forEach(e => { if (e.closest('.stk')) return; if (!origAttr.has(e)) origAttr.set(e, e.getAttribute('aria-label')); const o = origAttr.get(e); e.setAttribute('aria-label', LANG === 'en' && EN[o] ? EN[o] : o); });
+}
+function setLang(l, save){
+  LANG = l; const h = document.documentElement; h.lang = l; h.dir = l === 'en' ? 'ltr' : 'rtl';
+  document.title = T(AR_TITLE, 'Eblagh — Nobody should hunt for you on the street');
+  $('meta[name=description]').content = T(AR_DESC, 'An Eblagh sticker on your car window: anyone can alert you in seconds without your number, and you reply in one tap with your ETA. Delivery to every Iraqi governorate, cash on delivery.');
+  swapText(); renderChips(); runTry(false); renderStkUI(); renderMap(); renderTicker(); renderQty(); renderFaq(); paintStickers();
+  if (slot.innerHTML){ const left = $('.hxc--reply .ring b', slot); const h2 = HERO[hi]; let sec = h2.eta - 8; if (left){ const [m, s] = left.textContent.split(':'); sec = +m * 60 + +s; }
+    slot.innerHTML = $('.hxc--reply', slot) ? ownerHTML(h2, true) + replyHTML(h2, sec) : ownerHTML(h2, false); }
+  if (save) try { localStorage.setItem('eb-lang', l); } catch (e) {}
+}
+$('#langBtn').onclick = () => setLang(LANG === 'en' ? 'ar' : 'en', true);
+let saved = null; try { saved = localStorage.getItem('eb-lang'); } catch (e) {}
+if (saved === 'en') setLang('en', false);
+}
+</script>
+</body>
+</html>
