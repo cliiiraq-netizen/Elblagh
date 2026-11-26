@@ -25,6 +25,7 @@ var P=%s;window.__EBQ=%s;window.__EBF=%s+'.html';
 window.__EBGO=function(u){try{parent.postMessage({eb:'go',u:String(u)},'*')}catch(e){}};
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a||e.defaultPrevented||a.target==='_blank')return;
 var h=a.getAttribute('href'),m=/^(?:\.\/)?([a-z-]+)\.html(\?[^#]*)?(#.*)?$/.exec(h);if(!m||P.indexOf(m[1])<0)return;e.preventDefault();window.__EBGO(h);},true);
+document.addEventListener('DOMContentLoaded',function(){try{parent.postMessage({eb:'ready'},'*')}catch(e){}});
 addEventListener('load',function(){try{parent.postMessage({eb:'title',t:document.title},'*')}catch(e){};var h=%s;if(h){try{var el=document.getElementById(h.slice(1));if(el)el.scrollIntoView();else location.hash=h}catch(e){}}});
 })();</script>"""
 
@@ -74,7 +75,7 @@ window.__EB_TITLES = __TITLES__;
 <script>
 (function(){
   var FONTS = window.__EB_FONTS, PAGES = window.__EB_PAGES, TITLES = window.__EB_TITLES;
-  var NAMES = Object.keys(PAGES), boot = document.getElementById('boot'), view = null;
+  var NAMES = Object.keys(PAGES), boot = document.getElementById('boot'), view = null, renderSeq = 0;
   var SHIM = __SHIM__;
   // address format: #/order?plan=plus#order  →  page, query, in-page anchor
   function parse(h){
@@ -93,15 +94,25 @@ window.__EB_TITLES = __TITLES__;
     var css = '<style>' + pg.f.map(function(i){ return FONTS[i]; }).join('\n') + '</style>';
     var shim = SHIM.split('%P').join(JSON.stringify(NAMES)).split('%Q').join(JSON.stringify(r.q)).split('%F').join(JSON.stringify(r.p)).split('%H').join(JSON.stringify(r.a));
     var html = pg.h.replace(/<head[^>]*>/i, function(t){ return t + shim + css; });
-    var url = URL.createObjectURL(new Blob([html], {type: 'text/html'}));
     var f = document.createElement('iframe'); f.className = 'view next'; f.title = TITLES[r.p] || 'إبلاغ';
-    f.addEventListener('load', function(){
-      if (f.dataset.done) return; f.dataset.done = '1';
+    var seq = ++renderSeq, shown = false, url = null;
+    function show(){
+      if (shown || seq !== renderSeq) return; shown = true;
       var old = view; view = f; f.classList.remove('next'); boot.classList.add('gone');
-      if (old && old !== f) old.remove();
-      setTimeout(function(){ URL.revokeObjectURL(url); }, 30000);
-    });
-    f.src = url; document.body.appendChild(f);
+      document.querySelectorAll('iframe.view').forEach(function(x){ if (x !== f) x.remove(); });
+      if (url) setTimeout(function(){ URL.revokeObjectURL(url); }, 30000);
+    }
+    // the page reports itself when its scripts run; 'load' is a backup signal
+    f.addEventListener('load', function(){ if (f.dataset.mode && (f.dataset.mode !== 'blob' || f.contentWindow)) setTimeout(show, 30); });
+    f._eb = show;
+    // srcdoc works inside sandboxed viewers (iOS, artifact pages) where blob: frames can be blocked; blob is the fallback
+    f.dataset.mode = 'srcdoc'; f.srcdoc = html;
+    document.body.appendChild(f);
+    setTimeout(function(){
+      if (shown || seq !== renderSeq) return;
+      try { url = URL.createObjectURL(new Blob([html], {type: 'text/html'})); f.dataset.mode = 'blob'; f.removeAttribute('srcdoc'); f.src = url; } catch(e){}
+      setTimeout(show, 3000);
+    }, 4000);
     document.title = TITLES[r.p] || document.title;
   }
   addEventListener('message', function(e){
@@ -109,6 +120,7 @@ window.__EB_TITLES = __TITLES__;
     var fromView = false; document.querySelectorAll('iframe.view').forEach(function(x){ if (x.contentWindow === e.source) fromView = true; });
     if (!fromView) return;
     if (d.eb === 'go'){ var h = toHash(d.u); if (!h) return; if (h === location.hash) render(); else location.hash = h; }
+    if (d.eb === 'ready'){ document.querySelectorAll('iframe.view').forEach(function(x){ if (x.contentWindow === e.source && x._eb) x._eb(); }); }
     if (d.eb === 'title' && d.t && view && e.source === view.contentWindow) document.title = d.t;
   });
   addEventListener('hashchange', render);
