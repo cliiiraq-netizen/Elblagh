@@ -128,6 +128,10 @@ svg{flex:none}
 
 
 /* ---- Scan-card stickers (ev vertical · eh horizontal · er round) — 1em = 1mm ---- */
+/* scan cards own their line-height and layout so host pages (line-height:0 wrappers, display overrides) cannot break them */
+.stk.ev,.stk.eh,.stk.er{line-height:1.4}
+.stk.er{display:flex!important}
+.stk .e-note{line-height:1.3}
 .stk.ev,.stk.eh{position:relative;overflow:hidden;background:var(--spb)!important;--sband:#FFC816;--sbandi:#111;--scard:var(--sb)}
 .stk.v-yellow.ev,.stk.v-yellow.eh,.stk.v-yellow.er{--sband:#111;--sbandi:#FFC816;--scard:radial-gradient(60em 60em at 70% 22%,#FFD84A 0%,#FFC816 45%,#F5B400 100%)}
 .stk.v-black.ev,.stk.v-black.eh,.stk.v-black.er{--scard:radial-gradient(60em 60em at 70% 18%,#262626,#0d0d0d)}

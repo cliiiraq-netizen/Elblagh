@@ -150,6 +150,10 @@ svg{display:block}
 
 
 /* ---- Scan-card stickers (ev vertical · eh horizontal · er round) — 1em = 1mm ---- */
+/* scan cards own their line-height and layout so host pages (line-height:0 wrappers, display overrides) cannot break them */
+.stk.ev,.stk.eh,.stk.er{line-height:1.4}
+.stk.er{display:flex!important}
+.stk .e-note{line-height:1.3}
 .stk.ev,.stk.eh{position:relative;overflow:hidden;background:var(--spb)!important;--sband:#FFC816;--sbandi:#111;--scard:var(--sb)}
 .stk.v-yellow.ev,.stk.v-yellow.eh,.stk.v-yellow.er{--sband:#111;--sbandi:#FFC816;--scard:radial-gradient(60em 60em at 70% 22%,#FFD84A 0%,#FFC816 45%,#F5B400 100%)}
 .stk.v-black.ev,.stk.v-black.eh,.stk.v-black.er{--scard:radial-gradient(60em 60em at 70% 18%,#262626,#0d0d0d)}
@@ -686,7 +690,7 @@ select.inp{-webkit-appearance:none;appearance:none;cursor:pointer;padding-inline
 .dn-art::before{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--y) 20%,transparent),transparent 78%)}
 .dn-art::after{content:"";position:absolute;inset:38px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--y) 45%,transparent)}
 .dn-art .dn-sw{position:absolute;inset:0;z-index:1;display:grid;place-items:center;line-height:0;filter:drop-shadow(0 12px 16px rgba(70,45,0,.22))}
-.dn-art .dn-sw .stk{display:block;transform:rotate(12deg);animation:dnIn .8s cubic-bezier(.34,1.56,.64,1) .1s both}
+.dn-art .dn-sw .stk{transform:rotate(12deg);animation:dnIn .8s cubic-bezier(.34,1.56,.64,1) .1s both}
 .dn-ok{position:absolute;z-index:2;left:calc(50% - 74px);top:calc(50% + 16px);width:46px;height:46px;border-radius:50%;background:#E4F3EA;color:#1F8A4C;border:4px solid var(--bg);display:grid;place-items:center;box-shadow:0 6px 14px -6px rgba(0,0,0,.25);animation:dnPop .5s cubic-bezier(.34,1.56,.64,1) .55s both}
 .dn-ok svg{width:22px;height:22px}
 .dn-ok path{stroke-dasharray:30;stroke-dashoffset:30;animation:draw .45s .85s var(--ease) forwards}
