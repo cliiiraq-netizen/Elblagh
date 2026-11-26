@@ -178,15 +178,6 @@ svg{flex:none}
 @keyframes hx-float{0%,100%{translate:0 0}50%{translate:0 -10px}}
 
 /* ---------- steps ---------- */
-.hx-steps{padding-inline:var(--hx-gutter);scroll-padding-inline:var(--hx-gutter);scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;display:grid;grid-auto-flow:column;grid-auto-columns:min(82%,21rem);gap:.875rem;padding-bottom:.5rem;overflow-x:auto}
-.hx-steps::-webkit-scrollbar{display:none}
-.hx-step{border-radius:var(--hx-radius);background:var(--hx-soft);scroll-snap-align:start;display:flex;flex-direction:column;overflow:hidden}
-.hx-step__text{padding:1.5rem 1.5rem 1.75rem}
-.hx-step__tag{display:inline-flex;align-items:center;gap:.5rem;margin-bottom:.9rem;color:var(--hx-ink-2);font-size:.8125rem;font-weight:600}
-.hx-step__tag b{width:1.5rem;height:1.5rem;border-radius:50%;display:grid;place-items:center;background:var(--hx-ink);color:#fff;font-size:.75rem}
-.hx-step__text h3{font-size:1.375rem;font-weight:700;line-height:1.35}
-.hx-step__text p{color:var(--hx-ink-2);margin-top:.35rem;font-size:.9375rem;line-height:1.6}
-.hx-step__visual{flex:none;display:flex;justify-content:center;align-items:flex-start;height:17.5rem;margin-top:auto;position:relative;overflow:hidden}
 .hx-phone{user-select:none;-webkit-user-select:none;background:#111;border-radius:2.4rem;flex:none;width:13.25rem;height:26rem;padding:.45rem;position:relative;box-shadow:inset 0 0 0 1.5px #2b2b2b,0 30px 50px -20px rgba(0,0,0,.35)}
 .hx-phone__island{z-index:3;position:absolute;top:.9rem;left:50%;transform:translateX(-50%);width:4.25rem;height:1.2rem;border-radius:999px;background:#000}
 .hx-phone__screen{position:relative;height:100%;overflow:hidden;border-radius:1.95rem;background:#fff}
@@ -329,36 +320,9 @@ svg{flex:none}
 @keyframes bw2{0%,48%{transform:scaleX(0);opacity:0}49%{opacity:1}80%{transform:scaleX(1);opacity:1}96%,100%{transform:scaleX(1);opacity:0}}
 @keyframes bdst{0%,80%{background:rgba(255,255,255,.08);color:#fff;transform:scale(1)}85%{background:#FFC816;color:#111;transform:scale(1.1)}94%{background:#FFC816;color:#111;transform:scale(1)}100%{background:rgba(255,255,255,.08);color:#fff;transform:scale(1)}}
 html[dir="ltr"] .hx-bridge__wire{transform:scaleX(-1)}
-.hx-masked{position:relative;display:flex;flex-direction:column;gap:.6rem;padding:1.5rem;border-radius:var(--hx-radius);background:linear-gradient(rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1)}
-.hx-masked__label{color:rgba(255,255,255,.55);font-size:.8125rem}
-.hx-masked__digits{white-space:nowrap;font-size:clamp(1.5rem,min(9vw,(100vw - 5.25rem) / 8.6),3.75rem);font-weight:600;line-height:1.1;direction:ltr;text-align:left}
-.hx-masked__digits i{font-style:normal;color:var(--hx-accent);animation:hx-blink 2.6s ease-in-out infinite}
-.hx-masked__digits i:nth-of-type(2n){animation-delay:.3s}
-.hx-masked__digits i:nth-of-type(3n){animation-delay:.6s}
-.hx-masked__lock{position:absolute;top:1.5rem;inset-inline-end:1.5rem;color:rgba(255,255,255,.5)}
-.hx-facts{display:grid;gap:0;margin-top:1.5rem}
-.hx-facts li{display:grid;grid-template-columns:auto 1fr;grid-template-areas:"icon tag" "icon copy";column-gap:.9rem;padding:1.1rem 0;border-top:1px solid rgba(255,255,255,.1)}
-.hx-facts li>span:first-child{grid-area:icon;margin-top:.15rem;color:#FFC816;display:inline-flex}
-.hx-facts .ic{stroke-width:1.7}
-.hx-facts b{grid-area:tag;justify-self:start;text-align:start;font-size:1rem;font-weight:700}
-.hx-facts li>span:last-child{grid-area:copy;color:rgba(255,255,255,.6);font-size:.875rem}
 @keyframes hx-blink{0%,100%{opacity:1}50%{opacity:.35}}
 
 /* ---------- timeline ---------- */
-.hx-timeline{display:grid;gap:1.75rem;padding-inline-start:.25rem;position:relative}
-.hx-timeline::before{content:"";position:absolute;top:1.5rem;bottom:3rem;inset-inline-start:calc(1.75rem - .5px);width:1px;background:linear-gradient(180deg,#FFC816,var(--hx-line) 45%,#FFC816)}
-.hx-timeline__item{display:grid;grid-template-columns:3rem 1fr;grid-template-areas:"icon time" "icon title" ". copy";align-items:center;column-gap:1rem;position:relative}
-.hx-timeline__icon{grid-area:icon;align-self:start;width:3rem;height:3rem;border-radius:50%;display:grid;place-items:center;position:relative;background:var(--hx-surface);box-shadow:0 0 0 1px var(--hx-line),0 8px 18px -10px rgba(0,0,0,.2)}
-.hx-timeline__icon .ic{stroke-width:1.9}
-.hx-timeline__icon--bell{background:var(--hx-accent);color:#111;box-shadow:none}
-.hx-timeline__icon--wait{color:var(--hx-ink-3)}
-.hx-timeline__icon--wa{background:var(--hx-accent);color:#111;box-shadow:none}
-.hx-timeline__icon--wa svg{width:1.3rem;height:1.3rem;stroke-width:2.2}
-.hx-ring{position:absolute;inset:0;border-radius:50%;border:2px solid #FFC816;animation:hx-ring 1.8s ease-out infinite}
-.hx-timeline__time{grid-area:time;justify-self:start;color:var(--hx-ink-3);font-size:.8125rem;font-weight:600}
-.hx-timeline__item h3{grid-area:title;font-size:1.25rem;font-weight:700;line-height:1.4}
-.hx-timeline__item p{grid-area:copy;color:var(--hx-ink-2);margin-top:.3rem;font-size:.9375rem;line-height:1.6}
-.hx-timeline__item--wa .hx-timeline__time{color:var(--hx-accent-ink)}
 @keyframes hx-ring{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(1.9)}}
 
 /* ---------- sticker trio ---------- */
@@ -369,62 +333,12 @@ html[dir="ltr"] .hx-bridge__wire{transform:scaleX(-1)}
 .hx-duo__item--black .hx-duo__art{transform:rotate(4deg) translateY(1rem)}
 .hx-duo__item--yellow .hx-duo__art{transform:rotate(-3deg)}
 .hx-duo figcaption{color:var(--hx-ink-2);font-size:.875rem;font-weight:600}
-.hx-specs{display:grid;margin-top:1.25rem}
-.hx-specs li{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:1rem .25rem;border-bottom:1px solid var(--hx-line)}
-.hx-specs b{font-size:1.0625rem;font-weight:700}
-.hx-specs span{color:var(--hx-ink-2);text-align:end;font-size:.875rem}
 
 /* ---------- plans ---------- */
-.hx-plans{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem}
-.hx-plan{display:flex;flex-direction:column;padding:1.75rem;border-radius:var(--hx-radius);background:var(--hx-surface);box-shadow:0 0 0 1px var(--hx-line)}
-.hx-plan__top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem}
-.hx-plan__name{font-size:1.5rem;font-weight:inherit}
-.pw{display:inline-flex;align-items:center;gap:.45em;white-space:nowrap;line-height:1}
-.pw__em{width:1.6em;height:1.6em;border-radius:50%;display:inline-grid;place-items:center;background:var(--cta);color:#111}
-.pw__em .ic{width:62%;height:62%;stroke-width:2.2}
-.pw__txt{display:inline-flex;align-items:baseline;gap:.3em}
-.pw__kind{color:#6e6e73;font-weight:500}
-.pw__brand{color:#1d1d1f;font-weight:900}
-.pw__tier{color:#FFC816;font-weight:900}
-.hx-plan__badge{white-space:nowrap;padding:.25rem .65rem;border-radius:999px;background:rgba(255,200,22,.16);color:#FFD966;font-size:.75rem;font-weight:700}
-.hx-plan__audience{margin-top:.75rem;color:var(--hx-ink-2);font-size:.9375rem}
-.hx-plan__price{display:flex;align-items:baseline;gap:.5rem;margin-top:1.5rem}
-.hx-plan__price .hx-latin{letter-spacing:-.04em;font-size:3.25rem;font-weight:700;line-height:1}
-.hx-plan__price small{color:var(--hx-ink-2);font-size:.9375rem}
-.hx-plan__list{flex:1;display:grid;gap:.75rem;margin:1.5rem 0 1.75rem;padding-top:1.5rem;border-top:1px solid var(--hx-line);font-size:.9375rem}
-.hx-plan__list li{display:flex;gap:.6rem;line-height:1.5}
-.hx-plan__list svg{flex:none;margin-top:.2rem;width:1rem;height:1rem;color:var(--hx-accent-ink);stroke-width:2.4}
-.hx-plan--plus{color:#fff;background:radial-gradient(80% 60% at 100% 0,rgba(255,200,22,.24),transparent 60%),#121110;box-shadow:0 30px 60px -30px rgba(18,17,16,.55)}
-.hx-plan--plus .pw__brand{color:#fff}
-.hx-plan--plus .hx-plan__audience,.hx-plan--plus .hx-plan__price small{color:rgba(255,255,255,.62)}
-.hx-plan--plus .hx-plan__list{border-color:rgba(255,255,255,.12)}
-.hx-plan--plus .hx-plan__list svg{color:#FFC816}
-.hx-plans__note{text-align:center;color:var(--hx-ink-2);margin-top:1.25rem;font-size:.875rem}
 
 /* ---------- FAQ ---------- */
-.hx-faq__inner{max-width:48rem}
-.hx-faq__sec{display:flex;flex-direction:column;gap:.875rem}
-.hx-faq h2{font-size:clamp(2rem,8vw,3rem);font-weight:700;margin-bottom:1rem}
-.faq{display:grid;gap:.75rem}
-.faq details{background:var(--hx-surface);border:1px solid transparent;border-radius:1.375rem;overflow:hidden;transition:border-color .15s,box-shadow .15s}
-.faq details:hover{border-color:rgba(245,170,0,.3);box-shadow:0 14px 34px rgba(245,170,0,.12)}
-.faq details[open]{border-color:rgba(245,170,0,.28)}
-.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:.875rem;padding:.9375rem 1rem}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary span{flex:1;min-width:0;font-size:1.0625rem;font-weight:700;line-height:1.35;color:#1a1a1a}
-.faq summary i{flex-shrink:0;width:2rem;height:2rem;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;background:var(--hx-accent-soft);color:var(--hx-accent-ink);transition:background-color .15s,color .15s}
-.faq summary i .ic{width:1rem;height:1rem;transition:transform .2s}
-.faq details[open] summary i{background:var(--cta);color:#111}
-.faq details[open] summary i .ic{transform:rotate(180deg)}
-.faq details p{padding:0 1rem 1rem;color:#6b5f52;font-size:.875rem}
 
 /* ---------- final + footer ---------- */
-.hx-final{text-align:center;padding-block:clamp(5rem,14vw,9rem)}
-.hx-final__inner{display:flex;flex-direction:column;align-items:center;gap:1.75rem}
-.hx-final__stickers{width:9rem;height:10.5rem;margin-bottom:.5rem;position:relative}
-.hx-final__art{position:absolute;top:0;filter:drop-shadow(0 18px 24px rgba(40,25,15,.25))}
-.hx-final__art--back{left:.4rem;transform:rotate(-9deg)}
-.hx-final__art--front{top:.6rem;right:.4rem;transform:rotate(7deg)}
 .site-footer{padding:.75rem 0 1.25rem}
 .foot-card{border-radius:1rem;border:1px solid rgba(245,170,0,.14);overflow:hidden;background:#fff;box-shadow:0 16px 50px rgba(87,62,20,.08)}
 .foot-main{padding:1rem;background:radial-gradient(circle at 100% 0,rgba(255,200,22,.09),transparent 40%),linear-gradient(#fff,#fffcf3)}
@@ -445,16 +359,8 @@ html[dir="ltr"] .hx-bridge__wire{transform:scaleX(-1)}
 .foot-legal a:hover{color:#111;background:#fff8e0;border-color:rgba(245,170,0,.2)}
 
 /* ---------- sticky bar (mobile) ---------- */
-.hx-sticky{position:fixed;inset-inline:.75rem;bottom:calc(.75rem + env(safe-area-inset-bottom,0px));z-index:40;opacity:0;pointer-events:none;transform:translateY(calc(100% + 2rem));transition:transform .5s var(--hx-ease),opacity .3s ease}
-.hx-sticky.is-shown{opacity:1;pointer-events:auto;transform:none}
-.hx-sticky__bar{display:flex;justify-content:space-between;align-items:center;gap:.75rem;padding:.5rem 1rem .5rem .5rem;border-radius:1.4rem;background:rgba(255,255,255,.82);backdrop-filter:saturate(1.6) blur(16px);-webkit-backdrop-filter:saturate(1.6) blur(16px);box-shadow:0 0 0 1px var(--hx-line),0 20px 40px -16px rgba(0,0,0,.3)}
-.hx-sticky__price{display:flex;flex-direction:column;line-height:1.3}
-.hx-sticky__label{color:var(--hx-ink-2);font-size:.6875rem}
-.hx-sticky__amount{font-size:.9375rem;font-weight:700}
-.hx-sticky .hx-btn .ic{width:16px;height:16px}
 
 @media (hover:hover){
-  .hx-tile:hover{transform:translateY(-4px);box-shadow:0 24px 40px -24px rgba(40,25,15,.25)}
   .hx-btn--primary:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 -1px 0 rgba(140,90,0,.25),0 14px 32px -8px rgba(245,170,0,.65)}
   .hx-duo__item:hover .hx-duo__art{transform:rotate(0) translateY(-.4rem)}
 }
@@ -463,18 +369,6 @@ html[dir="ltr"] .hx-bridge__wire{transform:scaleX(-1)}
   .nav-pill{padding:.625rem;gap:.75rem}
   .brand-mk{width:2.75rem;height:2.75rem}
   .brand-name{font-size:1.5rem}
-  .faq{gap:.875rem}
-  .faq summary{gap:1rem;padding:1.0625rem 1.125rem}
-  .faq details p{padding:0 1.125rem 1.125rem}
-  .hx-bento{gap:1rem}
-  .hx-tile{min-height:13rem;padding:1.5rem}
-  .hx-tile h3{font-size:1.3125rem}
-  .hx-tile p{font-size:.9375rem}
-  .hx-facts{grid-template-columns:repeat(3,1fr);gap:2rem}
-  .hx-specs{grid-template-columns:repeat(3,1fr);gap:1.5rem}
-  .hx-specs li{border-bottom:0;border-top:1px solid var(--hx-line);flex-direction:column;gap:.25rem}
-  .hx-specs span{text-align:start}
-  .hx-final__stickers{width:11rem;height:12.5rem}
   .foot-main{padding:1.25rem 1.5rem}
   .foot-bottom{padding:.625rem 1.5rem}
   .site-footer{padding:1rem 0 1.75rem}
@@ -484,45 +378,255 @@ html[dir="ltr"] .hx-bridge__wire{transform:scaleX(-1)}
 }
 @media (min-width:768px){
   .site-header{padding-top:1.25rem}
-  .hx-sticky{display:none}
-  .hx-plans{grid-template-columns:repeat(2,minmax(0,1fr));max-width:56rem;margin-inline:auto}
-  .hx-plan{padding:2.25rem}
-  .hx-timeline{grid-template-columns:repeat(3,1fr);gap:2rem;padding:0}
-  .hx-timeline::before{top:1.5rem;bottom:auto;inset-inline:1.5rem 30%;width:auto;height:1px;background:linear-gradient(270deg,#FFC816,var(--hx-line) 50%,#FFC816)}
-  .hx-timeline__item{grid-template-columns:1fr;grid-template-areas:"icon" "time" "title" "copy";align-items:start;row-gap:.4rem}
-  .hx-timeline__icon{margin-bottom:.9rem}
-  .hx-masked{padding:2rem 2.25rem}
 }
 @media (min-width:1024px){
   .site-header{padding-top:1.5rem}
   .menu-btn{display:none}
   .login-btn{display:inline-flex}
-  .hx-hero{padding-top:3rem}
-  .hx-hero__grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3.5rem}
-  .hxd__sticker{width:15.5rem}
-  .hxd__stage{width:min(100%,24rem)}
   .hx-hero__copy{text-align:start;align-items:flex-start}
-  .hx-display{font-size:clamp(2.75rem,3.9vw,4.25rem)}
   .hx-hero__copy .hx-lead{margin-inline:0}
   .hx-hero__actions{align-items:flex-start}
-  .hx-steps{grid-template-columns:repeat(3,1fr);grid-auto-flow:row;gap:1.25rem;width:min(1120px,100% - 2rem);margin-inline:auto;padding-inline:0;overflow:visible}
-  .hx-step__text{padding:2rem 2rem 1.75rem}
-  .hx-step__visual{height:19.5rem}
-  .hx-bento{grid-template-columns:repeat(4,1fr);gap:1.25rem}
-  .hx-tile{min-height:15rem;padding:1.75rem}
-  .hx-tile--plus{padding:2.25rem 2.5rem}
-  .hx-tile--plus h3{font-size:1.75rem}
-  .hx-tile__people{width:7rem;height:7rem}
   .hx-dark .shell{display:grid;grid-template-columns:1fr 1fr;align-items:end;column-gap:4rem}
   .hx-dark .hx-head{grid-area:1/1;margin-bottom:2.5rem}
   .hx-bridge{grid-area:1/2;margin-bottom:2.75rem}
-  .hx-masked,.hx-facts{grid-column:1/-1}
 }
+/* ================= compact system (home3 v2): one type scale + 4px spacing scale ================= */
+:root{--sp-1:.25rem;--sp-2:.5rem;--sp-3:.75rem;--sp-4:1rem;--sp-5:1.25rem;--sp-6:1.5rem;--sp-8:2rem;
+  --fs-xs:.75rem;--fs-sm:.875rem;--fs-md:1rem;--fs-lg:1.125rem;--fs-title:clamp(1.5rem,5.4vw,2.25rem);--r-md:1rem;--r-lg:1.25rem;--dir:-1}
+html[dir=ltr]{--dir:1}
+.hx-section{padding-block:clamp(3rem,8vw,5rem)}
+.hx-head{margin-bottom:clamp(1.5rem,4vw,2.5rem)}
+.hx-title{font-size:var(--fs-title);line-height:1.4}
+.hx-eyebrow{font-size:var(--fs-sm);margin-bottom:var(--sp-2)}
+.hx-display{font-size:clamp(1.625rem,6.9vw,3.5rem);line-height:1.35}
+.hx-lead{font-size:clamp(.9375rem,3.6vw,1.0625rem)}
+.hx-btn--lg{min-height:3rem;padding:0 1.5rem;font-size:var(--fs-md)}
+.hx-btn--md{min-height:2.75rem;padding:0 1.25rem;font-size:.9375rem}
+.hx-btn--md .ic{width:1rem;height:1rem}
+
+/* hero */
+.hx-hero{padding-top:clamp(1.25rem,5vw,2.5rem);padding-bottom:clamp(1rem,4vw,2.5rem)}
+.hx-hero__grid{gap:clamp(1rem,4vw,2.5rem)}
+.hx-hero__copy{gap:var(--sp-4)}
+.hx-hero__actions{gap:var(--sp-3);margin-top:var(--sp-1)}
+.hx-hero__actions .hx-btn{min-width:13rem}
+.hxd__stage{padding-top:2rem;padding-bottom:2rem}
+.hxd__sticker{width:min(50vw,12.5rem)}
+/* QR scan: sweep + module glow (screen blend) + corner lock, played once per alert cycle */
+.hxd__art{position:relative}
+.hxq{position:absolute;pointer-events:none}
+.hxq__win{position:absolute;inset:0;overflow:hidden;border-radius:6%}
+.hxq__sweep,.hxq__line{position:absolute;inset:0;opacity:0;transform:translateY(-100%)}
+.hxq__sweep::before{content:"";position:absolute;inset-inline:0;bottom:0;height:42%;background:linear-gradient(rgba(255,200,22,0),rgba(255,200,22,.95))}
+.hxq__sweep{mix-blend-mode:screen}
+.hxq__line::after{content:"";position:absolute;inset-inline:0;bottom:-1px;height:2px;border-radius:2px;background:#FFC816;box-shadow:0 0 8px 2px rgba(255,200,22,.7),0 0 20px 4px rgba(255,200,22,.3)}
+.hxq__frame{position:absolute;inset:-4%;opacity:0;transform:scale(1.15)}
+.hxq__frame i{position:absolute;width:16%;height:16%;border:2.5px solid #FFC816;filter:drop-shadow(0 0 4px rgba(255,200,22,.6))}
+.hxq__frame i:nth-child(1){top:0;left:0;border-right:0;border-bottom:0;border-top-left-radius:6px}
+.hxq__frame i:nth-child(2){top:0;right:0;border-left:0;border-bottom:0;border-top-right-radius:6px}
+.hxq__frame i:nth-child(3){bottom:0;left:0;border-right:0;border-top:0;border-bottom-left-radius:6px}
+.hxq__frame i:nth-child(4){bottom:0;right:0;border-left:0;border-top:0;border-bottom-right-radius:6px}
+.hxd__stage.is-scan .hxq__sweep,.hxd__stage.is-scan .hxq__line{animation:hxq-sweep 1.3s cubic-bezier(.45,0,.25,1) both}
+.hxd__stage.is-scan .hxq__frame{animation:hxq-lock 1.3s var(--hx-ease) both}
+@keyframes hxq-sweep{0%{opacity:0;transform:translateY(-100%)}12%{opacity:1}78%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(0)}}
+@keyframes hxq-lock{0%,50%{opacity:0;transform:scale(1.15)}85%,100%{opacity:1;transform:scale(1)}}
+
+/* steps: compact 2×2 / 4-up grid */
+.hx-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--sp-3);width:min(1120px,100% - 2rem);margin-inline:auto}
+.hx-step{display:flex;flex-direction:column;overflow:hidden;border-radius:var(--r-lg);background:var(--hx-soft)}
+.hx-step__text{padding:var(--sp-4) var(--sp-4) var(--sp-3)}
+.hx-step__tag{display:inline-flex;align-items:center;gap:.4rem;margin-bottom:var(--sp-2);color:var(--hx-ink-2);font-size:var(--fs-xs);font-weight:600}
+.hx-step__tag b{width:1.375rem;height:1.375rem;border-radius:50%;display:grid;place-items:center;background:var(--hx-ink);color:#fff;font-family:var(--latin);font-size:.6875rem}
+.hx-step__text h3{font-size:var(--fs-md);font-weight:700;line-height:1.4}
+.hx-step__text p{margin-top:.15rem;color:var(--hx-ink-2);font-size:var(--fs-sm);line-height:1.5}
+.hx-step__visual{flex:none;margin-top:auto;height:8.75rem;display:flex;justify-content:center;align-items:flex-start;overflow:hidden;position:relative}
+.hx-step .hx-phone{zoom:.5;box-shadow:inset 0 0 0 1.5px #2b2b2b,0 24px 40px -18px rgba(0,0,0,.35)}
+
+/* moments */
+.hx-bento{gap:var(--sp-3)}
+.hx-tile{min-height:8.75rem;padding:var(--sp-4);border-radius:var(--r-lg);gap:.15rem}
+.hx-tile__icon{width:2.25rem;height:2.25rem}
+.hx-tile__icon .ic{width:18px;height:18px}
+.hx-tile h3{margin-top:var(--sp-4);font-size:var(--fs-md)}
+.hx-tile p{font-size:var(--fs-sm)}
+.hx-tile--plus{padding:var(--sp-5)}
+.hx-tile--plus h3{margin-top:var(--sp-2);font-size:var(--fs-lg)}
+.hx-tile--plus p{font-size:var(--fs-sm)}
+.hx-tile__people{width:4rem;height:4rem}
+.hx-tile__pulse,.hx-tile__echo{width:2.5rem;height:2.5rem}
+.hx-tile__echo{margin:-1.25rem 0 0 -1.25rem}
+.hx-tile__pulse .ic{width:18px;height:18px}
+
+/* privacy: small number pill + 2×2 facts (bridge untouched) */
+.hx-privacy__row{display:flex;margin-bottom:var(--sp-4)}
+.hx-masked{display:inline-flex;align-items:center;gap:.6rem;max-width:100%;padding:.4rem 1rem .4rem .4rem;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)}
+html[dir=ltr] .hx-masked{padding:.4rem .4rem .4rem 1rem}
+.hx-masked__lock{flex:none;width:2rem;height:2rem;border-radius:50%;display:grid;place-items:center;background:rgba(255,200,22,.14);color:#FFC816}
+.hx-masked__lock .ic{width:15px;height:15px}
+.hx-masked__label{min-width:0;color:rgba(255,255,255,.7);font-size:var(--fs-xs);line-height:1.3}
+.hx-masked__digits{font-size:.9375rem;font-weight:600;letter-spacing:.02em;direction:ltr;white-space:nowrap}
+.hx-masked__digits i{font-style:normal;color:var(--hx-accent);animation:hx-blink 2.6s ease-in-out infinite}
+.hx-masked__digits i:nth-of-type(2n){animation-delay:.3s}
+.hx-masked__digits i:nth-of-type(3n){animation-delay:.6s}
+.hx-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--sp-3)}
+.hx-facts li{display:flex;flex-direction:column;align-items:flex-start;gap:.15rem;padding:var(--sp-4);border-radius:var(--r-md);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+.hx-facts__ic{width:2rem;height:2rem;border-radius:.6rem;display:grid;place-items:center;background:rgba(255,200,22,.12);color:#FFC816;margin-bottom:var(--sp-2)}
+.hx-facts__ic .ic{width:16px;height:16px;stroke-width:1.8}
+.hx-facts b{font-size:var(--fs-md);font-weight:700;line-height:1.4}
+.hx-facts li>span:last-child{color:rgba(255,255,255,.66);font-size:var(--fs-sm);line-height:1.5}
+
+/* alerts: compact track with a travelling dot */
+.hx-track{position:relative;overflow:hidden;max-width:52rem;padding:var(--sp-5) var(--sp-3) var(--sp-4);border-radius:var(--r-lg);background:var(--hx-surface);box-shadow:inset 0 0 0 1px var(--hx-line)}
+.hx-track__rail{position:absolute;top:calc(var(--sp-5) + 1.125rem - 1px);inset-inline:calc(var(--sp-3) + (100% - 2.5rem) / 6);height:2px;border-radius:2px;background:var(--hx-soft)}
+.hx-track__fill{position:absolute;inset:0;border-radius:2px;background:#FFC816;transform-origin:100% 50%;transform:scaleX(0);animation:ht-fill 6s linear infinite}
+html[dir=ltr] .hx-track__fill{transform-origin:0 50%}
+.hx-track__dot{position:absolute;inset:0;animation:ht-dot 6s cubic-bezier(.45,0,.25,1) infinite}
+.hx-track__dot::before{content:"";position:absolute;top:50%;inset-inline-start:-5px;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:#FFC816;box-shadow:0 0 0 4px rgba(255,200,22,.25)}
+.hx-track__steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sp-2)}
+.hx-track__step{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.15rem}
+.hx-track__node{position:relative;z-index:1;width:2.25rem;height:2.25rem;margin-bottom:var(--sp-2);border-radius:50%;display:grid;place-items:center;background:var(--hx-surface);color:var(--hx-ink-2);box-shadow:0 0 0 1px var(--hx-line)}
+.hx-track__node::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:50%;background:var(--hx-accent);opacity:0}
+.hx-track__node .ic{width:16px;height:16px;stroke-width:2}
+.s1 .hx-track__node{color:#111;box-shadow:none}.s1 .hx-track__node::before{opacity:1}
+.s2 .hx-track__node::before{animation:ht-n2 6s linear infinite}
+.s3 .hx-track__node::before{animation:ht-n3 6s linear infinite}
+.s2 .hx-track__node{animation:ht-c2 6s linear infinite}
+.s3 .hx-track__node{animation:ht-c3 6s linear infinite}
+.hx-track__time{color:var(--hx-ink-2);font-size:var(--fs-xs);font-weight:600}
+.s3 .hx-track__time{color:var(--hx-accent-ink)}
+.hx-track__step h3{font-size:var(--fs-sm);font-weight:700;line-height:1.45}
+@keyframes ht-fill{0%,8%{transform:scaleX(0);opacity:1}38%,52%{transform:scaleX(.5)}82%,94%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1);opacity:0}}
+@keyframes ht-dot{0%,8%{transform:translateX(0);opacity:1}38%,52%{transform:translateX(calc(var(--dir) * 50%))}82%,94%{transform:translateX(calc(var(--dir) * 100%));opacity:1}100%{transform:translateX(calc(var(--dir) * 100%));opacity:0}}
+@keyframes ht-n2{0%,37%{opacity:0}40%,96%{opacity:1}100%{opacity:0}}
+@keyframes ht-n3{0%,80%{opacity:0}83%,96%{opacity:1}100%{opacity:0}}
+@keyframes ht-c2{0%,37%{color:var(--hx-ink-2)}40%,96%{color:#111}100%{color:var(--hx-ink-2)}}
+@keyframes ht-c3{0%,80%{color:var(--hx-ink-2)}83%,96%{color:#111}100%{color:var(--hx-ink-2)}}
+
+/* sticker trio + spec chips */
+.hx-duo{padding:clamp(1.75rem,6vw,3rem) 1rem;border-radius:var(--r-lg);gap:clamp(.5rem,3vw,2.5rem)}
+.hx-duo__item{gap:var(--sp-3)}
+.hx-duo figcaption{font-size:var(--fs-sm)}
+.hx-duo__art{animation:hx-float 6s ease-in-out infinite}
+.hx-duo__item--black .hx-duo__art{animation-delay:-2s}
+.hx-duo__item--yellow .hx-duo__art{animation-delay:-4s}
+.hx-specs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sp-2);margin-top:var(--sp-3)}
+.hx-specs li{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.1rem;padding:var(--sp-3) var(--sp-2);border-radius:var(--r-md);background:var(--hx-surface);box-shadow:inset 0 0 0 1px var(--hx-line)}
+.hx-specs__ic{display:inline-flex;color:var(--hx-accent-ink);margin-bottom:.2rem}
+.hx-specs__ic .ic{width:16px;height:16px;stroke-width:1.9}
+.hx-specs b{font-size:var(--fs-sm);font-weight:700;line-height:1.4}
+.hx-specs li>span:last-child{color:var(--hx-ink-2);font-size:var(--fs-xs);line-height:1.5}
+
+/* plans: slim cards, plate names */
+.hx-plans{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--sp-3);max-width:46rem;margin-inline:auto}
+.hx-plan{display:flex;flex-direction:column;padding:var(--sp-5);border-radius:var(--r-lg);background:var(--hx-surface);box-shadow:0 0 0 1px var(--hx-line)}
+.hx-plan__top{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--sp-3)}
+.hx-plan__name{font-size:inherit;font-weight:inherit;line-height:1}
+.hx-pplate{display:inline-flex;align-items:stretch;height:1.875rem;border:1.5px solid #111;border-radius:.375rem;background:#fff;color:#111;overflow:hidden}
+.hx-pplate i{width:.625rem;background:var(--hx-accent);border-inline-end:1.5px solid #111}
+.hx-pplate b{display:flex;align-items:center;padding:0 .7rem;font-family:var(--fh);font-size:var(--fs-sm);font-weight:700;line-height:1;white-space:nowrap}
+.hx-plan__badge{white-space:nowrap;padding:.15rem .6rem;border-radius:999px;background:rgba(255,200,22,.16);color:#FFD966;font-size:var(--fs-xs);font-weight:700}
+.hx-plan__id{display:flex;flex-direction:column;align-items:flex-start;gap:.4rem}
+.hx-plan__price{display:flex;flex-direction:column;align-items:flex-end;gap:.15rem;text-align:end}
+.hx-plan__price .hx-latin{font-size:1.75rem;font-weight:700;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.hx-plan__price small{color:var(--hx-ink-2);font-size:var(--fs-xs)}
+.hx-plan__audience{margin-top:var(--sp-3);color:var(--hx-ink-2);font-size:var(--fs-sm);line-height:1.55}
+.hx-plan__list{flex:1;display:grid;align-content:start;gap:.4rem;margin:var(--sp-4) 0 var(--sp-5);padding-top:var(--sp-4);border-top:1px solid var(--hx-line);font-size:var(--fs-sm)}
+.hx-plan__list li{display:flex;gap:.5rem;line-height:1.5}
+.hx-plan__list svg{flex:none;margin-top:.25rem;width:.875rem;height:.875rem;color:var(--hx-accent-ink);stroke-width:2.6}
+.hx-plan--plus{color:#fff;background:radial-gradient(80% 60% at 100% 0,rgba(255,200,22,.2),transparent 60%),#121110;box-shadow:0 20px 40px -24px rgba(18,17,16,.5)}
+.hx-plan--plus .hx-plan__audience,.hx-plan--plus .hx-plan__price small{color:rgba(255,255,255,.66)}
+.hx-plan--plus .hx-plan__list{border-color:rgba(255,255,255,.12)}
+.hx-plan--plus .hx-plan__list svg{color:#FFC816}
+.hx-plans__note{text-align:center;color:var(--hx-ink-2);margin-top:var(--sp-4);font-size:var(--fs-sm)}
+
+/* FAQ: side title + hairline accordion */
+.hx-faq__inner{display:grid;gap:var(--sp-5)}
+.hx-faq__aside p{margin-top:var(--sp-2);color:var(--hx-ink-2);font-size:var(--fs-sm);max-width:22rem}
+.hx-faq__help{display:inline-flex;align-items:center;gap:.45rem;min-height:2.75rem;margin-top:var(--sp-4);padding:0 1rem;border-radius:999px;background:var(--hx-surface);box-shadow:inset 0 0 0 1px var(--hx-line);font-size:var(--fs-sm);font-weight:600;transition:box-shadow .2s}
+.hx-faq__help:hover{box-shadow:inset 0 0 0 1px rgba(245,170,0,.45)}
+.hx-faq__help .ic{width:16px;height:16px;color:var(--hx-accent-ink)}
+.faq{display:grid;padding:0 var(--sp-4);border-radius:var(--r-lg);background:var(--hx-surface);box-shadow:inset 0 0 0 1px var(--hx-line)}
+.faq details+details{border-top:1px solid var(--hx-line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3);min-height:3.25rem;padding:var(--sp-3) 0}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:focus-visible{outline-offset:2px;border-radius:.5rem}
+.faq summary span{flex:1;min-width:0;font-size:.9375rem;font-weight:600;line-height:1.45;color:var(--hx-ink)}
+.faq summary i{flex:none;width:1.5rem;height:1.5rem;border-radius:50%;display:grid;place-items:center;background:var(--hx-soft);color:var(--hx-ink-2);transition:transform .2s var(--hx-ease),background-color .2s,color .2s}
+.faq summary i .ic{width:.875rem;height:.875rem}
+.faq details[open] summary i{transform:rotate(180deg);background:var(--hx-accent);color:#111}
+.faq details p{padding:0 0 var(--sp-4);color:var(--hx-ink-2);font-size:var(--fs-sm);line-height:1.7}
+
+/* final CTA card */
+.hx-final{padding-block:clamp(2.5rem,7vw,4.5rem)}
+.hx-final__card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:var(--sp-5);padding:var(--sp-8) var(--sp-5);border-radius:1.5rem;background:radial-gradient(70% 90% at 50% 0%,rgba(255,200,22,.18),transparent 70%),var(--hx-soft)}
+.hx-final__copy{display:flex;flex-direction:column;align-items:center;gap:var(--sp-3)}
+.hx-final__sub{color:var(--hx-ink-2);font-size:var(--fs-sm)}
+.hx-final__sub .hx-latin{color:var(--hx-ink);font-weight:700}
+.hx-final__copy .hx-btn{margin-top:var(--sp-1)}
+.hx-final__stickers{position:relative;flex:none;width:7rem;height:8.75rem}
+.hx-final__art{position:absolute;top:0;filter:drop-shadow(0 14px 18px rgba(40,25,15,.22));animation:hx-float 6s ease-in-out infinite}
+.hx-final__art--back{left:.25rem;transform:rotate(-9deg)}
+.hx-final__art--front{top:.5rem;right:.25rem;transform:rotate(7deg);animation-delay:-3s}
+
+/* sticky: slim dark pill */
+.hx-sticky{position:fixed;inset-inline:0;bottom:calc(.75rem + env(safe-area-inset-bottom,0px));z-index:40;display:flex;justify-content:center;padding:0 1rem;opacity:0;pointer-events:none;transform:translateY(calc(100% + 1.5rem));transition:transform .45s var(--hx-ease),opacity .3s ease}
+.hx-sticky.is-shown{opacity:1;transform:none}
+.hx-sticky.is-shown .hx-sticky__bar{pointer-events:auto}
+.hx-sticky__bar{display:flex;align-items:center;gap:.65rem;width:min(100%,21rem);padding:.375rem;border-radius:999px;background:rgba(18,17,16,.92);-webkit-backdrop-filter:saturate(1.4) blur(14px);backdrop-filter:saturate(1.4) blur(14px);color:#fff;box-shadow:0 14px 34px -12px rgba(0,0,0,.45)}
+.hx-sticky__mk{flex:none;width:2.5rem;height:2.5rem;border-radius:50%;background:var(--cta);display:grid;place-items:center;color:#111}
+.hx-sticky__mk svg.mk{width:1.6rem;height:auto}
+.hx-sticky__txt{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.35}
+.hx-sticky__txt b{font-size:.9375rem;font-weight:700}
+.hx-sticky__txt>span{color:rgba(255,255,255,.7);font-size:var(--fs-xs)}
+.hx-sticky__go{flex:none;width:2.75rem;height:2.75rem;border-radius:50%;display:grid;place-items:center;background:var(--hx-accent);color:#111}
+.hx-sticky__go .ic{width:1.1rem;height:1.1rem}
+html[dir=ltr] .hx-sticky__go svg{transform:scaleX(-1)}
+
+@media (min-width:640px){
+  .hx-plans{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hx-final__card{flex-direction:row;justify-content:center;text-align:start;gap:2.5rem;padding:2.5rem 3rem}
+  .hx-final__copy{align-items:flex-start}
+  .hx-final__stickers{width:8.25rem;height:10rem}
+}
+@media (min-width:768px){
+  .hx-sticky{display:none}
+  .hx-steps{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .hx-bento{grid-template-columns:repeat(4,1fr);gap:var(--sp-4)}
+  .hx-tile{min-height:10rem;padding:var(--sp-5)}
+  .hx-tile--plus{padding:var(--sp-6) 2rem}
+  .hx-tile--plus h3{font-size:1.25rem}
+  .hx-specs{max-width:40rem;margin-inline:auto}
+  .hx-track{margin-inline:auto;padding:var(--sp-6) var(--sp-5) var(--sp-5)}
+  .hx-track__rail{top:calc(var(--sp-6) + 1.125rem - 1px);inset-inline:calc(var(--sp-5) + (100% - 3.5rem) / 6)}
+  .hx-track__step h3{font-size:var(--fs-md)}
+}
+@media (min-width:1024px){
+  .hx-hero{padding-top:2.5rem}
+  .hx-hero__grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem}
+  .hxd__sticker{width:13.25rem}
+  .hxd__stage{width:min(100%,22rem)}
+  .hx-display{font-size:clamp(2.15rem,3.05vw,3.3rem)}
+  .hx-steps{gap:var(--sp-4)}
+  .hx-step__text{padding:var(--sp-5) var(--sp-5) var(--sp-4)}
+  .hx-step__visual{height:11rem}
+  .hx-step .hx-phone{zoom:.62}
+  .hx-privacy__row,.hx-facts{grid-column:1/-1}
+  .hx-facts{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .hx-faq__inner{grid-template-columns:minmax(0,.8fr) minmax(0,1.5fr);gap:4rem;align-items:start}
+  .hx-faq__aside{position:sticky;top:2rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .hxd__stage.is-scan .hxq__frame{opacity:1;transform:none}
+  .hx-track__fill{transform:scaleX(1)}
+  .hx-track__dot{transform:translateX(calc(var(--dir) * 100%))}
+  .hx-track__node::before{opacity:1}
+  .hx-track__node{color:#111!important}
+}
+
 /* English (EN toggle): ewsali's html[lang=en] typography + LTR mirrors */
 html[lang=en] .hx-display{letter-spacing:-.045em;line-height:1.04}
 html[lang=en] .hx-title{letter-spacing:-.04em;line-height:1.06}
 html[lang=en] .hx-step__text h3{letter-spacing:-.025em}
-html[lang=en] .hx-faq h2{letter-spacing:-.04em}
 html[lang=en] .pw__kind{display:none}
 html[lang=en] .pw__tier{text-transform:uppercase}
 html[dir=ltr] .hx-btn [data-ic=arrowL] svg,html[dir=ltr] .drawer nav .ch svg{transform:scaleX(-1)}
@@ -530,8 +634,6 @@ html[dir=ltr] .drawer-foot a .ic{transform:none}
 html[dir=ltr] .drawer aside{transform:translateX(-100%)}
 html[dir=ltr] .drawer.open aside{transform:none}
 html[dir=ltr] .hx-tile--plus{background:radial-gradient(90% 120% at 100% 100%,rgba(255,200,22,.32),transparent 60%),#151311}
-html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
-@media (min-width:768px){html[dir=ltr] .hx-timeline::before{background:linear-gradient(90deg,#FFC816,var(--hx-line) 50%,#FFC816)}}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition-duration:.01ms!important;animation:none!important}
   .rv-ready{opacity:1;transition:none;transform:none}
@@ -583,12 +685,12 @@ html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
     <div class="shell">
       <header class="hx-head rv">
         <p class="hx-eyebrow">شلون يشتغل</p>
-        <h2 class="hx-title" id="hx-how-title">ثلاث خطوات <span class="hx-title__soft">وتنحل السالفة</span></h2>
+        <h2 class="hx-title" id="hx-how-title">أربع خطوات <span class="hx-title__soft">وتنحل السالفة</span></h2>
       </header>
     </div>
     <ol class="hx-steps rv">
       <li class="hx-step hx-step--scan">
-        <div class="hx-step__text"><span class="hx-step__tag"><b>1</b>تصوير</span><h3>يصوّر الملصق</h3><p>بأي موبايل، وما يحتاج تطبيق</p></div>
+        <div class="hx-step__text"><span class="hx-step__tag"><b>1</b>تصوير</span><h3>يصوّر الملصق</h3><p>بأي موبايل، بدون تطبيق</p></div>
         <div class="hx-step__visual" aria-hidden="true">
           <div class="hx-phone hx-phone--dark"><span class="hx-phone__island"></span><div class="hx-phone__screen">
             <div class="hx-cam">
@@ -600,7 +702,7 @@ html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
         </div>
       </li>
       <li class="hx-step hx-step--choose">
-        <div class="hx-step__text"><span class="hx-step__tag"><b>2</b>اختيار</span><h3>يحدد شنو صاير</h3><p>ويرفق صورة توضّح الموقف</p></div>
+        <div class="hx-step__text"><span class="hx-step__tag"><b>2</b>اختيار</span><h3>يحدد شنو صاير</h3><p>ويرفق صورة للموقف</p></div>
         <div class="hx-step__visual" aria-hidden="true">
           <div class="hx-phone hx-phone--light"><span class="hx-phone__island"></span><div class="hx-phone__screen">
             <div class="hx-real" dir="rtl">
@@ -628,8 +730,27 @@ html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
           </div></div>
         </div>
       </li>
+      <li class="hx-step hx-step--notify">
+        <div class="hx-step__text"><span class="hx-step__tag"><b>3</b>إشعار</span><h3>يوصلك إشعار</h3><p>بثواني، ورقمك مخفي</p></div>
+        <div class="hx-step__visual" aria-hidden="true">
+          <div class="hx-phone hx-phone--dark"><span class="hx-phone__island"></span><div class="hx-phone__screen">
+            <div class="hx-lock">
+              <span class="hx-lock__date">الخميس، 26 تشرين الثاني</span>
+              <span class="hx-lock__time">9:41</span>
+              <div class="hx-note">
+                <span class="hx-note__head"><i data-mk></i><b>EBLAGH</b><time>الآن</time></span>
+                <b>سيارتك سادّة الطريق</b>
+                <span>وصلك بلاغ بخصوص سيارتك <b class="hx-latin">Toyota Camry</b> — «سادّة باب الكراج»</span>
+                <span class="hx-note__acts"><span>جاي هسّه</span><span>خلال 5 دقايق</span></span>
+              </div>
+              <div class="hx-lock__bottom"><i data-ic="flash"></i><i data-ic="camera"></i></div>
+              <span class="hx-lock__bar"></span>
+            </div>
+          </div></div>
+        </div>
+      </li>
       <li class="hx-step hx-step--deliver">
-        <div class="hx-step__text"><span class="hx-step__tag"><b>3</b>ردّ</span><h3>ويوصله ردّك</h3><p>بنقرة وحدة، ورقمك يبقى مخفي</p></div>
+        <div class="hx-step__text"><span class="hx-step__tag"><b>4</b>ردّ</span><h3>ويوصله ردّك</h3><p>بنقرة، ويعرف متى توصل</p></div>
         <div class="hx-step__visual" aria-hidden="true">
           <div class="hx-phone hx-phone--light"><span class="hx-phone__island"></span><div class="hx-phone__screen">
             <div class="hx-real" dir="rtl">
@@ -642,7 +763,6 @@ html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
                 <span class="rs-reply__ok" data-ic="check"></span>
                 <p class="rs-reply__t">وصل ردّ صاحب السيارة</p>
                 <span class="rs-reply__eta"><span data-ic="clock"></span><span>جاي هسّه</span><i class="rs-reply__dot"></i><span>5 دقايق</span></span>
-                <p class="rs-reply__note">شكراً لأنك بلّغت</p>
               </div>
             </div>
           </div></div>
@@ -683,15 +803,14 @@ html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
         <span class="hx-bridge__wire w2"><i></i></span>
         <div class="hx-bridge__node"><span class="hx-bridge__icon" data-ic="user"></span><span>انت</span></div>
       </div>
-      <div class="hx-masked rv">
-        <span class="hx-masked__label">رقم موبايلك</span>
-        <span class="hx-masked__digits hx-latin">+964 7<i>•</i><i>•</i> <i>•</i><i>•</i><i>•</i> <i>•</i><i>•</i><i>•</i><i>•</i></span>
-        <span class="hx-masked__lock" data-ic="lock"></span>
+      <div class="hx-privacy__row rv">
+        <div class="hx-masked"><span class="hx-masked__lock" data-ic="lock"></span><span class="hx-masked__label">رقم موبايلك</span><span class="hx-masked__digits hx-latin">+964 7<i>•</i><i>•</i> <i>•</i><i>•</i><i>•</i> <i>•</i><i>•</i><i>•</i><i>•</i></span></div>
       </div>
       <ul class="hx-facts rv">
-        <li><span data-ic="phone"></span><b>بدون تطبيق</b><span>يفتح من الكاميرا مباشرة</span></li>
-        <li><span data-ic="eyeOff"></span><b>رقمك مخفي</b><span>لا رقمك ولا رقمه يبين</span></li>
-        <li><span data-ic="shield"></span><b>حماية من الإزعاج</b><span>فلترة ذكية، وتحظر أي أحد بضغطة</span></li>
+        <li><span class="hx-facts__ic" data-ic="phone"></span><b>بدون تطبيق</b><span>يفتح من الكاميرا مباشرة</span></li>
+        <li><span class="hx-facts__ic" data-ic="eyeOff"></span><b>رقمك مخفي</b><span>لا رقمك ولا رقمه يبين</span></li>
+        <li><span class="hx-facts__ic" data-ic="shield"></span><b>فلترة ذكية</b><span>توقف الإزعاج قبل لا يوصلك</span></li>
+        <li><span class="hx-facts__ic" data-ic="ban"></span><b>تحظر بنقرة</b><span>وتوقف الملصق متى ما تريد</span></li>
       </ul>
     </div>
   </section>
@@ -702,11 +821,14 @@ html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
         <p class="hx-eyebrow">التنبيهات</p>
         <h2 class="hx-title" id="hx-alerts-title">ما راح <span class="hx-title__soft">يفوتك شي</span></h2>
       </header>
-      <ol class="hx-timeline rv">
-        <li class="hx-timeline__item"><span class="hx-timeline__icon hx-timeline__icon--bell" data-ic="bell"></span><span class="hx-timeline__time hx-latin">0:00</span><h3>إشعار فوري بنغمة إبلاغ</h3></li>
-        <li class="hx-timeline__item"><span class="hx-timeline__icon hx-timeline__icon--wait" data-ic="clock"></span><span class="hx-timeline__time hx-latin">1:00</span><h3>تذكير واحد بس</h3></li>
-        <li class="hx-timeline__item hx-timeline__item--wa"><span class="hx-timeline__icon hx-timeline__icon--wa"><span class="hx-ring"></span><span data-ic="reply"></span></span><span class="hx-timeline__time">دورك</span><h3>ردّك يوصل له بنقرة</h3><p>جاي هسّه أو خلال 5 دقايق، وهو يعرف متى توصل</p></li>
-      </ol>
+      <div class="hx-track rv">
+        <div class="hx-track__rail" aria-hidden="true"><i class="hx-track__fill"></i><i class="hx-track__dot"></i></div>
+        <ol class="hx-track__steps">
+          <li class="hx-track__step s1"><span class="hx-track__node" data-ic="bell"></span><span class="hx-track__time hx-latin">0:00</span><h3>إشعار فوري بنغمة إبلاغ</h3></li>
+          <li class="hx-track__step s2"><span class="hx-track__node" data-ic="clock"></span><span class="hx-track__time hx-latin">1:00</span><h3>تذكير واحد بس</h3></li>
+          <li class="hx-track__step s3"><span class="hx-track__node" data-ic="reply"></span><span class="hx-track__time">دورك</span><h3>ردّك يوصل له بنقرة</h3></li>
+        </ol>
+      </div>
     </div>
   </section>
 
@@ -718,9 +840,9 @@ html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
       </header>
       <div class="hx-duo rv" id="trio"></div>
       <ul class="hx-specs rv">
-        <li><b class="hx-latin" dir="ltr">6 × 12 cm</b><span>مقاس يناسب أي زجاج</span></li>
-        <li><b>QR + رابط</b><span>رابط احتياطي إذا الكاميرا ما تشتغل</span></li>
-        <li><b>ملصق واحد</b><span>ينربط بسيارتك بدقيقة</span></li>
+        <li><span class="hx-specs__ic" data-ic="ruler"></span><b class="hx-latin" dir="ltr">6 × 12 cm</b><span>يناسب أي زجاج</span></li>
+        <li><span class="hx-specs__ic" data-ic="qr"></span><b>QR + رابط</b><span>رابط احتياطي</span></li>
+        <li><span class="hx-specs__ic" data-ic="link"></span><b>دقيقة وحدة</b><span>وينربط بسيارتك</span></li>
       </ul>
     </div>
   </section>
@@ -733,18 +855,16 @@ html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
       </header>
       <div class="hx-plans rv">
         <article class="hx-plan">
-          <div class="hx-plan__top"><h3 class="hx-plan__name"><span class="pw"><span class="pw__em" data-ic="bell"></span><span class="pw__txt"><span class="pw__kind">باقة</span><span class="pw__brand">إبلاغ</span></span></span></h3></div>
+          <div class="hx-plan__top"><div class="hx-plan__id"><h3 class="hx-plan__name"><span class="hx-pplate"><i></i><b>إبلاغ</b></span></h3></div><p class="hx-plan__price"><span class="hx-latin">15,000</span><small>د.ع / سنة</small></p></div>
           <p class="hx-plan__audience">تنبيه فوري لسيارتك، ورقمك يبقى إلك</p>
-          <p class="hx-plan__price"><span class="hx-latin">15,000</span><small>د.ع / سنة</small></p>
           <ul class="hx-plan__list"><li><span data-ic="check"></span>إشعار فوري بنغمة إبلاغ المميزة</li><li><span data-ic="check"></span>رقمك واسمك ما يظهرون لأي أحد</li><li><span data-ic="check"></span>ردّ بنقرة مع وقت وصولك</li></ul>
-          <a class="hx-btn hx-btn--ink hx-btn--lg hx-btn--block" href="order.html?plan=basic">اختار الباقة <span data-ic="arrowL"></span></a>
+          <a class="hx-btn hx-btn--ink hx-btn--md hx-btn--block" href="order.html?plan=basic">اختار الباقة <span data-ic="arrowL"></span></a>
         </article>
         <article class="hx-plan hx-plan--plus">
-          <div class="hx-plan__top"><h3 class="hx-plan__name"><span class="pw"><span class="pw__em" data-ic="users"></span><span class="pw__txt"><span class="pw__kind">باقة</span><span class="pw__brand">إبلاغ</span><span class="pw__tier">بلس</span></span></span></h3><span class="hx-plan__badge">الأكمل</span></div>
+          <div class="hx-plan__top"><div class="hx-plan__id"><h3 class="hx-plan__name"><span class="hx-pplate"><i></i><b>إبلاغ بلس</b></span></h3><span class="hx-plan__badge">الأكمل</span></div><p class="hx-plan__price"><span class="hx-latin">22,000</span><small>د.ع / سنة</small></p></div>
           <p class="hx-plan__audience">للعائلة والسيارات الثانية: كلكم توصلكم التنبيهات</p>
-          <p class="hx-plan__price"><span class="hx-latin">22,000</span><small>د.ع / سنة</small></p>
           <ul class="hx-plan__list"><li><span data-ic="check"></span>كل مزايا إبلاغ</li><li><span data-ic="check"></span>لحد 3 سيارات بحساب واحد</li><li><span data-ic="check"></span>شارك السيارة ويا عائلتك</li><li><span data-ic="check"></span>واتساب احتياطي إذا ما شفت الإشعار</li></ul>
-          <a class="hx-btn hx-btn--primary hx-btn--lg hx-btn--block" href="order.html?plan=plus">اختار الباقة <span data-ic="arrowL"></span></a>
+          <a class="hx-btn hx-btn--primary hx-btn--md hx-btn--block" href="order.html?plan=plus">اختار الباقة <span data-ic="arrowL"></span></a>
         </article>
       </div>
       <p class="hx-plans__note rv">الدفع عند الاستلام · توصيل لكل المحافظات</p>
@@ -753,19 +873,24 @@ html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
 
   <section class="hx-section hx-section--soft hx-faq" aria-labelledby="hx-faq-title">
     <div class="shell hx-faq__inner rv">
-      <section class="hx-faq__sec">
-        <h2 id="hx-faq-title">عندك سؤال؟</h2>
-        <div class="faq" id="faq"></div>
-      </section>
+      <div class="hx-faq__aside">
+        <h2 class="hx-title" id="hx-faq-title">عندك سؤال؟</h2>
+        <p>ما حصلت جوابك؟ احجي ويانا ونردّ عليك بسرعة.</p>
+        <a class="hx-faq__help" href="contact.html"><span data-ic="chat"></span>تواصل ويانا</a>
+      </div>
+      <div class="faq" id="faq"></div>
     </div>
   </section>
 
   <section class="hx-final" id="hx-final" aria-labelledby="hx-final-title">
-    <div class="shell hx-final__inner rv">
+    <div class="shell"><div class="hx-final__card rv">
       <div class="hx-final__stickers" id="finalArt" aria-hidden="true"></div>
-      <h2 class="hx-title hx-title--xl" id="hx-final-title"><span>ركّب الملصق</span> <span class="hx-title__soft">وخلّي بالك مرتاح</span></h2>
-      <a class="hx-btn hx-btn--primary hx-btn--lg" href="order.html">جـــرّب إبلاغ <span data-ic="arrowL"></span></a>
-    </div>
+      <div class="hx-final__copy">
+        <h2 class="hx-title" id="hx-final-title"><span>ركّب الملصق</span> <span class="hx-title__soft">وخلّي بالك مرتاح</span></h2>
+        <p class="hx-final__sub">من <span class="hx-latin">15,000</span> د.ع / سنة · الدفع عند الاستلام</p>
+        <a class="hx-btn hx-btn--primary hx-btn--md" href="order.html">جـــرّب إبلاغ <span data-ic="arrowL"></span></a>
+      </div>
+    </div></div>
   </section>
 </main>
 
@@ -780,10 +905,7 @@ html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
 </footer>
 
 <div class="hx-sticky" id="sticky" aria-hidden="true">
-  <div class="hx-sticky__bar">
-    <span class="hx-sticky__price"><span class="hx-sticky__label">يبدأ من</span><span class="hx-sticky__amount"><span class="hx-latin">15,000</span> د.ع / سنة</span></span>
-    <a class="hx-btn hx-btn--primary hx-btn--sm" href="order.html" tabindex="-1">اطلب هسّه <span data-ic="arrowL"></span></a>
-  </div>
+  <a class="hx-sticky__bar" href="order.html" tabindex="-1"><span class="hx-sticky__mk" data-mk></span><span class="hx-sticky__txt"><b>اطلب إبلاغ</b><span><span class="hx-latin">15,000</span> د.ع / سنة</span></span><span class="hx-sticky__go" data-ic="arrowL"></span></a>
 </div>
 
 <div class="drawer" id="drawer" aria-hidden="true">
@@ -812,6 +934,10 @@ const L = (d, sw = 2) => `<svg class="ic" viewBox="0 0 24 24" fill="none" stroke
 const IC = {
   menu: L('<path d="M4 6h16M4 12h16M4 18h16"/>'),
   x: L('<path d="M18 6 6 18M6 6l12 12"/>'),
+  ban: L('<circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/>'),
+  ruler: L('<path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0ZM14.5 12.5l2-2M11.5 9.5l2-2M8.5 6.5l2-2M17.5 15.5l2-2"/>'),
+  link: L('<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>'),
+  chat: L('<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>'),
   reply: L('<path d="M20 18v-2a4 4 0 0 0-4-4H4"/><path d="m9 17-5-5 5-5"/>'),
   qr: L('<rect x="3" y="3" width="5" height="5" rx="1"/><rect x="16" y="3" width="5" height="5" rx="1"/><rect x="3" y="16" width="5" height="5" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3M21 21v.01M12 7v3a2 2 0 0 1-2 2H7M3 12h.01M12 3h.01M12 16v.01M16 12h1M21 12v.01M12 21v-1"/>'),
   arrowL: L('<path d="m12 19-7-7 7-7M19 12H5"/>'),
@@ -854,15 +980,17 @@ function paintStickers(){
   const keep = LANG; LANG = 'ar'; /* the physical sticker art stays Arabic in both languages (as on ewsali) */
   const hw = $('#stkBtn').getBoundingClientRect().width || 232;
   $('#heroArt').innerHTML = fit('ev', 'white', 'EB4471', hw);
+  { const q = $('#heroArt .e-qr'), a = $('#heroArt'); if (q){ let x = 0, y = 0, e = q; while (e && e !== a){ x += e.offsetLeft; y += e.offsetTop; e = e.offsetParent; }
+    a.insertAdjacentHTML('beforeend', `<span class="hxq" aria-hidden="true" style="left:${x}px;top:${y}px;width:${q.offsetWidth}px;height:${q.offsetHeight}px"><span class="hxq__win"><span class="hxq__sweep"></span><span class="hxq__line"></span></span><span class="hxq__frame"><i></i><i></i><i></i><i></i></span></span>`); } }
   $('#camArt').innerHTML = fit('ev', 'black', 'EB4471', 85);
   /* lock the scan frame onto the QR panel (offsets ignore the -2deg tilt) */
   const q = $('#camArt .e-qr'), tg = $('.hx-cam__target');
   if (q){ let x = 0, y = 0, e = q; while (e && e !== tg){ x += e.offsetLeft; y += e.offsetTop; e = e.offsetParent; }
     const pad = 6, k = $('.hx-cam__corners'); Object.assign(k.style, {left:(x-pad)+'px', top:(y-pad)+'px', width:(q.offsetWidth+pad*2)+'px', height:(q.offsetHeight+pad*2)+'px'}); }
   const vw = innerWidth, gap = Math.max(9.6, Math.min(64, vw * .04)), row = Math.min(1120, vw - 32) - 32;
-  const tw = Math.min(216, Math.max(120, vw * .33), (row - 2 * gap) / 3 * .94);
+  const tw = Math.min(176, Math.max(120, vw * .33), (row - 2 * gap) / 3 * .94);
   $('#trio').innerHTML = [['white',keep==='en'?'White':'أبيض'],['black',keep==='en'?'Black':'أسود'],['yellow',keep==='en'?'Yellow':'أصفر']].map(([k,t]) => `<figure class="hx-duo__item hx-duo__item--${k}"><span class="hx-duo__art">${fit('ev', k, 'EB4471', tw)}</span><figcaption>${t}</figcaption></figure>`).join('');
-  const fw = innerWidth >= 640 ? 104 : 84;
+  const fw = innerWidth >= 640 ? 76 : 64;
   $('#finalArt').innerHTML = `<span class="hx-final__art hx-final__art--back">${fit('ev','black','EB2208',fw)}</span><span class="hx-final__art hx-final__art--front">${fit('ev','white','EB4471',fw)}</span>`;
   LANG = keep;
 }
@@ -874,7 +1002,7 @@ function renderOpts(){ $('#rsOpts').innerHTML = [['car',T('السيارة ساد
   .map(([i,t,on]) => `<span class="rs-opt${on?' on':''}"><i>${IC[i]}</i><span>${t}</span><u></u></span>`).join(''); }
 renderOpts();
 
-/* ---------- hero sequence (ewsali HxHeroDemo timings): ripple → alert 300ms → missed + reminder 2.9s → leave 6.3s → clear 6.64s → next +3.5s ---------- */
+/* ---------- hero sequence: QR scan 0–1.3s → ripple 1.25s → alert 1.35s → owner reply 3.95s → leave 7.35s → clear 7.69s → next +3.5s ---------- */
 const MSGS_AR = ['رجاءً، سيارتك سادّة عليّ الطريق','انتبه، ضوء سيارتك شغّال','شباك سيارتك مفتوح'], MSGS_EN = ['Please move your car, you’re blocking me','Heads up, your headlights are on','Your car window is open'];
 const MSGS = MSGS_AR, msgAt = i => T(MSGS_AR[i], MSGS_EN[i]);
 let mi = 0, active = false, userTapped = false, timers = [];
@@ -890,17 +1018,18 @@ function cycle(i, byUser){
   timers.forEach(clearTimeout); timers = []; clearInterval(etaT);
   if (byUser) userTapped = true;
   mi = i; active = true;
-  slot.className = 'hxd__slot'; slot.innerHTML = ''; stage.classList.remove('is-alert');
-  ripple();
-  later(300, () => { stage.classList.add('is-alert'); slot.innerHTML = alertHTML(i, false); });
-  later(2900, () => { startEta(); $('.hxd__alert', slot)?.classList.add('is-back'); slot.insertAdjacentHTML('beforeend', callHTML()); });
-  later(6300, () => { slot.classList.add('is-leaving'); stage.classList.remove('is-alert'); });
-  later(6640, () => {
+  slot.className = 'hxd__slot'; slot.innerHTML = ''; stage.classList.remove('is-alert', 'is-scan'); $('.hxd__ripple')?.remove();
+  void stage.offsetWidth; stage.classList.add('is-scan');
+  later(1250, ripple);
+  later(1350, () => { stage.classList.add('is-alert'); slot.innerHTML = alertHTML(i, false); });
+  later(3950, () => { startEta(); $('.hxd__alert', slot)?.classList.add('is-back'); slot.insertAdjacentHTML('beforeend', callHTML()); });
+  later(7350, () => { slot.classList.add('is-leaving'); stage.classList.remove('is-alert', 'is-scan'); });
+  later(7690, () => {
     slot.className = 'hxd__slot'; slot.innerHTML = ''; clearInterval(etaT); $('.hxd__ripple')?.remove(); active = false;
     if (!userTapped && document.visibilityState === 'visible') later(3500, () => cycle((i + 1) % MSGS.length, false));
   });
 }
-if (RM.matches){ ripple(); stage.classList.add('is-alert'); slot.innerHTML = alertHTML(0, false) + callHTML(); $('.hxd__alert', slot).classList.add('is-back'); }
+if (RM.matches){ stage.classList.add('is-alert', 'is-scan'); slot.innerHTML = alertHTML(0, false) + callHTML(); $('.hxd__alert', slot).classList.add('is-back'); }
 else later(1400, () => cycle(0, false));
 /* tap: replays the shown alert, or moves to the next one while a cycle is running; stops the auto loop */
 $('#stkBtn').addEventListener('click', () => cycle((mi + (active ? 1 : 0)) % MSGS.length, true));
@@ -957,7 +1086,7 @@ const EN = {
  'تصوير':'Scan','أحد يصوّر الملصق':'They scan the sticker','بكاميرا أي موبايل، بدون تطبيق':'Any phone camera, no app','اختيار':'Choose','يختار المشكلة':'They pick the problem','ويصوّرها حتى يوضّحلك الموقف':'Then snap a photo of it',
  'ملصق':'Sticker','تحتـاج توصـل':'Need to reach','لصاحب السيـارة؟':'the car owner?','شنو المشكلة؟':'What’s happening?','صوّر المشكلة':'Take a photo','الصورة توضّح الموقف وتساعد صاحبها يتصرف أسرع.':'A clear photo helps the owner understand and act quickly.',
  'افتح الكاميرا':'Open camera','ابعث تنبيه لصاحب السيارة':'Send alert to owner','توصيل':'Delivered','يوصلك إشعار فوري':'You get it instantly','بثواني، ومحد يشوف رقمك':'In seconds, nobody sees your number',
- 'الخميس، 26 تشرين الثاني':'Thursday, 26 November','الآن':'now','🚗 سيارتك سادّة الطريق':'🚗 Your car is blocking the way','وصلك بلاغ بخصوص سيارتك':'You got a report about your','— «سادّة باب الكراج»':'— “Blocking the garage door”','جاي هسّه':'On my way','خلال 5 دقايق':'In 5 min',
+ 'الخميس، 26 تشرين الثاني':'Thursday, 26 November','الآن':'now','سيارتك سادّة الطريق':'Your car is blocking the way','وصلك بلاغ بخصوص سيارتك':'You got a report about your','— «سادّة باب الكراج»':'— “Blocking the garage door”','جاي هسّه':'On my way','خلال 5 دقايق':'In 5 min',
  'لكل موقف':'Every situation','ملصق واحد':'One sticker','لمواقف هواية':'Countless moments','أحد سادّ عليك؟':'Blocked in?','وصل لصاحبها بثواني':'Reach the owner in seconds','نسيت الضوء؟':'Lights left on?','الحق البطارية':'Save your battery',
  'الشباك مفتوح؟':'Window open?','سدّه قبل المطر والعجاج':'Close it before the rain','ضربة بالغلط؟':'A small scratch?','يكدر يعتذر ويوصلك':'They can own up and reach you','إبلاغ بلس':'Eblagh Plus','سيارة العائلة؟':'A family car?',
  'شارك سيارتك ويا عائلتك، ويوصلهم التنبيه بنفس اللحظة':'Share it with your family, everyone gets the alert at once','خصوصيتك أولاً':'Privacy by design','رقمك؟':'Your number?','محد راح يشوفه':'Nobody sees it','اللي يبلّغ':'Them','انت':'You',
@@ -977,6 +1106,10 @@ const EN = {
  'ولا أحد يشوفه':'Nobody sees it','ما راح':'You won’t','يفوتك شي':'miss a thing','إشعار فوري بنغمة إبلاغ':'Instant alert with Eblagh’s tone','تذكير واحد بس':'Just one reminder','دورك':'Your turn','ردّك يوصل له بنقرة':'Your reply reaches them in a tap',
  'جاي هسّه أو خلال 5 دقايق، وهو يعرف متى توصل':'On my way, or in 5 minutes — they know when you’ll arrive','اختار لونه':'Pick a colour','على ذوق سيارتك':'To suit your car','سنة كاملة':'A whole year','بسعر واحد':'One price','عندك سؤال؟':'Got a question?',
  'ركّب الملصق':'Stick it on','وخلّي بالك مرتاح':'and relax',
+ 'أربع خطوات':'Four steps','بأي موبايل، بدون تطبيق':'Any phone, no app','ويرفق صورة للموقف':'And add a photo','إشعار':'Alert','يوصلك إشعار':'You get alerted','بثواني، ورقمك مخفي':'In seconds, number hidden','بنقرة، ويعرف متى توصل':'One tap, they know your ETA',
+ 'فلترة ذكية':'Smart filtering','توقف الإزعاج قبل لا يوصلك':'Spam stops before it reaches you','تحظر بنقرة':'Block in a tap','وتوقف الملصق متى ما تريد':'And pause your sticker anytime',
+ 'يناسب أي زجاج':'Fits any windshield','رابط احتياطي':'Backup link','دقيقة وحدة':'One minute','وينربط بسيارتك':'To link it to your car',
+ 'ما حصلت جوابك؟ احجي ويانا ونردّ عليك بسرعة.':'Didn’t find your answer? Talk to us and we’ll get back fast.','اطلب إبلاغ':'Order Eblagh',
  'يبدأ من':'From','اطلب هسّه':'Order now','القائمة':'Menu',
  'إبلاغ — الرئيسية':'Eblagh — Home','افتح القائمة':'Open menu','اضغط على الملصق وشوف التنبيه':'Tap the sticker to see the alert','ملصق إبلاغ الأبيض':'Eblagh white sticker','English':'Switch to Arabic','روابط الموقع':'Site links','أغلق القائمة':'Close menu','تنقل الموقع':'Site navigation','قانوني':'Legal'
 };
