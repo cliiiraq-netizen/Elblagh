@@ -1,0 +1,3076 @@
+[
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "home",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 8.05px: تحتاج صاحب السيارة؟",
+   "font 9.43px: صوّر الرمز وبلّغ",
+   "font 5.98px: EB-4471"
+  ],
+  "lowc": [
+   "01 1.21 rgb(38, 38, 42) on rgb(21, 21, 23)",
+   "02 1.21 rgb(38, 38, 42) on rgb(21, 21, 23)",
+   "03 1.21 rgb(38, 38, 42) on rgb(21, 21, 23)",
+   "04 1.21 rgb(38, 38, 42) on rgb(21, 21, 23)",
+   "كن من أول 100 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)",
+   "احجز ملصقك هسه بسعر ال 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "r-landing",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [
+   "تويوتا كامري 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)",
+   "13 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "r-compose",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 31x40 تغيير"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "r-status",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "r-unact",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر",
+   "font 3px: تواصل بلا أرقام.",
+   "font 2.1px: تحتاج صاحب السيارة؟",
+   "font 2.46px: صوّر الرمز وبلّغ",
+   "font 1.56px: EB-5002"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "r-neterr",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "app-home",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "app-inbox",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "app-report",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 10.5px: 2:51 ص"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "app-cars",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "app-car",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 4.5px: تواصل بلا أرقام.",
+   "font 3.15px: تحتاج صاحب السيارة؟",
+   "font 3.69px: صوّر الرمز وبلّغ",
+   "font 2.34px: EB-4471"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "app-addScan",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 5.75px: تواصل بلا أرقام.",
+   "font 4.025px: تحتاج صاحب السيارة؟",
+   "font 4.715px: صوّر الرمز وبلّغ",
+   "font 2.99px: EB-5001"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "app-settings",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "start-splash",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "start-login",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "start-otp",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "start-profile",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "start-plans",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 10.5px: وفّر شهرين"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "start-buy",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 4.75px: تواصل بلا أرقام.",
+   "font 3.325px: تحتاج صاحب السيارة؟",
+   "font 3.895px: صوّر الرمز وبلّغ",
+   "font 2.47px: EB-5002"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "start-delivery",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "start-payment",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "start-done",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "book",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [
+   "قريباً بالعراق 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)",
+   "تواصل مع صاحب أي سيارة 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)",
+   "احجز ملصقك قبل الإطلاق 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "business",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "admin",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "stickers",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر",
+   "font 10.85px: تحتاج صاحب السيارة؟",
+   "font 8.06px: EB-4471",
+   "font 10.66px: EB-4471",
+   "font 3.9px: تحتاج صاحب السيارة؟ ",
+   "font 8.84px: EB-4471",
+   "font 7.82px: الرمز السري للتفعيل",
+   "font 8.16px: امسح للتحميل"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "live",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر",
+   "tap 57x31 الكاميرا",
+   "tap 84x31 صفحة البلاغ",
+   "tap 67x31 التفاصيل",
+   "tap 62x31 المتابعة",
+   "tap 92x31 ملصق متوقف",
+   "tap 69x31 غير مفعّل",
+   "tap 83x31 رمز غير صالح",
+   "tap 80x31 بدون إنترنت",
+   "tap 74x31 وصل الحد",
+   "tap 55x31 البداية"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "menu",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 320,
+  "name": "errors",
+  "errs": []
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "home",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 8.05px: تحتاج صاحب السيارة؟",
+   "font 9.43px: صوّر الرمز وبلّغ",
+   "font 5.98px: EB-4471"
+  ],
+  "lowc": [
+   "01 1.21 rgb(38, 38, 42) on rgb(21, 21, 23)",
+   "02 1.21 rgb(38, 38, 42) on rgb(21, 21, 23)",
+   "03 1.21 rgb(38, 38, 42) on rgb(21, 21, 23)",
+   "04 1.21 rgb(38, 38, 42) on rgb(21, 21, 23)",
+   "كن من أول 100 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)",
+   "احجز ملصقك هسه بسعر ال 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "r-landing",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [
+   "تويوتا كامري 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)",
+   "13 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "r-compose",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 31x40 تغيير"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "r-status",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "r-unact",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر",
+   "font 3px: تواصل بلا أرقام.",
+   "font 2.1px: تحتاج صاحب السيارة؟",
+   "font 2.46px: صوّر الرمز وبلّغ",
+   "font 1.56px: EB-5002"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "r-neterr",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "app-home",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "app-inbox",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "app-report",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 10.5px: 2:51 ص"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "app-cars",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "app-car",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 4.5px: تواصل بلا أرقام.",
+   "font 3.15px: تحتاج صاحب السيارة؟",
+   "font 3.69px: صوّر الرمز وبلّغ",
+   "font 2.34px: EB-4471"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "app-addScan",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 5.75px: تواصل بلا أرقام.",
+   "font 4.025px: تحتاج صاحب السيارة؟",
+   "font 4.715px: صوّر الرمز وبلّغ",
+   "font 2.99px: EB-5001"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "app-settings",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "start-splash",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "start-login",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "start-otp",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "start-profile",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "start-plans",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 10.5px: وفّر شهرين"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "start-buy",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 4.75px: تواصل بلا أرقام.",
+   "font 3.325px: تحتاج صاحب السيارة؟",
+   "font 3.895px: صوّر الرمز وبلّغ",
+   "font 2.47px: EB-5002"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "start-delivery",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "start-payment",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "start-done",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "book",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [
+   "قريباً بالعراق 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)",
+   "تواصل مع صاحب أي سيارة 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)",
+   "احجز ملصقك قبل الإطلاق 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "business",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "admin",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "stickers",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر",
+   "font 10.85px: تحتاج صاحب السيارة؟",
+   "font 8.06px: EB-4471",
+   "font 10.66px: EB-4471",
+   "font 3.9px: تحتاج صاحب السيارة؟ ",
+   "font 8.84px: EB-4471",
+   "font 7.82px: الرمز السري للتفعيل",
+   "font 8.16px: امسح للتحميل"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "live",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر",
+   "tap 57x31 الكاميرا",
+   "tap 84x31 صفحة البلاغ",
+   "tap 67x31 التفاصيل",
+   "tap 62x31 المتابعة",
+   "tap 92x31 ملصق متوقف",
+   "tap 69x31 غير مفعّل",
+   "tap 83x31 رمز غير صالح",
+   "tap 80x31 بدون إنترنت",
+   "tap 74x31 وصل الحد",
+   "tap 55x31 البداية"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "menu",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 375,
+  "name": "errors",
+  "errs": []
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "home",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 8.05px: تحتاج صاحب السيارة؟",
+   "font 9.43px: صوّر الرمز وبلّغ",
+   "font 5.98px: EB-4471"
+  ],
+  "lowc": [
+   "01 1.21 rgb(38, 38, 42) on rgb(21, 21, 23)",
+   "02 1.21 rgb(38, 38, 42) on rgb(21, 21, 23)",
+   "03 1.21 rgb(38, 38, 42) on rgb(21, 21, 23)",
+   "04 1.21 rgb(38, 38, 42) on rgb(21, 21, 23)",
+   "كن من أول 100 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)",
+   "احجز ملصقك هسه بسعر ال 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "r-landing",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [
+   "تويوتا كامري 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)",
+   "13 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "r-compose",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 31x40 تغيير"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "r-status",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "r-unact",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر",
+   "font 3px: تواصل بلا أرقام.",
+   "font 2.1px: تحتاج صاحب السيارة؟",
+   "font 2.46px: صوّر الرمز وبلّغ",
+   "font 1.56px: EB-5002"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "r-neterr",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "app-home",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "app-inbox",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "app-report",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 10.5px: 2:52 ص"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "app-cars",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "app-car",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 4.5px: تواصل بلا أرقام.",
+   "font 3.15px: تحتاج صاحب السيارة؟",
+   "font 3.69px: صوّر الرمز وبلّغ",
+   "font 2.34px: EB-4471"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "app-addScan",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 5.75px: تواصل بلا أرقام.",
+   "font 4.025px: تحتاج صاحب السيارة؟",
+   "font 4.715px: صوّر الرمز وبلّغ",
+   "font 2.99px: EB-5001"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "app-settings",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "start-splash",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "start-login",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "start-otp",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "start-profile",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "start-plans",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 10.5px: وفّر شهرين"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "start-buy",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 4.75px: تواصل بلا أرقام.",
+   "font 3.325px: تحتاج صاحب السيارة؟",
+   "font 3.895px: صوّر الرمز وبلّغ",
+   "font 2.47px: EB-5002"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "start-delivery",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "start-payment",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "start-done",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "book",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [
+   "قريباً بالعراق 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)",
+   "تواصل مع صاحب أي سيارة 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)",
+   "احجز ملصقك قبل الإطلاق 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "business",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "admin",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "stickers",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر",
+   "font 10.85px: تحتاج صاحب السيارة؟",
+   "font 8.06px: EB-4471",
+   "font 10.66px: EB-4471",
+   "font 3.9px: تحتاج صاحب السيارة؟ ",
+   "font 8.84px: EB-4471",
+   "font 7.82px: الرمز السري للتفعيل",
+   "font 8.16px: امسح للتحميل"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "live",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر",
+   "tap 57x31 الكاميرا",
+   "tap 84x31 صفحة البلاغ",
+   "tap 67x31 التفاصيل",
+   "tap 62x31 المتابعة",
+   "tap 92x31 ملصق متوقف",
+   "tap 69x31 غير مفعّل",
+   "tap 83x31 رمز غير صالح",
+   "tap 80x31 بدون إنترنت",
+   "tap 74x31 وصل الحد",
+   "tap 55x31 البداية"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "menu",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 390,
+  "name": "errors",
+  "errs": []
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "home",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 8.05px: تحتاج صاحب السيارة؟",
+   "font 9.43px: صوّر الرمز وبلّغ",
+   "font 5.98px: EB-4471"
+  ],
+  "lowc": [
+   "01 1.21 rgb(38, 38, 42) on rgb(21, 21, 23)",
+   "02 1.21 rgb(38, 38, 42) on rgb(21, 21, 23)",
+   "03 1.21 rgb(38, 38, 42) on rgb(21, 21, 23)",
+   "04 1.21 rgb(38, 38, 42) on rgb(21, 21, 23)",
+   "كن من أول 100 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)",
+   "احجز ملصقك هسه بسعر ال 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "r-landing",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [
+   "تويوتا كامري 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)",
+   "13 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "r-compose",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 31x40 تغيير"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "r-status",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "r-unact",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر",
+   "font 3px: تواصل بلا أرقام.",
+   "font 2.1px: تحتاج صاحب السيارة؟",
+   "font 2.46px: صوّر الرمز وبلّغ",
+   "font 1.56px: EB-5002"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "r-neterr",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "app-home",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "app-inbox",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "app-report",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 10.5px: 2:52 ص"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "app-cars",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "app-car",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 4.5px: تواصل بلا أرقام.",
+   "font 3.15px: تحتاج صاحب السيارة؟",
+   "font 3.69px: صوّر الرمز وبلّغ",
+   "font 2.34px: EB-4471"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "app-addScan",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 5.75px: تواصل بلا أرقام.",
+   "font 4.025px: تحتاج صاحب السيارة؟",
+   "font 4.715px: صوّر الرمز وبلّغ",
+   "font 2.99px: EB-5001"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "app-settings",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "start-splash",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "start-login",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "start-otp",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "start-profile",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "start-plans",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 10.5px: وفّر شهرين"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "start-buy",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 4.75px: تواصل بلا أرقام.",
+   "font 3.325px: تحتاج صاحب السيارة؟",
+   "font 3.895px: صوّر الرمز وبلّغ",
+   "font 2.47px: EB-5002"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "start-delivery",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "start-payment",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "start-done",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "book",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [
+   "قريباً بالعراق 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)",
+   "تواصل مع صاحب أي سيارة 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)",
+   "احجز ملصقك قبل الإطلاق 1.05 rgb(17, 17, 17) on rgb(9, 9, 10)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "business",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "admin",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 102x32 تصدير التقرير"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "stickers",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر",
+   "font 10.85px: تحتاج صاحب السيارة؟",
+   "font 8.06px: EB-4471",
+   "font 10.66px: EB-4471",
+   "font 3.9px: تحتاج صاحب السيارة؟ ",
+   "font 8.84px: EB-4471",
+   "font 7.82px: الرمز السري للتفعيل",
+   "font 8.16px: امسح للتحميل"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "live",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر",
+   "tap 57x31 الكاميرا",
+   "tap 84x31 صفحة البلاغ",
+   "tap 67x31 التفاصيل",
+   "tap 62x31 المتابعة",
+   "tap 92x31 ملصق متوقف",
+   "tap 69x31 غير مفعّل",
+   "tap 83x31 رمز غير صالح",
+   "tap 80x31 بدون إنترنت",
+   "tap 74x31 وصل الحد",
+   "tap 55x31 البداية"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "menu",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "dark",
+  "w": 430,
+  "name": "errors",
+  "errs": []
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "home",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 8.05px: تحتاج صاحب السيارة؟",
+   "font 9.43px: صوّر الرمز وبلّغ",
+   "font 5.98px: EB-4471"
+  ],
+  "lowc": [
+   "سيارتك سادّة الطريق 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.92)",
+   "مُبلِّغ مجهول · الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.92)",
+   "جاي هسّه 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.92)",
+   "خلال 5 دقايق 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.92)",
+   "01 1.24 rgb(233, 231, 223) on rgb(255, 255, 255)",
+   "02 1.24 rgb(233, 231, 223) on rgb(255, 255, 255)",
+   "03 1.24 rgb(233, 231, 223) on rgb(255, 255, 255)",
+   "04 1.24 rgb(233, 231, 223) on rgb(255, 255, 255)",
+   "للأعمال 2.90 rgb(122, 88, 0) on rgb(17, 17, 17)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "r-landing",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "r-compose",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 31x40 تغيير"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "r-status",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "r-unact",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر",
+   "font 3px: تواصل بلا أرقام.",
+   "font 2.1px: تحتاج صاحب السيارة؟",
+   "font 2.46px: صوّر الرمز وبلّغ",
+   "font 1.56px: EB-5002"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "r-neterr",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "app-home",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "app-inbox",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "app-report",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 10.5px: 2:52 ص"
+  ],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "app-cars",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "app-car",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 4.5px: تواصل بلا أرقام.",
+   "font 3.15px: تحتاج صاحب السيارة؟",
+   "font 3.69px: صوّر الرمز وبلّغ",
+   "font 2.34px: EB-4471"
+  ],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "app-addScan",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 5.75px: تواصل بلا أرقام.",
+   "font 4.025px: تحتاج صاحب السيارة؟",
+   "font 4.715px: صوّر الرمز وبلّغ",
+   "font 2.99px: EB-5001"
+  ],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "app-settings",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "start-splash",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "start-login",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "start-otp",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "start-profile",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "start-plans",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 10.5px: وفّر شهرين"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "start-buy",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 4.75px: تواصل بلا أرقام.",
+   "font 3.325px: تحتاج صاحب السيارة؟",
+   "font 3.895px: صوّر الرمز وبلّغ",
+   "font 2.47px: EB-5002"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "start-delivery",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "start-payment",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "start-done",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "book",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "business",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "admin",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "stickers",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر",
+   "font 10.85px: تحتاج صاحب السيارة؟",
+   "font 8.06px: EB-4471",
+   "font 10.66px: EB-4471",
+   "font 3.9px: تحتاج صاحب السيارة؟ ",
+   "font 8.84px: EB-4471",
+   "font 7.82px: الرمز السري للتفعيل",
+   "font 8.16px: امسح للتحميل"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "live",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر",
+   "tap 57x31 الكاميرا",
+   "tap 84x31 صفحة البلاغ",
+   "tap 67x31 التفاصيل",
+   "tap 62x31 المتابعة",
+   "tap 92x31 ملصق متوقف",
+   "tap 69x31 غير مفعّل",
+   "tap 83x31 رمز غير صالح",
+   "tap 80x31 بدون إنترنت",
+   "tap 74x31 وصل الحد",
+   "tap 55x31 البداية"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "menu",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 320,
+  "name": "errors",
+  "errs": []
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "home",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 8.05px: تحتاج صاحب السيارة؟",
+   "font 9.43px: صوّر الرمز وبلّغ",
+   "font 5.98px: EB-4471"
+  ],
+  "lowc": [
+   "سيارتك سادّة الطريق 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.92)",
+   "مُبلِّغ مجهول · الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.92)",
+   "جاي هسّه 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.92)",
+   "خلال 5 دقايق 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.92)",
+   "01 1.24 rgb(233, 231, 223) on rgb(255, 255, 255)",
+   "02 1.24 rgb(233, 231, 223) on rgb(255, 255, 255)",
+   "03 1.24 rgb(233, 231, 223) on rgb(255, 255, 255)",
+   "04 1.24 rgb(233, 231, 223) on rgb(255, 255, 255)",
+   "للأعمال 2.90 rgb(122, 88, 0) on rgb(17, 17, 17)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "r-landing",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "r-compose",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 31x40 تغيير"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "r-status",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "r-unact",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر",
+   "font 3px: تواصل بلا أرقام.",
+   "font 2.1px: تحتاج صاحب السيارة؟",
+   "font 2.46px: صوّر الرمز وبلّغ",
+   "font 1.56px: EB-5002"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "r-neterr",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "app-home",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "app-inbox",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "app-report",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 10.5px: 2:52 ص"
+  ],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "app-cars",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "app-car",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 4.5px: تواصل بلا أرقام.",
+   "font 3.15px: تحتاج صاحب السيارة؟",
+   "font 3.69px: صوّر الرمز وبلّغ",
+   "font 2.34px: EB-4471"
+  ],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "app-addScan",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 5.75px: تواصل بلا أرقام.",
+   "font 4.025px: تحتاج صاحب السيارة؟",
+   "font 4.715px: صوّر الرمز وبلّغ",
+   "font 2.99px: EB-5001"
+  ],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "app-settings",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "start-splash",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "start-login",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "start-otp",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "start-profile",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "start-plans",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 10.5px: وفّر شهرين"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "start-buy",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 4.75px: تواصل بلا أرقام.",
+   "font 3.325px: تحتاج صاحب السيارة؟",
+   "font 3.895px: صوّر الرمز وبلّغ",
+   "font 2.47px: EB-5002"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "start-delivery",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "start-payment",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "start-done",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "book",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "business",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "admin",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "stickers",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر",
+   "font 10.85px: تحتاج صاحب السيارة؟",
+   "font 8.06px: EB-4471",
+   "font 10.66px: EB-4471",
+   "font 3.9px: تحتاج صاحب السيارة؟ ",
+   "font 8.84px: EB-4471",
+   "font 7.82px: الرمز السري للتفعيل",
+   "font 8.16px: امسح للتحميل"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "live",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر",
+   "tap 57x31 الكاميرا",
+   "tap 84x31 صفحة البلاغ",
+   "tap 67x31 التفاصيل",
+   "tap 62x31 المتابعة",
+   "tap 92x31 ملصق متوقف",
+   "tap 69x31 غير مفعّل",
+   "tap 83x31 رمز غير صالح",
+   "tap 80x31 بدون إنترنت",
+   "tap 74x31 وصل الحد",
+   "tap 55x31 البداية"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "menu",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 375,
+  "name": "errors",
+  "errs": []
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "home",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 8.05px: تحتاج صاحب السيارة؟",
+   "font 9.43px: صوّر الرمز وبلّغ",
+   "font 5.98px: EB-4471"
+  ],
+  "lowc": [
+   "سيارتك سادّة الطريق 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.92)",
+   "مُبلِّغ مجهول · الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.92)",
+   "جاي هسّه 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.92)",
+   "خلال 5 دقايق 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.92)",
+   "01 1.24 rgb(233, 231, 223) on rgb(255, 255, 255)",
+   "02 1.24 rgb(233, 231, 223) on rgb(255, 255, 255)",
+   "03 1.24 rgb(233, 231, 223) on rgb(255, 255, 255)",
+   "04 1.24 rgb(233, 231, 223) on rgb(255, 255, 255)",
+   "للأعمال 2.90 rgb(122, 88, 0) on rgb(17, 17, 17)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "r-landing",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "r-compose",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 31x40 تغيير"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "r-status",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "r-unact",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر",
+   "font 3px: تواصل بلا أرقام.",
+   "font 2.1px: تحتاج صاحب السيارة؟",
+   "font 2.46px: صوّر الرمز وبلّغ",
+   "font 1.56px: EB-5002"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "r-neterr",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "app-home",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "app-inbox",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "app-report",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 10.5px: 2:52 ص"
+  ],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "app-cars",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "app-car",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 4.5px: تواصل بلا أرقام.",
+   "font 3.15px: تحتاج صاحب السيارة؟",
+   "font 3.69px: صوّر الرمز وبلّغ",
+   "font 2.34px: EB-4471"
+  ],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "app-addScan",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 5.75px: تواصل بلا أرقام.",
+   "font 4.025px: تحتاج صاحب السيارة؟",
+   "font 4.715px: صوّر الرمز وبلّغ",
+   "font 2.99px: EB-5001"
+  ],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "app-settings",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "start-splash",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "start-login",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "start-otp",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "start-profile",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "start-plans",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 10.5px: وفّر شهرين"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "start-buy",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 4.75px: تواصل بلا أرقام.",
+   "font 3.325px: تحتاج صاحب السيارة؟",
+   "font 3.895px: صوّر الرمز وبلّغ",
+   "font 2.47px: EB-5002"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "start-delivery",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "start-payment",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "start-done",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "book",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "business",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "admin",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "stickers",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر",
+   "font 10.85px: تحتاج صاحب السيارة؟",
+   "font 8.06px: EB-4471",
+   "font 10.66px: EB-4471",
+   "font 3.9px: تحتاج صاحب السيارة؟ ",
+   "font 8.84px: EB-4471",
+   "font 7.82px: الرمز السري للتفعيل",
+   "font 8.16px: امسح للتحميل"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "live",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر",
+   "tap 57x31 الكاميرا",
+   "tap 84x31 صفحة البلاغ",
+   "tap 67x31 التفاصيل",
+   "tap 62x31 المتابعة",
+   "tap 92x31 ملصق متوقف",
+   "tap 69x31 غير مفعّل",
+   "tap 83x31 رمز غير صالح",
+   "tap 80x31 بدون إنترنت",
+   "tap 74x31 وصل الحد",
+   "tap 55x31 البداية"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "menu",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 390,
+  "name": "errors",
+  "errs": []
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "home",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 8.05px: تحتاج صاحب السيارة؟",
+   "font 9.43px: صوّر الرمز وبلّغ",
+   "font 5.98px: EB-4471"
+  ],
+  "lowc": [
+   "سيارتك سادّة الطريق 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.92)",
+   "مُبلِّغ مجهول · الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.92)",
+   "جاي هسّه 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.92)",
+   "خلال 5 دقايق 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.92)",
+   "01 1.24 rgb(233, 231, 223) on rgb(255, 255, 255)",
+   "02 1.24 rgb(233, 231, 223) on rgb(255, 255, 255)",
+   "03 1.24 rgb(233, 231, 223) on rgb(255, 255, 255)",
+   "04 1.24 rgb(233, 231, 223) on rgb(255, 255, 255)",
+   "للأعمال 2.90 rgb(122, 88, 0) on rgb(17, 17, 17)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "r-landing",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "r-compose",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 31x40 تغيير"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "r-status",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "r-unact",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر",
+   "font 3px: تواصل بلا أرقام.",
+   "font 2.1px: تحتاج صاحب السيارة؟",
+   "font 2.46px: صوّر الرمز وبلّغ",
+   "font 1.56px: EB-5002"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "r-neterr",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "app-home",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "app-inbox",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "app-report",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 10.5px: 2:53 ص"
+  ],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "app-cars",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "app-car",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 4.5px: تواصل بلا أرقام.",
+   "font 3.15px: تحتاج صاحب السيارة؟",
+   "font 3.69px: صوّر الرمز وبلّغ",
+   "font 2.34px: EB-4471"
+  ],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "app-addScan",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 5.75px: تواصل بلا أرقام.",
+   "font 4.025px: تحتاج صاحب السيارة؟",
+   "font 4.715px: صوّر الرمز وبلّغ",
+   "font 2.99px: EB-5001"
+  ],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "app-settings",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [
+   "إبلاغ 1.13 rgb(20, 20, 20) on color(srgb 1 1 1 / 0.88)",
+   "الآن 3.75 rgb(106, 104, 98) on color(srgb 1 1 1 / 0.88)",
+   "سادّة الطريق 2.75 rgb(85, 84, 78) on color(srgb 1 1 1 / 0.88)"
+  ],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "start-splash",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "start-login",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "start-otp",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "start-profile",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "start-plans",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 10.5px: وفّر شهرين"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "start-buy",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 4.75px: تواصل بلا أرقام.",
+   "font 3.325px: تحتاج صاحب السيارة؟",
+   "font 3.895px: صوّر الرمز وبلّغ",
+   "font 2.47px: EB-5002"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "start-delivery",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "start-payment",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "start-done",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "book",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "business",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "admin",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "stickers",
+  "over": [],
+  "clip": [],
+  "small": [
+   "font 9.4px: الله أكبر",
+   "font 10.85px: تحتاج صاحب السيارة؟",
+   "font 8.06px: EB-4471",
+   "font 10.66px: EB-4471",
+   "font 3.9px: تحتاج صاحب السيارة؟ ",
+   "font 8.84px: EB-4471",
+   "font 7.82px: الرمز السري للتفعيل",
+   "font 8.16px: امسح للتحميل"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "live",
+  "over": [],
+  "clip": [],
+  "small": [
+   "tap 64x31 الله أكبر عربي",
+   "font 9.4px: الله أكبر",
+   "tap 57x31 الكاميرا",
+   "tap 84x31 صفحة البلاغ",
+   "tap 67x31 التفاصيل",
+   "tap 62x31 المتابعة",
+   "tap 92x31 ملصق متوقف",
+   "tap 69x31 غير مفعّل",
+   "tap 83x31 رمز غير صالح",
+   "tap 80x31 بدون إنترنت",
+   "tap 74x31 وصل الحد",
+   "tap 55x31 البداية"
+  ],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "menu",
+  "over": [],
+  "clip": [],
+  "small": [],
+  "lowc": [],
+  "docOver": 0
+ },
+ {
+  "theme": "light",
+  "w": 430,
+  "name": "errors",
+  "errs": []
+ }
+]

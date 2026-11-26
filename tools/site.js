@@ -23,7 +23,7 @@ function siteChrome(){
   const dark = document.documentElement.dataset.theme === 'dark';
   $('#sh').innerHTML = `<div class="sh-in"><a class="brand" href="#/"><span class="brand-mk">${markSVG}</span><span><b class="h">${BRAND()}</b><small>${T('تواصل بلا أرقام','Contact without numbers','پەیوەندی بێ ژمارە')}</small></span></a>
     <nav class="sh-nav">${NAV.map(k=>`<a href="${hrefOf(k)}" class="${curRoute===k?'on':''}">${ROUTES[k].t()}</a>`).join('')}</nav>
-    <div class="sh-tools"><div class="sh-langs">${langs}</div><button class="sh-ib sh-theme" data-act="site-theme" aria-label="${T('الوضع الداكن والفاتح','Dark / light','تاریک / ڕووناک')}">${dark ? I.sun : I.moon}</button>
+    <div class="sh-tools"><div class="sh-langs">${langs}</div><button class="sh-ib sh-theme" data-act="site-theme" title="${dark ? T('الوضع النهاري','Light mode','دۆخی ڕووناک') : T('الوضع الداكن','Dark mode','دۆخی تاریک')}" aria-label="${dark ? T('بدّل للوضع النهاري','Switch to light mode','بگۆڕە بۆ ڕووناک') : T('بدّل للوضع الداكن','Switch to dark mode','بگۆڕە بۆ تاریک')}">${dark ? I.sun : I.moon}</button>
       <a class="sh-cta" href="#/book">${I.bag}${T('احجز ملصقك','Book a sticker','ستیکەر حیجز بکە')}</a>
       <button class="sh-ib sh-menu" data-act="site-menu" aria-label="${T('القائمة','Menu','لیست')}">${I.grid}</button></div></div>`;
   const ph = ROUTES[curRoute].ph, chipsK = {r:'r', app:'a', start:'a', book:'b'}[curRoute];
@@ -32,9 +32,10 @@ function siteChrome(){
     ${ph && chipsK ? `<div class="pm-t">${T('انتقل لشاشة بهذي الصفحة','Jump to a screen on this page','بچۆ بۆ شاشەیەک لەم پەڕەیەدا')}</div><div class="chips" data-chips="${chipsK}"></div>` : ''}
     ${curRoute === 'app' ? `<div class="pm-t">${T('محاكاة بلاغ وارد','Simulate an incoming report','ڕاپۆرتێکی هاتوو نمایش بکە')}</div><div class="pm-row"><button data-act="sim" data-k="block">${I.cone}${rt('block')}</button><button data-act="sim" data-k="inside">${I.heart}${T('عاجل','Urgent','بەپەلە')}</button></div>` : ''}
     <div class="pm-t">${T('اللغة','Language','زمان')}</div><div class="pm-row">${Object.entries(LANGS).map(([k,v])=>`<button class="${LANG===k?'on':''}" data-act="lang" data-l="${k}">${flag(v.flag)} ${v.name}</button>`).join('')}</div>
-    <div class="pm-t">${T('العرض','Display','پیشاندان')}</div><div class="pm-row"><button data-act="site-theme">${dark ? I.sun : I.moon} ${dark ? T('فاتح','Light','ڕووناک') : T('داكن','Dark','تاریک')}</button><button data-act="site-reset">${I.refresh} ${T('ابدأ من جديد','Start over','لە سەرەتاوە')}</button></div>
+    <div class="pm-t">${T('المظهر','Appearance','ڕووکار')}</div><div class="pm-row">${themeSeg()}</div>
+    <div class="pm-t">${T('التجربة','Demo','نمایش')}</div><div class="pm-row"><button data-act="site-reset">${I.refresh} ${T('ابدأ من جديد','Start over','لە سەرەتاوە')}</button></div>
     <p class="pm-note">${I.info.replace('class="ic"','class="ic" style="width:15px;height:15px;display:inline;vertical-align:-3px"')} ${T('نصيحة: افتح صفحة المُبلِّغ بتبويب، وتطبيق صاحب السيارة بتبويب ثاني — البلاغ يوصل بينهم مباشرة. هذا نموذج تجريبي: البيانات تنحفظ بمتصفحك بس.','Tip: open the reporter page in one tab and the owner app in another — reports flow between them live. This is a prototype: data is stored only in your browser.','ئامۆژگاری: پەڕەی ڕاپۆرتدەر لە تابێک و ئەپی خاوەن لە تابێکی تر بکەرەوە — ڕاپۆرت ڕاستەوخۆ دەگات. ئەمە پرۆتۆتایپە: داتا تەنها لە وێبگەڕەکەتدا هەڵدەگیرێت.')}</p>`;
-  $('#pfab').innerHTML = markSVG;
+  $('#pfab').innerHTML = I.grid + T('القائمة','Menu','لیست');
   $('#pfab').setAttribute('aria-label', T('قائمة البروتوتايب','Prototype menu','لیستی پرۆتۆتایپ'));
 }
 
@@ -80,10 +81,10 @@ function renderLanding(){
   <section class="lp-sec alt" id="lp-how"><div class="lp-in">
     ${head(T('رحلة الاستخدام','How it works','چۆن کار دەکات'), T('أربع خطوات وبس','Just four steps','تەنها چوار هەنگاو'))}
     <div class="lp-g4">
-      ${card('userPlus', T('التسجيل','Sign up','تۆمارکردن'), T('صاحب السيارة ينشئ حساب برقم هاتفه ويضيف سيارته.','The owner signs up with their phone number and adds their car.','خاوەنەکە بە ژمارەی تەلەفۆن هەژمار دروست دەکات و ئۆتۆمبێلەکەی زیاد دەکات.'), `<span class="n">01</span>${tryL('start', T('جرّب التسجيل','Try sign-up','تۆمارکردن تاقی بکەرەوە'))}`)}
-      ${card('key', T('التفعيل','Activate','چالاککردن'), T('يربط الملصق بحسابه بمسحة أو بالرمز السري ويلصقه على الزجاج.','Links the sticker with a scan or the secret code and sticks it on the window.','بە سکان یان کۆدی نهێنی ستیکەرەکە دەبەستێتەوە و لەسەر شووشە دەیلکێنێت.'), `<span class="n">02</span>${tryL('app', T('جرّب التفعيل','Try activation','چالاککردن تاقی بکەرەوە'))}`)}
-      ${card('scan', T('الإبلاغ','Report','ڕاپۆرتدان'), T('المار يمسح الرمز ويختار المشكلة ويرسلها بدون تسجيل.','A passer-by scans the code, picks the problem and sends it — no sign-up.','ڕێبوارێک کۆدەکە سکان دەکات، کێشەکە هەڵدەبژێرێت و دەینێرێت — بێ تۆمارکردن.'), `<span class="n">03</span>${tryL('r', T('جرّب كمُبلِّغ','Try as a reporter','وەک ڕاپۆرتدەر تاقی بکەرەوە'))}`)}
-      ${card('bell', T('الاستجابة','Respond','وەڵامدانەوە'), T('المالك يوصله إشعار ويرد بنقرة، والرد يظهر بصفحة المُبلِّغ.','The owner gets a notification and replies in one tap; the reply shows on the reporter’s page.','خاوەنەکە ئاگادار دەکرێتەوە و بە یەک کرتە وەڵام دەداتەوە؛ وەڵامەکە لە پەڕەی ڕاپۆرتدەر دەردەکەوێت.'), `<span class="n">04</span>${tryL('app', T('جرّب الرد','Try replying','وەڵامدانەوە تاقی بکەرەوە'))}`)}
+      ${card('userPlus', T('التسجيل','Sign up','تۆمارکردن'), T('صاحب السيارة ينشئ حساب برقم هاتفه ويضيف سيارته.','The owner signs up with their phone number and adds their car.','خاوەنەکە بە ژمارەی تەلەفۆن هەژمار دروست دەکات و ئۆتۆمبێلەکەی زیاد دەکات.'), `<span class="n" aria-hidden="true">01</span>${tryL('start', T('جرّب التسجيل','Try sign-up','تۆمارکردن تاقی بکەرەوە'))}`)}
+      ${card('key', T('التفعيل','Activate','چالاککردن'), T('يربط الملصق بحسابه بمسحة أو بالرمز السري ويلصقه على الزجاج.','Links the sticker with a scan or the secret code and sticks it on the window.','بە سکان یان کۆدی نهێنی ستیکەرەکە دەبەستێتەوە و لەسەر شووشە دەیلکێنێت.'), `<span class="n" aria-hidden="true">02</span>${tryL('app', T('جرّب التفعيل','Try activation','چالاککردن تاقی بکەرەوە'))}`)}
+      ${card('scan', T('الإبلاغ','Report','ڕاپۆرتدان'), T('المار يمسح الرمز ويختار المشكلة ويرسلها بدون تسجيل.','A passer-by scans the code, picks the problem and sends it — no sign-up.','ڕێبوارێک کۆدەکە سکان دەکات، کێشەکە هەڵدەبژێرێت و دەینێرێت — بێ تۆمارکردن.'), `<span class="n" aria-hidden="true">03</span>${tryL('r', T('جرّب كمُبلِّغ','Try as a reporter','وەک ڕاپۆرتدەر تاقی بکەرەوە'))}`)}
+      ${card('bell', T('الاستجابة','Respond','وەڵامدانەوە'), T('المالك يوصله إشعار ويرد بنقرة، والرد يظهر بصفحة المُبلِّغ.','The owner gets a notification and replies in one tap; the reply shows on the reporter’s page.','خاوەنەکە ئاگادار دەکرێتەوە و بە یەک کرتە وەڵام دەداتەوە؛ وەڵامەکە لە پەڕەی ڕاپۆرتدەر دەردەکەوێت.'), `<span class="n" aria-hidden="true">04</span>${tryL('app', T('جرّب الرد','Try replying','وەڵامدانەوە تاقی بکەرەوە'))}`)}
     </div></div></section>
 
   <section class="lp-sec" id="lp-try"><div class="lp-in">
@@ -175,7 +176,7 @@ render = function(){
 Object.assign(ACT, {
   'mode': el => go(el.dataset.m === 'reporter' ? 'r' : (ROUTE_OF[el.dataset.m] || '')),
   'site-menu': () => document.body.classList.toggle('pm-open'),
-  'site-theme': () => { $('#themeBtn').click(); render(); },
+  'site-theme': () => $('#themeBtn').click(),
   'site-reset': () => { try { localStorage.removeItem(SKEY); } catch(e){} timers.forEach(clearTimeout); timers = []; const m = S.mode; S = freshState(); S.mode = m; if (m === 'reporter') S.r.screen = 'landing'; document.body.classList.remove('pm-open'); render(); pageToast(T('رجعت التجربة من البداية','Demo restarted','نمایشەکە لە سەرەتاوە دەستی پێکردەوە')); },
   'go-app': el => { const id = el.dataset.id; S.a.authed = true; S.a.newUser = false; S.a.onboarded = true; if (id && repById(id)){ S.a.report = id; S.a.screen = 'report'; S.a.push = null; markSeen(repById(id)); S._chatBottom = true; } go('app'); },
 });

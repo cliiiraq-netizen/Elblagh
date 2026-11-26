@@ -9,6 +9,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="description" content="إبلاغ: تواصل مع صاحب السيارة بمسحة واحدة، بدون اتصال وبدون كشف رقم الهاتف. البلاغ من المتصفح والاستلام بالتطبيق.">
 <meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#09090A">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap">
 <style>
@@ -37,7 +38,7 @@
 :root[data-theme="dark"]{
   color-scheme:dark;
   --bg:#09090A; --bg2:#0F0F11; --surface:#151517; --surface2:#1D1D20; --surface3:#26262A; --line:#2A2A2F;
-  --ink:#F5F5F1; --ink2:#A9A9A3; --ink3:#6D6D69;
+  --ink:#F5F5F1; --ink2:#B4B4AE; --ink3:#8E8E88;
   --ytext:#FFC816; --ysoft:rgba(255,200,22,.12); --yline:rgba(255,200,22,.32);
   --ok:#2FD08A; --oks:rgba(47,208,138,.13); --warn:#FFB224; --warns:rgba(255,178,36,.13);
   --bad:#FF5A5F; --bads:rgba(255,90,95,.13); --info:#5AA9FF; --infos:rgba(90,169,255,.13);
@@ -47,10 +48,10 @@
 :root[data-theme="light"]{
   color-scheme:light;
   --bg:#F5F4EF; --bg2:#EEEDE6; --surface:#FFFFFF; --surface2:#F3F2EC; --surface3:#E9E7DF; --line:#E3E1D8;
-  --ink:#141414; --ink2:#5F5E58; --ink3:#95938B;
-  --ytext:#9A7200; --ysoft:rgba(255,200,22,.18); --yline:rgba(214,160,0,.45);
-  --ok:#14A86B; --oks:rgba(20,168,107,.11); --warn:#C77A00; --warns:rgba(255,178,36,.16);
-  --bad:#E03B41; --bads:rgba(224,59,65,.1); --info:#2F7CE0; --infos:rgba(47,124,224,.1);
+  --ink:#141414; --ink2:#55544E; --ink3:#6A6862;
+  --ytext:#7A5800; --ysoft:rgba(255,200,22,.2); --yline:rgba(190,140,0,.5);
+  --ok:#0A7A4C; --oks:rgba(20,168,107,.13); --warn:#9A5B00; --warns:rgba(255,178,36,.18);
+  --bad:#C22A30; --bads:rgba(224,59,65,.11); --info:#1D5FB8; --infos:rgba(47,124,224,.11);
   --shadow:0 18px 50px rgba(40,36,20,.16); --shadow-s:0 6px 18px rgba(40,36,20,.1);
   --phone:#111; --page:radial-gradient(1200px 600px at 50% -10%, #FFF6D6 0%, #F5F4EF 60%);
 }
@@ -179,7 +180,7 @@ svg{display:block}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg)}
 .row{display:flex;align-items:center;gap:12px}
 .sec-t{display:flex;align-items:center;justify-content:space-between;margin:20px 2px 10px;font-size:14px;font-weight:700}
-.sec-t a,.sec-t button{font-size:12.5px;color:var(--ytext);font-weight:600}
+.sec-t a,.sec-t button{font-size:12.5px;color:var(--ytext);font-weight:600;padding:8px 6px;margin:-8px -6px}
 .pill{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:99px;font-size:11.5px;font-weight:700;white-space:nowrap}
 .pill .ic{width:13px;height:13px}
 .pill.ok{background:var(--oks);color:var(--ok)}
@@ -197,6 +198,7 @@ svg{display:block}
 .sw{width:48px;height:29px;border-radius:20px;background:var(--surface3);position:relative;flex:none;transition:background .25s}
 .sw::after{content:"";position:absolute;top:3px;inset-inline-start:3px;width:23px;height:23px;border-radius:50%;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.25);transition:inset-inline-start .25s var(--ease)}
 .sw.on{background:var(--ok)}
+:root[data-theme="light"] .sw.on{background:#14A86B}
 .sw.on::after{inset-inline-start:22px}
 .sw.y.on{background:var(--y)}
 .list{display:flex;flex-direction:column}
@@ -302,7 +304,7 @@ textarea.inp{height:auto;min-height:92px;padding:12px 14px;resize:none;line-heig
 .selr.urgent .ric{background:var(--bad);color:#fff}
 .selr b{display:block;font-size:15.5px}
 .selr small{color:var(--ink3);font-size:12px}
-.selr button{margin-inline-start:auto;font-size:12.5px;color:var(--ytext);font-weight:700}
+.selr button{margin-inline-start:auto;padding:10px 4px;font-size:12.5px;color:var(--ytext);font-weight:700}
 .lbl{margin:18px 18px 8px;font-size:13px;font-weight:700;color:var(--ink2);display:flex;justify-content:space-between}
 .lbl span{font-weight:500;color:var(--ink3)}
 .wta{margin:0 18px;width:calc(100% - 36px)}
@@ -546,7 +548,7 @@ textarea.inp{height:auto;min-height:92px;padding:12px 14px;resize:none;line-heig
 .mini-seg button{padding:7px 12px;border-radius:9px;font-size:13px;font-weight:600;color:var(--ink2);display:flex;align-items:center;gap:6px}
 .mini-seg button i{width:12px;height:12px;border-radius:50%;border:1px solid rgba(128,128,128,.5)}
 .mini-seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow-s)}
-.stk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px}
+.stk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:18px}
 .stk-card{background:var(--surface);border:1px solid var(--line);border-radius:24px;overflow:hidden;display:flex;flex-direction:column}
 .stk-stage{min-height:420px;display:grid;place-items:center;padding:34px 20px;overflow:auto;background:repeating-conic-gradient(var(--surface2) 0 25%,var(--surface) 0 50%) 0 0/22px 22px}
 .stk-card.wide{grid-column:span 2}
@@ -834,7 +836,7 @@ select.inp{cursor:pointer}
 .addr{margin:14px 18px 0;padding:12px 14px;border-radius:16px;background:var(--surface2);display:flex;gap:10px;font-size:12.5px;color:var(--ink2);align-items:flex-start}
 .addr .ic{width:18px;height:18px;flex:none;color:var(--ytext);margin-top:1px}
 .addr b{color:var(--ink);display:block;font-size:13px}
-.addr button{margin-inline-start:auto;color:var(--ytext);font-weight:700;font-size:12.5px;flex:none}
+.addr button{margin-inline-start:auto;padding:10px 4px;color:var(--ytext);font-weight:700;font-size:12.5px;flex:none}
 .vtrack{margin:16px 18px 0;padding:16px;border-radius:20px;background:var(--surface);border:1px solid var(--line)}
 .vtrack div{display:grid;grid-template-columns:26px 1fr;gap:12px;position:relative;padding-bottom:16px;font-size:13.5px;color:var(--ink3);align-items:start}
 .vtrack div:last-child{padding-bottom:0}
@@ -1032,6 +1034,10 @@ select.inp{cursor:pointer}
 .funnel small{color:var(--ink3);font-size:11.5px}
 @media (max-width:1180px){.bplans{grid-template-columns:1fr 1fr}.bgrid2{grid-template-columns:1fr}.bfun{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:760px){.bplans{grid-template-columns:1fr}.bform{grid-template-columns:1fr}.stages{grid-template-columns:repeat(5,minmax(56px,1fr));overflow-x:auto}.stages b{font-size:11px}.bfun{grid-template-columns:1fr 1fr}.funnel div{grid-template-columns:60px 1fr 48px}.funnel small{display:none}.bdash{padding:14px}.sbar{width:90px}}
+.theme-seg{display:flex;gap:6px;padding:0 14px 12px}
+.theme-seg button{flex:1;height:40px;border-radius:12px;background:var(--surface2);border:1.5px solid var(--line);font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:6px;color:var(--ink2)}
+.theme-seg button .ic{width:16px;height:16px}
+.theme-seg button.on{border-color:var(--y);background:var(--ysoft);color:var(--ink)}
 
 /* ================= Website prototype layer ================= */
 .top{display:none!important}
@@ -1058,7 +1064,7 @@ body{min-height:100dvh}
 .sh-cta .ic{width:17px;height:17px}
 .sh-menu{display:none}
 @media (max-width:1100px){.sh-nav{display:none}.sh-menu{display:grid}}
-@media (max-width:560px){.sh-langs,.sh-theme{display:none}.sh-cta{padding:0 12px;font-size:13px}.sh .brand small{display:none}}
+@media (max-width:560px){.sh-langs{display:none}.sh-in{gap:8px;padding:10px 14px}.sh-cta{padding:0 12px;font-size:13px}.sh .brand small{display:none}}
 
 /* prototype menu sheet */
 .pm-bg{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.5);animation:fade .2s;display:none}
@@ -1085,9 +1091,9 @@ body.pm-open .pm-bg{display:block}
 .pm-row button.on{background:var(--ysoft);border-color:var(--yline);color:var(--ytext)}
 .pm-row .ic{width:16px;height:16px}
 .pm-note{margin-top:16px;padding:12px;border-radius:14px;background:var(--surface2);font-size:12px;color:var(--ink2);line-height:1.6}
-.pfab{display:none;position:fixed;z-index:150;inset-inline-end:0;top:42%;width:26px;height:64px;border-radius:0 14px 14px 0;background:#111;color:#FFC816;box-shadow:0 6px 18px rgba(0,0,0,.35);place-items:center;border:1.5px solid #FFC816;border-inline-end:0;opacity:.9;padding:0}
-[dir=ltr] .pfab{border-radius:14px 0 0 14px}
-.pfab svg.mk{width:19px;height:auto;transform:rotate(-90deg)}
+.pfab{display:none;position:fixed;z-index:150;top:env(safe-area-inset-top);left:50%;transform:translateX(-50%);height:20px;padding:0 14px;border-radius:0 0 12px 12px;background:#111;color:#FFC816;border:1px solid rgba(255,200,22,.6);border-top:0;align-items:center;gap:6px;font-size:10.5px;font-weight:800;letter-spacing:.02em;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.pfab .ic{width:12px;height:12px}
+
 
 /* phone routes: real full-screen app on mobile, clean card on desktop */
 body.ph .intro{display:none}
@@ -1109,8 +1115,8 @@ body.ph .pcol .chips{max-width:430px}
   body.ph .pcol{display:block;width:100%!important;max-width:100vw;min-width:0}
   body.ph .phone,body.ph .scr{max-width:100vw!important;min-width:0}
   body.ph .phone{width:100%;max-width:none;height:100dvh;min-height:0;max-height:none;padding:0;border:0;border-radius:0;box-shadow:none}
-  body.ph .scr{border-radius:0;padding-top:calc(env(safe-area-inset-top) + 8px)}
-  body.ph .pfab{display:grid}
+  body.ph .scr{border-radius:0;padding-top:calc(env(safe-area-inset-top) + 24px)}
+  body.ph .pfab{display:flex}
   .inp,textarea.inp,select.inp{font-size:16px!important}
 }
 
@@ -1242,6 +1248,37 @@ body.rt-home .wrap{max-width:none;padding:0}
   .lp-foot .lp-in>div:first-child{grid-column:1/-1}
   .lp-card{padding:20px}
 }
+
+/* ---- mobile fixes (audit) ---- */
+.lp-plan .lp-btn{flex:none!important}
+.lp-card a.try{padding:10px 0;margin-top:4px}
+.lp-foot a,.lp-foot button{padding:6px 0;margin-bottom:2px}
+.linkb{padding:10px 8px}
+@media (max-width:860px){
+  .flow{grid-template-columns:minmax(0,1fr)!important}
+  .flow>.pcol{width:100%;max-width:372px;justify-self:center}
+  .flow .phone{width:100%}
+}
+@media (max-width:640px){
+  .lp-sec{padding:48px 0}
+  .lp-head{margin-bottom:22px}
+  .lp-count{width:100%}
+  .lp-g4,.lp-try{grid-template-columns:1fr 1fr;gap:10px}
+  .lp-g4 .lp-card,.lp-try a{padding:14px}
+  .lp-g4 .lp-card .ci{width:40px;height:40px;margin-bottom:10px}
+  .lp-g4 .lp-card h3,.lp-try b{font-size:15.5px}
+  .lp-g4 .lp-card p,.lp-try small{font-size:13px}
+  .lp-g4 .lp-card .n{font-size:24px;top:12px;inset-inline-end:14px}
+  .lp-try .ti{width:38px;height:38px}
+  #lp-privacy .lp-g4{grid-template-columns:1fr}
+  .lp-banner{font-size:14px;padding:14px 16px}
+}
+@media (max-width:440px){
+  .lp-cta .lp-btn{flex:1 1 100%;white-space:nowrap}
+}
+.lp-biz .lp-eye{color:#FFC816;background:rgba(255,200,22,.12);border-color:rgba(255,200,22,.4)}
+.selr button{padding:12px 8px!important;margin-block:-8px}
+@media (max-width:640px){.lp-count{flex-wrap:wrap;gap:8px}.lp-count .bar{width:100%}}
 </style>
 </head>
 <body>
@@ -1823,6 +1860,7 @@ function aSettings(){
     <div class="set-h">${T('الخصوصية والأمان','Privacy & security','تایبەتمەندی و ئاسایش')}</div>
     <div class="grp"><div class="li"><span class="lic" style="color:var(--ok)">${I.lock}</span><span class="lt"><b>${T('رقمك مخفي دائماً','Your number is always hidden','ژمارەکەت هەمیشە شاراوەیە')}</b><small>${T('ما ينكشف لأي مُبلِّغ، ولا حتى بالرد',"Never shown to reporters, not even when you reply",'بۆ هیچ ڕاپۆرتدەرێک دەرناکەوێت، تەنانەت لە وەڵامدانەوەشدا')}</small></span></div>
       <button class="li"><span class="lic">${I.ban}</span><span class="lt"><b>${T('المحظورين','Blocked','بلۆککراوەکان')}</b><small>${T(`${S.blocked} مُبلِّغ`,`${S.blocked} reporters`,`${S.blocked} ڕاپۆرتدەر`)}</small></span>${ch}</button>
+      <div class="li"><span class="lic">${document.documentElement.dataset.theme==='dark'?I.moon:I.sun}</span><span class="lt"><b>${T('المظهر','Appearance','ڕووکار')}</b><small>${T('نهاري أو داكن أو حسب الجهاز','Light, dark or follow the device','ڕووناک، تاریک یان بەپێی ئامێر')}</small></span></div><div class="theme-seg">${themeSeg()}</div>
       <button class="li" data-act="a-langsheet"><span class="lic">${I.globe}</span><span class="lt"><b>${T('اللغة','Language','زمان')}</b><small>${LANGS[LANG].name}</small></span>${flag(LANGS[LANG].flag)}${ch}</button></div>
     <div class="set-h">${T('الحساب','Account','هەژمار')}</div>
     <div class="grp"><button class="li" data-act="a-logout"><span class="lic">${I.logout}</span><span class="lt"><b>${T('تسجيل خروج','Log out','چوونەدەرەوە')}</b></span></button>
@@ -1865,7 +1903,7 @@ function obBar(step){
   return `<div class="ob"><div class="ob-bars">${st.map((_,i)=>`<i class="${i<=step?'on':''}"></i>`).join('')}</div><small>${T('الخطوة','Step','هەنگاو')} ${ltr((step+1)+'/5')} · ${st[step]}</small></div>`;
 }
 const fld = (label, bind, val, extra='') => `<div class="field"><label>${label}</label><input class="inp" data-bind="${bind}" value="${esc(val)}" ${extra}></div>`;
-const govSelect = (bind, val) => `<select class="inp" data-bind="${bind}">${GOVS.map(([k,n])=>`<option value="${k}" ${val===k?'selected':''}>${L(n)}</option>`).join('')}</select>`;
+const govSelect = (bind, val) => `<select class="inp" data-bind="${bind}" aria-label="${T('المحافظة','Governorate','پارێزگا')}">${GOVS.map(([k,n])=>`<option value="${k}" ${val===k?'selected':''}>${L(n)}</option>`).join('')}</select>`;
 function aProfile(){
   const r = S.a.reg;
   const refs = [['insta',T('إنستغرام','Instagram','ئینستاگرام')],['sticker',T('ملصق على سيارة','A sticker on a car','ستیکەرێک لەسەر ئۆتۆمبێل')],['friend',T('صديق','A friend','هاوڕێیەک')],['tiktok',T('تيك توك','TikTok','تیکتۆک')]];
@@ -2252,7 +2290,7 @@ function bkPage(){
       ${b.err ? `<div class="banner bad" style="margin:0 0 14px">${I.alert}<div><b>${T('كمّل المعلومات','Complete the details','زانیارییەکان تەواو بکە')}</b>${T('نحتاج اسمك ورقم هاتف صحيح (10 أرقام) حتى نتواصل وياك.','We need your name and a valid phone number (10 digits) to reach you.','ناو و ژمارەیەکی دروستی تەلەفۆن (10 ژمارە) پێویستە بۆ پەیوەندیکردن.')}</div></div>` : ''}
       <div class="field"><label>${T('الاسم','Name','ناو')}</label><input class="inp" data-bk="name" value="${esc(b.name)}" placeholder="${T('مثال: أحمد علي','e.g. Ahmed Ali','بۆ نموونە: ئەحمەد عەلی')}"></div>
       <div class="field"><label>${T('رقم الهاتف','Phone number','ژمارەی تەلەفۆن')}</label><div class="phonein"><span class="cc">${flag('iq')} +964</span><input class="inp" data-bk="phone" value="${esc(b.phone)}" inputmode="tel" placeholder="770 000 0000"></div></div>
-      <div class="field"><label>${T('المحافظة','Governorate','پارێزگا')}</label><select class="inp" data-bk="gov">${GOVS.map(([k,n])=>`<option value="${k}" ${b.gov===k?'selected':''}>${L(n)}</option>`).join('')}</select></div>
+      <div class="field"><label>${T('المحافظة','Governorate','پارێزگا')}</label><select class="inp" data-bk="gov" aria-label="${T('المحافظة','Governorate','پارێزگا')}">${GOVS.map(([k,n])=>`<option value="${k}" ${b.gov===k?'selected':''}>${L(n)}</option>`).join('')}</select></div>
       <div class="field"><label>${T('كود إحالة','Referral code','کۆدی ناساندن')} <span style="color:var(--ink3);font-weight:500">(${T('اختياري','optional','ئارەزوومەندانە')})</span></label><input class="inp" data-bk="ref" dir="ltr" value="${esc(b.ref)}" placeholder="EB-7K42"></div>
       ${b.ref ? (validRef(b.ref) ? `<div class="okline" style="margin:-6px 0 12px">${I.check} ${T('الكود صالح — خصم 2,000 د.ع عند الطلب','Valid code — 2,000 IQD off when you order','کۆدەکە دروستە — 2,000 دینار داشکاندن لە کاتی داواکردن')}</div>` : `<div class="errline" style="margin:-6px 0 12px">${I.alert} ${T('الكود غير صحيح','Invalid code','کۆدەکە هەڵەیە')}</div>`) : ''}
       <button class="pbtn" data-act="bk-submit">${I.check} ${T('احجز مكاني','Reserve my spot','شوێنەکەم حیجز بکە')}</button>
@@ -2696,6 +2734,7 @@ const ACT = {
   's-var': el => { S.stk.variant = el.dataset.v; render(); },
   's-code': el => { S.stk.code = el.dataset.c; render(); },
   's-cut': () => { S.stk.cut = !S.stk.cut; render(); },
+  'theme-pref': el => setThemePref(el.dataset.t),
   'ad-tab': el => { S.adm.tab = el.dataset.k; render(); },
   'ad-sel': el => { S.adm.selBatch = el.dataset.id; render(); },
   'ad-dl': () => pageToast(T('ملف الطباعة: PDF بالمقاس الفعلي مع خط القص — بالنسخة الحقيقية','Print file: true-size PDF with cut line — in the real version','فایلی چاپ: PDF بە قەبارەی ڕاستەقینە لەگەڵ هێڵی بڕین — لە وەشانی ڕاستەقینەدا')),
@@ -2874,18 +2913,23 @@ function themeLabel(){
   $('#themeBtn').innerHTML = (t==='dark' ? I.sun : I.moon) + `<span style="font-size:12.5px">${t==='dark'?T('فاتح','Light','ڕووناک'):T('داكن','Dark','تاریک')}</span>`;
   $('#themeBtn').setAttribute('aria-label', T('تبديل الوضع الداكن والفاتح','Toggle dark / light','گۆڕینی تاریک / ڕووناک'));
 }
-function applyTheme(t){ document.documentElement.dataset.theme = t; themeLabel(); try { localStorage.setItem('eb_theme', t); } catch(e){} }
+const THEME_MQ = window.matchMedia ? matchMedia('(prefers-color-scheme: dark)') : {matches:true};
+function themePref(){ try { const p = localStorage.getItem('eb_theme_pref'); return p || 'auto'; } catch(e){ return 'auto'; } }
+const resolveTheme = p => p === 'auto' ? (THEME_MQ.matches ? 'dark' : 'light') : p;
+function setThemePref(p){ try { localStorage.setItem('eb_theme_pref', p); } catch(e){} applyTheme(resolveTheme(p)); render(); }
+const themeSeg = () => { const p = themePref(); return [['light',I.sun,T('نهاري','Light','ڕووناک')],['dark',I.moon,T('داكن','Dark','تاریک')],['auto',I.smartphone,T('تلقائي','Auto','خۆکار')]].map(([k,ic,t])=>`<button class="${p===k?'on':''}" data-act="theme-pref" data-t="${k}" aria-pressed="${p===k}">${ic}${t}</button>`).join(''); };
+function applyTheme(t){ document.documentElement.dataset.theme = t; try { const m = document.querySelector('meta[name=theme-color]'); if (m) m.setAttribute('content', t === 'dark' ? '#09090A' : '#F5F4EF'); } catch(e){} themeLabel(); }
 
 $('#brandMk').innerHTML = markSVG;
 $('#icFontH').innerHTML = cls(I.type,'','width:16px;height:16px');
 $('#icFontB').innerHTML = '<span style="font-size:11px;font-weight:700">Aa</span>';
 $('#selFH').onchange = e => { fontPrefs[LANG].fh = e.target.value; saveFonts(); applyFonts(); };
 $('#selFB').onchange = e => { fontPrefs[LANG].fb = e.target.value; saveFonts(); applyFonts(); };
-$('#themeBtn').onclick = () => applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+$('#themeBtn').onclick = () => setThemePref(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
 $('#resetBtn').innerHTML = I.refresh;
 $('#resetBtn').onclick = () => { timers.forEach(clearTimeout); timers = []; const m = S.mode; S = freshState(); S.mode = m; render(); };
-let th = 'dark'; try { th = localStorage.getItem('eb_theme') || th; } catch(e){}
-document.documentElement.dataset.theme = th;
+applyTheme(resolveTheme(themePref()));
+try { THEME_MQ.addEventListener('change', () => { if (themePref() === 'auto'){ applyTheme(resolveTheme('auto')); render(); } }); } catch(e){}
 setLang(LANG);
 /* ================= Website prototype: router, chrome, landing, sync ================= */
 window.SITE = true;
@@ -2912,7 +2956,7 @@ function siteChrome(){
   const dark = document.documentElement.dataset.theme === 'dark';
   $('#sh').innerHTML = `<div class="sh-in"><a class="brand" href="#/"><span class="brand-mk">${markSVG}</span><span><b class="h">${BRAND()}</b><small>${T('تواصل بلا أرقام','Contact without numbers','پەیوەندی بێ ژمارە')}</small></span></a>
     <nav class="sh-nav">${NAV.map(k=>`<a href="${hrefOf(k)}" class="${curRoute===k?'on':''}">${ROUTES[k].t()}</a>`).join('')}</nav>
-    <div class="sh-tools"><div class="sh-langs">${langs}</div><button class="sh-ib sh-theme" data-act="site-theme" aria-label="${T('الوضع الداكن والفاتح','Dark / light','تاریک / ڕووناک')}">${dark ? I.sun : I.moon}</button>
+    <div class="sh-tools"><div class="sh-langs">${langs}</div><button class="sh-ib sh-theme" data-act="site-theme" title="${dark ? T('الوضع النهاري','Light mode','دۆخی ڕووناک') : T('الوضع الداكن','Dark mode','دۆخی تاریک')}" aria-label="${dark ? T('بدّل للوضع النهاري','Switch to light mode','بگۆڕە بۆ ڕووناک') : T('بدّل للوضع الداكن','Switch to dark mode','بگۆڕە بۆ تاریک')}">${dark ? I.sun : I.moon}</button>
       <a class="sh-cta" href="#/book">${I.bag}${T('احجز ملصقك','Book a sticker','ستیکەر حیجز بکە')}</a>
       <button class="sh-ib sh-menu" data-act="site-menu" aria-label="${T('القائمة','Menu','لیست')}">${I.grid}</button></div></div>`;
   const ph = ROUTES[curRoute].ph, chipsK = {r:'r', app:'a', start:'a', book:'b'}[curRoute];
@@ -2921,9 +2965,10 @@ function siteChrome(){
     ${ph && chipsK ? `<div class="pm-t">${T('انتقل لشاشة بهذي الصفحة','Jump to a screen on this page','بچۆ بۆ شاشەیەک لەم پەڕەیەدا')}</div><div class="chips" data-chips="${chipsK}"></div>` : ''}
     ${curRoute === 'app' ? `<div class="pm-t">${T('محاكاة بلاغ وارد','Simulate an incoming report','ڕاپۆرتێکی هاتوو نمایش بکە')}</div><div class="pm-row"><button data-act="sim" data-k="block">${I.cone}${rt('block')}</button><button data-act="sim" data-k="inside">${I.heart}${T('عاجل','Urgent','بەپەلە')}</button></div>` : ''}
     <div class="pm-t">${T('اللغة','Language','زمان')}</div><div class="pm-row">${Object.entries(LANGS).map(([k,v])=>`<button class="${LANG===k?'on':''}" data-act="lang" data-l="${k}">${flag(v.flag)} ${v.name}</button>`).join('')}</div>
-    <div class="pm-t">${T('العرض','Display','پیشاندان')}</div><div class="pm-row"><button data-act="site-theme">${dark ? I.sun : I.moon} ${dark ? T('فاتح','Light','ڕووناک') : T('داكن','Dark','تاریک')}</button><button data-act="site-reset">${I.refresh} ${T('ابدأ من جديد','Start over','لە سەرەتاوە')}</button></div>
+    <div class="pm-t">${T('المظهر','Appearance','ڕووکار')}</div><div class="pm-row">${themeSeg()}</div>
+    <div class="pm-t">${T('التجربة','Demo','نمایش')}</div><div class="pm-row"><button data-act="site-reset">${I.refresh} ${T('ابدأ من جديد','Start over','لە سەرەتاوە')}</button></div>
     <p class="pm-note">${I.info.replace('class="ic"','class="ic" style="width:15px;height:15px;display:inline;vertical-align:-3px"')} ${T('نصيحة: افتح صفحة المُبلِّغ بتبويب، وتطبيق صاحب السيارة بتبويب ثاني — البلاغ يوصل بينهم مباشرة. هذا نموذج تجريبي: البيانات تنحفظ بمتصفحك بس.','Tip: open the reporter page in one tab and the owner app in another — reports flow between them live. This is a prototype: data is stored only in your browser.','ئامۆژگاری: پەڕەی ڕاپۆرتدەر لە تابێک و ئەپی خاوەن لە تابێکی تر بکەرەوە — ڕاپۆرت ڕاستەوخۆ دەگات. ئەمە پرۆتۆتایپە: داتا تەنها لە وێبگەڕەکەتدا هەڵدەگیرێت.')}</p>`;
-  $('#pfab').innerHTML = markSVG;
+  $('#pfab').innerHTML = I.grid + T('القائمة','Menu','لیست');
   $('#pfab').setAttribute('aria-label', T('قائمة البروتوتايب','Prototype menu','لیستی پرۆتۆتایپ'));
 }
 
@@ -2969,10 +3014,10 @@ function renderLanding(){
   <section class="lp-sec alt" id="lp-how"><div class="lp-in">
     ${head(T('رحلة الاستخدام','How it works','چۆن کار دەکات'), T('أربع خطوات وبس','Just four steps','تەنها چوار هەنگاو'))}
     <div class="lp-g4">
-      ${card('userPlus', T('التسجيل','Sign up','تۆمارکردن'), T('صاحب السيارة ينشئ حساب برقم هاتفه ويضيف سيارته.','The owner signs up with their phone number and adds their car.','خاوەنەکە بە ژمارەی تەلەفۆن هەژمار دروست دەکات و ئۆتۆمبێلەکەی زیاد دەکات.'), `<span class="n">01</span>${tryL('start', T('جرّب التسجيل','Try sign-up','تۆمارکردن تاقی بکەرەوە'))}`)}
-      ${card('key', T('التفعيل','Activate','چالاککردن'), T('يربط الملصق بحسابه بمسحة أو بالرمز السري ويلصقه على الزجاج.','Links the sticker with a scan or the secret code and sticks it on the window.','بە سکان یان کۆدی نهێنی ستیکەرەکە دەبەستێتەوە و لەسەر شووشە دەیلکێنێت.'), `<span class="n">02</span>${tryL('app', T('جرّب التفعيل','Try activation','چالاککردن تاقی بکەرەوە'))}`)}
-      ${card('scan', T('الإبلاغ','Report','ڕاپۆرتدان'), T('المار يمسح الرمز ويختار المشكلة ويرسلها بدون تسجيل.','A passer-by scans the code, picks the problem and sends it — no sign-up.','ڕێبوارێک کۆدەکە سکان دەکات، کێشەکە هەڵدەبژێرێت و دەینێرێت — بێ تۆمارکردن.'), `<span class="n">03</span>${tryL('r', T('جرّب كمُبلِّغ','Try as a reporter','وەک ڕاپۆرتدەر تاقی بکەرەوە'))}`)}
-      ${card('bell', T('الاستجابة','Respond','وەڵامدانەوە'), T('المالك يوصله إشعار ويرد بنقرة، والرد يظهر بصفحة المُبلِّغ.','The owner gets a notification and replies in one tap; the reply shows on the reporter’s page.','خاوەنەکە ئاگادار دەکرێتەوە و بە یەک کرتە وەڵام دەداتەوە؛ وەڵامەکە لە پەڕەی ڕاپۆرتدەر دەردەکەوێت.'), `<span class="n">04</span>${tryL('app', T('جرّب الرد','Try replying','وەڵامدانەوە تاقی بکەرەوە'))}`)}
+      ${card('userPlus', T('التسجيل','Sign up','تۆمارکردن'), T('صاحب السيارة ينشئ حساب برقم هاتفه ويضيف سيارته.','The owner signs up with their phone number and adds their car.','خاوەنەکە بە ژمارەی تەلەفۆن هەژمار دروست دەکات و ئۆتۆمبێلەکەی زیاد دەکات.'), `<span class="n" aria-hidden="true">01</span>${tryL('start', T('جرّب التسجيل','Try sign-up','تۆمارکردن تاقی بکەرەوە'))}`)}
+      ${card('key', T('التفعيل','Activate','چالاککردن'), T('يربط الملصق بحسابه بمسحة أو بالرمز السري ويلصقه على الزجاج.','Links the sticker with a scan or the secret code and sticks it on the window.','بە سکان یان کۆدی نهێنی ستیکەرەکە دەبەستێتەوە و لەسەر شووشە دەیلکێنێت.'), `<span class="n" aria-hidden="true">02</span>${tryL('app', T('جرّب التفعيل','Try activation','چالاککردن تاقی بکەرەوە'))}`)}
+      ${card('scan', T('الإبلاغ','Report','ڕاپۆرتدان'), T('المار يمسح الرمز ويختار المشكلة ويرسلها بدون تسجيل.','A passer-by scans the code, picks the problem and sends it — no sign-up.','ڕێبوارێک کۆدەکە سکان دەکات، کێشەکە هەڵدەبژێرێت و دەینێرێت — بێ تۆمارکردن.'), `<span class="n" aria-hidden="true">03</span>${tryL('r', T('جرّب كمُبلِّغ','Try as a reporter','وەک ڕاپۆرتدەر تاقی بکەرەوە'))}`)}
+      ${card('bell', T('الاستجابة','Respond','وەڵامدانەوە'), T('المالك يوصله إشعار ويرد بنقرة، والرد يظهر بصفحة المُبلِّغ.','The owner gets a notification and replies in one tap; the reply shows on the reporter’s page.','خاوەنەکە ئاگادار دەکرێتەوە و بە یەک کرتە وەڵام دەداتەوە؛ وەڵامەکە لە پەڕەی ڕاپۆرتدەر دەردەکەوێت.'), `<span class="n" aria-hidden="true">04</span>${tryL('app', T('جرّب الرد','Try replying','وەڵامدانەوە تاقی بکەرەوە'))}`)}
     </div></div></section>
 
   <section class="lp-sec" id="lp-try"><div class="lp-in">
@@ -3064,7 +3109,7 @@ render = function(){
 Object.assign(ACT, {
   'mode': el => go(el.dataset.m === 'reporter' ? 'r' : (ROUTE_OF[el.dataset.m] || '')),
   'site-menu': () => document.body.classList.toggle('pm-open'),
-  'site-theme': () => { $('#themeBtn').click(); render(); },
+  'site-theme': () => $('#themeBtn').click(),
   'site-reset': () => { try { localStorage.removeItem(SKEY); } catch(e){} timers.forEach(clearTimeout); timers = []; const m = S.mode; S = freshState(); S.mode = m; if (m === 'reporter') S.r.screen = 'landing'; document.body.classList.remove('pm-open'); render(); pageToast(T('رجعت التجربة من البداية','Demo restarted','نمایشەکە لە سەرەتاوە دەستی پێکردەوە')); },
   'go-app': el => { const id = el.dataset.id; S.a.authed = true; S.a.newUser = false; S.a.onboarded = true; if (id && repById(id)){ S.a.report = id; S.a.screen = 'report'; S.a.push = null; markSeen(repById(id)); S._chatBottom = true; } go('app'); },
 });

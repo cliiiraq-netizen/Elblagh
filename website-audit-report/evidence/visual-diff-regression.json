@@ -1,0 +1,233 @@
+{
+  "mode": "regression",
+  "summary": "9 screenshots compared; 9 changed (threshold 0.1% pixels)",
+  "threshold": 0.1,
+  "tolerance": 32,
+  "results": [
+    {
+      "file": "site-1024.png",
+      "sizeA": [
+        1024,
+        6258
+      ],
+      "sizeB": [
+        1024,
+        6287
+      ],
+      "comparedRegion": [
+        0,
+        0,
+        1024,
+        6287
+      ],
+      "changedPct": 87.357,
+      "changedRows": [
+        0,
+        6286
+      ],
+      "sizeChanged": true,
+      "status": "changed",
+      "diff": "screenshots/diff-regression/site-1024.png"
+    },
+    {
+      "file": "site-1280.png",
+      "sizeA": [
+        1280,
+        6196
+      ],
+      "sizeB": [
+        1280,
+        6225
+      ],
+      "comparedRegion": [
+        0,
+        0,
+        1280,
+        6225
+      ],
+      "changedPct": 88.726,
+      "changedRows": [
+        0,
+        6224
+      ],
+      "sizeChanged": true,
+      "status": "changed",
+      "diff": "screenshots/diff-regression/site-1280.png"
+    },
+    {
+      "file": "site-1440.png",
+      "sizeA": [
+        1440,
+        6201
+      ],
+      "sizeB": [
+        1440,
+        6229
+      ],
+      "comparedRegion": [
+        0,
+        0,
+        1440,
+        6229
+      ],
+      "changedPct": 89.987,
+      "changedRows": [
+        0,
+        6228
+      ],
+      "sizeChanged": true,
+      "status": "changed",
+      "diff": "screenshots/diff-regression/site-1440.png"
+    },
+    {
+      "file": "site-1920.png",
+      "sizeA": [
+        1920,
+        6201
+      ],
+      "sizeB": [
+        1920,
+        6229
+      ],
+      "comparedRegion": [
+        0,
+        0,
+        1920,
+        6229
+      ],
+      "changedPct": 92.495,
+      "changedRows": [
+        0,
+        6228
+      ],
+      "sizeChanged": true,
+      "status": "changed",
+      "diff": "screenshots/diff-regression/site-1920.png"
+    },
+    {
+      "file": "site-320.png",
+      "sizeA": [
+        320,
+        10995
+      ],
+      "sizeB": [
+        320,
+        9167
+      ],
+      "comparedRegion": [
+        0,
+        0,
+        320,
+        10995
+      ],
+      "changedPct": 93.562,
+      "changedRows": [
+        0,
+        10994
+      ],
+      "sizeChanged": true,
+      "status": "changed",
+      "diff": "screenshots/diff-regression/site-320.png"
+    },
+    {
+      "file": "site-375.png",
+      "sizeA": [
+        375,
+        10722
+      ],
+      "sizeB": [
+        375,
+        8761
+      ],
+      "comparedRegion": [
+        0,
+        0,
+        375,
+        10722
+      ],
+      "changedPct": 93.773,
+      "changedRows": [
+        0,
+        10721
+      ],
+      "sizeChanged": true,
+      "status": "changed",
+      "diff": "screenshots/diff-regression/site-375.png"
+    },
+    {
+      "file": "site-390.png",
+      "sizeA": [
+        390,
+        10653
+      ],
+      "sizeB": [
+        390,
+        8739
+      ],
+      "comparedRegion": [
+        0,
+        0,
+        390,
+        10653
+      ],
+      "changedPct": 94.085,
+      "changedRows": [
+        0,
+        10652
+      ],
+      "sizeChanged": true,
+      "status": "changed",
+      "diff": "screenshots/diff-regression/site-390.png"
+    },
+    {
+      "file": "site-430.png",
+      "sizeA": [
+        430,
+        10463
+      ],
+      "sizeB": [
+        430,
+        8517
+      ],
+      "comparedRegion": [
+        0,
+        0,
+        430,
+        10463
+      ],
+      "changedPct": 93.74,
+      "changedRows": [
+        0,
+        10462
+      ],
+      "sizeChanged": true,
+      "status": "changed",
+      "diff": "screenshots/diff-regression/site-430.png"
+    },
+    {
+      "file": "site-768.png",
+      "sizeA": [
+        768,
+        8260
+      ],
+      "sizeB": [
+        768,
+        8297
+      ],
+      "comparedRegion": [
+        0,
+        0,
+        768,
+        8297
+      ],
+      "changedPct": 88.959,
+      "changedRows": [
+        0,
+        8296
+      ],
+      "sizeChanged": true,
+      "status": "changed",
+      "diff": "screenshots/diff-regression/site-768.png"
+    }
+  ]
+}

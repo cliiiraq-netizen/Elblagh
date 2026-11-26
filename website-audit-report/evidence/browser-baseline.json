@@ -1,0 +1,2418 @@
+{
+  "tool": "browser_audit",
+  "label": "baseline",
+  "base": "local-static-server",
+  "target": "/home/user/Elblagh/site.html",
+  "viewports": [
+    320,
+    375,
+    390,
+    430,
+    768,
+    1024,
+    1280,
+    1440,
+    1920
+  ],
+  "pages": {
+    "/site.html": {
+      "status": 200,
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "viewports": {
+        "320": {
+          "overflow": [],
+          "smallTargets": [
+            {
+              "el": "a.brand \"إبلاغ\"",
+              "w": 79,
+              "h": 38,
+              "severe": false
+            },
+            {
+              "el": "a.sh-cta \"احجز ملصقك\"",
+              "w": 118,
+              "h": 40,
+              "severe": false
+            },
+            {
+              "el": "button.sh-ib.sh-menu \"القائمة\"",
+              "w": 40,
+              "h": 40,
+              "severe": false
+            },
+            {
+              "el": "a.try \"جرّب التسجيل\"",
+              "w": 96,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب التفعيل\"",
+              "w": 90,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب كمُبلِّغ\"",
+              "w": 81,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب الرد\"",
+              "w": 68,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.lp-btn.o \"احجز\"",
+              "w": 238,
+              "h": 25,
+              "severe": false
+            },
+            {
+              "el": "a.lp-btn.o \"احجز\"",
+              "w": 238,
+              "h": 25,
+              "severe": false
+            },
+            {
+              "el": "a.lp-btn \"احجز\"",
+              "w": 238,
+              "h": 23,
+              "severe": true
+            },
+            {
+              "el": "a.lp-btn.o \"احجز\"",
+              "w": 238,
+              "h": 25,
+              "severe": false
+            },
+            {
+              "el": "a \"صفحة المُبلِّغ\"",
+              "w": 130,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"تطبيق صاحب السيارة\"",
+              "w": 130,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"زبون جديد\"",
+              "w": 130,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الحجز المسبق\"",
+              "w": 130,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الشركات والمجمعات\"",
+              "w": 130,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"لوحة الإدارة\"",
+              "w": 130,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الملصقات للطباعة\"",
+              "w": 130,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"العرض المتزامن\"",
+              "w": 130,
+              "h": 22,
+              "severe": true
+            }
+          ],
+          "contrast": [
+            {
+              "el": "small \"مُبلِّغ مجهول · الآن\"",
+              "ratio": 3.83,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(9,9,10)"
+            },
+            {
+              "el": "span.n \"01\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"02\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"03\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"04\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "small \"د.ع\"",
+              "ratio": 3.51,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "h4 \"جرّب\"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            },
+            {
+              "el": "h4 \"المزيد\"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            },
+            {
+              "el": "div.cp \"© 2026 إبلاغ · ابتكار عراقي · \"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            }
+          ],
+          "brokenImages": [],
+          "fakeClickables": [],
+          "scrollWidth": 320,
+          "vw": 320,
+          "links": [
+            "#/",
+            "#/",
+            "#/r/EB4471",
+            "#/app",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/book",
+            "#/",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live",
+            "#/book",
+            "#/r/EB4471",
+            "#/start",
+            "#/app",
+            "#/r/EB4471",
+            "#/app",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live",
+            "#/book",
+            "#/book",
+            "#/book",
+            "#/book",
+            "#/business",
+            "#/book",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live"
+          ],
+          "domNodes": 1176,
+          "screenshot": "screenshots/baseline/site-320.png"
+        },
+        "375": {
+          "overflow": [],
+          "smallTargets": [
+            {
+              "el": "a.brand \"إبلاغ\"",
+              "w": 79,
+              "h": 38,
+              "severe": false
+            },
+            {
+              "el": "a.sh-cta \"احجز ملصقك\"",
+              "w": 118,
+              "h": 40,
+              "severe": false
+            },
+            {
+              "el": "button.sh-ib.sh-menu \"القائمة\"",
+              "w": 40,
+              "h": 40,
+              "severe": false
+            },
+            {
+              "el": "a.try \"جرّب التسجيل\"",
+              "w": 96,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب التفعيل\"",
+              "w": 90,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب كمُبلِّغ\"",
+              "w": 81,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب الرد\"",
+              "w": 68,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.lp-btn.o \"احجز\"",
+              "w": 293,
+              "h": 25,
+              "severe": false
+            },
+            {
+              "el": "a.lp-btn.o \"احجز\"",
+              "w": 293,
+              "h": 25,
+              "severe": false
+            },
+            {
+              "el": "a.lp-btn \"احجز\"",
+              "w": 293,
+              "h": 23,
+              "severe": true
+            },
+            {
+              "el": "a.lp-btn.o \"احجز\"",
+              "w": 293,
+              "h": 25,
+              "severe": false
+            },
+            {
+              "el": "a \"صفحة المُبلِّغ\"",
+              "w": 158,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"تطبيق صاحب السيارة\"",
+              "w": 158,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"زبون جديد\"",
+              "w": 158,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الحجز المسبق\"",
+              "w": 158,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الشركات والمجمعات\"",
+              "w": 158,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"لوحة الإدارة\"",
+              "w": 158,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الملصقات للطباعة\"",
+              "w": 158,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"العرض المتزامن\"",
+              "w": 158,
+              "h": 22,
+              "severe": true
+            }
+          ],
+          "contrast": [
+            {
+              "el": "small \"مُبلِّغ مجهول · الآن\"",
+              "ratio": 3.83,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(9,9,10)"
+            },
+            {
+              "el": "span.n \"01\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"02\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"03\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"04\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "small \"د.ع\"",
+              "ratio": 3.51,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "h4 \"جرّب\"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            },
+            {
+              "el": "h4 \"المزيد\"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            },
+            {
+              "el": "div.cp \"© 2026 إبلاغ · ابتكار عراقي · \"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            }
+          ],
+          "brokenImages": [],
+          "fakeClickables": [],
+          "scrollWidth": 375,
+          "vw": 375,
+          "links": [
+            "#/",
+            "#/",
+            "#/r/EB4471",
+            "#/app",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/book",
+            "#/",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live",
+            "#/book",
+            "#/r/EB4471",
+            "#/start",
+            "#/app",
+            "#/r/EB4471",
+            "#/app",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live",
+            "#/book",
+            "#/book",
+            "#/book",
+            "#/book",
+            "#/business",
+            "#/book",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live"
+          ],
+          "domNodes": 1176,
+          "screenshot": "screenshots/baseline/site-375.png"
+        },
+        "390": {
+          "overflow": [],
+          "smallTargets": [
+            {
+              "el": "a.brand \"إبلاغ\"",
+              "w": 79,
+              "h": 38,
+              "severe": false
+            },
+            {
+              "el": "a.sh-cta \"احجز ملصقك\"",
+              "w": 118,
+              "h": 40,
+              "severe": false
+            },
+            {
+              "el": "button.sh-ib.sh-menu \"القائمة\"",
+              "w": 40,
+              "h": 40,
+              "severe": false
+            },
+            {
+              "el": "a.try \"جرّب التسجيل\"",
+              "w": 96,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب التفعيل\"",
+              "w": 90,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب كمُبلِّغ\"",
+              "w": 81,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب الرد\"",
+              "w": 68,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.lp-btn.o \"احجز\"",
+              "w": 308,
+              "h": 25,
+              "severe": false
+            },
+            {
+              "el": "a.lp-btn.o \"احجز\"",
+              "w": 308,
+              "h": 25,
+              "severe": false
+            },
+            {
+              "el": "a.lp-btn \"احجز\"",
+              "w": 308,
+              "h": 23,
+              "severe": true
+            },
+            {
+              "el": "a.lp-btn.o \"احجز\"",
+              "w": 308,
+              "h": 25,
+              "severe": false
+            },
+            {
+              "el": "a \"صفحة المُبلِّغ\"",
+              "w": 165,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"تطبيق صاحب السيارة\"",
+              "w": 165,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"زبون جديد\"",
+              "w": 165,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الحجز المسبق\"",
+              "w": 165,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الشركات والمجمعات\"",
+              "w": 165,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"لوحة الإدارة\"",
+              "w": 165,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الملصقات للطباعة\"",
+              "w": 165,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"العرض المتزامن\"",
+              "w": 165,
+              "h": 22,
+              "severe": true
+            }
+          ],
+          "contrast": [
+            {
+              "el": "small \"مُبلِّغ مجهول · الآن\"",
+              "ratio": 3.83,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(9,9,10)"
+            },
+            {
+              "el": "span.n \"01\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"02\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"03\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"04\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "small \"د.ع\"",
+              "ratio": 3.51,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "h4 \"جرّب\"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            },
+            {
+              "el": "h4 \"المزيد\"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            },
+            {
+              "el": "div.cp \"© 2026 إبلاغ · ابتكار عراقي · \"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            }
+          ],
+          "brokenImages": [],
+          "fakeClickables": [],
+          "scrollWidth": 390,
+          "vw": 390,
+          "links": [
+            "#/",
+            "#/",
+            "#/r/EB4471",
+            "#/app",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/book",
+            "#/",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live",
+            "#/book",
+            "#/r/EB4471",
+            "#/start",
+            "#/app",
+            "#/r/EB4471",
+            "#/app",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live",
+            "#/book",
+            "#/book",
+            "#/book",
+            "#/book",
+            "#/business",
+            "#/book",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live"
+          ],
+          "domNodes": 1176,
+          "screenshot": "screenshots/baseline/site-390.png"
+        },
+        "430": {
+          "overflow": [],
+          "smallTargets": [
+            {
+              "el": "a.brand \"إبلاغ\"",
+              "w": 79,
+              "h": 38,
+              "severe": false
+            },
+            {
+              "el": "a.sh-cta \"احجز ملصقك\"",
+              "w": 118,
+              "h": 40,
+              "severe": false
+            },
+            {
+              "el": "button.sh-ib.sh-menu \"القائمة\"",
+              "w": 40,
+              "h": 40,
+              "severe": false
+            },
+            {
+              "el": "a.try \"جرّب التسجيل\"",
+              "w": 96,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب التفعيل\"",
+              "w": 90,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب كمُبلِّغ\"",
+              "w": 81,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب الرد\"",
+              "w": 68,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.lp-btn.o \"احجز\"",
+              "w": 348,
+              "h": 25,
+              "severe": false
+            },
+            {
+              "el": "a.lp-btn.o \"احجز\"",
+              "w": 348,
+              "h": 25,
+              "severe": false
+            },
+            {
+              "el": "a.lp-btn \"احجز\"",
+              "w": 348,
+              "h": 23,
+              "severe": true
+            },
+            {
+              "el": "a.lp-btn.o \"احجز\"",
+              "w": 348,
+              "h": 25,
+              "severe": false
+            },
+            {
+              "el": "a \"صفحة المُبلِّغ\"",
+              "w": 185,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"تطبيق صاحب السيارة\"",
+              "w": 185,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"زبون جديد\"",
+              "w": 185,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الحجز المسبق\"",
+              "w": 185,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الشركات والمجمعات\"",
+              "w": 185,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"لوحة الإدارة\"",
+              "w": 185,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الملصقات للطباعة\"",
+              "w": 185,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"العرض المتزامن\"",
+              "w": 185,
+              "h": 22,
+              "severe": true
+            }
+          ],
+          "contrast": [
+            {
+              "el": "small \"مُبلِّغ مجهول · الآن\"",
+              "ratio": 3.83,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(9,9,10)"
+            },
+            {
+              "el": "span.n \"01\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"02\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"03\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"04\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "small \"د.ع\"",
+              "ratio": 3.51,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "h4 \"جرّب\"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            },
+            {
+              "el": "h4 \"المزيد\"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            },
+            {
+              "el": "div.cp \"© 2026 إبلاغ · ابتكار عراقي · \"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            }
+          ],
+          "brokenImages": [],
+          "fakeClickables": [],
+          "scrollWidth": 430,
+          "vw": 430,
+          "links": [
+            "#/",
+            "#/",
+            "#/r/EB4471",
+            "#/app",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/book",
+            "#/",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live",
+            "#/book",
+            "#/r/EB4471",
+            "#/start",
+            "#/app",
+            "#/r/EB4471",
+            "#/app",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live",
+            "#/book",
+            "#/book",
+            "#/book",
+            "#/book",
+            "#/business",
+            "#/book",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live"
+          ],
+          "domNodes": 1176,
+          "screenshot": "screenshots/baseline/site-430.png"
+        },
+        "768": {
+          "overflow": [],
+          "smallTargets": [
+            {
+              "el": "a.brand \"إبلاغ\"",
+              "w": 79,
+              "h": 38,
+              "severe": false
+            },
+            {
+              "el": "button.on \"الله أكبر\nعربي\"",
+              "w": 68,
+              "h": 30,
+              "severe": false
+            },
+            {
+              "el": "button \"EN\"",
+              "w": 63,
+              "h": 30,
+              "severe": false
+            },
+            {
+              "el": "button \"کوردی\"",
+              "w": 78,
+              "h": 30,
+              "severe": false
+            },
+            {
+              "el": "button.sh-ib.sh-theme \"الوضع الداكن والفاتح\"",
+              "w": 40,
+              "h": 40,
+              "severe": false
+            },
+            {
+              "el": "a.sh-cta \"احجز ملصقك\"",
+              "w": 132,
+              "h": 40,
+              "severe": false
+            },
+            {
+              "el": "button.sh-ib.sh-menu \"القائمة\"",
+              "w": 40,
+              "h": 40,
+              "severe": false
+            },
+            {
+              "el": "a.try \"جرّب التسجيل\"",
+              "w": 96,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب التفعيل\"",
+              "w": 90,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب كمُبلِّغ\"",
+              "w": 81,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب الرد\"",
+              "w": 68,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"صفحة المُبلِّغ\"",
+              "w": 198,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"تطبيق صاحب السيارة\"",
+              "w": 198,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"زبون جديد\"",
+              "w": 198,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الحجز المسبق\"",
+              "w": 198,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الشركات والمجمعات\"",
+              "w": 198,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"لوحة الإدارة\"",
+              "w": 198,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الملصقات للطباعة\"",
+              "w": 198,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"العرض المتزامن\"",
+              "w": 198,
+              "h": 22,
+              "severe": true
+            }
+          ],
+          "contrast": [
+            {
+              "el": "small \"مُبلِّغ مجهول · الآن\"",
+              "ratio": 3.83,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(9,9,10)"
+            },
+            {
+              "el": "span.n \"01\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"02\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"03\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"04\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "small \"د.ع\"",
+              "ratio": 3.51,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "h4 \"جرّب\"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            },
+            {
+              "el": "h4 \"المزيد\"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            },
+            {
+              "el": "div.cp \"© 2026 إبلاغ · ابتكار عراقي · \"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            }
+          ],
+          "brokenImages": [],
+          "fakeClickables": [],
+          "scrollWidth": 768,
+          "vw": 768,
+          "links": [
+            "#/",
+            "#/",
+            "#/r/EB4471",
+            "#/app",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/book",
+            "#/",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live",
+            "#/book",
+            "#/r/EB4471",
+            "#/start",
+            "#/app",
+            "#/r/EB4471",
+            "#/app",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live",
+            "#/book",
+            "#/book",
+            "#/book",
+            "#/book",
+            "#/business",
+            "#/book",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live"
+          ],
+          "domNodes": 1176,
+          "screenshot": "screenshots/baseline/site-768.png"
+        },
+        "1024": {
+          "overflow": [],
+          "smallTargets": [
+            {
+              "el": "a.brand \"إبلاغ\"",
+              "w": 79,
+              "h": 38,
+              "severe": false
+            },
+            {
+              "el": "button.on \"الله أكبر\nعربي\"",
+              "w": 68,
+              "h": 30,
+              "severe": false
+            },
+            {
+              "el": "button \"EN\"",
+              "w": 63,
+              "h": 30,
+              "severe": false
+            },
+            {
+              "el": "button \"کوردی\"",
+              "w": 78,
+              "h": 30,
+              "severe": false
+            },
+            {
+              "el": "button.sh-ib.sh-theme \"الوضع الداكن والفاتح\"",
+              "w": 40,
+              "h": 40,
+              "severe": false
+            },
+            {
+              "el": "a.sh-cta \"احجز ملصقك\"",
+              "w": 132,
+              "h": 40,
+              "severe": false
+            },
+            {
+              "el": "button.sh-ib.sh-menu \"القائمة\"",
+              "w": 40,
+              "h": 40,
+              "severe": false
+            },
+            {
+              "el": "a.try \"جرّب التسجيل\"",
+              "w": 96,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب التفعيل\"",
+              "w": 90,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب كمُبلِّغ\"",
+              "w": 81,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب الرد\"",
+              "w": 68,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"صفحة المُبلِّغ\"",
+              "w": 273,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"تطبيق صاحب السيارة\"",
+              "w": 273,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"زبون جديد\"",
+              "w": 273,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الحجز المسبق\"",
+              "w": 273,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الشركات والمجمعات\"",
+              "w": 273,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"لوحة الإدارة\"",
+              "w": 273,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الملصقات للطباعة\"",
+              "w": 273,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"العرض المتزامن\"",
+              "w": 273,
+              "h": 22,
+              "severe": true
+            }
+          ],
+          "contrast": [
+            {
+              "el": "small \"مُبلِّغ مجهول · الآن\"",
+              "ratio": 3.83,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(9,9,10)"
+            },
+            {
+              "el": "span.n \"01\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"02\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"03\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"04\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "small \"د.ع\"",
+              "ratio": 3.51,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "h4 \"جرّب\"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            },
+            {
+              "el": "h4 \"المزيد\"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            },
+            {
+              "el": "div.cp \"© 2026 إبلاغ · ابتكار عراقي · \"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            }
+          ],
+          "brokenImages": [],
+          "fakeClickables": [],
+          "scrollWidth": 1024,
+          "vw": 1024,
+          "links": [
+            "#/",
+            "#/",
+            "#/r/EB4471",
+            "#/app",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/book",
+            "#/",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live",
+            "#/book",
+            "#/r/EB4471",
+            "#/start",
+            "#/app",
+            "#/r/EB4471",
+            "#/app",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live",
+            "#/book",
+            "#/book",
+            "#/book",
+            "#/book",
+            "#/business",
+            "#/book",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live"
+          ],
+          "domNodes": 1176,
+          "screenshot": "screenshots/baseline/site-1024.png"
+        },
+        "1280": {
+          "overflow": [],
+          "smallTargets": [
+            {
+              "el": "a.brand \"إبلاغ\"",
+              "w": 79,
+              "h": 38,
+              "severe": false
+            },
+            {
+              "el": "a.on \"الصفحة الرئيسية\"",
+              "w": 118,
+              "h": 38,
+              "severe": false
+            },
+            {
+              "el": "a \"صفحة المُبلِّغ\"",
+              "w": 99,
+              "h": 38,
+              "severe": false
+            },
+            {
+              "el": "a \"تطبيق صاحب السيارة\"",
+              "w": 142,
+              "h": 38,
+              "severe": false
+            },
+            {
+              "el": "a \"الحجز المسبق\"",
+              "w": 101,
+              "h": 38,
+              "severe": false
+            },
+            {
+              "el": "a \"الشركات والمجمعات\"",
+              "w": 137,
+              "h": 38,
+              "severe": false
+            },
+            {
+              "el": "a \"لوحة الإدارة\"",
+              "w": 88,
+              "h": 38,
+              "severe": false
+            },
+            {
+              "el": "button.on \"الله أكبر\nعربي\"",
+              "w": 68,
+              "h": 30,
+              "severe": false
+            },
+            {
+              "el": "button \"EN\"",
+              "w": 63,
+              "h": 30,
+              "severe": false
+            },
+            {
+              "el": "button \"کوردی\"",
+              "w": 78,
+              "h": 30,
+              "severe": false
+            },
+            {
+              "el": "button.sh-ib.sh-theme \"الوضع الداكن والفاتح\"",
+              "w": 40,
+              "h": 40,
+              "severe": false
+            },
+            {
+              "el": "a.sh-cta \"احجز ملصقك\"",
+              "w": 132,
+              "h": 40,
+              "severe": false
+            },
+            {
+              "el": "a.try \"جرّب التسجيل\"",
+              "w": 96,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب التفعيل\"",
+              "w": 90,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب كمُبلِّغ\"",
+              "w": 81,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب الرد\"",
+              "w": 68,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"صفحة المُبلِّغ\"",
+              "w": 319,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"تطبيق صاحب السيارة\"",
+              "w": 319,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"زبون جديد\"",
+              "w": 319,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الحجز المسبق\"",
+              "w": 319,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الشركات والمجمعات\"",
+              "w": 319,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"لوحة الإدارة\"",
+              "w": 319,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الملصقات للطباعة\"",
+              "w": 319,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"العرض المتزامن\"",
+              "w": 319,
+              "h": 22,
+              "severe": true
+            }
+          ],
+          "contrast": [
+            {
+              "el": "small \"مُبلِّغ مجهول · الآن\"",
+              "ratio": 3.83,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(9,9,10)"
+            },
+            {
+              "el": "span.n \"01\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"02\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"03\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"04\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "small \"د.ع\"",
+              "ratio": 3.51,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "h4 \"جرّب\"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            },
+            {
+              "el": "h4 \"المزيد\"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            },
+            {
+              "el": "div.cp \"© 2026 إبلاغ · ابتكار عراقي · \"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            }
+          ],
+          "brokenImages": [],
+          "fakeClickables": [],
+          "scrollWidth": 1280,
+          "vw": 1280,
+          "links": [
+            "#/",
+            "#/",
+            "#/r/EB4471",
+            "#/app",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/book",
+            "#/",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live",
+            "#/book",
+            "#/r/EB4471",
+            "#/start",
+            "#/app",
+            "#/r/EB4471",
+            "#/app",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live",
+            "#/book",
+            "#/book",
+            "#/book",
+            "#/book",
+            "#/business",
+            "#/book",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live"
+          ],
+          "domNodes": 1176,
+          "screenshot": "screenshots/baseline/site-1280.png"
+        },
+        "1440": {
+          "overflow": [],
+          "smallTargets": [
+            {
+              "el": "a.on \"الصفحة الرئيسية\"",
+              "w": 118,
+              "h": 38,
+              "severe": false
+            },
+            {
+              "el": "a \"صفحة المُبلِّغ\"",
+              "w": 99,
+              "h": 38,
+              "severe": false
+            },
+            {
+              "el": "a \"تطبيق صاحب السيارة\"",
+              "w": 142,
+              "h": 38,
+              "severe": false
+            },
+            {
+              "el": "a \"الحجز المسبق\"",
+              "w": 101,
+              "h": 38,
+              "severe": false
+            },
+            {
+              "el": "a \"الشركات والمجمعات\"",
+              "w": 137,
+              "h": 38,
+              "severe": false
+            },
+            {
+              "el": "a \"لوحة الإدارة\"",
+              "w": 88,
+              "h": 38,
+              "severe": false
+            },
+            {
+              "el": "button.on \"الله أكبر\nعربي\"",
+              "w": 68,
+              "h": 30,
+              "severe": false
+            },
+            {
+              "el": "button \"EN\"",
+              "w": 63,
+              "h": 30,
+              "severe": false
+            },
+            {
+              "el": "button \"کوردی\"",
+              "w": 78,
+              "h": 30,
+              "severe": false
+            },
+            {
+              "el": "button.sh-ib.sh-theme \"الوضع الداكن والفاتح\"",
+              "w": 40,
+              "h": 40,
+              "severe": false
+            },
+            {
+              "el": "a.sh-cta \"احجز ملصقك\"",
+              "w": 132,
+              "h": 40,
+              "severe": false
+            },
+            {
+              "el": "a.try \"جرّب التسجيل\"",
+              "w": 96,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب التفعيل\"",
+              "w": 90,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب كمُبلِّغ\"",
+              "w": 81,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب الرد\"",
+              "w": 68,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"صفحة المُبلِّغ\"",
+              "w": 319,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"تطبيق صاحب السيارة\"",
+              "w": 319,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"زبون جديد\"",
+              "w": 319,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الحجز المسبق\"",
+              "w": 319,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الشركات والمجمعات\"",
+              "w": 319,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"لوحة الإدارة\"",
+              "w": 319,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الملصقات للطباعة\"",
+              "w": 319,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"العرض المتزامن\"",
+              "w": 319,
+              "h": 22,
+              "severe": true
+            }
+          ],
+          "contrast": [
+            {
+              "el": "small \"مُبلِّغ مجهول · الآن\"",
+              "ratio": 3.83,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(9,9,10)"
+            },
+            {
+              "el": "span.n \"01\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"02\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"03\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"04\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "small \"د.ع\"",
+              "ratio": 3.51,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "h4 \"جرّب\"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            },
+            {
+              "el": "h4 \"المزيد\"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            },
+            {
+              "el": "div.cp \"© 2026 إبلاغ · ابتكار عراقي · \"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            }
+          ],
+          "brokenImages": [],
+          "fakeClickables": [],
+          "scrollWidth": 1440,
+          "vw": 1440,
+          "links": [
+            "#/",
+            "#/",
+            "#/r/EB4471",
+            "#/app",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/book",
+            "#/",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live",
+            "#/book",
+            "#/r/EB4471",
+            "#/start",
+            "#/app",
+            "#/r/EB4471",
+            "#/app",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live",
+            "#/book",
+            "#/book",
+            "#/book",
+            "#/book",
+            "#/business",
+            "#/book",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live"
+          ],
+          "domNodes": 1176,
+          "screenshot": "screenshots/baseline/site-1440.png"
+        },
+        "1920": {
+          "overflow": [],
+          "smallTargets": [
+            {
+              "el": "a.on \"الصفحة الرئيسية\"",
+              "w": 118,
+              "h": 38,
+              "severe": false
+            },
+            {
+              "el": "a \"صفحة المُبلِّغ\"",
+              "w": 99,
+              "h": 38,
+              "severe": false
+            },
+            {
+              "el": "a \"تطبيق صاحب السيارة\"",
+              "w": 142,
+              "h": 38,
+              "severe": false
+            },
+            {
+              "el": "a \"الحجز المسبق\"",
+              "w": 101,
+              "h": 38,
+              "severe": false
+            },
+            {
+              "el": "a \"الشركات والمجمعات\"",
+              "w": 137,
+              "h": 38,
+              "severe": false
+            },
+            {
+              "el": "a \"لوحة الإدارة\"",
+              "w": 88,
+              "h": 38,
+              "severe": false
+            },
+            {
+              "el": "button.on \"الله أكبر\nعربي\"",
+              "w": 68,
+              "h": 30,
+              "severe": false
+            },
+            {
+              "el": "button \"EN\"",
+              "w": 63,
+              "h": 30,
+              "severe": false
+            },
+            {
+              "el": "button \"کوردی\"",
+              "w": 78,
+              "h": 30,
+              "severe": false
+            },
+            {
+              "el": "button.sh-ib.sh-theme \"الوضع الداكن والفاتح\"",
+              "w": 40,
+              "h": 40,
+              "severe": false
+            },
+            {
+              "el": "a.sh-cta \"احجز ملصقك\"",
+              "w": 132,
+              "h": 40,
+              "severe": false
+            },
+            {
+              "el": "a.try \"جرّب التسجيل\"",
+              "w": 96,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب التفعيل\"",
+              "w": 90,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب كمُبلِّغ\"",
+              "w": 81,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a.try \"جرّب الرد\"",
+              "w": 68,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"صفحة المُبلِّغ\"",
+              "w": 319,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"تطبيق صاحب السيارة\"",
+              "w": 319,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"زبون جديد\"",
+              "w": 319,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الحجز المسبق\"",
+              "w": 319,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الشركات والمجمعات\"",
+              "w": 319,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"لوحة الإدارة\"",
+              "w": 319,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"الملصقات للطباعة\"",
+              "w": 319,
+              "h": 22,
+              "severe": true
+            },
+            {
+              "el": "a \"العرض المتزامن\"",
+              "w": 319,
+              "h": 22,
+              "severe": true
+            }
+          ],
+          "contrast": [
+            {
+              "el": "small \"مُبلِّغ مجهول · الآن\"",
+              "ratio": 3.83,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(9,9,10)"
+            },
+            {
+              "el": "span.n \"01\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"02\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"03\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "span.n \"04\"",
+              "ratio": 1.21,
+              "need": 3,
+              "color": "rgb(38, 38, 42)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "small \"د.ع\"",
+              "ratio": 3.51,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(21,21,23)"
+            },
+            {
+              "el": "h4 \"جرّب\"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            },
+            {
+              "el": "h4 \"المزيد\"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            },
+            {
+              "el": "div.cp \"© 2026 إبلاغ · ابتكار عراقي · \"",
+              "ratio": 3.69,
+              "need": 4.5,
+              "color": "rgb(109, 109, 105)",
+              "bg": "rgb(15,15,17)"
+            }
+          ],
+          "brokenImages": [],
+          "fakeClickables": [],
+          "scrollWidth": 1920,
+          "vw": 1920,
+          "links": [
+            "#/",
+            "#/",
+            "#/r/EB4471",
+            "#/app",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/book",
+            "#/",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live",
+            "#/book",
+            "#/r/EB4471",
+            "#/start",
+            "#/app",
+            "#/r/EB4471",
+            "#/app",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live",
+            "#/book",
+            "#/book",
+            "#/book",
+            "#/book",
+            "#/business",
+            "#/book",
+            "#/r/EB4471",
+            "#/app",
+            "#/start",
+            "#/book",
+            "#/business",
+            "#/admin",
+            "#/stickers",
+            "#/live"
+          ],
+          "domNodes": 1176,
+          "screenshot": "screenshots/baseline/site-1920.png"
+        }
+      },
+      "performance": {
+        "note": "single lab run on local machine, not field data",
+        "domContentLoadedMs": 295,
+        "loadMs": 413,
+        "lcpMs": 696,
+        "cls": 0.001,
+        "requests": 1,
+        "bytes": {
+          "script": 0,
+          "css": 2474,
+          "img": 0,
+          "total": 2474
+        },
+        "domNodes": 1176
+      },
+      "keyboard": {
+        "tabStops": 15,
+        "invisibleFocus": []
+      },
+      "interaction": {
+        "clicked": [
+          {
+            "el": "button \"التدفق المباشر\"",
+            "result": "not clickable: locator.click: Timeout 2000ms exceeded."
+          },
+          {
+            "el": "button \"المُبلِّغ (متصفح)\"",
+            "result": "not clickable: locator.click: Timeout 2000ms exceeded."
+          },
+          {
+            "el": "button \"تطبيق صاحب السيارة\"",
+            "result": "not clickable: locator.click: Timeout 2000ms exceeded."
+          },
+          {
+            "el": "button \"تسجيل زبون جديد\"",
+            "result": "not clickable: locator.click: Timeout 2000ms exceeded."
+          },
+          {
+            "el": "button \"الحجز المسبق\"",
+            "result": "not clickable: locator.click: Timeout 2000ms exceeded."
+          },
+          {
+            "el": "button \"الشركات والمجمعات\"",
+            "result": "not clickable: locator.click: Timeout 2000ms exceeded."
+          },
+          {
+            "el": "button \"الملصقات\"",
+            "result": "not clickable: locator.click: Timeout 2000ms exceeded."
+          },
+          {
+            "el": "button \"الإدارة\"",
+            "result": "not clickable: locator.click: Timeout 2000ms exceeded."
+          },
+          {
+            "el": "button \"الله أكبرعربي\"",
+            "result": "not clickable: locator.click: Timeout 2000ms exceeded."
+          },
+          {
+            "el": "button \"EN\"",
+            "result": "not clickable: locator.click: Timeout 2000ms exceeded."
+          },
+          {
+            "el": "button \"کوردی\"",
+            "result": "not clickable: locator.click: Timeout 2000ms exceeded."
+          },
+          {
+            "el": "button \"فاتح\"",
+            "result": "not clickable: locator.click: Timeout 2000ms exceeded."
+          },
+          {
+            "el": "button \"\"",
+            "result": "not clickable: locator.click: Timeout 2000ms exceeded."
+          },
+          {
+            "el": "button \"الله أكبر\nعربي\"",
+            "result": "no visible change"
+          },
+          {
+            "el": "button \"EN\"",
+            "result": "changed page"
+          },
+          {
+            "el": "button \"کوردی\"",
+            "result": "changed page"
+          },
+          {
+            "el": "button \"\"",
+            "result": "changed page"
+          },
+          {
+            "el": "button \"\"",
+            "result": "not clickable: locator.click: Timeout 2000ms exceeded."
+          },
+          {
+            "el": "button \"\"",
+            "result": "not clickable: locator.click: Timeout 2000ms exceeded."
+          },
+          {
+            "el": "button \"\"",
+            "result": "not clickable: locator.click: Timeout 2000ms exceeded."
+          },
+          {
+            "el": "button \"\"",
+            "result": "not clickable: locator.click: Timeout 2000ms exceeded."
+          },
+          {
+            "el": "button \"\"",
+            "result": "not clickable: locator.click: Timeout 2000ms exceeded."
+          },
+          {
+            "el": "button \"\"",
+            "result": "not clickable: locator.click: Timeout 2000ms exceeded."
+          },
+          {
+            "el": "button \"\"",
+            "result": "not clickable: locator.click: Timeout 2000ms exceeded."
+          },
+          {
+            "el": "button \"\"",
+            "result": "not clickable: locator.click: Timeout 2000ms exceeded."
+          }
+        ],
+        "errorsAfterClick": [],
+        "forms": []
+      }
+    }
+  },
+  "interactive": true,
+  "notPerformed": [
+    "axe-core not installed: automated WCAG rule scan skipped (built-in contrast, focus, label and target checks still ran)"
+  ],
+  "findings": [
+    {
+      "id": "B-001",
+      "module": "responsive-audit",
+      "severity": "P2",
+      "title": "13 touch targets under 24px on mobile",
+      "location": "/site.html",
+      "evidence": "a.try \"جرّب التسجيل\" 96x22; a.try \"جرّب التفعيل\" 90x22; a.try \"جرّب كمُبلِّغ\" 81x22; a.try \"جرّب الرد\" 68x22; a.lp-btn \"احجز\" 238x23; a \"صفحة المُبلِّغ\" 130x22",
+      "fix": "Make tap targets at least 24px (44px recommended).",
+      "user_impact": "",
+      "business_impact": "",
+      "effort": "S",
+      "source": "browser",
+      "status": "open",
+      "screenshot": "screenshots/baseline/site-320.png"
+    },
+    {
+      "id": "B-002",
+      "module": "accessibility-audit",
+      "severity": "P1",
+      "title": "9 text elements below WCAG contrast",
+      "location": "/site.html",
+      "evidence": "small \"مُبلِّغ مجهول · الآن\" 3.83:1 (needs 4.5) rgb(109, 109, 105) on rgb(9,9,10); span.n \"01\" 1.21:1 (needs 3) rgb(38, 38, 42) on rgb(21,21,23); span.n \"02\" 1.21:1 (needs 3) rgb(38, 38, 42) on rgb(21,21,23); span.n \"03\" 1.21:1 (needs 3) rgb(38, 38, 42) on rgb(21,21,23); span.n \"04\" 1.21:1 (needs 3) rgb(38, 38, 42) on rgb(21,21,23); small \"د.ع\" 3.51:1 (needs 4.5) rgb(109, 109, 105) on rgb(21,21,23)",
+      "fix": "Darken text or change background to reach 4.5:1 (3:1 for large text).",
+      "user_impact": "",
+      "business_impact": "",
+      "effort": "S",
+      "source": "browser",
+      "status": "open",
+      "screenshot": "screenshots/baseline/site-1440.png"
+    },
+    {
+      "id": "B-003",
+      "module": "functional-qa",
+      "severity": "P2",
+      "title": "Control does nothing when clicked",
+      "location": "/site.html",
+      "evidence": "button \"الله أكبر\nعربي\"",
+      "fix": "Implement it, or mark it as unavailable/prototype. No fake functionality.",
+      "user_impact": "Visitor clicks and nothing happens.",
+      "business_impact": "",
+      "effort": "S",
+      "source": "browser",
+      "status": "open",
+      "screenshot": ""
+    }
+  ],
+  "counts": {
+    "P2": 2,
+    "P1": 1
+  }
+}

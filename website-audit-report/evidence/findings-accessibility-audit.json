@@ -1,0 +1,73 @@
+[
+ {
+  "id": "A11Y-001",
+  "module": "accessibility-audit",
+  "severity": "P1",
+  "title": "Secondary text below WCAG AA contrast in both themes (--ink3)",
+  "location": "all pages (timestamps, captions, hints)",
+  "evidence": "sweep lowc: 3.51:1 dark, 3.08:1 light (needs 4.5); browser_audit B-002",
+  "source": "measured",
+  "user_impact": "Hard to read, especially outdoors on phones",
+  "business_impact": "Accessibility risk",
+  "fix": "--ink3 #8E8E88 (dark) / #6A6862 (light); light status colours darkened",
+  "effort": "S",
+  "status": "fixed"
+ },
+ {
+  "id": "A11Y-002",
+  "module": "accessibility-audit",
+  "severity": "P2",
+  "title": "Small text-only tap targets (try links, \"All\", \"Change\", \"Edit\", footer links ~20-22px)",
+  "location": "home, app home, report compose, payment",
+  "evidence": "sweep tap 21x20 / 23x20 / 96x22",
+  "source": "browser",
+  "user_impact": "Hard to tap",
+  "business_impact": "-",
+  "fix": "Padding to >=40px hit area",
+  "effort": "S",
+  "status": "fixed"
+ },
+ {
+  "id": "A11Y-003",
+  "module": "accessibility-audit",
+  "severity": "P2",
+  "title": "Governorate selects without accessible name",
+  "location": "profile, delivery, booking",
+  "evidence": "static S-002/S-003",
+  "source": "static",
+  "user_impact": "Screen readers announce unnamed field",
+  "business_impact": "-",
+  "fix": "aria-label added",
+  "effort": "S",
+  "status": "fixed"
+ },
+ {
+  "id": "A11Y-004",
+  "module": "accessibility-audit",
+  "severity": "P2",
+  "title": "\"For business\" eyebrow 2.9:1 on black panel in light mode",
+  "location": "home business section",
+  "evidence": "sweep lowc l320 home",
+  "source": "measured",
+  "user_impact": "Low legibility",
+  "business_impact": "-",
+  "fix": "Fixed yellow on black",
+  "effort": "S",
+  "status": "fixed"
+ },
+ {
+  "id": "A11Y-005",
+  "module": "accessibility-audit",
+  "severity": "P4",
+  "title": "Decorative step numbers 01-04 are low contrast by design",
+  "location": "home \"how it works\"",
+  "evidence": "browser_audit after: span.n 1.24:1",
+  "source": "measured",
+  "user_impact": "None (decorative, aria-hidden)",
+  "business_impact": "-",
+  "fix": "Marked aria-hidden; kept as decoration",
+  "effort": "S",
+  "status": "accepted",
+  "intentional": true
+ }
+]

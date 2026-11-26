@@ -1,0 +1,94 @@
+{
+  "overall": 89.6,
+  "weights": {
+    "ux": 16.2,
+    "ui": 12.15,
+    "functionality": 12.15,
+    "responsive": 8.1,
+    "accessibility": 8.1,
+    "performance": 8.1,
+    "business": 8.1,
+    "conversion": 4.05,
+    "code": 4.05,
+    "design": 9.0,
+    "workflow": 10.0
+  },
+  "category_scores": {
+    "ux": null,
+    "ui": null,
+    "functionality": 94,
+    "responsive": 94,
+    "accessibility": 67,
+    "performance": 100,
+    "business": null,
+    "conversion": null,
+    "code": 92,
+    "design": null,
+    "workflow": null
+  },
+  "category_open_counts": {
+    "functionality": {
+      "P0": 0,
+      "P1": 0,
+      "P2": 1,
+      "P3": 0,
+      "P4": 0
+    },
+    "responsive": {
+      "P0": 0,
+      "P1": 0,
+      "P2": 1,
+      "P3": 0,
+      "P4": 0
+    },
+    "accessibility": {
+      "P0": 0,
+      "P1": 1,
+      "P2": 3,
+      "P3": 0,
+      "P4": 0
+    },
+    "performance": {
+      "P0": 0,
+      "P1": 0,
+      "P2": 0,
+      "P3": 0,
+      "P4": 0
+    },
+    "code": {
+      "P0": 0,
+      "P1": 0,
+      "P2": 1,
+      "P3": 1,
+      "P4": 0
+    }
+  },
+  "not_assessed": [
+    "ux",
+    "ui",
+    "business",
+    "conversion",
+    "design",
+    "workflow"
+  ],
+  "weights_used_pct": 40.5,
+  "counts": {
+    "P0": 0,
+    "P1": 6,
+    "P2": 13,
+    "P3": 5,
+    "P4": 1
+  },
+  "open_counts": {
+    "P0": 0,
+    "P1": 1,
+    "P2": 7,
+    "P3": 4,
+    "P4": 1
+  },
+  "fixed": 12,
+  "unresolved": 12,
+  "journeys_passed": 7,
+  "journeys_failed": 0,
+  "note": "Score uses only recorded findings from modules that ran. Not-assessed categories are excluded, not assumed perfect."
+}

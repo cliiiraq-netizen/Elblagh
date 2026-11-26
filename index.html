@@ -6,6 +6,7 @@
 <title>إبلاغ — العرض التجريبي الكامل</title>
 <meta name="description" content="إبلاغ: تواصل مع صاحب السيارة بمسحة واحدة، بدون اتصال وبدون كشف رقم الهاتف. البلاغ من المتصفح والاستلام بالتطبيق.">
 <meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#09090A">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap">
 <style>
@@ -34,7 +35,7 @@
 :root[data-theme="dark"]{
   color-scheme:dark;
   --bg:#09090A; --bg2:#0F0F11; --surface:#151517; --surface2:#1D1D20; --surface3:#26262A; --line:#2A2A2F;
-  --ink:#F5F5F1; --ink2:#A9A9A3; --ink3:#6D6D69;
+  --ink:#F5F5F1; --ink2:#B4B4AE; --ink3:#8E8E88;
   --ytext:#FFC816; --ysoft:rgba(255,200,22,.12); --yline:rgba(255,200,22,.32);
   --ok:#2FD08A; --oks:rgba(47,208,138,.13); --warn:#FFB224; --warns:rgba(255,178,36,.13);
   --bad:#FF5A5F; --bads:rgba(255,90,95,.13); --info:#5AA9FF; --infos:rgba(90,169,255,.13);
@@ -44,10 +45,10 @@
 :root[data-theme="light"]{
   color-scheme:light;
   --bg:#F5F4EF; --bg2:#EEEDE6; --surface:#FFFFFF; --surface2:#F3F2EC; --surface3:#E9E7DF; --line:#E3E1D8;
-  --ink:#141414; --ink2:#5F5E58; --ink3:#95938B;
-  --ytext:#9A7200; --ysoft:rgba(255,200,22,.18); --yline:rgba(214,160,0,.45);
-  --ok:#14A86B; --oks:rgba(20,168,107,.11); --warn:#C77A00; --warns:rgba(255,178,36,.16);
-  --bad:#E03B41; --bads:rgba(224,59,65,.1); --info:#2F7CE0; --infos:rgba(47,124,224,.1);
+  --ink:#141414; --ink2:#55544E; --ink3:#6A6862;
+  --ytext:#7A5800; --ysoft:rgba(255,200,22,.2); --yline:rgba(190,140,0,.5);
+  --ok:#0A7A4C; --oks:rgba(20,168,107,.13); --warn:#9A5B00; --warns:rgba(255,178,36,.18);
+  --bad:#C22A30; --bads:rgba(224,59,65,.11); --info:#1D5FB8; --infos:rgba(47,124,224,.11);
   --shadow:0 18px 50px rgba(40,36,20,.16); --shadow-s:0 6px 18px rgba(40,36,20,.1);
   --phone:#111; --page:radial-gradient(1200px 600px at 50% -10%, #FFF6D6 0%, #F5F4EF 60%);
 }
@@ -176,7 +177,7 @@ svg{display:block}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg)}
 .row{display:flex;align-items:center;gap:12px}
 .sec-t{display:flex;align-items:center;justify-content:space-between;margin:20px 2px 10px;font-size:14px;font-weight:700}
-.sec-t a,.sec-t button{font-size:12.5px;color:var(--ytext);font-weight:600}
+.sec-t a,.sec-t button{font-size:12.5px;color:var(--ytext);font-weight:600;padding:8px 6px;margin:-8px -6px}
 .pill{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:99px;font-size:11.5px;font-weight:700;white-space:nowrap}
 .pill .ic{width:13px;height:13px}
 .pill.ok{background:var(--oks);color:var(--ok)}
@@ -194,6 +195,7 @@ svg{display:block}
 .sw{width:48px;height:29px;border-radius:20px;background:var(--surface3);position:relative;flex:none;transition:background .25s}
 .sw::after{content:"";position:absolute;top:3px;inset-inline-start:3px;width:23px;height:23px;border-radius:50%;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.25);transition:inset-inline-start .25s var(--ease)}
 .sw.on{background:var(--ok)}
+:root[data-theme="light"] .sw.on{background:#14A86B}
 .sw.on::after{inset-inline-start:22px}
 .sw.y.on{background:var(--y)}
 .list{display:flex;flex-direction:column}
@@ -299,7 +301,7 @@ textarea.inp{height:auto;min-height:92px;padding:12px 14px;resize:none;line-heig
 .selr.urgent .ric{background:var(--bad);color:#fff}
 .selr b{display:block;font-size:15.5px}
 .selr small{color:var(--ink3);font-size:12px}
-.selr button{margin-inline-start:auto;font-size:12.5px;color:var(--ytext);font-weight:700}
+.selr button{margin-inline-start:auto;padding:10px 4px;font-size:12.5px;color:var(--ytext);font-weight:700}
 .lbl{margin:18px 18px 8px;font-size:13px;font-weight:700;color:var(--ink2);display:flex;justify-content:space-between}
 .lbl span{font-weight:500;color:var(--ink3)}
 .wta{margin:0 18px;width:calc(100% - 36px)}
@@ -543,7 +545,7 @@ textarea.inp{height:auto;min-height:92px;padding:12px 14px;resize:none;line-heig
 .mini-seg button{padding:7px 12px;border-radius:9px;font-size:13px;font-weight:600;color:var(--ink2);display:flex;align-items:center;gap:6px}
 .mini-seg button i{width:12px;height:12px;border-radius:50%;border:1px solid rgba(128,128,128,.5)}
 .mini-seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow-s)}
-.stk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px}
+.stk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:18px}
 .stk-card{background:var(--surface);border:1px solid var(--line);border-radius:24px;overflow:hidden;display:flex;flex-direction:column}
 .stk-stage{min-height:420px;display:grid;place-items:center;padding:34px 20px;overflow:auto;background:repeating-conic-gradient(var(--surface2) 0 25%,var(--surface) 0 50%) 0 0/22px 22px}
 .stk-card.wide{grid-column:span 2}
@@ -831,7 +833,7 @@ select.inp{cursor:pointer}
 .addr{margin:14px 18px 0;padding:12px 14px;border-radius:16px;background:var(--surface2);display:flex;gap:10px;font-size:12.5px;color:var(--ink2);align-items:flex-start}
 .addr .ic{width:18px;height:18px;flex:none;color:var(--ytext);margin-top:1px}
 .addr b{color:var(--ink);display:block;font-size:13px}
-.addr button{margin-inline-start:auto;color:var(--ytext);font-weight:700;font-size:12.5px;flex:none}
+.addr button{margin-inline-start:auto;padding:10px 4px;color:var(--ytext);font-weight:700;font-size:12.5px;flex:none}
 .vtrack{margin:16px 18px 0;padding:16px;border-radius:20px;background:var(--surface);border:1px solid var(--line)}
 .vtrack div{display:grid;grid-template-columns:26px 1fr;gap:12px;position:relative;padding-bottom:16px;font-size:13.5px;color:var(--ink3);align-items:start}
 .vtrack div:last-child{padding-bottom:0}
@@ -1029,6 +1031,10 @@ select.inp{cursor:pointer}
 .funnel small{color:var(--ink3);font-size:11.5px}
 @media (max-width:1180px){.bplans{grid-template-columns:1fr 1fr}.bgrid2{grid-template-columns:1fr}.bfun{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:760px){.bplans{grid-template-columns:1fr}.bform{grid-template-columns:1fr}.stages{grid-template-columns:repeat(5,minmax(56px,1fr));overflow-x:auto}.stages b{font-size:11px}.bfun{grid-template-columns:1fr 1fr}.funnel div{grid-template-columns:60px 1fr 48px}.funnel small{display:none}.bdash{padding:14px}.sbar{width:90px}}
+.theme-seg{display:flex;gap:6px;padding:0 14px 12px}
+.theme-seg button{flex:1;height:40px;border-radius:12px;background:var(--surface2);border:1.5px solid var(--line);font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:6px;color:var(--ink2)}
+.theme-seg button .ic{width:16px;height:16px}
+.theme-seg button.on{border-color:var(--y);background:var(--ysoft);color:var(--ink)}
 </style>
 </head>
 <body>
@@ -1606,6 +1612,7 @@ function aSettings(){
     <div class="set-h">${T('الخصوصية والأمان','Privacy & security','تایبەتمەندی و ئاسایش')}</div>
     <div class="grp"><div class="li"><span class="lic" style="color:var(--ok)">${I.lock}</span><span class="lt"><b>${T('رقمك مخفي دائماً','Your number is always hidden','ژمارەکەت هەمیشە شاراوەیە')}</b><small>${T('ما ينكشف لأي مُبلِّغ، ولا حتى بالرد',"Never shown to reporters, not even when you reply",'بۆ هیچ ڕاپۆرتدەرێک دەرناکەوێت، تەنانەت لە وەڵامدانەوەشدا')}</small></span></div>
       <button class="li"><span class="lic">${I.ban}</span><span class="lt"><b>${T('المحظورين','Blocked','بلۆککراوەکان')}</b><small>${T(`${S.blocked} مُبلِّغ`,`${S.blocked} reporters`,`${S.blocked} ڕاپۆرتدەر`)}</small></span>${ch}</button>
+      <div class="li"><span class="lic">${document.documentElement.dataset.theme==='dark'?I.moon:I.sun}</span><span class="lt"><b>${T('المظهر','Appearance','ڕووکار')}</b><small>${T('نهاري أو داكن أو حسب الجهاز','Light, dark or follow the device','ڕووناک، تاریک یان بەپێی ئامێر')}</small></span></div><div class="theme-seg">${themeSeg()}</div>
       <button class="li" data-act="a-langsheet"><span class="lic">${I.globe}</span><span class="lt"><b>${T('اللغة','Language','زمان')}</b><small>${LANGS[LANG].name}</small></span>${flag(LANGS[LANG].flag)}${ch}</button></div>
     <div class="set-h">${T('الحساب','Account','هەژمار')}</div>
     <div class="grp"><button class="li" data-act="a-logout"><span class="lic">${I.logout}</span><span class="lt"><b>${T('تسجيل خروج','Log out','چوونەدەرەوە')}</b></span></button>
@@ -1648,7 +1655,7 @@ function obBar(step){
   return `<div class="ob"><div class="ob-bars">${st.map((_,i)=>`<i class="${i<=step?'on':''}"></i>`).join('')}</div><small>${T('الخطوة','Step','هەنگاو')} ${ltr((step+1)+'/5')} · ${st[step]}</small></div>`;
 }
 const fld = (label, bind, val, extra='') => `<div class="field"><label>${label}</label><input class="inp" data-bind="${bind}" value="${esc(val)}" ${extra}></div>`;
-const govSelect = (bind, val) => `<select class="inp" data-bind="${bind}">${GOVS.map(([k,n])=>`<option value="${k}" ${val===k?'selected':''}>${L(n)}</option>`).join('')}</select>`;
+const govSelect = (bind, val) => `<select class="inp" data-bind="${bind}" aria-label="${T('المحافظة','Governorate','پارێزگا')}">${GOVS.map(([k,n])=>`<option value="${k}" ${val===k?'selected':''}>${L(n)}</option>`).join('')}</select>`;
 function aProfile(){
   const r = S.a.reg;
   const refs = [['insta',T('إنستغرام','Instagram','ئینستاگرام')],['sticker',T('ملصق على سيارة','A sticker on a car','ستیکەرێک لەسەر ئۆتۆمبێل')],['friend',T('صديق','A friend','هاوڕێیەک')],['tiktok',T('تيك توك','TikTok','تیکتۆک')]];
@@ -2035,7 +2042,7 @@ function bkPage(){
       ${b.err ? `<div class="banner bad" style="margin:0 0 14px">${I.alert}<div><b>${T('كمّل المعلومات','Complete the details','زانیارییەکان تەواو بکە')}</b>${T('نحتاج اسمك ورقم هاتف صحيح (10 أرقام) حتى نتواصل وياك.','We need your name and a valid phone number (10 digits) to reach you.','ناو و ژمارەیەکی دروستی تەلەفۆن (10 ژمارە) پێویستە بۆ پەیوەندیکردن.')}</div></div>` : ''}
       <div class="field"><label>${T('الاسم','Name','ناو')}</label><input class="inp" data-bk="name" value="${esc(b.name)}" placeholder="${T('مثال: أحمد علي','e.g. Ahmed Ali','بۆ نموونە: ئەحمەد عەلی')}"></div>
       <div class="field"><label>${T('رقم الهاتف','Phone number','ژمارەی تەلەفۆن')}</label><div class="phonein"><span class="cc">${flag('iq')} +964</span><input class="inp" data-bk="phone" value="${esc(b.phone)}" inputmode="tel" placeholder="770 000 0000"></div></div>
-      <div class="field"><label>${T('المحافظة','Governorate','پارێزگا')}</label><select class="inp" data-bk="gov">${GOVS.map(([k,n])=>`<option value="${k}" ${b.gov===k?'selected':''}>${L(n)}</option>`).join('')}</select></div>
+      <div class="field"><label>${T('المحافظة','Governorate','پارێزگا')}</label><select class="inp" data-bk="gov" aria-label="${T('المحافظة','Governorate','پارێزگا')}">${GOVS.map(([k,n])=>`<option value="${k}" ${b.gov===k?'selected':''}>${L(n)}</option>`).join('')}</select></div>
       <div class="field"><label>${T('كود إحالة','Referral code','کۆدی ناساندن')} <span style="color:var(--ink3);font-weight:500">(${T('اختياري','optional','ئارەزوومەندانە')})</span></label><input class="inp" data-bk="ref" dir="ltr" value="${esc(b.ref)}" placeholder="EB-7K42"></div>
       ${b.ref ? (validRef(b.ref) ? `<div class="okline" style="margin:-6px 0 12px">${I.check} ${T('الكود صالح — خصم 2,000 د.ع عند الطلب','Valid code — 2,000 IQD off when you order','کۆدەکە دروستە — 2,000 دینار داشکاندن لە کاتی داواکردن')}</div>` : `<div class="errline" style="margin:-6px 0 12px">${I.alert} ${T('الكود غير صحيح','Invalid code','کۆدەکە هەڵەیە')}</div>`) : ''}
       <button class="pbtn" data-act="bk-submit">${I.check} ${T('احجز مكاني','Reserve my spot','شوێنەکەم حیجز بکە')}</button>
@@ -2479,6 +2486,7 @@ const ACT = {
   's-var': el => { S.stk.variant = el.dataset.v; render(); },
   's-code': el => { S.stk.code = el.dataset.c; render(); },
   's-cut': () => { S.stk.cut = !S.stk.cut; render(); },
+  'theme-pref': el => setThemePref(el.dataset.t),
   'ad-tab': el => { S.adm.tab = el.dataset.k; render(); },
   'ad-sel': el => { S.adm.selBatch = el.dataset.id; render(); },
   'ad-dl': () => pageToast(T('ملف الطباعة: PDF بالمقاس الفعلي مع خط القص — بالنسخة الحقيقية','Print file: true-size PDF with cut line — in the real version','فایلی چاپ: PDF بە قەبارەی ڕاستەقینە لەگەڵ هێڵی بڕین — لە وەشانی ڕاستەقینەدا')),
@@ -2657,18 +2665,23 @@ function themeLabel(){
   $('#themeBtn').innerHTML = (t==='dark' ? I.sun : I.moon) + `<span style="font-size:12.5px">${t==='dark'?T('فاتح','Light','ڕووناک'):T('داكن','Dark','تاریک')}</span>`;
   $('#themeBtn').setAttribute('aria-label', T('تبديل الوضع الداكن والفاتح','Toggle dark / light','گۆڕینی تاریک / ڕووناک'));
 }
-function applyTheme(t){ document.documentElement.dataset.theme = t; themeLabel(); try { localStorage.setItem('eb_theme', t); } catch(e){} }
+const THEME_MQ = window.matchMedia ? matchMedia('(prefers-color-scheme: dark)') : {matches:true};
+function themePref(){ try { const p = localStorage.getItem('eb_theme_pref'); return p || 'auto'; } catch(e){ return 'auto'; } }
+const resolveTheme = p => p === 'auto' ? (THEME_MQ.matches ? 'dark' : 'light') : p;
+function setThemePref(p){ try { localStorage.setItem('eb_theme_pref', p); } catch(e){} applyTheme(resolveTheme(p)); render(); }
+const themeSeg = () => { const p = themePref(); return [['light',I.sun,T('نهاري','Light','ڕووناک')],['dark',I.moon,T('داكن','Dark','تاریک')],['auto',I.smartphone,T('تلقائي','Auto','خۆکار')]].map(([k,ic,t])=>`<button class="${p===k?'on':''}" data-act="theme-pref" data-t="${k}" aria-pressed="${p===k}">${ic}${t}</button>`).join(''); };
+function applyTheme(t){ document.documentElement.dataset.theme = t; try { const m = document.querySelector('meta[name=theme-color]'); if (m) m.setAttribute('content', t === 'dark' ? '#09090A' : '#F5F4EF'); } catch(e){} themeLabel(); }
 
 $('#brandMk').innerHTML = markSVG;
 $('#icFontH').innerHTML = cls(I.type,'','width:16px;height:16px');
 $('#icFontB').innerHTML = '<span style="font-size:11px;font-weight:700">Aa</span>';
 $('#selFH').onchange = e => { fontPrefs[LANG].fh = e.target.value; saveFonts(); applyFonts(); };
 $('#selFB').onchange = e => { fontPrefs[LANG].fb = e.target.value; saveFonts(); applyFonts(); };
-$('#themeBtn').onclick = () => applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+$('#themeBtn').onclick = () => setThemePref(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
 $('#resetBtn').innerHTML = I.refresh;
 $('#resetBtn').onclick = () => { timers.forEach(clearTimeout); timers = []; const m = S.mode; S = freshState(); S.mode = m; render(); };
-let th = 'dark'; try { th = localStorage.getItem('eb_theme') || th; } catch(e){}
-document.documentElement.dataset.theme = th;
+applyTheme(resolveTheme(themePref()));
+try { THEME_MQ.addEventListener('change', () => { if (themePref() === 'auto'){ applyTheme(resolveTheme('auto')); render(); } }); } catch(e){}
 setLang(LANG);
 }
 </script>
