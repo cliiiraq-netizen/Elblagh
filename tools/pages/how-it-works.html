@@ -1,0 +1,201 @@
+<!--@meta-->
+title: إبلاغ شلون يشتغل؟ | إبلاغ
+desc: أحد يصوّر الملصق اللي على سيارتك، يوصلك إشعار فوري بنغمة إبلاغ، ويا إبلاغ بلس إذا ما شفته خلال دقيقة نوصلك على واتساب. ورقمك يبقى مخفي.
+main_class: hiw
+<!--@css-->
+.hiw{display:grid;grid-template-columns:minmax(0,1fr);row-gap:16px;align-items:start}
+/* hero */
+.hiw-hero{padding:4px 2px 0;display:flex;flex-direction:column;align-items:flex-start;min-width:0}
+.hiw-tag{display:inline-flex;align-items:center;padding:3px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent-ink);font-size:12px;line-height:1.7;font-weight:600}
+.hiw-hero h1{margin-top:16px;font-size:28px;line-height:1.4;font-weight:800;color:var(--ink);text-wrap:balance}
+.hiw-lead{margin-top:8px;max-width:30.5rem;font-size:14.5px;line-height:1.7;color:var(--ink-2);text-wrap:pretty}
+.hiw-facts{margin-top:16px;display:flex;flex-wrap:wrap;gap:6px}
+.hiw-facts li{display:inline-flex;align-items:center;gap:6px;height:32px;padding:5px 10px;border-radius:999px;background:#fff;border:1px solid var(--warm-line);font-size:12px;line-height:1.7;font-weight:600;color:var(--ink-soft);white-space:nowrap}
+.hiw-facts .ic{width:14px;height:14px;color:var(--accent-icon)}
+.hiw-btn{margin-top:14px;display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;height:46px;padding:0 18px;border-radius:12px;background:var(--cta);color:#111;font-size:14px;line-height:1.7;font-weight:700;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 -1px 0 rgba(140,90,0,.22),0 8px 22px -10px rgba(245,170,0,.6);transition:transform .2s var(--ease),background-color .2s}
+.hiw-btn:hover{background:var(--cta-hover)}
+.hiw-btn:active{transform:scale(.97)}
+.hiw-btn .ic{width:16px;height:16px}
+.hiw-plus{margin-top:16px;width:100%;padding:10px 12px;border-radius:12px;border:1px dashed rgba(245,170,0,.55);background:#FFFCF2;font-size:12.5px;line-height:1.7;color:#4f4a45}
+.hiw-plus b{display:block;font-size:13px;line-height:1.7;font-weight:700;color:var(--ink)}
+
+/* story card */
+.story{min-width:0;background:#fff;border:1px solid var(--warm-line);border-radius:16px;box-shadow:0 10px 30px -22px rgba(18,17,16,.35);overflow:hidden}
+.story__head{padding:16px 16px 4px}
+.story__head h2{font-size:18px;line-height:1.4;font-weight:800;color:var(--ink)}
+.story__head > p{font-size:13px;line-height:1.7;color:var(--ink-2)}
+.tabs{margin-top:13px;display:grid;grid-template-columns:1fr 1fr;gap:4px;height:48px;padding:4px;border-radius:12px;background:#F5F0E6}
+.tab{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-width:0;height:40px;padding:8px 10px;border-radius:9px;font-size:13.5px;line-height:1.7;font-weight:600;color:var(--ink-2);transition:background-color .2s,box-shadow .2s,color .2s}
+.tab[aria-selected="true"]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.tab:not([aria-selected="true"]):hover{color:var(--ink);background:rgba(255,255,255,.5)}
+.tab:focus-visible{outline-offset:-2px}
+.tab__em{width:20px;height:20px;border-radius:50%;flex:none;display:grid;place-items:center;background:var(--cta);color:#111}
+.tab__em svg.mk{width:14px;height:auto}
+.tab__em .ic{width:12px;height:12px}
+.tab__kind{font-weight:400}
+.tab b{font-weight:700;color:var(--ink);white-space:nowrap}
+.tab__tier{color:var(--accent-ink)}
+.story__panel{outline:none}
+.story__panel:focus-visible{box-shadow:inset 0 0 0 3px rgba(242,170,0,.5)}
+.tl{padding:16px 16px 0}
+.step{position:relative;display:grid;grid-template-columns:36px minmax(0,1fr);column-gap:12px;padding-bottom:34px;animation:story-in 380ms linear both;animation-delay:calc(var(--i) * 70ms)}
+.step:last-child{padding-bottom:0}
+.step::before{content:"";position:absolute;inset-inline-start:17px;top:34px;bottom:-4px;border-inline-start:1.5px dashed #E6DDCF}
+.step:last-child::before{display:none}
+.step__icon{position:relative;width:36px;height:36px;margin-top:-8px;border-radius:50%;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent-icon)}
+.step__icon .ic{width:17px;height:17px}
+.step--wa .step__icon{background:#E7F8EE;color:#1DA851}
+.step--ok .step__icon{background:var(--ok-soft);color:var(--ok)}
+.step__body{min-width:0}
+.step__time{display:inline-flex;align-items:center;padding:1px 7px;border-radius:999px;background:var(--accent-soft);color:var(--accent-ink);font-family:var(--latin);font-size:10.5px;line-height:1.7;font-weight:700;font-variant-numeric:tabular-nums}
+.step__time .ic{width:11px;height:11px}
+.step--wa .step__time{background:#E7F8EE;color:#0B6E36}
+.step--ok .step__time{background:var(--ok-soft);color:var(--ok)}
+.step h3{margin-top:10px;font-size:15px;line-height:1.4;font-weight:700;color:var(--ink)}
+.step__body > p{margin-top:4px;font-size:12.5px;line-height:1.7;color:var(--ink-2)}
+.step__vis{margin-top:13px}
+/* illustrations */
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;border:1px solid var(--warm-line);background:#fff;font-size:11.5px;line-height:1.7;color:var(--ink-2)}
+.chip .ic{width:12px;height:12px}
+.chip--on{border-color:#F2AA00;background:#FFF8DC;color:var(--ink);font-weight:600}
+.chip--car .ic{color:var(--accent-icon)}
+.notif{max-width:320px;display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:16px;background:rgba(255,255,255,.9);border:1px solid var(--warm-line);box-shadow:0 6px 18px -10px rgba(18,17,16,.35)}
+.notif + .who{margin-top:10px}
+.who{display:block;margin-bottom:6px;font-size:11.5px;line-height:1.5;font-weight:600;color:var(--ink-3)}
+.notif__app{width:40px;height:40px;border-radius:50%;flex:none;display:grid;place-items:center;background:var(--cta);color:#111;box-shadow:inset 0 1px 0 rgba(255,255,255,.5)}
+.notif__app svg.mk{width:27px;height:auto}
+.notif__body{flex:1;min-width:0;display:flex;flex-direction:column}
+.notif__head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.notif__head b{font-family:var(--latin);font-size:12px;line-height:1.5;font-weight:700;color:var(--ink);letter-spacing:.02em}
+.notif__head time{font-size:11px;line-height:1.5;color:var(--ink-3)}
+.notif__title{font-size:13px;line-height:1.5;font-weight:700;color:var(--ink)}
+.notif__text{font-size:12px;line-height:1.5;color:var(--ink-2)}
+.cap{max-width:320px;display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:18px;background:var(--ink);color:#fff;box-shadow:0 10px 24px -14px rgba(0,0,0,.6)}
+.cap__btn,.wa__av{position:relative;width:40px;height:40px;border-radius:50%;flex:none;display:grid;place-items:center;background:var(--accent);color:#111}
+.cap__btn .ic,.wa__av .ic{width:18px;height:18px;position:relative}
+.ring{position:absolute;inset:0;border-radius:50%;background:currentColor;opacity:0;animation:story-ping 1600ms linear infinite}
+.cap__btn .ring{color:var(--accent)}
+.wa__av .ring{color:#25D366}
+.cap b{display:block;font-size:14px;line-height:1.5;font-weight:700}
+.cap small{display:block;font-size:12px;line-height:1.5;color:#cfcac5}
+.reply{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.reply__ok,.reply__alt{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:999px;font-size:13px;line-height:1;font-weight:700;white-space:nowrap}
+.reply__ok{background:var(--ok);color:#fff}
+.reply__ok .ic{width:14px;height:14px}
+.reply__alt{background:#fff;color:var(--ink);border:1px solid var(--warm-line)}
+.reply small{flex-basis:100%;font-size:11.5px;line-height:1.5;color:var(--ink-3)}
+.wa{max-width:320px;display:flex;align-items:flex-end;gap:10px;padding:10px;border-radius:16px;background:#EFEAE2}
+.wa__av{background:#25D366;color:#fff}
+.wa__bubble{flex:1;min-width:0;padding:7px 10px 5px;border-radius:12px;border-start-start-radius:4px;background:#fff;box-shadow:0 1px 1px rgba(0,0,0,.08)}
+.wa__bubble b{display:block;font-size:12px;line-height:1.5;font-weight:700;color:#0B6E36}
+.wa__bubble p{font-size:12.5px;line-height:1.55;color:var(--ink)}
+.wa__bubble small{display:block;text-align:end;font-family:var(--latin);font-size:10px;line-height:1.4;color:#7a8a80}
+.story__cta{margin:28px 16px 16px;display:flex;align-items:center;justify-content:center;gap:8px;height:44px;border-radius:12px;background:var(--ink);color:#fff;font-size:14px;line-height:1.7;font-weight:700;transition:background-color .2s,transform .2s var(--ease)}
+.story__cta:hover{background:#2a2826}
+.story__cta:active{transform:scale(.98)}
+.story__cta .ic{width:16px;height:16px}
+
+/* closing band */
+.hiw-final{display:flex;flex-direction:column;align-items:center;gap:6px;padding:18px 16px;border-radius:16px;background:var(--ink);color:#fff;text-align:center}
+.hiw-final h2{font-size:19px;line-height:1.4;font-weight:800}
+.hiw-final p{font-size:13px;line-height:1.7;color:#D6D3D1;text-wrap:balance}
+.hiw-final .hiw-btn{margin-top:8px}
+
+@keyframes story-in{0%{opacity:0;transform:translateY(8px)}100%{opacity:1;transform:none}}
+@keyframes story-ping{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(1.7)}}
+
+@media (min-width:640px){
+  .hiw-btn{width:auto}
+}
+@media (min-width:1024px){
+  .page.hiw{padding-top:48px;grid-template-columns:minmax(0,1fr) 520px;column-gap:52px;row-gap:32px}
+  .hiw-hero{padding:12px 2px;grid-column:1;grid-row:1}
+  .story{grid-column:2;grid-row:1}
+  .hiw-final{grid-column:1 / -1;padding:28px 24px}
+  .hiw-hero h1{margin-top:12px;font-size:40px}
+  .hiw-lead{font-size:16px}
+  .story__head{padding:20px 22px 4px}
+  .tl{padding:16px 22px 0}
+  .story__cta{margin:28px 22px 22px}
+  .hiw-final h2{font-size:22px}
+}
+@media (prefers-reduced-motion:reduce){
+  .step{animation:none}
+  .ring{display:none}
+}
+<!--@main-->
+<section class="hiw-hero" aria-labelledby="hiw-title">
+  <span class="hiw-tag">شلون يشتغل</span>
+  <h1 id="hiw-title">أحد يحتاجك عند سيارتك؟ تعرف بثواني.</h1>
+  <p class="hiw-lead">يسوي سكان للملصق ويختار المشكلة. يوصلك إشعار فوري بنغمة إبلاغ، وإذا ما شفته خلال دقيقة نوصلك على واتساب ويا إبلاغ بلس. ومحد يشوف رقمك.</p>
+  <ul class="hiw-facts">
+    <li><span data-ic="qr"></span>السكان بدون تطبيق</li>
+    <li><span data-ic="bell"></span>إشعار بنغمة إبلاغ</li>
+    <li><span data-ic="eyeOff"></span>رقمك ما يبين لأحد</li>
+  </ul>
+  <a class="hiw-btn" href="order.html">اطلب الملصق <span data-ic="arrowL"></span></a>
+  <div class="hiw-plus"><b>إبلاغ بلس</b>لحد 3 سيارات، تشارك السيارة ويا عائلتك وكلكم يوصلكم التنبيه بنفس اللحظة، وواتساب احتياطي إذا ما شفت الإشعار خلال دقيقة.</div>
+</section>
+
+<section class="story" aria-labelledby="story-title">
+  <header class="story__head">
+    <h2 id="story-title">شنو يصير لما أحد يسوي سكان</h2>
+    <p>من السكان لحد ما يوصلك، خطوة بخطوة.</p>
+    <div class="tabs" role="tablist" aria-label="اختار الباقة">
+      <button class="tab" type="button" role="tab" id="tab-basic" data-plan="basic" aria-selected="true" aria-controls="story-panel" tabindex="0"><span class="tab__em" data-mk></span><span class="tab__kind">باقة</span><b>إبلاغ</b></button>
+      <button class="tab" type="button" role="tab" id="tab-plus" data-plan="plus" aria-selected="false" aria-controls="story-panel" tabindex="-1"><span class="tab__em" data-ic="users"></span><span class="tab__kind">باقة</span><b>إبلاغ <span class="tab__tier">بلس</span></b></button>
+    </div>
+  </header>
+  <div class="story__panel" id="story-panel" role="tabpanel" aria-labelledby="tab-basic" tabindex="0">
+    <ol class="tl" id="tl"></ol>
+    <a class="story__cta" id="storyCta" href="order.html?plan=basic">اطلب إبلاغ <span data-ic="arrowL"></span></a>
+  </div>
+</section>
+
+<section class="hiw-final" aria-labelledby="final-title">
+  <h2 id="final-title">جاهز تحطه على سيارتك؟</h2>
+  <p>اطلب الملصق ويوصلك لباب البيت بكل المحافظات، والدفع عند الاستلام. أو فعّل ملصق عندك.</p>
+  <a class="hiw-btn" href="order.html">اطلب الملصق <span data-ic="arrowL"></span></a>
+</section>
+<!--@js-->
+/* story timeline: two plans, replays story-in on every tab switch */
+const chips = (list, cls = '') => `<div class="chips">${list.map(([t, on, ic]) => `<span class="chip${on ? ' chip--on' : ''}${cls}">${on ? IC.check : ic ? IC[ic] : ''}${t}</span>`).join('')}</div>`;
+const notif = who => `${who ? `<span class="who">${who}</span>` : ''}<div class="notif"><span class="notif__app">${markSVG}</span><span class="notif__body"><span class="notif__head"><b>EBLAGH</b><time>الآن</time></span><span class="notif__title">🚗 سيارتك سادّة الطريق</span><span class="notif__text">وصلك بلاغ بخصوص سيارتك</span></span></div>`;
+const S0 = { icon:'qr', time:'0:00', h:'أحد سوّى سكان للملصق', p:'يختار المشكلة، بدون أي تطبيق.', vis: chips([['سادّ عليّ', 1], ['الضوء شغّال'], ['الشباك مفتوح']]) };
+const SOK = { kind:'ok', icon:'check', time: IC.check, h:'ضغطة وحدة: «جاي هسّه»', p:'أو «خلال 5 دقايق» — واللي ينتظر يعرف إنك بالطريق.',
+  vis:`<div class="reply"><span class="reply__ok">${IC.check}جاي هسّه</span><span class="reply__alt">خلال 5 دقايق</span><small>يوصل ردّك للي سوّى سكان، بدون أي رقم</small></div>` };
+const PLANS = {
+  basic: { cta:'اطلب إبلاغ', href:'order.html?plan=basic', steps:[
+    S0,
+    { icon:'bell', time:'0:01', h:'يوصلك إشعار بنغمة إبلاغ', p:'بنفس اللحظة، ورقمك ورقمه ما يبينون لأحد.', vis: notif() },
+    { icon:'repeat', time: IC.repeat, h:'بعدك ما شفته؟ تذكير واحد بس', p:'اللي ينتظر يكدر يبعث تذكير واحد بس، حتى ما ينزعج أحد.',
+      vis:`<div class="cap"><span class="cap__btn"><i class="ring" aria-hidden="true"></i>${IC.bell}</span><span><b>تذكير من المبلّغ</b><small>مرة وحدة بس لكل بلاغ</small></span></div>` },
+    SOK ] },
+  plus: { cta:'اطلب إبلاغ بلس', href:'order.html?plan=plus', steps:[
+    S0,
+    { icon:'bell', time:'0:01', h:'يوصلك انت وعائلتك', p:'كل اللي مشاركين السيارة يوصلهم الإشعار بنفس اللحظة، وأرقامكم ما تبين لأحد.', vis: notif('انت') + notif('أخوك') },
+    { kind:'wa', icon:'wa', time:'1:00', h:'ما شفته؟ نوصلك على واتساب', p:'تنبيه احتياطي على واتساب بعد دقيقة، بموافقتك.',
+      vis:`<div class="wa"><span class="wa__av"><i class="ring" aria-hidden="true"></i>${IC.wa}</span><div class="wa__bubble"><b>إبلاغ</b><p>سيارتك سادّة الطريق — افتح التطبيق حتى ترد</p><small>1:00 ✓✓</small></div></div>` },
+    SOK,
+    { icon:'car', time:'×3', h:'لحد 3 سيارات بحساب واحد', p:'كل سيارة بملصقها، وكلها بنفس التطبيق.', vis: chips([['سيارتي', 0, 'car'], ['سيارة البيت', 0, 'car'], ['سيارة أخوي', 0, 'car']], ' chip--car') } ] }
+};
+const tl = $('#tl'), cta = $('#storyCta'), panel = $('#story-panel'), tabs = $$('.tab');
+function render(plan){
+  const P = PLANS[plan];
+  tl.innerHTML = P.steps.map((s, i) => `<li class="step${s.kind ? ' step--' + s.kind : ''}" style="--i:${i}"><span class="step__icon" aria-hidden="true">${IC[s.icon]}</span><div class="step__body"><span class="step__time"${s.time.startsWith('<') ? ' aria-hidden="true"' : ''}>${s.time}</span><h3>${s.h}</h3><p>${s.p}</p><div class="step__vis">${s.vis}</div></div></li>`).join('');
+  cta.firstChild.nodeValue = P.cta + ' ';
+  cta.href = P.href;
+  tabs.forEach(t => { const on = t.dataset.plan === plan; t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1; if (on) panel.setAttribute('aria-labelledby', t.id); });
+}
+tabs.forEach((t, i) => {
+  t.addEventListener('click', () => { if (t.getAttribute('aria-selected') !== 'true') render(t.dataset.plan); });
+  t.addEventListener('keydown', e => {
+    const k = e.key; let j = -1;
+    if (k === 'ArrowLeft') j = (i + 1) % tabs.length;        /* RTL: left = next */
+    else if (k === 'ArrowRight') j = (i - 1 + tabs.length) % tabs.length;
+    else if (k === 'Home') j = 0; else if (k === 'End') j = tabs.length - 1;
+    if (j < 0) return; e.preventDefault(); tabs[j].focus(); render(tabs[j].dataset.plan);
+  });
+});
+render('basic');

@@ -1,0 +1,19 @@
+/* shared legal template (privacy / terms / communications) — ewsali: 768px text column, 32px between sections */
+.draft-flag{display:inline-flex;align-items:center;gap:.4rem;margin-bottom:14px;padding:4px 12px;border-radius:999px;background:#FFF8DC;border:1px dashed rgba(200,140,0,.55);color:#6b4a00;font-size:12px;font-weight:600;line-height:1.6}
+.draft-flag .ic{width:14px;height:14px}
+.legal{width:100%;max-width:768px;margin-inline:auto;display:flex;flex-direction:column;gap:32px}
+.legal .legal-date{font-size:14px;line-height:1.7;color:var(--ink-2)}
+.legal section{scroll-margin-top:1rem}
+.legal section > * + *{margin-top:12px}
+.legal h2{font-size:18px;line-height:1.4;font-weight:600;color:var(--ink)}
+.legal p,.legal li{font-size:14px;line-height:1.7;color:var(--ink-2);text-wrap:pretty}
+.legal ul{list-style:disc;padding-inline-start:20px}
+.legal li + li{margin-top:8px}
+.legal li::marker{color:#b5aca5}
+.legal a{color:var(--ink);font-weight:500;text-decoration:underline;text-decoration-color:rgba(18,17,16,.25);text-underline-offset:3px;border-radius:3px}
+.legal a:hover{text-decoration-color:currentColor}
+.legal .latin{font-family:var(--latin)}
+@media (min-width:768px){
+  .legal h2{font-size:20px}
+  .legal p,.legal li{font-size:16px}
+}

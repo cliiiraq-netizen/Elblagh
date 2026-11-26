@@ -1,0 +1,75 @@
+<!--@meta-->
+title: تواصل ويانا | إبلاغ
+desc: تواصل ويا فريق إبلاغ على واتساب أو الإيميل بخصوص حسابك، الملصقات، الطلب والتوصيل، أو التنبيهات.
+<!--@css-->
+.contact-wrap{width:100%;max-width:896px;margin-inline:auto;display:flex;flex-direction:column;gap:32px}
+.contact-featured{display:flex;flex-direction:column;gap:16px;padding:16px 18px;border-radius:22px;border:1px solid var(--bord);background:#fff}
+.cf-icon{width:48px;height:48px;border-radius:16px;background:#25D366;color:#fff;display:grid;place-items:center;flex:none}
+.cf-icon .ic{width:22px;height:22px}
+.cf-text h2{font-size:17px;line-height:1.4;font-weight:700;color:var(--ink)}
+.cf-text p{margin-top:4px;font-size:14px;line-height:1.7;color:var(--ink-2)}
+.btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:10px 20px;border-radius:999px;background:#25D366;color:#0b2414;font-size:14px;font-weight:600;white-space:nowrap;box-shadow:0 10px 24px rgba(37,211,102,.22);transition:background-color .15s,transform .2s var(--ease)}
+.btn-wa:hover{background:#2fe072}
+.btn-wa:active{transform:scale(.97)}
+.btn-wa .ic{width:16px;height:16px}
+.contact-grid{display:grid;gap:28px}
+.contact-sec{display:flex;flex-direction:column;gap:14px}
+.contact-sec h2{font-size:13px;line-height:1.4;font-weight:800;color:var(--ink-2)}
+.contact-sec ul{display:flex;flex-direction:column;gap:14px}
+.contact-card{display:flex;align-items:center;gap:14px;min-height:80px;padding:15px 16px;border-radius:22px;border:1px solid var(--bord);background:#fff;box-shadow:0 8px 22px rgba(18,17,16,.05);transition:border-color .15s,box-shadow .2s,transform .2s var(--ease)}
+.contact-card:hover{border-color:rgba(245,170,0,.35);box-shadow:0 12px 28px rgba(18,17,16,.08)}
+.cc-ic{width:48px;height:48px;border-radius:16px;flex:none;display:grid;place-items:center;background:var(--accent-soft);border:1px solid rgba(245,170,0,.18);color:var(--accent-icon)}
+.cc-ic .ic{width:22px;height:22px}
+.cc-txt{flex:1;min-width:0;display:flex;flex-direction:column}
+.cc-txt small{font-size:12px;line-height:1.5;font-weight:600;color:var(--ink-2)}
+.cc-txt b{font-size:17px;line-height:1.5;font-weight:700;color:var(--ink);font-family:var(--latin);direction:ltr;unicode-bidi:isolate;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cc-go{width:32px;height:32px;border-radius:50%;flex:none;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent-ink);transition:transform .2s var(--ease)}
+.cc-go .ic{width:16px;height:16px}
+.contact-card:hover .cc-go{transform:translateX(-3px)}
+@media (min-width:768px){
+  .contact-wrap{gap:40px}
+  .contact-featured{flex-direction:row;align-items:center;gap:18px;padding:18px 20px}
+  .cf-text{flex:1;min-width:0}
+  .cf-text p{margin-top:2px}
+}
+@media (min-width:1024px){
+  .contact-grid{grid-template-columns:1fr 1fr;column-gap:24px}
+  .contact-card{min-height:84px;padding:17px 18px}
+}
+<!--@main-->
+<div class="page-card">
+  <header class="page-head page-head--center">
+    <p class="eyebrow">الدعم</p>
+    <h1>تواصل ويانا</h1>
+    <p class="lead">عندك سؤال عن حسابك، الملصقات، طلبك والتوصيل، الخصوصية أو التنبيهات؟ راسلنا ونرد عليك بأقرب وقت.</p>
+    <p class="demo-flag" role="note"><span data-ic="info"></span>بيانات تواصل تجريبية — تتحدد قبل الإطلاق</p>
+  </header>
+
+  <div class="contact-wrap">
+    <section class="contact-featured" aria-labelledby="cf-title">
+      <span class="cf-icon" data-ic="wa"></span>
+      <div class="cf-text">
+        <h2 id="cf-title">راسلنا على واتساب</h2>
+        <p>أغلب الناس يتواصلون ويانا من هنا. عادةً نرد خلال ساعات قليلة بأيام الدوام.</p>
+      </div>
+      <a class="btn-wa" href="https://wa.me/9647700000000" target="_blank" rel="noopener noreferrer" aria-label="افتح واتساب (يفتح بنافذة جديدة)">افتح واتساب</a>
+    </section>
+
+    <div class="contact-grid">
+      <section class="contact-sec" aria-labelledby="cs-direct">
+        <h2 id="cs-direct">تواصل مباشر</h2>
+        <ul>
+          <li><a class="contact-card" href="mailto:support@eblagh.iq" aria-label="الإيميل: support@eblagh.iq"><span class="cc-ic" data-ic="mail"></span><span class="cc-txt"><small>الإيميل</small><b>support@eblagh.iq</b></span><span class="cc-go" data-ic="chevL"></span></a></li>
+          <li><a class="contact-card" href="tel:+9647700000000" aria-label="الموبايل: ‎+964 770 000 0000"><span class="cc-ic" data-ic="call"></span><span class="cc-txt"><small>الموبايل</small><b>+964 770 000 0000</b></span><span class="cc-go" data-ic="chevL"></span></a></li>
+        </ul>
+      </section>
+      <section class="contact-sec" aria-labelledby="cs-follow">
+        <h2 id="cs-follow">تابعنا</h2>
+        <ul>
+          <li><a class="contact-card" href="https://www.instagram.com/eblagh.iq/" target="_blank" rel="noopener noreferrer" aria-label="إنستغرام: ‎@eblagh.iq (يفتح بنافذة جديدة)"><span class="cc-ic" data-ic="instagram"></span><span class="cc-txt"><small>إنستغرام</small><b>@eblagh.iq</b></span><span class="cc-go" data-ic="chevL"></span></a></li>
+          <li><a class="contact-card" href="https://www.facebook.com/eblagh.iq" target="_blank" rel="noopener noreferrer" aria-label="فيسبوك: ‎@eblagh.iq (يفتح بنافذة جديدة)"><span class="cc-ic" data-ic="facebook"></span><span class="cc-txt"><small>فيسبوك</small><b>@eblagh.iq</b></span><span class="cc-go" data-ic="chevL"></span></a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>
