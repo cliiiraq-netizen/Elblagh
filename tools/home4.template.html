@@ -219,8 +219,8 @@ svg{display:block}
 .hxq-frame i:nth-child(3){bottom:0;left:0;border-right:0;border-top:0;border-bottom-left-radius:6px}
 .hxq-frame i:nth-child(4){bottom:0;right:0;border-left:0;border-top:0;border-bottom-right-radius:6px}
 .stk.v-yellow~.hxq .hxq-frame i{border-color:#1C1917;filter:drop-shadow(0 0 3px rgba(255,255,255,.55))}
-.stage.is-scan .hxq-sweep,.stage.is-scan .hxq-line{animation:hxqSweep .8s cubic-bezier(.45,0,.25,1) both}
-.stage.is-scan .hxq-frame{animation:hxqLock .9s var(--ease) both}
+.stage.is-scan .hxq-sweep,.stage.is-scan .hxq-line{animation:hxqSweep .55s cubic-bezier(.45,0,.25,1) both}
+.stage.is-scan .hxq-frame{animation:hxqLock .62s var(--ease) both}
 @keyframes hxqSweep{0%{opacity:0;transform:translateY(-100%)}12%{opacity:1}78%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(0)}}
 @keyframes hxqLock{0%,45%{opacity:0;transform:scale(1.15)}80%,100%{opacity:1;transform:scale(1)}}
 @media (prefers-reduced-motion:reduce){.stk-btn .lean{transition:none}.stage.is-scan .hxq-frame{opacity:1;transform:none}}
@@ -1185,7 +1185,8 @@ function playSequence(withSound){
   slot.innerHTML = ''; slot.classList.remove('slot-out'); st.classList.remove('is-call','is-scan','lean-on'); void st.offsetWidth; st.classList.add('is-alert','is-scan'); hero.classList.add('scan');
   ripple(); if (withSound) chime();
   const at = (ms, fn) => seqTimers.push(setTimeout(() => { if (heroAway()){ stopSequence(); return; } fn(); }, ms));
-  at(560, () => { slot.innerHTML = alertHTML(txt, false); $('#alert').classList.add('show'); st.classList.add('lean-on'); });
+  at(280, () => { slot.innerHTML = alertHTML(txt, false); $('#alert').classList.add('show'); });
+  at(460, () => st.classList.add('lean-on'));
   at(2600, () => { st.classList.remove('is-alert'); st.classList.add('is-call'); });
   at(2900, () => { const a = $('#alert'); if (a){ a.classList.add('missed'); $('#alertWhen').textContent = 'ما انشاف'; } slot.insertAdjacentHTML('beforeend', callHTML); $('#capsule').classList.add('show'); if (withSound) ringTone(); });
   at(6300, () => { slot.classList.add('slot-out'); st.classList.remove('lean-on','is-scan'); });
