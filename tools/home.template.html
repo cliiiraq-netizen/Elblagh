@@ -20,11 +20,14 @@
 }
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent;scroll-behavior:smooth}
-body{margin:0;min-height:100vh;line-height:1.7;text-rendering:optimizeLegibility;font-family:var(--fb),system-ui,sans-serif;background:radial-gradient(70% 520px at 50% 0%,rgba(255,200,22,.08),transparent 75%) no-repeat,var(--hx-bg);color:var(--hx-ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+html{line-height:1.5}
+html[lang=ar] body{line-height:1.7;text-rendering:optimizeLegibility}
+body{margin:0;min-height:100vh;font-family:var(--fb),system-ui,sans-serif;background:radial-gradient(70% 520px at 50% 0%,rgba(255,200,22,.08),transparent 75%) no-repeat,var(--hx-bg);color:var(--hx-ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 h1,h2,h3,p,ul,ol,figure{margin:0;padding:0}
 ul,ol{list-style:none}
-:where(p,label,a,li,input,textarea,select,button){line-height:1.7}
-:where(h1,h2,h3,h4,h5,h6){line-height:1.4}
+:where(html[lang=ar]) :where(p,label,a,li,input,textarea,select,button){line-height:1.7}
+:where(html[lang=ar]) :where(h1,h2,h3,h4,h5,h6){line-height:1.4}
+html[lang=en] body{font-family:var(--latin)}
 .site-header :where(button,a){line-height:normal}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
@@ -282,14 +285,31 @@ svg{flex:none}
 .hx-dark .hx-eyebrow{color:#FFC816}
 .hx-bridge{display:flex;align-items:center;justify-content:space-between;gap:.5rem;max-width:34rem;margin-bottom:2.25rem}
 .hx-bridge__node{flex:none;display:flex;flex-direction:column;align-items:center;gap:.5rem;color:rgba(255,255,255,.6);font-size:.75rem}
-.hx-bridge__icon{width:3rem;height:3rem;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);color:#fff}
+.hx-bridge__icon{width:3rem;height:3rem;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);color:#fff;transition:background-color .3s,color .3s}
 .hx-bridge__node--core{color:#fff;font-weight:700}
 .hx-bridge__mark{position:relative;width:3.75rem;height:3.75rem;border-radius:50%;background:var(--cta);display:grid;place-items:center;color:#111;filter:drop-shadow(0 0 22px rgba(255,200,22,.5))}
 .hx-bridge__mark svg.mk{width:2.5rem;height:auto}
-.hx-bridge__wire{flex:1;height:1px;margin-bottom:1.6rem;position:relative;background:rgba(255,255,255,.18)}
-.hx-bridge__wire i{position:absolute;top:-2px;width:5px;height:5px;border-radius:50%;background:var(--hx-accent);box-shadow:0 0 10px var(--hx-accent);animation:hx-travel 2.4s linear infinite}
-.hx-bridge__wire:last-of-type i{animation-delay:1.2s}
-@keyframes hx-travel{0%{inset-inline-start:0}100%{inset-inline-start:calc(100% - 5px)}}
+.hx-bridge__wire{flex:1;height:1px;margin-bottom:1.6rem;position:relative;background:rgba(255,255,255,.14)}
+/* one message, one timeline (3.6s): scanner sends → wire 1 → Eblagh receives → wire 2 → you get it */
+.hx-bridge{--bt:3.6s}
+.hx-bridge__wire::after{content:"";position:absolute;inset:0;background:linear-gradient(to left,rgba(255,200,22,.15),rgba(255,200,22,.75));transform-origin:100% 50%;transform:scaleX(0);animation:bw1 var(--bt) linear infinite}
+.hx-bridge__wire.w2::after{animation-name:bw2}
+.hx-bridge__wire i{position:absolute;top:-1px;right:0;width:28px;height:3px;border-radius:3px;background:linear-gradient(to left,#FFC816,rgba(255,200,22,0));opacity:0;animation:bd1 var(--bt) cubic-bezier(.45,0,.25,1) infinite}
+.hx-bridge__wire i::before{content:"";position:absolute;left:-2px;top:50%;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:#FFE27A;box-shadow:0 0 10px 2px rgba(255,200,22,.85)}
+.hx-bridge__wire.w2 i{animation-name:bd2}
+.hx-bridge__node:first-child .hx-bridge__icon{animation:bsrc var(--bt) ease-out infinite}
+.hx-bridge__node:last-child .hx-bridge__icon{animation:bdst var(--bt) ease-out infinite}
+.hx-bridge__mark{animation:bcore var(--bt) ease-out infinite}
+.hx-bridge__mark::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #FFC816;opacity:0;animation:bring var(--bt) ease-out infinite}
+@keyframes bsrc{0%{background:rgba(255,255,255,.08);color:#fff;transform:scale(1)}5%{background:rgba(255,200,22,.22);color:#FFC816;transform:scale(1.07)}16%,100%{background:rgba(255,255,255,.08);color:#fff;transform:scale(1)}}
+@keyframes bd1{0%,6%{right:0;opacity:0}10%{opacity:1}38%{right:calc(100% - 28px);opacity:1}42%,100%{right:calc(100% - 28px);opacity:0}}
+@keyframes bw1{0%,6%{transform:scaleX(0);opacity:1}38%{transform:scaleX(1);opacity:1}62%,100%{transform:scaleX(1);opacity:0}}
+@keyframes bcore{0%,38%{transform:scale(1)}44%{transform:scale(1.1)}52%,100%{transform:scale(1)}}
+@keyframes bring{0%,39%{opacity:0;transform:scale(1)}41%{opacity:.9;transform:scale(1)}62%,100%{opacity:0;transform:scale(1.4)}}
+@keyframes bd2{0%,48%{right:0;opacity:0}52%{opacity:1}80%{right:calc(100% - 28px);opacity:1}84%,100%{right:calc(100% - 28px);opacity:0}}
+@keyframes bw2{0%,48%{transform:scaleX(0);opacity:0}49%{opacity:1}80%{transform:scaleX(1);opacity:1}96%,100%{transform:scaleX(1);opacity:0}}
+@keyframes bdst{0%,80%{background:rgba(255,255,255,.08);color:#fff;transform:scale(1)}85%{background:#FFC816;color:#111;transform:scale(1.1)}94%{background:#FFC816;color:#111;transform:scale(1)}100%{background:rgba(255,255,255,.08);color:#fff;transform:scale(1)}}
+html[dir="ltr"] .hx-bridge__wire{transform:scaleX(-1)}
 .hx-masked{position:relative;display:flex;flex-direction:column;gap:.6rem;padding:1.5rem;border-radius:var(--hx-radius);background:linear-gradient(rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1)}
 .hx-masked__label{color:rgba(255,255,255,.55);font-size:.8125rem}
 .hx-masked__digits{white-space:nowrap;font-size:clamp(1.5rem,min(9vw,(100vw - 5.25rem) / 8.6),3.75rem);font-weight:600;line-height:1.1;direction:ltr;text-align:left}
@@ -403,8 +423,8 @@ svg{flex:none}
 .foot-nav a:hover{color:#111}
 .foot-bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.375rem 1rem;padding:.625rem 1rem;border-top:1px solid #efe9e0;background:rgba(255,250,235,.6)}
 .foot-bottom p{font-size:.75rem;color:#6b5f52;font-variant-numeric:tabular-nums}
-.foot-legal{display:flex;flex-wrap:wrap;gap:.25rem}
-.foot-legal a{min-height:1.75rem;display:inline-flex;align-items:center;padding:.125rem .625rem;border-radius:999px;font-size:.75rem;color:#6b5f52;border:1px solid transparent;transition:color .15s,background-color .15s,border-color .15s}
+.foot-legal{display:flex;flex-wrap:wrap;gap:.25rem .5rem}
+.foot-legal a{margin-inline:-.375rem;min-height:1.75rem;display:inline-flex;align-items:center;padding:.125rem .625rem;border-radius:999px;font-size:.75rem;color:#6b5f52;border:1px solid transparent;transition:color .15s,background-color .15s,border-color .15s}
 .foot-legal a:hover{color:#111;background:#fff8e0;border-color:rgba(245,170,0,.2)}
 
 /* ---------- sticky bar (mobile) ---------- */
@@ -415,7 +435,6 @@ svg{flex:none}
 .hx-sticky__label{color:var(--hx-ink-2);font-size:.6875rem}
 .hx-sticky__amount{font-size:.9375rem;font-weight:700}
 .hx-sticky .hx-btn .ic{width:16px;height:16px}
-.toast{position:fixed;left:50%;bottom:calc(5.5rem + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:60;background:#121110;color:#fff;padding:.7rem 1.1rem;border-radius:999px;font-size:.875rem;font-weight:600;box-shadow:0 16px 40px -12px rgba(0,0,0,.5);animation:hxd-drop .35s var(--hx-ease)}
 
 @media (hover:hover){
   .hx-tile:hover{transform:translateY(-4px);box-shadow:0 24px 40px -24px rgba(40,25,15,.25)}
@@ -482,6 +501,20 @@ svg{flex:none}
   .hx-bridge{grid-area:1/2;margin-bottom:2.75rem}
   .hx-masked,.hx-facts{grid-column:1/-1}
 }
+/* English (EN toggle): ewsali's html[lang=en] typography + LTR mirrors */
+html[lang=en] .hx-display{letter-spacing:-.045em;line-height:1.04}
+html[lang=en] .hx-title{letter-spacing:-.04em;line-height:1.06}
+html[lang=en] .hx-step__text h3{letter-spacing:-.025em}
+html[lang=en] .hx-faq h2{letter-spacing:-.04em}
+html[lang=en] .pw__kind{display:none}
+html[lang=en] .pw__tier{text-transform:uppercase}
+html[dir=ltr] .hx-btn [data-ic=arrowL] svg,html[dir=ltr] .drawer nav .ch svg{transform:scaleX(-1)}
+html[dir=ltr] .drawer-foot a .ic{transform:none}
+html[dir=ltr] .drawer aside{transform:translateX(-100%)}
+html[dir=ltr] .drawer.open aside{transform:none}
+html[dir=ltr] .hx-tile--plus{background:radial-gradient(90% 120% at 100% 100%,rgba(255,200,22,.32),transparent 60%),#151311}
+html[dir=ltr] .hx-sticky__bar{padding:.5rem .5rem .5rem 1rem}
+@media (min-width:768px){html[dir=ltr] .hx-timeline::before{background:linear-gradient(90deg,#FFC816,var(--hx-line) 50%,#25b543)}}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition-duration:.01ms!important;animation:none!important}
   .rv-ready{opacity:1;transition:none;transform:none}
@@ -724,7 +757,7 @@ svg{flex:none}
       <div class="foot-row"><a class="foot-brand" href="home.html"><span class="brand-mk" data-mk></span><b>إبلاغ</b></a><button class="lang-btn" id="langBtn" type="button" aria-label="English"><span data-ic="lang"></span>EN</button></div>
       <nav class="foot-nav" aria-label="روابط الموقع"><a href="#how">شلون يشتغل</a><a href="#plans">الأسعار</a><a href="order.html">اطلب أونلاين</a><a href="site.html#contact">تواصل ويانا</a></nav>
     </div>
-    <div class="foot-bottom"><p>© 2026 Eblagh</p><div class="foot-legal"><a href="site.html#privacy">الخصوصية</a><a href="site.html#terms">الشروط</a><a href="site.html#privacy">سياسة التواصل</a></div></div>
+    <div class="foot-bottom"><p>© 2026 Eblagh</p><nav class="foot-legal" aria-label="قانوني"><a href="site.html#privacy">الخصوصية</a><a href="site.html#terms">الشروط</a><a href="site.html#privacy">سياسة التواصل</a></nav></div>
   </div></div>
 </footer>
 
@@ -751,8 +784,8 @@ svg{flex:none}
 <script>
 {
 /*@BRAND_JS@*/
-const LANG = 'ar';
-const T = (ar) => ar;
+let LANG = 'ar';
+const T = (ar, en) => LANG === 'en' ? en : ar;
 const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const RM = matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -799,6 +832,7 @@ $$('[data-mk]').forEach(e => { e.innerHTML = markSVG; });
 /* ---------- stickers (sized in px → em = px / mm) ---------- */
 const fit = (type, variant, code, px) => stickerHTML(type, variant, code, px / ({ev:60, eh:104, er:76}[type]));
 function paintStickers(){
+  const keep = LANG; LANG = 'ar'; /* the physical sticker art stays Arabic in both languages (as on ewsali) */
   const hw = $('#stkBtn').getBoundingClientRect().width || 232;
   $('#heroArt').innerHTML = fit('ev', 'white', 'EB4471', hw);
   $('#camArt').innerHTML = fit('ev', 'black', 'EB4471', 85);
@@ -808,24 +842,27 @@ function paintStickers(){
     const pad = 6, k = $('.hx-cam__corners'); Object.assign(k.style, {left:(x-pad)+'px', top:(y-pad)+'px', width:(q.offsetWidth+pad*2)+'px', height:(q.offsetHeight+pad*2)+'px'}); }
   const vw = innerWidth, gap = Math.max(9.6, Math.min(64, vw * .04)), row = Math.min(1120, vw - 32) - 32;
   const tw = Math.min(216, Math.max(120, vw * .33), (row - 2 * gap) / 3 * .94);
-  $('#trio').innerHTML = [['white','أبيض'],['black','أسود'],['yellow','أصفر']].map(([k,t]) => `<figure class="hx-duo__item hx-duo__item--${k}"><span class="hx-duo__art">${fit('ev', k, 'EB4471', tw)}</span><figcaption>${t}</figcaption></figure>`).join('');
+  $('#trio').innerHTML = [['white',keep==='en'?'White':'أبيض'],['black',keep==='en'?'Black':'أسود'],['yellow',keep==='en'?'Yellow':'أصفر']].map(([k,t]) => `<figure class="hx-duo__item hx-duo__item--${k}"><span class="hx-duo__art">${fit('ev', k, 'EB4471', tw)}</span><figcaption>${t}</figcaption></figure>`).join('');
   const fw = innerWidth >= 640 ? 104 : 84;
   $('#finalArt').innerHTML = `<span class="hx-final__art hx-final__art--back">${fit('ev','black','EB2208',fw)}</span><span class="hx-final__art hx-final__art--front">${fit('ev','white','EB4471',fw)}</span>`;
+  LANG = keep;
 }
 paintStickers();
 let rz; addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(paintStickers, 120); });
 
 /* step 2 options */
-$('#rsOpts').innerHTML = [['car','السيارة سادّة الطريق',1],['bulb','الضوء شغّال'],['door','السيارة مفتوحة'],['tri','ضربت سيارتك بالغلط'],['dots','شي ثاني']]
-  .map(([i,t,on]) => `<span class="rs-opt${on?' on':''}"><i>${IC[i]}</i><span>${t}</span><u></u></span>`).join('');
+function renderOpts(){ $('#rsOpts').innerHTML = [['car',T('السيارة سادّة الطريق','Car is blocking the way'),1],['bulb',T('الضوء شغّال','Your lights are on')],['door',T('السيارة مفتوحة','Your car is open')],['tri',T('ضربت سيارتك بالغلط','I accidentally hit your car')],['dots',T('شي ثاني','Other')]]
+  .map(([i,t,on]) => `<span class="rs-opt${on?' on':''}"><i>${IC[i]}</i><span>${t}</span><u></u></span>`).join(''); }
+renderOpts();
 
 /* ---------- hero sequence (ewsali HxHeroDemo timings): ripple → alert 300ms → missed + reminder 2.9s → leave 6.3s → clear 6.64s → next +3.5s ---------- */
-const MSGS = ['رجاءً، سيارتك سادّة عليّ الطريق','انتبه، ضوء سيارتك شغّال','شباك سيارتك مفتوح'];
+const MSGS_AR = ['رجاءً، سيارتك سادّة عليّ الطريق','انتبه، ضوء سيارتك شغّال','شباك سيارتك مفتوح'], MSGS_EN = ['Please move your car, you’re blocking me','Heads up, your headlights are on','Your car window is open'];
+const MSGS = MSGS_AR, msgAt = i => T(MSGS_AR[i], MSGS_EN[i]);
 let mi = 0, active = false, userTapped = false, timers = [];
 const stage = $('#stage'), slot = $('#slot');
 const later = (ms, f) => timers.push(setTimeout(f, ms));
-const alertHTML = (msg, missed) => `<div class="hxd__alert${missed ? ' is-missed' : ''}" dir="ltr"><span class="hxd__avatar">${markSVG}<span class="hxd__app">${IC.bell}</span></span><span class="hxd__alert-body"><span class="hxd__alert-head"><strong class="hx-latin">Eblagh</strong><span>${missed ? 'ما انشاف' : 'هسّه'}</span></span><span class="hxd__alert-text" dir="rtl">${msg}</span></span></div>`;
-const callHTML = () => `<div class="hxd__call" dir="ltr"><span class="hxd__ring" aria-hidden="true">${IC.wa}</span><span class="hxd__call-body" dir="rtl"><strong>إبلاغ يذكّرك على واتساب…</strong><span>تنبيه احتياطي لأن الإشعار ما انشاف</span></span></div>`;
+const alertHTML = (i, missed) => `<div class="hxd__alert${missed ? ' is-missed' : ''}" dir="ltr"><span class="hxd__avatar">${markSVG}<span class="hxd__app">${IC.bell}</span></span><span class="hxd__alert-body"><span class="hxd__alert-head"><strong class="hx-latin">Eblagh</strong><span>${missed ? T('ما انشاف','not seen') : T('هسّه','now')}</span></span><span class="hxd__alert-text" dir="${T('rtl','ltr')}">${msgAt(i)}</span></span></div>`;
+const callHTML = () => `<div class="hxd__call" dir="ltr"><span class="hxd__ring" aria-hidden="true">${IC.wa}</span><span class="hxd__call-body" dir="${T('rtl','ltr')}"><strong>${T('إبلاغ يذكّرك على واتساب…','Eblagh reminds you on WhatsApp…')}</strong><span>${T('تنبيه احتياطي لأن الإشعار ما انشاف','Backup alert, the notification wasn’t seen')}</span></span></div>`;
 function ripple(){ $('.hxd__ripple')?.remove(); const r = document.createElement('span'); r.className = 'hxd__ripple'; r.setAttribute('aria-hidden','true'); $('.hxd__float').appendChild(r); }
 function cycle(i, byUser){
   timers.forEach(clearTimeout); timers = [];
@@ -833,16 +870,15 @@ function cycle(i, byUser){
   mi = i; active = true;
   slot.className = 'hxd__slot'; slot.innerHTML = ''; stage.classList.remove('is-alert');
   ripple();
-  const msg = MSGS[i];
-  later(300, () => { stage.classList.add('is-alert'); slot.innerHTML = alertHTML(msg, false); });
-  later(2900, () => { slot.innerHTML = alertHTML(msg, true) + callHTML(); });
+  later(300, () => { stage.classList.add('is-alert'); slot.innerHTML = alertHTML(i, false); });
+  later(2900, () => { slot.innerHTML = alertHTML(i, true) + callHTML(); });
   later(6300, () => { slot.classList.add('is-leaving'); stage.classList.remove('is-alert'); });
   later(6640, () => {
     slot.className = 'hxd__slot'; slot.innerHTML = ''; $('.hxd__ripple')?.remove(); active = false;
     if (!userTapped && document.visibilityState === 'visible') later(3500, () => cycle((i + 1) % MSGS.length, false));
   });
 }
-if (RM.matches){ ripple(); stage.classList.add('is-alert'); slot.innerHTML = alertHTML(MSGS[0], true) + callHTML(); }
+if (RM.matches){ ripple(); stage.classList.add('is-alert'); slot.innerHTML = alertHTML(0, true) + callHTML(); }
 else later(1400, () => cycle(0, false));
 /* tap: replays the shown alert, or moves to the next one while a cycle is running; stops the auto loop */
 $('#stkBtn').addEventListener('click', () => cycle((mi + (active ? 1 : 0)) % MSGS.length, true));
@@ -859,8 +895,17 @@ const FAQ = [
   ['شلون أطلب الملصق؟','اطلب أونلاين بخطوتين: اختار باقتك وعدد الملصقات واللون، واكتب عنوانك. التوصيل لكل المحافظات والدفع عند الاستلام.'],
   ['التنبيه شلون يوصلني؟','إشعار فوري بتطبيق إبلاغ. ويا باقة إبلاغ بلس، إذا ما شفت الإشعار خلال دقيقة نوصلك تنبيه احتياطي على واتساب — بموافقتك.']
 ];
-$('#faq').innerHTML = FAQ.map(([q,a]) => `<details><summary><span>${q}</span><i>${IC.chevD}</i></summary><p>${a}</p></details>`).join('');
-$$('#faq details').forEach(d => d.addEventListener('toggle', () => { if (d.open) $$('#faq details').forEach(o => { if (o !== d) o.open = false; }); }));
+const FAQ_EN = [
+  ['How does Eblagh work?','Stick the sticker on your car window and link it to your account. If someone needs you, they scan the code with their phone camera, pick the problem and send the alert — and you get an instant notification with Eblagh’s tone.'],
+  ['Will they see my phone number?','No. Your name and number stay hidden, and they never know who owns the car. Everything goes through Eblagh.'],
+  ['Can anyone send me messages just to joke around?','No. Before a report reaches you there is smart filtering and a limit on how many reports can be sent, with a single reminder. You can block anyone in a tap and pause your sticker whenever you want.'],
+  ['Does anyone need to download an app?','No. The person reporting only uses their phone camera and browser. You receive alerts in the Eblagh app.'],
+  ['How do I get a sticker?','Order online in two steps: choose your plan, how many stickers and the colour, then add your address. Delivery to all governorates, cash on delivery.'],
+  ['How do I receive alerts?','An instant notification in the Eblagh app. With Eblagh Plus, if you don’t see it within a minute we send a backup alert on WhatsApp — with your consent.']
+];
+function renderFaq(){ $('#faq').innerHTML = (LANG === 'en' ? FAQ_EN : FAQ).map(([q,a]) => `<details><summary><span>${q}</span><i>${IC.chevD}</i></summary><p>${a}</p></details>`).join('');
+$$('#faq details').forEach(d => d.addEventListener('toggle', () => { if (d.open) $$('#faq details').forEach(o => { if (o !== d) o.open = false; }); })); }
+renderFaq();
 
 /* ---------- reveal on scroll (threshold .12, -10% bottom margin) ---------- */
 const rvs = $$('.rv');
@@ -883,9 +928,51 @@ $('#drawerX').onclick = $('#drawerBg').onclick = () => setDrawer(false);
 $$('[data-close]').forEach(a => a.addEventListener('click', () => setDrawer(false)));
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('open')) setDrawer(false); });
 
-/* ---------- language (prototype) ---------- */
-function toast(m){ $('.toast')?.remove(); const d = document.createElement('div'); d.className = 'toast'; d.setAttribute('role','status'); d.textContent = m; document.body.appendChild(d); setTimeout(() => d.remove(), 2600); }
-$('#langBtn').onclick = () => toast('النسخة الإنجليزية متوفرة داخل تطبيق الديمو — هذي الصفحة نموذج عربي');
+/* ---------- language: EN switches the whole page to English LTR in place (remembered) ---------- */
+const EN = {
+ 'إبلاغ':'Eblagh','تسجيل الدخول':'Login','خلّي أي أحد يوصلك':'Let anyone reach you','بدون ما يعرف رقمك':'Without your number','راحة بال وانت بعيد عن سيارتك':'Peace of mind when you’re away from your car',
+ 'جـــرّب إبلاغ':'Try Eblagh','من':'From','د.ع / سنة · الدفع عند الاستلام':'IQD / year · Cash on delivery','شلون يشتغل':'How it works','ثلاث خطوات':'Three steps','وبدون تطبيق':'Zero apps',
+ 'سكان':'Scan','أحد يصوّر الملصق':'They scan the sticker','بكاميرا أي موبايل، بدون تطبيق':'Any phone camera, no app','اختيار':'Choose','يختار المشكلة':'They pick the problem','ويصوّرها حتى يوضّحلك الموقف':'Then snap a photo of it',
+ 'ملصق':'Sticker','تحتـاج توصـل':'Need to reach','لصاحب السيـارة؟':'the car owner?','شنو المشكلة؟':'What’s happening?','صوّر المشكلة':'Take a photo','الصورة توضّح الموقف وتساعد صاحبها يتصرف أسرع.':'A clear photo helps the owner understand and act quickly.',
+ 'افتح الكاميرا':'Open camera','ابعث تنبيه لصاحب السيارة':'Send alert to owner','توصيل':'Delivered','يوصلك إشعار فوري':'You get it instantly','بثواني، ومحد يشوف رقمك':'In seconds, nobody sees your number',
+ 'الخميس، 26 تشرين الثاني':'Thursday, 26 November','الآن':'now','🚗 سيارتك سادّة الطريق':'🚗 Your car is blocking the way','وصلك بلاغ بخصوص سيارتك':'You got a report about your','— «سادّة باب الكراج»':'— “Blocking the garage door”','جاي هسّه':'On my way','خلال 5 دقايق':'In 5 min',
+ 'لكل موقف':'Every situation','ملصق واحد':'One sticker','لمواقف هواية':'Countless moments','أحد سادّ عليك؟':'Blocked in?','وصل لصاحبها بثواني':'Reach the owner in seconds','نسيت الضوء؟':'Lights left on?','الحق البطارية':'Save your battery',
+ 'الشباك مفتوح؟':'Window open?','سدّه قبل المطر والعجاج':'Close it before the rain','ضربة بالغلط؟':'A small scratch?','يكدر يعتذر ويوصلك':'They can own up and reach you','إبلاغ بلس':'Eblagh Plus','سيارة العائلة؟':'A family car?',
+ 'شارك سيارتك ويا عائلتك، ويوصلهم التنبيه بنفس اللحظة':'Share it with your family, everyone gets the alert at once','خصوصيتك أولاً':'Privacy by design','رقمك؟':'Your number?','محد راح يشوفه':'Nobody sees it','اللي يسوي سكان':'Them','انت':'You',
+ 'رقم موبايلك':'Your phone number','بدون تطبيق':'No app','يفتح من الكاميرا مباشرة':'Opens straight from the camera','رقمك مخفي':'Zero exposure','لا رقمك ولا رقمه يبين':'Neither number is ever shown','حماية من الإزعاج':'Spam shield',
+ 'فلترة ذكية، وتحظر أي أحد بضغطة':'Smart filtering, block anyone in a tap','التنبيهات':'Smart delivery','مستحيل':'Impossible','يفوتك':'to miss','الإشعار يوصلك بنغمة إبلاغ':'Alert with Eblagh’s tone','بعدك ما شفته؟':'Not seen yet?',
+ 'واتساب':'WhatsApp','نوصلك على واتساب':'We reach you on WhatsApp','تنبيه احتياطي بعد دقيقة، بموافقتك — ويا باقة إبلاغ بلس':'A backup alert after a minute, with your consent — on Eblagh Plus','الملصق':'The sticker','ثلاث ألوان':'Three colours','لكل سيارة':'For every car',
+ 'مقاس يناسب أي زجاج':'Fits any windshield','QR + رابط':'QR + Link','رابط احتياطي إذا الكاميرا ما تشتغل':'A backup link if the camera fails','ينربط بسيارتك بدقيقة':'Linked to your car in a minute','الباقات':'Plans','اشتراك سنوي':'One price','وسعر بسيط':'A whole year',
+ 'باقة':'Plan','تنبيه فوري لسيارتك، ورقمك يبقى إلك':'Instant alerts for your car','د.ع / سنة':'IQD / year','إشعار فوري بنغمة إبلاغ المميزة':'Instant notification with Eblagh’s tone','رقمك واسمك ما يظهرون لأي أحد':'Your name and number stay hidden',
+ 'ردّ بنقرة مع وقت وصولك':'One-tap reply with your ETA','اختار الباقة':'Choose this plan','بلس':'Plus','الأكمل':'Most complete','للعائلة والسيارات الثانية: كلكم توصلكم التنبيهات':'For family and second cars, everyone gets alerts','كل مزايا إبلاغ':'Everything in Eblagh',
+ 'لحد 3 سيارات و3 ملصقات':'Up to 3 cars and 3 stickers','شارك السيارة ويا عائلتك':'Share the car with your family','واتساب احتياطي إذا ما شفت الإشعار':'WhatsApp backup if you miss it','الدفع عند الاستلام · توصيل لكل المحافظات':'Cash on delivery · Delivery to all governorates',
+ 'أسئلة شائعة':'Common questions','خلّي الناس':'Ready when','تكدر توصلك':'they need you','EN':'AR','الأسعار':'Pricing','اطلب أونلاين':'Order online','تواصل ويانا':'Contact us','الخصوصية':'Privacy','الشروط':'Terms','سياسة التواصل':'Communication policy',
+ 'يبدأ من':'From','اطلب هسّه':'Order now','القائمة':'Menu',
+ 'إبلاغ — الرئيسية':'Eblagh — Home','افتح القائمة':'Open menu','اضغط على الملصق وشوف التنبيه':'Tap the sticker to see the alert','ملصق إبلاغ الأبيض':'Eblagh white sticker','English':'Switch to Arabic','روابط الموقع':'Site links','أغلق القائمة':'Close menu','تنقل الموقع':'Site navigation','قانوني':'Legal'
+};
+const AR_TITLE = document.title, AR_DESC = $('meta[name=description]').content;
+const orig = new Map(), origAttr = new Map();
+function swapText(){
+  const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, { acceptNode: n => n.parentElement.closest('script,style,.stk,#faq,#rsOpts,#trio,#slot') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT });
+  let n; while ((n = w.nextNode())){
+    if (!orig.has(n)) orig.set(n, n.textContent);
+    const o = orig.get(n), k = o.trim();
+    n.textContent = LANG === 'en' && EN[k] !== undefined ? o.replace(k, EN[k]) : o;
+  }
+  $$('[aria-label]').forEach(e => { if (e.closest('.stk')) return; if (!origAttr.has(e)) origAttr.set(e, e.getAttribute('aria-label')); const o = origAttr.get(e); e.setAttribute('aria-label', LANG === 'en' && EN[o] ? EN[o] : o); });
+}
+function setLang(l, save){
+  LANG = l; const h = document.documentElement; h.lang = l; h.dir = l === 'en' ? 'ltr' : 'rtl';
+  $$('.hx-real').forEach(e => e.dir = h.dir);
+  document.title = T(AR_TITLE, 'Eblagh — Let anyone reach you without your number');
+  $('meta[name=description]').content = T(AR_DESC, 'An Eblagh sticker on your car window: anyone scans the code and alerts you in seconds, without knowing your number. Yearly plan, delivery to all Iraqi governorates, cash on delivery.');
+  swapText(); renderOpts(); renderFaq(); paintStickers();
+  if (slot.innerHTML){ const missed = !!$('.hxd__call', slot); slot.innerHTML = alertHTML(mi, missed) + (missed ? callHTML() : ''); }
+  if (save) try { localStorage.setItem('eb-lang', l); } catch (e) {}
+}
+$('#langBtn').onclick = () => setLang(LANG === 'en' ? 'ar' : 'en', true);
+let saved = null; try { saved = localStorage.getItem('eb-lang'); } catch (e) {}
+if (saved === 'en') setLang('en', false);
 }
 </script>
 </body>
