@@ -42,6 +42,7 @@
   --shadow:0 16px 40px rgba(0,0,0,.45);
 }
 *,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent;scroll-behavior:smooth;overflow-x:hidden}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--fb),system-ui,sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 body.has-bar{padding-bottom:calc(116px + env(safe-area-inset-bottom))}
@@ -541,6 +542,72 @@ select.inp{-webkit-appearance:none;appearance:none;cursor:pointer;padding-inline
 .track small{display:block;font-size:13px;color:var(--ink3)}
 .done .again{margin:20px auto 0;height:50px;padding:0 22px;border-radius:14px;border:1px solid var(--line);font-weight:700;display:inline-flex;align-items:center;gap:8px;background:var(--surface)}
 .done .again .ic{width:18px;height:18px}
+/* success page — layout of the reference "استلمنا طلبك" screen */
+.dn{text-align:center;padding:4px 0 28px}
+.dn-art{position:relative;width:236px;height:236px;margin:0 auto 34px;display:grid;place-items:center}
+.dn-art::before{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--y) 18%,transparent),transparent 74%)}
+.dn-art::after{content:"";position:absolute;inset:26px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--y) 42%,transparent)}
+.dn-art .sw{position:relative;z-index:1;line-height:0;transform:rotate(12deg);filter:drop-shadow(0 14px 18px rgba(70,45,0,.22));animation:dnIn .8s cubic-bezier(.34,1.56,.64,1) .1s both}
+.dn-art .sw .stk{display:block}
+.dn-ok{position:absolute;z-index:2;inset-inline-end:22px;bottom:26px;width:54px;height:54px;border-radius:50%;background:#E4F3EA;color:#1F8A4C;border:4px solid var(--bg);display:grid;place-items:center;animation:dnPop .5s cubic-bezier(.34,1.56,.64,1) .55s both}
+.dn-ok svg{width:26px;height:26px}
+.dn-ok path{stroke-dasharray:30;stroke-dashoffset:30;animation:draw .45s .85s var(--ease) forwards}
+@keyframes dnIn{from{opacity:0;transform:rotate(-8deg) scale(.6)}to{opacity:1;transform:rotate(12deg)}}
+@keyframes dnPop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
+.dn-pill{display:inline-flex;align-items:center;padding:5px 14px;border-radius:999px;background:#E4F3EA;color:#1C7A44;font-size:13px;font-weight:600}
+.dn h2{margin:12px 0 0;font-size:30px;line-height:1.3;font-weight:700}
+.dn .lead{margin:6px auto 0;max-width:420px;color:var(--ink2);font-size:14.5px}
+.dn-stack{display:grid;gap:12px;margin:26px auto 0;max-width:560px;text-align:start}
+.dn-card{border-radius:18px;border:1px solid var(--line);background:var(--surface);animation:rise2 .5s var(--ease) both}
+.dn-stack .receipt{margin:0;max-width:none;padding:0;box-shadow:none;opacity:1;transform:none}
+.dn-card:nth-child(2){animation-delay:.08s}.dn-card:nth-child(3){animation-delay:.16s}.dn-card:nth-child(4){animation-delay:.24s}.dn-card:nth-child(5){animation-delay:.32s}
+.dn-ship{display:flex;gap:12px;align-items:flex-start;padding:16px 18px;background:#EAF6F2;border-color:#C7E6DD;color:#0F5E50}
+.dn-ship .ic{width:24px;height:24px;margin-top:2px}
+.dn-ship b{display:block;font-size:16px;font-weight:700}
+.dn-ship small{display:block;font-size:14px;color:#3A6058}
+.dn-id{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;border-bottom:1px solid var(--line)}
+.dn-id small{display:block;font-size:14px;color:var(--ink3)}
+.dn-id b{display:block;white-space:nowrap;font-size:22px;font-weight:800;letter-spacing:.01em;direction:ltr;text-align:start;font-variant-numeric:tabular-nums}
+.dn-btn{flex:none;display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:14px;font-weight:600;color:var(--ink);transition:background-color .15s,border-color .15s}
+.dn-btn:hover{background:var(--surface2)}
+.dn-btn .ic{width:18px;height:18px}
+.dn-btn.ok{border-color:#9ED3B4;color:#1C7A44}
+.dn-rows{padding:8px 18px 12px}
+.dn-rows .ln{display:flex;justify-content:space-between;gap:10px;padding:8px 0;font-size:14px;color:var(--ink3)}
+.dn-rows .ln b{font-size:15px;font-weight:700;color:var(--ink);text-align:end;font-variant-numeric:tabular-nums}
+.dn-edit{padding:16px 18px}
+.dn-edit .row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 12px}
+.dn-edit h3{white-space:nowrap}
+.dn-edit h3{margin:0;font-size:17px;font-weight:700}
+.dn-edit a{display:inline-block;margin-top:12px;font-size:14px;font-weight:500;color:var(--ytext);text-decoration:underline;text-underline-offset:4px}
+.dn-mail{padding:16px 18px;background:linear-gradient(135deg,color-mix(in srgb,var(--y) 9%,var(--surface)),var(--surface));border-color:color-mix(in srgb,var(--y) 30%,var(--line))}
+.dn-mail .hd{display:flex;gap:10px;align-items:flex-start}
+.dn-mail .hd .ic{width:22px;height:22px;color:var(--ytext);margin-top:2px}
+.dn-mail b{display:block;font-size:16px;font-weight:700}
+.dn-mail small{display:block;font-size:14px;color:var(--ink2)}
+.dn-mail form{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.dn-mail .inp{flex:1 1 170px;height:46px;border-radius:999px;direction:ltr;text-align:right}
+.dn-mail .inp::placeholder{direction:rtl}
+.dn-mail button{flex:0 1 auto;height:46px;padding:0 20px;border-radius:999px;background:var(--y);color:#111;font-size:14.5px;font-weight:700;box-shadow:0 10px 22px -10px rgba(245,170,0,.8)}
+.dn-mail .msg{margin-top:10px;font-size:13px;font-weight:600}
+.dn-mail .msg.bad{color:var(--bad)}.dn-mail .msg.good{color:#1C7A44}
+.dn-gift{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding:18px;background:linear-gradient(135deg,#FCF1F6,#F2ECFB);border-color:#EAD5EE}
+.dn-gift .gi{width:46px;height:46px;border-radius:14px;background:#F1DDF1;color:#7B2D73;display:grid;place-items:center;margin-bottom:10px}
+.dn-gift .gi .ic{width:22px;height:22px}
+.dn-gift .tx{flex:1 1 220px}
+.dn-gift b{display:block;font-size:18px;line-height:1.45;font-weight:700;color:#5B2154}
+.dn-gift small{display:block;margin-top:4px;font-size:14px;color:#6F5470}
+.dn-gift button{flex:none;height:48px;padding:0 24px;border-radius:999px;background:#6B2A63;color:#fff;font-size:15px;font-weight:700}
+.dn-note{margin-top:16px;font-size:12px;color:var(--ink3)}
+:root[data-theme="dark"] .dn-ship{background:#0F2A25;border-color:#1E4A41;color:#7EE0C8}
+:root[data-theme="dark"] .dn-ship small{color:#9CC7BC}
+:root[data-theme="dark"] .dn-pill,:root[data-theme="dark"] .dn-ok{background:#123222;color:#6FDC9E}
+:root[data-theme="dark"] .dn-gift{background:linear-gradient(135deg,#2A1726,#221B33);border-color:#43284A}
+:root[data-theme="dark"] .dn-gift b{color:#F3C7EC}
+:root[data-theme="dark"] .dn-gift small{color:#C9AFCB}
+:root[data-theme="dark"] .dn-gift .gi{background:#3B2140;color:#F0B8E8}
+:root[data-theme="dark"] .dn-gift button{background:#B04CA3}
+@media (prefers-reduced-motion:reduce){.dn-art .sw,.dn-ok,.dn-card{animation:none}.dn-ok path{stroke-dashoffset:0}}
 .toast{position:fixed;left:50%;bottom:calc(110px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:95;background:var(--ink);color:var(--bg);padding:12px 16px;border-radius:14px;font-size:14px;font-weight:600;box-shadow:var(--shadow);max-width:90vw;animation:toast .3s var(--ease)}
 @keyframes toast{from{opacity:0;transform:translate(-50%,10px)}}
 
@@ -623,6 +690,10 @@ const FLAG_IQ = `<svg class="flag" viewBox="0 0 60 40" aria-hidden="true"><rect 
 const icn = (svg, st='') => st ? svg.replace('class="ic"', `class="ic" style="${st}"`) : svg;
 const sv = d => `<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
 const X = {
+  copy: sv('<rect x="8.5" y="8.5" width="11.5" height="11.5" rx="2.5"/><path d="M15.5 8.5V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7.5a2 2 0 0 0 2 2h2.5"/>'),
+  pencil: sv('<path d="M14.5 5.5l4 4M4 20l1-4.5L15.8 4.7a1.8 1.8 0 0 1 2.5 0l1 1a1.8 1.8 0 0 1 0 2.5L8.5 19z"/>'),
+  mail: sv('<rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/>'),
+  gift: sv('<rect x="3.5" y="8" width="17" height="4" rx="1"/><path d="M5 12v7.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V12M12 8v12.5M12 8S10.6 4 8.3 4a2 2 0 0 0 0 4H12zm0 0s1.4-4 3.7-4a2 2 0 0 1 0 4H12z"/>'),
   vol: sv('<path d="M11 4.7 6.6 8.3H3.5v7.4h3.1L11 19.3z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.6 5.6a9 9 0 0 1 0 12.8"/>'),
   volX: sv('<path d="M11 4.7 6.6 8.3H3.5v7.4h3.1L11 19.3z"/><path d="m16 9.5 5 5M21 9.5l-5 5"/>'),
   phone: sv('<path d="M5.1 3.5h3.2l1.6 4-2.1 1.3a11 11 0 0 0 5.4 5.4l1.3-2.1 4 1.6v3.2a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 3.1 5.7a2 2 0 0 1 2-2.2z"/>'),
@@ -992,31 +1063,49 @@ function submit(){
     $('#sending').classList.remove('on');
     S.done = {id:'EB-' + (40000 + Math.floor(Math.random()*9000)), t};
     $('#form').hidden = true; $('#ohead').hidden = true; renderBar(); renderSums(false);
-    const first = S.name.trim().split(/\s+/)[0];
-    $('#doneBox').hidden = false;
-    $('#doneBox').innerHTML = `<div class="done" role="status">
-      <div class="ok-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
-      <h2>تم طلبك يا ${esc(first)}!</h2>
-      <p class="lead">راح نتصل بيك قبل ما يطلع المندوب. ملصقك يوصلك خلال 2–3 أيام إلى ${esc(S.gov)} — ${esc(S.area)}.</p>
-      <div class="receipt">
-        <div class="rh">${stkMini(topV(), 64, 84)}<span><small>رقم الطلب</small><b class="num ltr">${S.done.id}</b></span></div>
-        <div class="ln"><span>${planLabel(t.P)} · سنة</span><b>${IQD(t.P.price)}</b></div>
-        <div class="ln"><span>${qtyLabel(t.n)} · ${shapeName()}${mixLabel()}</span><b>${t.extra ? IQD(t.extra) : 'مشمولة'}</b></div>
-        <div class="ln"><span>التوصيل</span><b>${t.deliv ? IQD(t.deliv) : 'مجاناً'}</b></div>
-        ${t.disc ? `<div class="ln"><span>الخصم</span><b>− ${IQD(t.disc)}</b></div>` : ''}
-        <div class="ln"><span>الدفع</span><b>عند الاستلام</b></div>
-        <div class="ln tot"><span>المبلغ للمندوب</span><b>${IQD(t.total)}</b></div>
+    $('#hero').hidden = true; $('#doneBox').hidden = false;
+    const id = S.done.id, waTxt = encodeURIComponent(`هلا، أريد أعدّل طلبي رقم ${id}`);
+    $('#doneBox').innerHTML = `<div class="dn" role="status" aria-live="polite">
+      <div class="dn-art" aria-hidden="true"><span class="sw">${stkMini(topV(), 156, 112)}</span>
+        <span class="dn-ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></div>
+      <span class="dn-pill">شكراً لاختيارك إبلاغ</span>
+      <h2>استلمنا طلبك!</h2>
+      <p class="lead">سيارتك راح يصير إلها باركود خاص بيها قريب</p>
+      <div class="dn-stack">
+        <div class="dn-card dn-ship">${I.truck}<span><b>طلبك يوصلك خلال 2–3 أيام</b><small>راح نتواصل وياك على رقمك حتى نرتّب الاستلام.</small></span></div>
+        <div class="dn-card receipt">
+          <div class="dn-id"><span><small>رقم الطلب</small><b>${id}</b></span><button type="button" class="dn-btn" id="dnCopy">${X.copy}<span>نسخ</span></button></div>
+          <div class="dn-rows">
+            <div class="ln"><span>الباقة</span><b>${planLabel(t.P)} × ${t.n}</b></div>
+            <div class="ln"><span>الدفع</span><b>نقداً عند الاستلام</b></div>
+            <div class="ln"><span>إجمالي الطلب</span><b>${IQD(t.total)}</b></div>
+          </div>
+        </div>
+        <div class="dn-card dn-edit">
+          <div class="row"><h3>محتاج تعدّل طلبك؟</h3><button type="button" class="dn-btn" id="dnEdit">${X.pencil}<span>عدّل التوصيل</span></button></div>
+          <a href="https://wa.me/9647700000000?text=${waTxt}" target="_blank" rel="noopener">تريد تعدّل الطلب نفسه؟ راسلنا على الواتساب</a>
+        </div>
+        <div class="dn-card dn-mail">
+          <div class="hd">${X.mail}<span><b>تابع حالة طلبك بالإيميل</b><small>ضيف إيميلك حتى توصلك تحديثات الطلب.</small></span></div>
+          <form id="dnMail" novalidate><label class="sr" for="dnMailIn">عنوان الإيميل</label><input class="inp" id="dnMailIn" type="email" inputmode="email" autocomplete="email" placeholder="عنوان الإيميل"><button type="submit">فعّل تحديثات الطلب</button></form>
+          <p class="msg" id="dnMailMsg" role="status"></p>
+        </div>
+        <div class="dn-card dn-gift">
+          <div class="tx"><span class="gi" aria-hidden="true">${X.gift}</span><b>تذكّرت صاحبك اللي طلع ولقى سيارته مسدودة؟</b><small>اطلبله ملصق إبلاغ هدية حتى الناس تكدر توصله إذا صار شي بسيارته.</small></div>
+          <button type="button" id="dnGift">اهديه ملصق</button>
+        </div>
       </div>
-      <div class="track">
-        <div class="now"><i>${I.check}</i><span><b>تم الطلب</b><small>هسه</small></span></div>
-        <div><i>${I.printer}</i><span><b>نطبع ملصقك</b><small>برمز عشوائي خاص بيك</small></span></div>
-        <div><i>${I.truck}</i><span><b>مع المندوب</b><small>يتصل بيك قبل ما يوصل</small></span></div>
-        <div><i>${I.key}</i><span><b>فعّله بدقيقة</b><small>امسحه أو اكتب الرمز السري من كرت التفعيل</small></span></div>
-      </div>
-      <button type="button" class="again" id="again">${I.refresh} طلب جديد</button>
-      <p class="hint" style="margin-top:14px">هذا نموذج تجريبي — ما انرسل أي طلب فعلي.</p></div>`;
-    scrollToEl($('#order'), 24);
-    $('#again').onclick = () => location.reload();
+      <p class="dn-note">هذا نموذج تجريبي — ما انرسل أي طلب فعلي.</p></div>`;
+    scrollTo({top:0, behavior: RM() ? 'auto' : 'smooth'});
+    $('#dnCopy').onclick = async e => { const b = e.currentTarget; let ok = false;
+      try { await navigator.clipboard.writeText(id); ok = true; } catch(err){ const ta = document.createElement('textarea'); ta.value = id; document.body.appendChild(ta); ta.select(); try { ok = document.execCommand('copy'); } catch(_){} ta.remove(); }
+      b.classList.toggle('ok', ok); b.querySelector('span').textContent = ok ? 'تم النسخ' : 'انسخه يدوياً'; setTimeout(() => { b.classList.remove('ok'); b.querySelector('span').textContent = 'نسخ'; }, 1800); };
+    $('#dnEdit').onclick = () => { S.done = null; $('#doneBox').hidden = true; $('#doneBox').innerHTML = ''; $('#hero').hidden = false; $('#form').hidden = false; $('#ohead').hidden = false;
+      renderP2(); renderBar(); renderSums(false); scrollToEl($('#order'), 24); toast('عدّل بيانات التوصيل وأكّد الطلب من جديد'); };
+    $('#dnMail').onsubmit = e => { e.preventDefault(); const v = $('#dnMailIn').value.trim(), m = $('#dnMailMsg');
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){ m.className = 'msg bad'; m.textContent = 'اكتب إيميل صحيح، مثل name@example.com'; $('#dnMailIn').setAttribute('aria-invalid','true'); $('#dnMailIn').focus(); return; }
+      $('#dnMailIn').removeAttribute('aria-invalid'); e.currentTarget.hidden = true; m.className = 'msg good'; m.textContent = `تم! راح توصلك تحديثات طلبك على ${v}`; };
+    $('#dnGift').onclick = () => { location.href = location.pathname + '?gift=1#order'; };
   }, 1400);
 }
 
