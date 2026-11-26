@@ -1,8 +1,8 @@
-# Builds site.html (website prototype) from index.html + tools/site.css + tools/site.js
+# Builds site.html (website prototype) from app.html + tools/site.css + tools/site.js
 # Usage: python3 tools/build_site.py
 import sys, os
 D = os.path.dirname(os.path.abspath(__file__))
-s = open(os.path.join(D, '..', 'index.html'), encoding='utf-8').read()
+s = open(os.path.join(D, '..', 'app.html'), encoding='utf-8').read()
 rd = lambda f: open(os.path.join(D, f), encoding='utf-8').read()
 def rep(a, b):
     global s

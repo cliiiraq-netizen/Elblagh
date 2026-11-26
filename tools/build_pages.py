@@ -2,7 +2,7 @@
 #   how-it-works.html, contact.html, login.html, forgot-password.html,
 #   privacy.html, terms.html, communications.html
 # Each output is a single self-contained file in the project root. Fonts (Thmanyah Sans) and the
-# brand mark (LOGO_W / MARK_H / MARK_D / markSVG) are pulled from index.html, like build_order.py does.
+# brand mark (LOGO_W / MARK_H / MARK_D / markSVG) are pulled from app.html, like build_order.py does.
 #
 # Page sources (tools/pages/<name>.html) are split into blocks with <!--@meta-->, <!--@css-->,
 # <!--@main-->, <!--@js--> markers. `layout: legal` pages put only <section>s in @main; they are
@@ -20,16 +20,16 @@ PAGES = ['how-it-works', 'contact', 'login', 'forgot-password', 'privacy', 'term
 def read(*p):
     return open(os.path.join(*p), encoding='utf-8').read()
 
-src_lines = read(ROOT, 'index.html').split('\n')
+src_lines = read(ROOT, 'app.html').split('\n')
 fonts = '\n'.join(l for l in src_lines if l.startswith("@font-face{font-family:'Thmanyah Sans'"))
 if not fonts:
-    sys.exit('Thmanyah Sans @font-face lines not found in index.html')
+    sys.exit('Thmanyah Sans @font-face lines not found in app.html')
 
 def line(prefix):
     for l in src_lines:
         if l.startswith(prefix):
             return l
-    sys.exit(f'line not found in index.html: {prefix}')
+    sys.exit(f'line not found in app.html: {prefix}')
 
 brand_js = '\n'.join([line('const LOGO_W = '), line('const MARK_D = '), line('const markSVG = ')])
 

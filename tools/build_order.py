@@ -1,9 +1,9 @@
 # Builds order.html and home.html from tools/order.template.html and tools/home.template.html,
-# pulling brand assets (fonts, sticker design, QR, logo, icons) from index.html.
+# pulling brand assets (fonts, sticker design, QR, logo, icons) from app.html.
 # Usage: python3 tools/build_order.py  (builds both pages)
 import os, re, sys
 D = os.path.dirname(os.path.abspath(__file__))
-src = open(os.path.join(D, '..', 'index.html'), encoding='utf-8').read()
+src = open(os.path.join(D, '..', 'app.html'), encoding='utf-8').read()
 
 def between(a, b, s=src, inclusive_a=True):
     i = s.find(a); j = s.find(b, i + len(a))
