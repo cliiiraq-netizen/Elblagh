@@ -122,46 +122,50 @@ svg{flex:none}
 
 
 /* ---- Scan-card stickers (ev vertical · eh horizontal · er round) — 1em = 1mm ---- */
-.stk.ev,.stk.eh{display:flex;flex-direction:column;border-radius:5em;overflow:hidden}
-.stk.ev{width:60em;height:104em}
-.stk.eh{width:104em;height:62em}
-.stk .e-main{flex:1;display:flex;flex-direction:column;align-items:center;padding:6.2em 4.6em 2.6em;min-height:0}
-.stk.eh .e-main{flex-direction:row;align-items:center;gap:5em;padding:4.4em 5em 3em}
-.stk.eh .e-txt{flex:1;display:flex;flex-direction:column;align-items:stretch;min-width:0}
-.stk .e-h{display:block;font-size:1em;text-align:center;color:var(--si);font-weight:900;line-height:1.16}
-.stk .e-h span{display:block;font-size:6.5em}
-.stk.eh .e-h{text-align:start}
+.stk.ev,.stk.eh{position:relative;overflow:hidden;background:var(--spb)!important;--sband:#FFC816;--sbandi:#111;--scard:var(--sb)}
+.stk.v-yellow.ev,.stk.v-yellow.eh,.stk.v-yellow.er{--sband:#111;--sbandi:#FFC816;--scard:radial-gradient(60em 60em at 70% 22%,#FFD84A 0%,#FFC816 45%,#F5B400 100%)}
+.stk.v-black.ev,.stk.v-black.eh,.stk.v-black.er{--scard:radial-gradient(60em 60em at 70% 18%,#262626,#0d0d0d)}
+.stk.v-white.ev,.stk.v-white.eh,.stk.v-white.er{--scard:#fff}
+.stk.ev{width:60em;height:120em;border-radius:6.5em}
+.stk.eh{width:112em;height:64em;border-radius:6em}
+.stk .e-card{position:absolute;top:0;left:0;right:0;background:var(--scard);display:flex;flex-direction:column;align-items:center}
+.stk.ev .e-card{height:94em;border-radius:0 0 4.6em 4.6em;padding-top:6.4em}
+.stk.eh .e-card{height:50em;border-radius:0 0 4.6em 4.6em;flex-direction:row;align-items:center;gap:4.4em;padding:0 4.6em}
+.stk.eh .e-txt{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center}
+.stk .e-h{display:block;font-size:1em;text-align:center;color:var(--si);font-weight:900;line-height:1.12}
+.stk .e-h span{display:block;font-size:6.6em;white-space:nowrap}
 .stk.eh .e-h span{font-size:6em}
-.stk .e-band{align-self:stretch;margin-top:3.2em;background:var(--spb);color:var(--spi);text-align:center;padding:1.5em 2em;border-radius:1.2em}
-.stk .e-band span{display:block;font-size:3.9em;font-weight:900;line-height:1.2}
-.stk .e-qr{align-self:stretch;margin-top:3.4em;background:#fff;border-radius:4.4em;padding:3.4em;box-shadow:0 .6em 1.8em rgba(0,0,0,.16);aspect-ratio:1}
-.stk .e-qr svg{width:100%;height:100%}
-.stk.ev .e-qr{align-self:center;width:45em;padding:3em;border-radius:4em}
-.stk.ev .e-strip{height:15em}
-.stk.eh .e-qr{flex:none;width:44em;margin:0;padding:3.2em}
-.stk .e-note{margin-top:2.6em;text-align:center;color:var(--si);opacity:.75}
-.stk .e-note span{font-size:2.35em;font-weight:700}
-.stk.eh .e-note{text-align:start;margin-top:2.4em}
-.stk .e-strip{flex:none;height:17em;display:flex;align-items:center;justify-content:space-between;gap:3em;padding:0 5.2em;background:var(--spb);color:var(--spi)}
-.stk.eh .e-strip{height:13.5em}
-.stk .e-strip .logo{font-size:5.6em;color:var(--spi)}
-.stk.eh .e-strip .logo{font-size:4.6em}
-.stk .e-url{display:flex;flex-direction:column;align-items:flex-start;direction:ltr;font-family:-apple-system,"Segoe UI",system-ui,sans-serif;border-left:.25em solid currentColor;padding-left:2.6em;line-height:1.25}
-.stk .e-url small{font-size:2.3em;font-weight:600;opacity:.8}
-.stk .e-url b{font-size:3.2em;font-weight:800;letter-spacing:.08em}
-.stk.er{width:76em;height:76em;border-radius:50%;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;padding-top:7.4em}
-.stk.er::after{content:"";position:absolute;inset:1.6em;border-radius:50%;border:.3em solid var(--sline);pointer-events:none}
+.stk .e-band{margin-top:2.2em;width:51.4em;height:6.9em;display:grid;place-items:center;background:var(--sband);color:var(--sbandi)}
+.stk.eh .e-band{width:100%;margin-top:2em;height:6.4em}
+.stk .e-band span{font-size:3.45em;font-weight:900;white-space:nowrap;line-height:1}
+.stk .e-qr{background:#fff;aspect-ratio:1;line-height:0}
+.stk .e-qr svg{width:100%;height:100%;display:block}
+.stk.ev .e-qr{margin-top:2.5em;width:53em;padding:3.5em;border-radius:2.8em}
+.stk.eh .e-qr{flex:none;width:41em;padding:2.9em;border-radius:2.6em}
+.stk.v-white .e-qr{box-shadow:0 0 0 .3em #e6e3dc}
+.stk .e-note{margin-top:2.1em;text-align:center;color:var(--si);opacity:.82;white-space:nowrap}
+.stk .e-note span{font-size:2.2em;font-weight:700}
+.stk.eh .e-note{margin-top:1.8em}
+.stk .e-foot{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;gap:3.4em;color:var(--spi)}
+.stk.ev .e-foot{height:26em}
+.stk.eh .e-foot{height:14em}
+.stk .e-foot .logo{font-size:6.2em;color:var(--spi)}
+.stk.eh .e-foot .logo{font-size:4.6em}
+.stk .e-url{display:flex;flex-direction:column;align-items:flex-start;direction:ltr;font-family:-apple-system,"Segoe UI",system-ui,sans-serif;line-height:1.3}
+.stk .e-foot i{width:.3em;height:9em;background:currentColor;opacity:.9;border-radius:1em}
+.stk.eh .e-foot i{height:7em}
+.stk .e-url small{font-size:2.7em;font-weight:600}
+.stk .e-url b{font-size:2.9em;font-weight:800;letter-spacing:.04em}
+.stk.er{width:76em;height:76em;border-radius:50%;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;padding-top:7.6em;background:var(--scard)!important;--sband:#FFC816;--sbandi:#111}
 .stk.er .e-h span{font-size:5em;line-height:1.14}
-.stk.er .e-band{align-self:center;margin-top:1.4em;padding:.9em 3.6em;border-radius:99em}
-.stk.er .e-band span{font-size:3.1em}
-.stk.er .e-qr{align-self:center;width:31em;margin-top:1.6em;padding:2.3em;border-radius:3.6em}
-.stk.er .e-strip{position:absolute;left:0;right:0;bottom:0;height:13.6em;padding:0 0 2.2em;justify-content:center;gap:3em}
-.stk.er .e-strip .logo{font-size:4.3em}
-.stk.er .e-url{padding-left:2.2em}
+.stk.er .e-band{width:40em;height:5.6em;margin-top:1.5em}
+.stk.er .e-band span{font-size:2.8em}
+.stk.er .e-qr{width:30em;margin-top:1.6em;padding:2.2em;border-radius:2.4em}
+.stk.er .e-foot{height:13.8em;background:var(--spb);padding-bottom:2em;gap:2.6em}
+.stk.er .e-foot .logo{font-size:4.2em}
+.stk.er .e-foot i{height:6.2em}
 .stk.er .e-url small{font-size:2em}
-.stk.er .e-url b{font-size:2.8em}
-.stk.v-white .e-qr{box-shadow:0 0 0 .35em #111,0 .6em 1.8em rgba(0,0,0,.12)}
-.stk.v-white.ev,.stk.v-white.eh,.stk.v-white.er{box-shadow:inset 0 0 0 .3em rgba(0,0,0,.08)}
+.stk.er .e-url b{font-size:2.3em}
 
 
 
@@ -254,7 +258,7 @@ svg{flex:none}
 .hxd__rings i{position:absolute;inset:0;border-radius:50%;background:radial-gradient(closest-side,rgba(255,200,22,.15),transparent);border:1px solid rgba(255,255,255,.07)}
 .hxd__rings i:nth-child(2){background:none;border-color:rgba(255,255,255,.09);inset:16%}
 .hxd__rings i:nth-child(3){background:none;border-color:rgba(255,200,22,.25);inset:32%}
-.hxd__sticker{cursor:pointer;perspective:900px;transform-origin:50% 100%;width:min(68vw,16.5rem);position:relative;transition:transform .9s cubic-bezier(.22,1,.36,1)}
+.hxd__sticker{cursor:pointer;perspective:900px;transform-origin:50% 100%;width:min(60vw,14.5rem);position:relative;transition:transform .9s cubic-bezier(.22,1,.36,1)}
 .hxd__stage.is-alert .hxd__sticker{transform:translateY(.5rem) scale(.82)}
 .hxd__sticker:focus-visible{outline:2px solid rgba(255,200,22,.7);outline-offset:6px;border-radius:1.25rem}
 .hxd__float{display:block;position:relative;transform:rotateX(var(--tx)) rotateY(var(--ty));transition:transform .4s var(--hx-ease);filter:drop-shadow(0 40px 50px rgba(0,0,0,.6)) drop-shadow(0 0 60px rgba(255,200,22,.16));animation:hx-float 6s ease-in-out infinite}
@@ -309,8 +313,8 @@ svg{flex:none}
 .hx-cam__target{width:43%;position:relative;transform:rotate(-2deg)}
 .hx-cam__sticker{line-height:0;box-shadow:0 20px 30px rgba(0,0,0,.45);border-radius:.55rem}
 .hx-cam__sticker .stk{display:block}
-.hx-cam__corners{position:absolute;top:25%;left:-6%;right:-6%;height:50%;animation:hx-lock 2.8s var(--hx-ease) infinite}
-.hx-cam__corners i{position:absolute;width:18px;height:18px;border:3px solid #FFC816}
+.hx-cam__corners{position:absolute;top:31%;left:-4%;width:108%;height:52%;animation:hx-lock 2.8s var(--hx-ease) infinite}
+.hx-cam__corners i{position:absolute;width:15px;height:15px;border:3px solid #FFC816}
 .hx-cam__corners i:nth-child(1){top:0;left:0;border-right:0;border-bottom:0;border-top-left-radius:6px}
 .hx-cam__corners i:nth-child(2){top:0;right:0;border-left:0;border-bottom:0;border-top-right-radius:6px}
 .hx-cam__corners i:nth-child(3){bottom:0;left:0;border-right:0;border-top:0;border-bottom-left-radius:6px}
@@ -412,7 +416,7 @@ svg{flex:none}
 .hx-bridge__mark{width:3.75rem;height:3.75rem;border-radius:50%;background:var(--cta);display:grid;place-items:center;color:#111;filter:drop-shadow(0 0 22px rgba(255,200,22,.5))}
 .hx-bridge__mark svg.mk{width:2.5rem;height:auto}
 .hx-bridge__wire{flex:1;height:1px;margin-bottom:1.6rem;position:relative;background:rgba(255,255,255,.18)}
-.hx-bridge__wire i{position:absolute;top:-2px;width:5px;height:5px;border-radius:50%;background:var(--hx-accent);box-shadow:0 0 10px var(--hx-accent);animation:hx-travel 2.4s linear infinite}
+.hx-bridge__wire i{position:absolute;top:-2px;right:0;width:5px;height:5px;border-radius:50%;background:var(--hx-accent);box-shadow:0 0 10px var(--hx-accent);-webkit-animation:hx-travel 2.4s linear infinite;animation:hx-travel 2.4s linear infinite}
 .hx-bridge__wire.w2 i{animation-delay:1.2s}
 .hx-masked{position:relative;display:flex;flex-direction:column;gap:.6rem;padding:1.5rem;border-radius:var(--hx-radius);background:linear-gradient(rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1)}
 .hx-masked__label{color:rgba(255,255,255,.55);font-size:.8125rem}
@@ -426,7 +430,8 @@ svg{flex:none}
 .hx-facts li>span:first-child{grid-area:icon;margin-top:.15rem;color:#FFC816;display:inline-flex}
 .hx-facts b{grid-area:tag;justify-self:start;font-size:1rem;font-weight:700}
 .hx-facts li>span:last-child{grid-area:copy;color:rgba(255,255,255,.6);font-size:.875rem}
-@keyframes hx-travel{0%{inset-inline-start:0}100%{inset-inline-start:calc(100% - 5px)}}
+@-webkit-keyframes hx-travel{0%{right:0}100%{right:calc(100% - 5px)}}
+@keyframes hx-travel{0%{right:0}100%{right:calc(100% - 5px)}}
 @keyframes hx-blink{0%,100%{opacity:1}50%{opacity:.35}}
 
 /* ---------- timeline ---------- */
@@ -580,7 +585,7 @@ svg{flex:none}
   .login-btn{display:inline-flex}
   .hx-hero{padding-top:3rem}
   .hx-hero__grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3.5rem}
-  .hxd__sticker{width:16.5rem}
+  .hxd__sticker{width:15.5rem}
   .hxd__stage{width:min(100%,24rem)}
   .hx-hero__copy{text-align:start;align-items:flex-start}
   .hx-display{font-size:clamp(2.75rem,3.9vw,4.25rem)}
@@ -784,7 +789,7 @@ svg{flex:none}
       </header>
       <div class="hx-duo rv" id="trio"></div>
       <ul class="hx-specs">
-        <li><b class="hx-latin" dir="ltr">6 × 10.4 cm</b><span>مقاس يناسب أي زجاج</span></li>
+        <li><b class="hx-latin" dir="ltr">6 × 12 cm</b><span>مقاس يناسب أي زجاج</span></li>
         <li><b>QR + رابط</b><span>رابط احتياطي إذا الكاميرا ما تشتغل</span></li>
         <li><b>ملصق واحد</b><span>ينربط بسيارتك بدقيقة</span></li>
       </ul>
@@ -827,7 +832,7 @@ svg{flex:none}
   <section class="hx-final" aria-labelledby="hx-final-title">
     <div class="shell hx-final__inner">
       <div class="hx-final__stickers rv" id="finalArt" aria-hidden="true"></div>
-      <h2 class="hx-title hx-title--xl rv" id="hx-final-title"><span>خلّي الناس</span><span class="hx-title__soft">تگدر توصلك</span></h2>
+      <h2 class="hx-title hx-title--xl rv" id="hx-final-title"><span>خلّي الناس</span> <span class="hx-title__soft">تگدر توصلك</span></h2>
       <a class="hx-btn hx-btn--primary hx-btn--lg rv" href="order.html">جـــرّب إبلاغ <span data-ic="arrowL"></span></a>
     </div>
   </section>
@@ -957,15 +962,15 @@ function qrSVG(code, o={}){
 function qrEyes(code, o={}){
   const m = QR[code] || QR.EB4471, n = m.length, fg = o.fg || '#111', eye = o.eye || '#FFC816', bg = o.bg || '#fff';
   const inF = (x, y) => (x < 7 && y < 7) || (x >= n - 7 && y < 7) || (x < 7 && y >= n - 7);
-  const c = n / 2, half = o.logo === false ? 0 : 4.4;
-  const inL = (x, y) => half && Math.abs(x + .5 - c) < half + .7 && Math.abs(y + .5 - c) < half + .7;
+  const c = n / 2, R = 3.6;
+  const inL = (x, y) => Math.hypot(x + .5 - c, y + .5 - c) < R + .9;
   const on = (x, y) => m[y][x] === '1' && !inF(x, y) && !inL(x, y);
   let d = '';
   for (let y = 0; y < n; y++){ let x = 0;
     while (x < n){ if (on(x, y)){ let l = 1; while (x + l < n && on(x + l, y)) l++; d += `M${x} ${y}h${l}v1h-${l}z`; x += l; } else x++; } }
-  const E = (x, y) => `<rect x="${x}" y="${y}" width="7" height="7" rx="2.2" fill="${fg}"/><rect x="${x+1}" y="${y+1}" width="5" height="5" rx="1.6" fill="${eye}"/><rect x="${x+2}" y="${y+2}" width="3" height="3" rx=".95" fill="${fg}"/>`;
-  const mw = half * 1.62, ms = mw / LOGO_W, mh = MARK_H * ms;
-  const L = half ? `<rect x="${c-half-.5}" y="${c-half-.5}" width="${2*half+1}" height="${2*half+1}" rx="2.2" fill="${bg}"/><rect x="${c-half}" y="${c-half}" width="${2*half}" height="${2*half}" rx="1.9" fill="${eye}"/><path transform="translate(${c-mw/2} ${c-mh/2}) scale(${ms})" fill="#111" fill-rule="evenodd" d="${MARK_D}"/>` : '';
+  const E = (x, y) => `<circle cx="${x+3.5}" cy="${y+3.5}" r="3.5" fill="${fg}"/><circle cx="${x+3.5}" cy="${y+3.5}" r="2.5" fill="${bg}"/><circle cx="${x+3.5}" cy="${y+3.5}" r="1.55" fill="${eye}"/>`;
+  const mw = R * 1.5, ms = mw / LOGO_W, mh = MARK_H * ms;
+  const L = `<circle cx="${c}" cy="${c}" r="${R}" fill="${eye}"/><path transform="translate(${c-mw/2} ${c-mh/2}) scale(${ms})" fill="#111" fill-rule="evenodd" d="${MARK_D}"/>`;
   return `<svg viewBox="0 0 ${n} ${n}" shape-rendering="crispEdges" role="img" aria-label="QR ${code}"><path d="${d}" fill="${fg}"/><g shape-rendering="geometricPrecision">${E(0,0)}${E(n-7,0)}${E(0,n-7)}${L}</g></svg>`;
 }
 const fmtCode = c => c.replace(/^EB/,'EB-');
@@ -984,18 +989,15 @@ function stickerHTML(type, variant, code, u=3){
   if (type==='ss') return `<div class="stk ss v-${variant}" ${st}><div class="s-logo">${logo()}</div><div class="mid"><b>${need} <em>${scanTxt}</em></b><small>${T('بدون اتصال · بدون كشف رقم الهاتف','No calls · No phone number shared','بێ پەیوەندیی تەلەفۆنی · ژمارەکەت ئاشکرا ناکرێت')} · eblagh.iq</small></div>${q}</div>`;
   if (type==='cf') return `<div class="stk sc2 front v-${variant}" ${st}><div class="s-logo">${logo()}</div><div class="s-tag">${T('ملصقك جاهز — فعّله بدقيقة','Your sticker is ready — activate it in a minute','ستیکەرەکەت ئامادەیە — لە خولەکێکدا چالاکی بکە')}</div>${code$}<div class="s-secret"><small>${T('الرمز السري للتفعيل','Secret activation code','کۆدی نهێنیی چالاککردن')}</small><b>${secretOf(code)}</b></div></div>`;
   if (type==='cb') return `<div class="stk sc2 back" ${st}><div><h4>${T('شلون تفعّل ملصقك؟','How to activate your sticker','چۆن ستیکەرەکەت چالاک دەکەیت؟')}</h4><ol><li><i>1</i>${T('حمّل تطبيق إبلاغ','Download the Eblagh app','ئەپی ئیبلاغ دابگرە')}</li><li><i>2</i>${T('سجّل برقم هاتفك','Sign up with your phone number','بە ژمارەی تەلەفۆنەکەت خۆت تۆمار بکە')}</li><li><i>3</i>${T('امسح الملصق واختار سيارتك','Scan the sticker and pick your car','ستیکەرەکە سکان بکە و ئۆتۆمبێلەکەت هەڵبژێرە')}</li><li><i>4</i>${T('الصقه على الزجاج من برّه','Stick it on the outside of the glass','لە دەرەوەی شووشەکە بیلکێنە')}</li></ol></div><div class="bq"><div class="s-qr">${qrSVG('APP',{logo:false})}</div><small>${T('امسح للتحميل','Scan to download','سکان بکە بۆ داگرتن')}</small></div></div>`;
-  if (type==='ev' || type==='eh'){
-    const h = `<b class="e-h"><span>${T('تحتـاج توصـل','Need to reach','پێویستە بگەیتە')}</span><span>${T('لصاحـب السيـارة؟','the car owner?','خاوەنی ئۆتۆمبێل؟')}</span></b>`;
-    const band = `<div class="e-band"><span>${T('صوّر الرمز وبلّغـه','Scan the code & notify','کۆدەکە سکان بکە و ئاگاداری بکەرەوە')}</span></div>`;
+  if (type==='ev' || type==='eh' || type==='er'){
+    const h = `<b class="e-h"><span>${T('تحتــاج توصــل','Need to reach','پێویستە بگەیتە')}</span><span>${T('لصاحــب السيــارة؟','the car owner?','خاوەنی ئۆتۆمبێل؟')}</span></b>`;
+    const band = `<div class="e-band"><span>${T('سوّي سكان للكـــــود وبلّـغ','Scan the code & notify','کۆدەکە سکان بکە')}</span></div>`;
     const qr = `<div class="e-qr">${qrEyes(code)}</div>`;
-    const note = `<div class="e-note"><span>${T('الكاميرا ما تشتغل؟ افتح الرابط اللي جوّه','Camera not working? Open the link below','کامێرا کار ناکات؟ بەستەرەکەی خوارەوە بکەرەوە')}</span></div>`;
-    const strip = `<div class="e-strip">${logo()}<span class="e-url"><small>eblagh.iq/r/</small><b>${fmtCode(code)}</b></span></div>`;
-    return type==='ev'
-      ? `<div class="stk ev v-${variant}" ${st}><div class="e-main">${h}${band}${qr}${note}</div>${strip}</div>`
-      : `<div class="stk eh v-${variant}" ${st}><div class="e-main"><div class="e-txt">${h}${band}${note}</div>${qr}</div>${strip}</div>`;
-  }
-  if (type==='er'){
-    return `<div class="stk er v-${variant}" ${st}><b class="e-h"><span>${T('تحتـاج توصـل','Need to reach','پێویستە بگەیتە')}</span><span>${T('لصاحـب السيـارة؟','the car owner?','خاوەنی ئۆتۆمبێل؟')}</span></b><div class="e-band"><span>${T('صوّر الرمز وبلّغـه','Scan & notify','سکان بکە و ئاگادار بکەرەوە')}</span></div><div class="e-qr">${qrEyes(code)}</div><div class="e-strip">${logo()}<span class="e-url"><small>eblagh.iq/r/</small><b>${fmtCode(code)}</b></span></div></div>`;
+    const note = `<div class="e-note"><span>${T('الكاميرا ما تشتغل؟ ادخل على الرابط اللي جوّه','Camera not working? Open the link below','کامێرا کار ناکات؟ بەستەرەکە بکەرەوە')}</span></div>`;
+    const foot = `<div class="e-foot"><span class="e-url"><small>eblagh.iq/r/</small><b>${fmtCode(code)}</b></span><i></i>${logo()}</div>`;
+    if (type==='ev') return `<div class="stk ev v-${variant}" ${st}>${foot}<div class="e-card">${h}${band}${qr}${note}</div></div>`;
+    if (type==='eh') return `<div class="stk eh v-${variant}" ${st}>${foot}<div class="e-card"><div class="e-txt">${h}${band}${note}</div>${qr}</div></div>`;
+    return `<div class="stk er v-${variant}" ${st}>${h}${band}${qr}${foot}</div>`;
   }
   return '';
 }
@@ -1050,6 +1052,10 @@ function paintStickers(){
   const hw = $('#stkBtn').getBoundingClientRect().width || 232;
   $('#heroArt').innerHTML = fit('ev', 'white', 'EB4471', hw);
   $('#camArt').innerHTML = fit('ev', 'black', 'EB4471', 85);
+  /* lock the scan frame onto the QR panel (offsets ignore the -2deg tilt) */
+  const q = $('#camArt .e-qr'), tg = $('.hx-cam__target');
+  if (q){ let x = 0, y = 0, e = q; while (e && e !== tg){ x += e.offsetLeft; y += e.offsetTop; e = e.offsetParent; }
+    const pad = 6, k = $('.hx-cam__corners'); Object.assign(k.style, {left:(x-pad)+'px', top:(y-pad)+'px', width:(q.offsetWidth+pad*2)+'px', height:(q.offsetHeight+pad*2)+'px'}); }
   const tw = Math.max(88, Math.min(176, (innerWidth - 80) / 3.25));
   $('#trio').innerHTML = [['white','أبيض'],['black','أسود'],['yellow','أصفر']].map(([k,t]) => `<figure class="hx-duo__item hx-duo__item--${k}"><span class="hx-duo__art">${fit('ev', k, 'EB4471', tw)}</span><figcaption>${t}</figcaption></figure>`).join('');
   const fw = innerWidth >= 640 ? 104 : 84;

@@ -598,7 +598,7 @@ const SHAPES = [['v','طولي'],['r','دائري']];
 const shapeIc = k => k === 'v' ? '<svg viewBox="0 0 14 16" aria-hidden="true"><rect x="3" y="1" width="8" height="14" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>' : '<svg viewBox="0 0 14 16" aria-hidden="true"><circle cx="7" cy="8" r="5.6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>';
 const shapeName = () => S.shape === 'r' ? 'دائري' : 'طولي';
 // one place decides which sticker art is shown: vertical scan card (ev) or round (er), sized to match
-const stk = (variant, code, u) => stickerHTML(S.shape === 'r' ? 'er' : 'ev', variant, code, u * (S.shape === 'r' ? 1.22 : 1.12));
+const stk = (variant, code, u) => stickerHTML(S.shape === 'r' ? 'er' : 'ev', variant, code, u * (S.shape === 'r' ? 1.22 : 1));
 try { const q = new URLSearchParams(location.search).get('shape'); if (q === 'round' || q === 'r') S.shape = 'r'; } catch(e){}
 function setShape(k){ if (!k || k === S.shape) return; S.shape = k; renderSticker(true); if (typeof renderP1 === 'function' && $('#p1').innerHTML) { renderP1(); } if (S.step === 2 && typeof renderP2 === 'function') renderP2(); }
 function renderSticker(swap){

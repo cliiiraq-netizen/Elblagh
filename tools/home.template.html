@@ -120,7 +120,7 @@ svg{flex:none}
 .hxd__rings i{position:absolute;inset:0;border-radius:50%;background:radial-gradient(closest-side,rgba(255,200,22,.15),transparent);border:1px solid rgba(255,255,255,.07)}
 .hxd__rings i:nth-child(2){background:none;border-color:rgba(255,255,255,.09);inset:16%}
 .hxd__rings i:nth-child(3){background:none;border-color:rgba(255,200,22,.25);inset:32%}
-.hxd__sticker{cursor:pointer;perspective:900px;transform-origin:50% 100%;width:min(68vw,16.5rem);position:relative;transition:transform .9s cubic-bezier(.22,1,.36,1)}
+.hxd__sticker{cursor:pointer;perspective:900px;transform-origin:50% 100%;width:min(60vw,14.5rem);position:relative;transition:transform .9s cubic-bezier(.22,1,.36,1)}
 .hxd__stage.is-alert .hxd__sticker{transform:translateY(.5rem) scale(.82)}
 .hxd__sticker:focus-visible{outline:2px solid rgba(255,200,22,.7);outline-offset:6px;border-radius:1.25rem}
 .hxd__float{display:block;position:relative;transform:rotateX(var(--tx)) rotateY(var(--ty));transition:transform .4s var(--hx-ease);filter:drop-shadow(0 40px 50px rgba(0,0,0,.6)) drop-shadow(0 0 60px rgba(255,200,22,.16));animation:hx-float 6s ease-in-out infinite}
@@ -175,8 +175,8 @@ svg{flex:none}
 .hx-cam__target{width:43%;position:relative;transform:rotate(-2deg)}
 .hx-cam__sticker{line-height:0;box-shadow:0 20px 30px rgba(0,0,0,.45);border-radius:.55rem}
 .hx-cam__sticker .stk{display:block}
-.hx-cam__corners{position:absolute;top:25%;left:-6%;right:-6%;height:50%;animation:hx-lock 2.8s var(--hx-ease) infinite}
-.hx-cam__corners i{position:absolute;width:18px;height:18px;border:3px solid #FFC816}
+.hx-cam__corners{position:absolute;top:31%;left:-4%;width:108%;height:52%;animation:hx-lock 2.8s var(--hx-ease) infinite}
+.hx-cam__corners i{position:absolute;width:15px;height:15px;border:3px solid #FFC816}
 .hx-cam__corners i:nth-child(1){top:0;left:0;border-right:0;border-bottom:0;border-top-left-radius:6px}
 .hx-cam__corners i:nth-child(2){top:0;right:0;border-left:0;border-bottom:0;border-top-right-radius:6px}
 .hx-cam__corners i:nth-child(3){bottom:0;left:0;border-right:0;border-top:0;border-bottom-left-radius:6px}
@@ -278,7 +278,7 @@ svg{flex:none}
 .hx-bridge__mark{width:3.75rem;height:3.75rem;border-radius:50%;background:var(--cta);display:grid;place-items:center;color:#111;filter:drop-shadow(0 0 22px rgba(255,200,22,.5))}
 .hx-bridge__mark svg.mk{width:2.5rem;height:auto}
 .hx-bridge__wire{flex:1;height:1px;margin-bottom:1.6rem;position:relative;background:rgba(255,255,255,.18)}
-.hx-bridge__wire i{position:absolute;top:-2px;width:5px;height:5px;border-radius:50%;background:var(--hx-accent);box-shadow:0 0 10px var(--hx-accent);animation:hx-travel 2.4s linear infinite}
+.hx-bridge__wire i{position:absolute;top:-2px;right:0;width:5px;height:5px;border-radius:50%;background:var(--hx-accent);box-shadow:0 0 10px var(--hx-accent);-webkit-animation:hx-travel 2.4s linear infinite;animation:hx-travel 2.4s linear infinite}
 .hx-bridge__wire.w2 i{animation-delay:1.2s}
 .hx-masked{position:relative;display:flex;flex-direction:column;gap:.6rem;padding:1.5rem;border-radius:var(--hx-radius);background:linear-gradient(rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1)}
 .hx-masked__label{color:rgba(255,255,255,.55);font-size:.8125rem}
@@ -292,7 +292,8 @@ svg{flex:none}
 .hx-facts li>span:first-child{grid-area:icon;margin-top:.15rem;color:#FFC816;display:inline-flex}
 .hx-facts b{grid-area:tag;justify-self:start;font-size:1rem;font-weight:700}
 .hx-facts li>span:last-child{grid-area:copy;color:rgba(255,255,255,.6);font-size:.875rem}
-@keyframes hx-travel{0%{inset-inline-start:0}100%{inset-inline-start:calc(100% - 5px)}}
+@-webkit-keyframes hx-travel{0%{right:0}100%{right:calc(100% - 5px)}}
+@keyframes hx-travel{0%{right:0}100%{right:calc(100% - 5px)}}
 @keyframes hx-blink{0%,100%{opacity:1}50%{opacity:.35}}
 
 /* ---------- timeline ---------- */
@@ -446,7 +447,7 @@ svg{flex:none}
   .login-btn{display:inline-flex}
   .hx-hero{padding-top:3rem}
   .hx-hero__grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3.5rem}
-  .hxd__sticker{width:16.5rem}
+  .hxd__sticker{width:15.5rem}
   .hxd__stage{width:min(100%,24rem)}
   .hx-hero__copy{text-align:start;align-items:flex-start}
   .hx-display{font-size:clamp(2.75rem,3.9vw,4.25rem)}
@@ -650,7 +651,7 @@ svg{flex:none}
       </header>
       <div class="hx-duo rv" id="trio"></div>
       <ul class="hx-specs">
-        <li><b class="hx-latin" dir="ltr">6 × 10.4 cm</b><span>مقاس يناسب أي زجاج</span></li>
+        <li><b class="hx-latin" dir="ltr">6 × 12 cm</b><span>مقاس يناسب أي زجاج</span></li>
         <li><b>QR + رابط</b><span>رابط احتياطي إذا الكاميرا ما تشتغل</span></li>
         <li><b>ملصق واحد</b><span>ينربط بسيارتك بدقيقة</span></li>
       </ul>
@@ -693,7 +694,7 @@ svg{flex:none}
   <section class="hx-final" aria-labelledby="hx-final-title">
     <div class="shell hx-final__inner">
       <div class="hx-final__stickers rv" id="finalArt" aria-hidden="true"></div>
-      <h2 class="hx-title hx-title--xl rv" id="hx-final-title"><span>خلّي الناس</span><span class="hx-title__soft">تگدر توصلك</span></h2>
+      <h2 class="hx-title hx-title--xl rv" id="hx-final-title"><span>خلّي الناس</span> <span class="hx-title__soft">تگدر توصلك</span></h2>
       <a class="hx-btn hx-btn--primary hx-btn--lg rv" href="order.html">جـــرّب إبلاغ <span data-ic="arrowL"></span></a>
     </div>
   </section>
@@ -783,6 +784,10 @@ function paintStickers(){
   const hw = $('#stkBtn').getBoundingClientRect().width || 232;
   $('#heroArt').innerHTML = fit('ev', 'white', 'EB4471', hw);
   $('#camArt').innerHTML = fit('ev', 'black', 'EB4471', 85);
+  /* lock the scan frame onto the QR panel (offsets ignore the -2deg tilt) */
+  const q = $('#camArt .e-qr'), tg = $('.hx-cam__target');
+  if (q){ let x = 0, y = 0, e = q; while (e && e !== tg){ x += e.offsetLeft; y += e.offsetTop; e = e.offsetParent; }
+    const pad = 6, k = $('.hx-cam__corners'); Object.assign(k.style, {left:(x-pad)+'px', top:(y-pad)+'px', width:(q.offsetWidth+pad*2)+'px', height:(q.offsetHeight+pad*2)+'px'}); }
   const tw = Math.max(88, Math.min(176, (innerWidth - 80) / 3.25));
   $('#trio').innerHTML = [['white','أبيض'],['black','أسود'],['yellow','أصفر']].map(([k,t]) => `<figure class="hx-duo__item hx-duo__item--${k}"><span class="hx-duo__art">${fit('ev', k, 'EB4471', tw)}</span><figcaption>${t}</figcaption></figure>`).join('');
   const fw = innerWidth >= 640 ? 104 : 84;
