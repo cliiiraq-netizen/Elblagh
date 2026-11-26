@@ -72,9 +72,10 @@ svg{display:block}
 .brand b{display:block;font-size:17px;line-height:1.2}
 .brand small{color:var(--ink2);font-size:12.5px}
 .seg{display:flex;background:var(--surface2);border:1px solid var(--line);border-radius:14px;padding:4px;gap:2px;overflow-x:auto;scrollbar-width:none}
-.seg button{display:flex;align-items:center;gap:7px;padding:8px 13px;border-radius:10px;color:var(--ink2);font-size:13.5px;font-weight:600;white-space:nowrap;transition:background .2s,color .2s}
+.seg button{display:flex;align-items:center;gap:6px;padding:8px 11px;border-radius:10px;color:var(--ink2);font-size:13.5px;font-weight:600;white-space:nowrap;transition:background .2s,color .2s}
 .seg button .ic{width:17px;height:17px}
 .seg button[aria-pressed="true"]{background:var(--y);color:#111}
+@media (max-width:1560px){.seg button .ic{display:none}.seg button{padding:8px 10px}}
 .tools{display:flex;align-items:center;gap:8px}
 .tbtn{height:40px;min-width:40px;padding:0 10px;border-radius:12px;background:var(--surface2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;gap:6px;color:var(--ink2);font-size:13px}
 .tbtn:hover{color:var(--ink)}
@@ -858,6 +859,176 @@ select.inp{cursor:pointer}
 .steps2 .ic{width:18px;height:18px;color:var(--ytext);flex:none}
 .steps2 b{display:block;font-size:13.5px}
 .steps2 small{display:block;font-size:11.5px;color:var(--ink3)}
+
+/* ============ Added features: errors, activation, notes, referral, booking, business, admin ============ */
+.inact.err{padding:30px 22px 6px}
+.inact.err.bad .st-ring{background:var(--bads);color:var(--bad)}
+.inact.err.warn .st-ring{background:var(--warns);color:var(--warn)}
+.err-own{width:100%;display:flex;gap:10px;text-align:start;padding:12px 14px;border-radius:15px;background:var(--surface2);font-size:12.5px;color:var(--ink2);margin-bottom:14px}
+.err-own .ic{width:18px;height:18px;flex:none;color:var(--ytext);margin-top:2px}
+.err-own b{display:block;color:var(--ink);font-size:13.5px}
+.err-emg{display:flex;gap:8px;align-items:flex-start;text-align:start;font-size:12px;color:var(--ink3);margin:14px 0 0}
+.err-emg .ic{width:15px;height:15px;flex:none;margin-top:2px}
+.err-small{font-size:12px;color:var(--ink3);margin:10px 0 0}
+.err-msg{width:100%;text-align:start;padding:11px 13px;border-radius:14px;background:var(--surface2);font-size:13px;color:var(--ink2);margin-bottom:14px}
+.adpromo{margin:16px 18px 0;padding:14px;border-radius:20px;background:#111;color:#fff;display:flex;gap:12px;align-items:center}
+.adpromo .pst{width:48px;flex:none}
+.adpromo b{display:block;font-size:14px;line-height:1.35}
+.adpromo small{display:block;font-size:11.5px;opacity:.72;margin:2px 0 8px}
+.adline{margin:18px 18px 0;width:calc(100% - 36px);display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:15px;border:1px dashed var(--yline);background:var(--ysoft);color:var(--ytext);font-size:12.5px;font-weight:700;text-align:start}
+.adline span{flex:1}
+.adline .ic{width:17px;height:17px;flex:none}
+.promo-code{font-size:12px;margin:-4px 0 8px;opacity:.9}
+.promo-code b{color:#FFC816}
+.onote{margin:12px 18px 0;padding:13px 14px;border-radius:18px;background:var(--surface);border:1.5px solid var(--yline);display:flex;gap:11px;align-items:flex-start}
+.onote>.ic{width:36px;height:36px;padding:8px;border-radius:11px;background:var(--y);color:#111;flex:none}
+.onote small{display:block;font-size:11.5px;color:var(--ink3);font-weight:600}
+.onote b{display:block;font-size:15px;line-height:1.4;margin:2px 0}
+.onote em{font-style:normal;font-size:11.5px;color:var(--ytext);font-weight:700}
+.onote-sub{margin:8px 20px 0;font-size:12px;color:var(--ink3)}
+.note-ed{margin:0 18px;padding:14px;border-radius:20px;background:var(--surface);border:1px solid var(--line)}
+.note-ed .phr{padding:0 0 10px;flex-wrap:wrap}
+.note-ed .inp{height:46px;font-size:14px}
+.note-hint{margin:10px 2px 0;font-size:11.5px;color:var(--ink3)}
+.linkb{display:block;margin:12px auto 0;font-size:12.5px;color:var(--ytext);font-weight:700;text-align:center}
+.card-prev{display:flex;gap:12px;align-items:center;padding:12px;border-radius:18px;background:var(--surface2);margin-bottom:14px;font-size:12px;color:var(--ink2);line-height:1.5}
+.card-prev .stk{flex:none}
+.stk .s-secret{margin-top:2.2em;display:flex;align-items:center;gap:2em;padding:1.2em 2.8em;border-radius:2em;background:#111;color:#fff;border:.3em dashed #FFC816}
+.stk .s-secret small{font-size:2.3em;font-weight:700;opacity:.8}
+.stk .s-secret b{font-size:3.6em;letter-spacing:.14em;font-family:-apple-system,system-ui,sans-serif;direction:ltr}
+.stk.sc2.front .s-code{margin-top:1.6em}
+.refc{margin:0 18px;padding:14px;border-radius:20px;background:var(--surface);border:1px solid var(--line)}
+.refc-top{display:flex;gap:11px;align-items:flex-start;margin-bottom:12px}
+.refc-top .lic{width:38px;height:38px;border-radius:12px;background:var(--ysoft);color:var(--ytext);display:grid;place-items:center;flex:none}
+.refc-top .lic .ic{width:20px;height:20px}
+.refc-top b{display:block;font-size:14px;line-height:1.35}
+.refc-top small{display:block;font-size:12px;color:var(--ink3)}
+.refcode{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 14px;border-radius:14px;border:1.5px dashed var(--yline);background:var(--ysoft);margin-bottom:12px}
+.refcode span{font-family:-apple-system,system-ui,sans-serif;font-weight:800;font-size:17px;letter-spacing:.12em}
+.refcode button{height:34px;padding:0 14px;border-radius:10px;background:var(--y);color:#111;font-weight:700;font-size:13px}
+.refstats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;text-align:center}
+.refstats div{padding:8px;border-radius:12px;background:var(--surface2)}
+.refstats b{display:block;font-size:18px}
+.refstats small{font-size:11px;color:var(--ink3)}
+.refin{display:flex;gap:8px}
+.refin button{flex:none;padding:0 16px;border-radius:15px;background:var(--surface2);border:1.5px solid var(--line);font-weight:700;font-size:13.5px}
+.okline,.errline{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;margin-top:6px}
+.okline{color:var(--ok)}
+.errline{color:var(--bad)}
+.okline .ic,.errline .ic{width:16px;height:16px;flex:none}
+/* booking */
+.bk-hero{margin:0 18px;padding:18px;border-radius:24px;background:linear-gradient(140deg,var(--y),#FFB800);color:#111}
+.bk-hero small{font-size:12px;font-weight:800;opacity:.7}
+.bk-hero h2{margin:4px 0 6px;font-size:21px;line-height:1.3}
+.bk-hero p{margin:0 0 14px;font-size:13px;opacity:.8}
+.bk-prog{background:rgba(17,17,17,.9);color:#fff;border-radius:16px;padding:12px}
+.bk-prog div{font-size:13px}
+.bk-prog div b{font-size:20px;color:#FFC816}
+.bk-prog span{display:block;height:8px;border-radius:8px;background:rgba(255,255,255,.15);margin:8px 0 6px;overflow:hidden}
+.bk-prog span i{display:block;height:100%;background:#FFC816;border-radius:8px}
+.bk-prog small{font-size:11.5px;opacity:.7}
+.bk-how{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 18px 0}
+.bk-how div{padding:11px 8px;border-radius:15px;background:var(--surface);border:1px solid var(--line);text-align:center;font-size:11.5px;color:var(--ink2);font-weight:600;display:flex;flex-direction:column;align-items:center;gap:6px;line-height:1.35}
+.bk-how .ic{width:20px;height:20px;color:var(--ytext)}
+.bk-opts{display:flex;flex-direction:column;gap:8px;margin:0 18px}
+.bk-opts button{display:flex;align-items:center;gap:11px;padding:12px 14px;border-radius:16px;background:var(--surface);border:1.5px solid var(--line);text-align:start}
+.bk-opts button.on{border-color:var(--y);background:var(--ysoft)}
+.bk-opts .radio{width:22px;height:22px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;flex:none}
+.bk-opts .on .radio{background:var(--y);border-color:var(--y);color:#111}
+.bk-opts .radio .ic{width:13px;height:13px}
+.bk-opts .lt{flex:1;min-width:0}
+.bk-opts .lt b{display:block;font-size:14px}
+.bk-opts .lt small{display:block;font-size:11.5px;color:var(--ink3)}
+.bk-opts .pr{font-size:13px;white-space:nowrap}
+.bk-pos{display:block;font-size:44px;font-family:var(--fh);color:var(--ytext);line-height:1.1}
+.bk-goal .row2{display:flex;align-items:baseline;gap:6px;margin-top:12px}
+.bk-goal .row2 b{font-size:28px;font-family:var(--fh)}
+.bk-goal .row2 small{color:var(--ink3)}
+.bar{display:block;height:9px;border-radius:9px;background:var(--surface3);overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;background:var(--y);border-radius:9px}
+.mstats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.mstats div{padding:10px 6px;border-radius:12px;background:var(--surface2);text-align:center}
+.mstats b{display:block;font-size:18px}
+.mstats small{font-size:11.5px;color:var(--ink3)}
+/* business */
+.biz-top{display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;margin-bottom:18px}
+.biz-top .mini-seg{background:var(--surface);border:1px solid var(--line)}
+.biz-top .mini-seg button[aria-pressed="true"]{background:var(--y);color:#111}
+.bplans{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px}
+.bplan{position:relative;padding:20px;border-radius:24px;background:var(--surface);border:1.5px solid var(--line);display:flex;flex-direction:column}
+.bplan.pop{border-color:var(--yline)}
+.bplan.on{border-color:var(--y);box-shadow:0 0 0 3px var(--ysoft)}
+.bplan .pop{position:absolute;top:-11px;inset-inline-start:18px;background:var(--y);color:#111;font-size:11px;font-weight:800;padding:3px 10px;border-radius:99px}
+.bplan .bic{width:46px;height:46px;border-radius:14px;background:var(--ysoft);color:var(--ytext);display:grid;place-items:center;margin-bottom:12px}
+.bplan .bic .ic{width:24px;height:24px}
+.bplan h3{margin:0;font-size:18px}
+.bplan p{margin:4px 0 12px;font-size:13px;color:var(--ink2)}
+.bprice{font-size:22px;font-weight:800;font-family:var(--fh);margin-bottom:12px}
+.bprice small{display:block;font-size:12px;color:var(--ink3);font-weight:600;font-family:var(--fb)}
+.bplan ul{list-style:none;margin:0 0 16px;padding:0;display:flex;flex-direction:column;gap:8px;flex:1}
+.bplan li{display:flex;gap:8px;font-size:13px;color:var(--ink2)}
+.bplan li .ic{width:17px;height:17px;color:var(--ok);flex:none;margin-top:2px}
+.bgrid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.bgrid2 .panel{background:var(--surface)}
+.bform{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.bform .inp{height:46px;font-size:14px}
+.bnote{font-size:12px;color:var(--ink3);margin:12px 0 0}
+.bdash{background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:22px;box-shadow:var(--shadow-s)}
+.bdash-h{display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap}
+.bdash-h .bic{width:46px;height:46px;border-radius:14px;background:#111;color:#FFC816;display:grid;place-items:center;flex:none}
+.bdash-h .bic .ic{width:24px;height:24px}
+.bdash-h b{display:block;font-size:18px}
+.bdash-h small{color:var(--ink3);font-size:12.5px}
+.bdash-h .acts3{margin-inline-start:auto;display:flex;gap:6px;flex-wrap:wrap}
+.route{display:flex;flex-direction:column;gap:8px}
+.route button{display:flex;gap:10px;align-items:center;padding:11px 12px;border-radius:14px;border:1.5px solid var(--line);background:var(--surface);text-align:start;font-size:13px}
+.route button.on{border-color:var(--y);background:var(--ysoft)}
+.route .radio{width:20px;height:20px;border-radius:50%;border:2px solid var(--line);flex:none;display:grid;place-items:center}
+.route .on .radio{border-color:var(--y);background:var(--y);color:#111}
+.route .radio .ic{width:12px;height:12px}
+.brep{display:flex;gap:10px;align-items:center;padding:10px 0;border-top:1px solid var(--line);font-size:13px}
+.brep:first-of-type{border-top:0}
+.brep .ri2{width:32px;height:32px;border-radius:10px;background:var(--surface2);display:grid;place-items:center;flex:none}
+.brep .ri2 .ic{width:16px;height:16px}
+.brep .lt{flex:1;min-width:0}
+.brep b{display:block}
+.brep small{display:block;color:var(--ink3);font-size:11.5px}
+/* admin additions */
+.ofilt{margin-bottom:14px;flex-wrap:wrap;width:fit-content;max-width:100%}
+.ofilt small{font-size:11px;color:var(--ink3);margin-inline-start:2px}
+.tbl small.sub{display:block;color:var(--ink3);font-size:11px}
+.tbl tr.live td{background:var(--ysoft)}
+.adm-tip{display:flex;gap:8px;align-items:center;font-size:12.5px;color:var(--ink3);margin:12px 2px 0}
+.adm-tip .ic{width:16px;height:16px;flex:none}
+.sbar{display:flex;width:140px;height:8px;border-radius:8px;background:var(--surface3);overflow:hidden;margin-bottom:4px}
+.sbar i{display:block;height:100%}
+.tbl .sbar+small{font-size:11px;color:var(--ink3)}
+.lg{display:inline-flex;align-items:center;gap:4px;margin-inline-start:10px}
+.lg i{width:9px;height:9px;border-radius:3px;display:inline-block}
+.stages{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:14px}
+.stages div{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;font-size:12px;color:var(--ink3)}
+.stages div::before{content:"";position:absolute;top:14px;inset-inline-start:calc(50% + 18px);width:calc(100% - 30px);height:2px;background:var(--surface3)}
+.stages div:last-child::before{display:none}
+.stages div.done::before{background:var(--ok)}
+.stages i{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--surface2);border:2px solid var(--line);font-style:normal;font-weight:700;font-size:12px;color:var(--ink3);position:relative;z-index:1}
+.stages i .ic{width:14px;height:14px}
+.stages .done i{background:var(--ok);border-color:var(--ok);color:#fff}
+.stages .now i{background:var(--y);border-color:var(--y);color:#111}
+.stages b{font-size:12.5px;color:var(--ink)}
+.bfun{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:14px}
+.bfun div{padding:10px 12px;border-radius:14px;background:var(--surface);border:1px solid var(--line)}
+.bfun small{display:block;font-size:11.5px;color:var(--ink3)}
+.bfun b{display:block;font-size:20px;font-family:var(--fh)}
+.bfun em{font-style:normal;font-size:11.5px;color:var(--ink3)}
+.codes .pill{font-size:10.5px}
+.funnel{display:flex;flex-direction:column;gap:12px}
+.funnel div{display:grid;grid-template-columns:70px 1fr 56px 36px;gap:10px;align-items:center;font-size:12.5px;color:var(--ink2)}
+.funnel .tr{height:22px;border-radius:7px;background:var(--surface3);overflow:hidden}
+.funnel .tr i{display:block;height:100%;background:var(--y);border-radius:7px}
+.funnel b{text-align:end;color:var(--ink)}
+.funnel small{color:var(--ink3);font-size:11.5px}
+@media (max-width:1180px){.bplans{grid-template-columns:1fr 1fr}.bgrid2{grid-template-columns:1fr}.bfun{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:760px){.bplans{grid-template-columns:1fr}.bform{grid-template-columns:1fr}.stages{grid-template-columns:repeat(5,minmax(56px,1fr));overflow-x:auto}.stages b{font-size:11px}.bfun{grid-template-columns:1fr 1fr}.funnel div{grid-template-columns:60px 1fr 48px}.funnel small{display:none}.bdash{padding:14px}.sbar{width:90px}}
 </style>
 </head>
 <body>
@@ -932,6 +1103,17 @@ select.inp{cursor:pointer}
     <div class="stk-tools" id="stkTools"></div>
     <div class="stk-grid" id="stkGrid"></div>
     <div class="print-note" id="printNote"></div>
+  </section>
+  <section class="view" id="v-booking">
+    <div class="intro" id="introB"></div>
+    <div class="single">
+      <div class="pcol"><div class="phone"><div class="scr" data-phone="b"></div></div><div class="chips" data-chips="b"></div></div>
+      <div class="notes" id="notesB"></div>
+    </div>
+  </section>
+  <section class="view" id="v-biz">
+    <div class="intro" id="introBiz"></div>
+    <div id="biz"></div>
   </section>
   <section class="view" id="v-admin">
     <div class="intro" id="introAd"></div>
@@ -1103,30 +1285,57 @@ const freshState = () => ({
   a: { authed:true, screen:'home', report:null, car:'EB4471', filter:'all', dnd:false, push:null, draft:'', langSheet:false,
        newCar:{model:'', color:'silver', plate:'58'}, store:{design:'sv-yellow', qty:1},
        settings:{sound:true, vibrate:true, urgentBypass:true, quiet:false},
-       onboarded:true, reg:{name:'', gov:'salahaddin', area:'', ref:''}, plan:'family', billing:'year', cart:{design:'sv-yellow', qty:1},
-       ship:{name:'', phone:'770 123 1290', gov:'', area:'', landmark:'', notes:'', slot:'any'}, pay:'cod', order:null },
+       onboarded:true, reg:{name:'', gov:'salahaddin', area:'', ref:'', code:''}, plan:'family', billing:'year', cart:{design:'sv-yellow', qty:1},
+       ship:{name:'', phone:'770 123 1290', gov:'', area:'', landmark:'', notes:'', slot:'any'}, pay:'cod', order:null,
+       act:{method:'scan', code:'', secret:'', err:null, tries:0, via:null, verified:null}, noteDur:60, noteDraft:'', refOk:false, refErr:false, refInv:3, refJoined:1, payFail:false },
   cars: [
-    {id:'EB4471', model:o3('تويوتا كامري','Toyota Camry','تۆیۆتا کامری'), color:'white', plate:'13', showModel:true, showColor:true, showPlate:true, paused:false, shared:[{n:'zainab', p:'0770 ••• 412'}], since:'2026-10-02'},
-    {id:'EB2208', model:o3('كيا سبورتاج','Kia Sportage','کیا سپۆرتەیج'), color:'grey', plate:'86', showModel:true, showColor:true, showPlate:false, paused:false, shared:[], since:'2026-10-19'},
+    {id:'EB4471', model:o3('تويوتا كامري','Toyota Camry','تۆیۆتا کامری'), color:'white', plate:'13', showModel:true, showColor:true, showPlate:true, paused:false, shared:[{n:'zainab', p:'0770 ••• 412'}], since:'2026-10-02', note:null},
+    {id:'EB2208', model:o3('كيا سبورتاج','Kia Sportage','کیا سپۆرتەیج'), color:'grey', plate:'86', showModel:true, showColor:true, showPlate:false, paused:false, shared:[], since:'2026-10-19', note:null},
   ],
   reports: [
     {id:'R-1042', car:'EB4471', reason:'lights', note:REASONS.lights.ph[0], photo:false, allowReply:true, t:T0-26*HR, status:'resolved', msgs:[{from:'owner', text:o3('شكراً هواية، هسّه أطفيه','Thanks a lot, turning them off now','زۆر سوپاس، ئێستا دەیانکوژێنمەوە'), t:T0-26*HR+4*MIN}], resp:4},
     {id:'R-1031', car:'EB2208', reason:'block', note:REASONS.block.ph[0], photo:false, allowReply:true, t:T0-3*DAY, status:'resolved', msgs:[{from:'owner', text:QUICK[1].t, t:T0-3*DAY+2*MIN, eta:5}], resp:2},
     {id:'R-1007', car:'EB4471', reason:'crash', note:o3('واحد ضرب سيارتك بالباب ومشى، صورت لوحته.','Someone hit your door and drove off, I took a photo of the plate.','کەسێک لە دەرگای ئۆتۆمبێلەکەتی دا و ڕۆیشت، وێنەی ژمارەکەیم گرت.'), photo:true, allowReply:true, t:T0-6*DAY, status:'resolved', msgs:[{from:'owner', text:o3('مشكور جداً، جاي هسّه','Thank you so much, coming now','زۆر سوپاس، ئێستا دێم'), t:T0-6*DAY+1*MIN, eta:2}], resp:1},
   ],
-  log: [], toast: {r:null, a:null}, blocked:0,
+  log: [], toast: {r:null, a:null, b:null}, blocked:0,
+  bk: {name:'', phone:'', gov:'baghdad', ref:'', kind:'basic', done:false, err:false, pos:0}, bookings:87, bkRef:9,
+  biz: {tab:'plans', type:'fleet', route:'driver', sent:false, err:false, q:{org:'', type:'fleet', n:'', phone:''},
+    veh:[
+      {id:'EB6101', m:o3('تويوتا كورولا','Toyota Corolla','تۆیۆتا کۆرۆلا'), d:0, st:'active', r:4, last:2*HR},
+      {id:'EB6102', m:o3('هيونداي سوناتا','Hyundai Sonata','هیوندای سۆناتا'), d:1, st:'active', r:7, last:35*MIN},
+      {id:'EB6103', m:o3('كيا سيراتو','Kia Cerato','کیا سێراتۆ'), d:2, st:'active', r:2, last:1*DAY},
+      {id:'EB6104', m:o3('تويوتا هايلكس','Toyota Hilux','تۆیۆتا هایلەکس'), d:null, st:'unassigned', r:0, last:null},
+      {id:'EB6105', m:o3('نيسان صني','Nissan Sunny','نیسان سەنی'), d:3, st:'paused', r:1, last:4*DAY},
+      {id:'EB6106', m:o3('شيفروليه ماليبو','Chevrolet Malibu','شێڤرۆلێت مالیبۆ'), d:0, st:'active', r:3, last:6*HR}],
+    units:[
+      {id:'EB7201', unit:'A-02', m:o3('كيا سبورتاج','Kia Sportage','کیا سپۆرتەیج'), st:'active', r:3, last:5*HR},
+      {id:'EB7202', unit:'A-11', m:o3('تويوتا كامري','Toyota Camry','تۆیۆتا کامری'), st:'active', r:1, last:2*DAY},
+      {id:'EB7203', unit:'B-04', m:o3('هيونداي توسان','Hyundai Tucson','هیوندای تووسان'), st:'active', r:6, last:50*MIN},
+      {id:'EB7204', unit:'B-09', m:o3('ميتسوبيشي باجيرو','Mitsubishi Pajero','میتسوبیشی پاجێرۆ'), st:'paused', r:0, last:null},
+      {id:'EB7205', unit:'C-17', m:o3('كيا كارنفال','Kia Carnival','کیا کارنیڤاڵ'), st:'active', r:2, last:3*HR},
+      {id:'EB7206', unit:'C-21', m:o3('تويوتا لاندكروزر','Toyota Land Cruiser','تۆیۆتا لاندکرۆزەر'), st:'inactive', r:0, last:null}]},
   stk: { variant:'yellow', cut:false, code:'EB4471' },
   adm: { tab:'overview', genQty:500, genDesign:'v-y', selBatch:'B-0014',
          batches:[
-           {id:'B-0014', qty:1000, design:'v-y', date:'2026-11-18', act:212, st:'printed', codes:['EB5001','EB5002','EB5003','EB5004','EB5005','EB5006']},
-           {id:'B-0013', qty:500, design:'h-b', date:'2026-11-02', act:388, st:'printed', codes:['EB5007','EB5008','EB5009','EB5010','EB5011','EB5012']},
-           {id:'B-0012', qty:500, design:'r-y', date:'2026-10-20', act:441, st:'distributed', codes:['EB4471','EB2208','EB5001','EB5003','EB5005','EB5007']},
+           {id:'B-0014', qty:1000, design:'v-y', date:'2026-11-18', printed:1000, sold:640, act:212, lost:3, st:'distributed', dates:{ready:'11-18', printing:'11-19', printed:'11-21', stock:'11-22', distributed:'11-23'}, codes:['EB5001','EB5002','EB5003','EB5004','EB5005','EB5006'], cst:['inactive','active','inactive','active','inactive','lost']},
+           {id:'B-0013', qty:500, design:'h-b', date:'2026-11-02', printed:500, sold:470, act:388, lost:6, st:'distributed', dates:{ready:'11-02', printing:'11-03', printed:'11-05', stock:'11-06', distributed:'11-07'}, codes:['EB5007','EB5008','EB5009','EB5010','EB5011','EB5012'], cst:['inactive','active','active','active','paused','active']},
+           {id:'B-0012', qty:500, design:'r-y', date:'2026-10-20', printed:500, sold:500, act:441, lost:9, st:'distributed', dates:{ready:'10-20', printing:'10-21', printed:'10-23', stock:'10-24', distributed:'10-25'}, codes:['EB4471','EB2208','EB4410','EB4415','EB4422','EB4430'], cst:['active','active','active','lost','active','inactive']},
          ],
          abuse:[
            {id:'A-77', who:o3('متصفح مجهول · 4 بلاغات خلال 3 دقائق','Anonymous browser · 4 reports in 3 minutes','وێبگەڕی نەناسراو · 4 ڕاپۆرت لە 3 خولەکدا'), car:'EB-3390', why:o3('تجاوز حدّ البلاغات','Report limit exceeded','سنووری ڕاپۆرت تێپەڕێنراوە'), t:12*MIN},
            {id:'A-76', who:o3('رسالة تحتوي ألفاظاً مسيئة','Message contains abusive language','نامەکە وشەی ناشیرینی تێدایە'), car:'EB-1184', why:o3('بلّغ عنها صاحب السيارة','Flagged by the car owner','خاوەنی ئۆتۆمبێل ڕاپۆرتی کردووە'), t:2*HR},
          ],
-         limits:{perHour:3, perDay:6, reminder:3, escalate:true}
+         limits:{perHour:3, perDay:6, reminder:3, escalate:true},
+         ofilter:'all',
+         orders:[
+           {id:'ORD-2290', name:o3('حسين علي','Hussein Ali','حوسێن عەلی'), gov:'baghdad', items:o3('عائلة سنوي · 3 ملصقات','Family yearly · 3 stickers','خێزان ساڵانە · 3 ستیکەر'), total:55000, pay:'cod', st:'new', t:T0-25*MIN},
+           {id:'ORD-2289', name:o3('نور الهدى','Noor Al-Huda','نوور هودا'), gov:'basra', items:o3('أساسي سنوي · ملصق','Basic yearly · 1 sticker','بنەڕەتی ساڵانە · 1 ستیکەر'), total:25000, pay:'zaincash', st:'new', t:T0-2*HR},
+           {id:'ORD-2286', name:o3('كرار جاسم','Karrar Jasim','کەڕار جاسم'), gov:'najaf', items:o3('عائلة شهري · 3 ملصقات','Family monthly · 3 stickers','خێزان مانگانە · 3 ستیکەر'), total:10000, pay:'qi', st:'preparing', t:T0-7*HR},
+           {id:'ORD-2283', name:o3('دلشاد عمر','Dilshad Omar','دڵشاد عومەر'), gov:'erbil', items:o3('أساسي شهري · 2 ملصق','Basic monthly · 2 stickers','بنەڕەتی مانگانە · 2 ستیکەر'), total:10000, pay:'cod', st:'shipped', t:T0-1*DAY},
+           {id:'ORD-2279', name:o3('سارة محمود','Sara Mahmoud','سارا مەحمود'), gov:'baghdad', items:o3('عائلة سنوي · 3 ملصقات','Family yearly · 3 stickers','خێزان ساڵانە · 3 ستیکەر'), total:55000, pay:'card', st:'delivered', t:T0-2*DAY},
+           {id:'ORD-2271', name:o3('مصطفى رعد','Mustafa Raad','مستەفا ڕەعد'), gov:'kirkuk', items:o3('أساسي سنوي · ملصق','Basic yearly · 1 sticker','بنەڕەتی ساڵانە · 1 ستیکەر'), total:25000, pay:'cod', st:'activated', t:T0-4*DAY},
+           {id:'ORD-2266', name:o3('زهراء فاضل','Zahraa Fadhil','زەهرا فازڵ'), gov:'babil', items:o3('أساسي شهري · ملصق','Basic monthly · 1 sticker','بنەڕەتی مانگانە · 1 ستیکەر'), total:7000, pay:'cod', st:'cancelled', t:T0-5*DAY},
+         ]
   },
 });
 let S = freshState();
@@ -1205,6 +1414,7 @@ function rLanding(){
       <div class="row"><div class="carbox">${I.car}</div><div><b>${esc(facts[0])}</b><small>${facts.slice(1).join(' · ') || T('معلومات السيارة مخفية','Car details hidden','زانیاریی ئۆتۆمبێل شاردراوەتەوە')}</small></div></div>
       <div class="hero-st"><span class="dot ${dnd?'warn':''}"></span>${dnd ? T('صاحب السيارة بوضع عدم الإزعاج — العاجل يوصله فوراً','The owner is on Do Not Disturb — urgent reports still get through','خاوەنەکەی لە دۆخی بێزارنەکردندایە — ڕاپۆرتی بەپەلە یەکسەر دەگات') : T('صاحب السيارة يستلم البلاغات هسّه','The car owner is receiving reports now','خاوەنی ئۆتۆمبێل ئێستا ڕاپۆرت وەردەگرێت')}</div>
     </div>
+    ${noteCard(car)}
     <h2 class="w-h h">${T('شنو صاير؟',"What's going on?",'چی ڕوویداوە؟')}</h2>
     <p class="w-sub">${T('اختار السبب وتوصل رسالتك لصاحب السيارة فوراً، بدون ما يشوف رقمك ولا تشوف رقمه.',"Pick a reason and your message reaches the owner instantly — they never see your number, and you never see theirs.",'هۆکارێک هەڵبژێرە و نامەکەت یەکسەر دەگاتە خاوەنی ئۆتۆمبێل — نە ئەو ژمارەی تۆ دەبینێت و نە تۆ ژمارەی ئەو.')}</p>
     <div class="reasons">${Object.entries(REASONS).filter(([k])=>k!=='inside').map(([k,v]) =>
@@ -1212,6 +1422,7 @@ function rLanding(){
       <button class="rsn urgent" data-act="r-reason" data-k="inside"><span class="ric">${I.heart}</span><span class="rt"><b>${rt('inside')}</b><small>${T('بلاغ عاجل يتجاوز وضع عدم الإزعاج','Urgent — bypasses Do Not Disturb','بەپەلە — دۆخی بێزارنەکردن تێدەپەڕێنێت')}</small></span></button>
     </div>
     <div class="trust"><div>${I.lock}${T('بخصوصية تامة','Full privacy','تایبەتمەندیی تەواو')}</div><div>${I.phoneOff}${T('بدون رقم هاتف','No phone number','بێ ژمارەی تەلەفۆن')}</div><div>${I.bolt}${T('سريع وآمن','Fast & secure','خێرا و پارێزراو')}</div></div>
+    <button class="adline" data-act="r-promo">${I.sticker}<span>${T('عجبتك الفكرة؟ احصل على ملصق لسيارتك','Like the idea? Get a sticker for your car','بیرۆکەکەت بەدڵە؟ ستیکەرێک بۆ ئۆتۆمبێلەکەت وەربگرە')}</span>${FWD()}</button>
     <p class="w-foot"><b>${BRAND()}</b> · ${T('ابتكار عراقي · ما نحفظ أي معلومة عنك','An Iraqi innovation · we store nothing about you','داهێنانێکی عێراقی · هیچ زانیارییەک دەربارەی تۆ هەڵناگرین')}</p>`;
 }
 function rInactive(){
@@ -1266,9 +1477,10 @@ function rStatus(){
       ${['delivered','seen','replied'].includes(st) && !rep.reminded && (waited > 7000 || st==='replied') ? `<button class="pbtn ghost" data-act="r-remind">${I.bell} ${st==='replied'?T('بعده ما وصل؟ أرسل تذكير','Still not here? Send a reminder','هێشتا نەگەیشتووە؟ بیرخستنەوە بنێرە'):T('ما ردّ؟ أرسل تذكير','No reply? Send a reminder','وەڵامی نەدایەوە؟ بیرخستنەوە بنێرە')}</button>` : ''}
       ${rep.reminded ? `<div class="mine" style="margin:0">${inl(I.check,'color:var(--ok)')} ${T('انرسل تذكير. التذكير مرة وحدة لكل بلاغ حتى ما ينزعج.','Reminder sent. Only one reminder per report, so nobody gets spammed.','بیرخستنەوە نێردرا. بۆ هەر ڕاپۆرتێک تەنها یەک بیرخستنەوە هەیە.')}</div>` : ''}
     </div>
+    ${['delivered','seen'].includes(st) ? adStrip() : ''}
     ${st==='resolved' ? `<p style="text-align:center;font-size:13px;color:var(--ink2);margin:20px 0 0">${T('شلون كانت التجربة؟','How was it?','ئەزموونەکە چۆن بوو؟')}</p>
       <div class="rate"><button class="${S.r.rated==='up'?'on':''}" data-act="r-rate" data-v="up" aria-label="${T('ممتازة','Great','نایاب')}">${I.thumb}</button><button class="dn ${S.r.rated==='dn'?'on':''}" data-act="r-rate" data-v="dn" aria-label="${T('سيئة','Bad','خراپ')}">${I.thumb}</button></div>
-      <div class="promo"><div class="pst">${stickerHTML('sv','yellow',S.r.car,0.72)}</div><div><b>${T('تريد ملصق لسيارتك؟','Want a sticker for your car?','ستیکەرێکت بۆ ئۆتۆمبێلەکەت دەوێت؟')}</b><small>${T('حمّل التطبيق وفعّل ملصقك بدقيقة.','Get the app and activate your sticker in a minute.','ئەپەکە دابگرە و لە خولەکێکدا ستیکەرەکەت چالاک بکە.')}</small><div class="stores"><span>${I.apple}App Store</span><span>${I.play}Google Play</span></div></div></div>
+      <div class="promo"><div class="pst">${stickerHTML('sv','yellow',S.r.car,0.72)}</div><div><b>${T('تريد ملصق لسيارتك؟','Want a sticker for your car?','ستیکەرێکت بۆ ئۆتۆمبێلەکەت دەوێت؟')}</b><small>${T('حمّل التطبيق وفعّل ملصقك بدقيقة.','Get the app and activate your sticker in a minute.','ئەپەکە دابگرە و لە خولەکێکدا ستیکەرەکەت چالاک بکە.')}</small><div class="promo-code">${T('خصم 2,000 د.ع بكود','2,000 IQD off with code','2,000 دینار داشکاندن بە کۆدی')} <b>${ltr('SCAN-2K')}</b></div><button class="tb-btn y" data-act="r-promo" style="margin-bottom:8px">${I.bag} ${T('احجز ملصقك','Book your sticker','ستیکەرەکەت حیجز بکە')}</button><div class="stores"><span>${I.apple}App Store</span><span>${I.play}Google Play</span></div></div></div>
       <div class="acts"><button class="pbtn ghost" data-act="r-new">${I.refresh} ${T('بلاغ جديد','New report','ڕاپۆرتی نوێ')}</button></div>` : ''}
     <div style="height:20px"></div>`;
 }
@@ -1276,7 +1488,7 @@ function renderReporter(scr){
   const r = S.r;
   let html;
   if (r.screen === 'camera') html = rCamera();
-  else html = browserChrome(r.screen==='compose' ? rCompose() : r.screen==='status' ? rStatus() : r.screen==='inactive' ? rInactive() : rLanding());
+  else html = browserChrome(r.screen==='compose' ? rCompose() : r.screen==='status' ? rStatus() : r.screen==='inactive' ? rInactive() : R_ERR.includes(r.screen) ? rErr(r.screen) : rLanding());
   scr.innerHTML = `<div class="island"></div>${html}${r.langMenu && r.screen!=='camera' ? langMenu('r-lang') : ''}${S.toast.r?`<div class="toast">${I.check}${esc(L(S.toast.r))}</div>`:''}<div class="homebar" style="${r.screen==='camera'?'background:#fff':''}"></div>`;
 }
 
@@ -1311,7 +1523,7 @@ function aHome(){
     <div class="hcars">${myCars().map(c=>`<button class="hcar" data-act="a-car" data-id="${c.id}"><span class="cic">${I.car}</span><span><b>${esc(carName(c))}</b><small>${fmtCode(c.id)}</small></span>${activeBadge(c)}</button>`).join('')}
       <button class="hcar add" data-act="a-go" data-s="addScan">${I.plus}${T('أضف سيارة','Add a car','ئۆتۆمبێل زیاد بکە')}</button></div>
     <div class="sec-t" style="margin-inline:18px">${T('إجراءات سريعة','Quick actions','کردارە خێراکان')}</div>
-    <div class="qa"><button data-act="a-go" data-s="buy">${I.bag}${T('اطلب ملصق','Order sticker','داواکردنی ستیکەر')}</button><button data-act="a-car" data-id="${(myCars()[0]||{}).id||''}">${I.share}${T('شارك سيارة','Share a car','هاوبەشکردنی ئۆتۆمبێل')}</button><button data-act="a-go" data-s="addScan">${I.scan}${T('فعّل ملصق','Activate sticker','چالاککردنی ستیکەر')}</button></div>
+    <div class="qa" style="grid-template-columns:repeat(4,1fr)"><button data-act="a-go" data-s="buy">${I.bag}${T('اطلب ملصق','Order sticker','داواکردنی ستیکەر')}</button><button data-act="a-car" data-id="${(myCars()[0]||{}).id||''}">${I.share}${T('شارك سيارة','Share a car','هاوبەشکردنی ئۆتۆمبێل')}</button><button data-act="a-go" data-s="addScan">${I.scan}${T('فعّل ملصق','Activate sticker','چالاککردنی ستیکەر')}</button><button data-act="a-car" data-id="${(myCars()[0]||{}).id||''}">${I.msg}${T('ملاحظة','Car note','تێبینی')}</button></div>
     <div class="how"><b>${T('شلون يشتغل إبلاغ؟','How does Eblagh work?','ئیبلاغ چۆن کار دەکات؟')}</b><ol><li>${T('تلصق الملصق على زجاج سيارتك','Put the sticker on your car window','ستیکەرەکە لەسەر شووشەی ئۆتۆمبێلەکەت بلکێنە')}</li><li>${T('أي شخص يمسحه بكاميرا تلفونه ويبلّغ من المتصفح','Anyone scans it with their phone camera and reports from the browser','هەر کەسێک بە کامێرای مۆبایلەکەی سکانی دەکات و لە وێبگەڕەوە ڕاپۆرت دەدات')}</li><li>${T('يوصلك إشعار هنا وترد بنقرة، ورقمك يبقى مخفي','You get notified here and reply in one tap — your number stays hidden','لێرە ئاگادار دەکرێیتەوە و بە یەک کرتە وەڵام دەدەیتەوە — ژمارەکەت شاراوە دەمێنێتەوە')}</li></ol></div>
     <div style="height:18px"></div></div>`;
 }
@@ -1357,6 +1569,7 @@ function aCar(){
   const names = c.shared.map(s=>L(NAMES[s.n]));
   return aHead(T('تفاصيل السيارة','Car details','وردەکاریی ئۆتۆمبێل'), 'cars') + `<div class="body">
     <div class="cd-hero"><div>${stickerHTML('sv','yellow',c.id,0.9)}</div><div class="lt"><b>${esc(carName(c))}</b><small>${ltr(fmtCode(c.id))} · ${T('منذ','since','لە')} ${ltr(c.since)}</small>${c.paused?`<span class="pill warn">${I.pause} ${T('متوقف','Paused','ڕاگیراو')}</span>`:`<span class="pill ok">${I.check} ${T('مفعّل','Active','چالاک')}</span>`}</div></div>
+    ${noteSection(c)}
     <div class="set-h">${T('شنو يشوف المُبلِّغ','What the reporter sees','ڕاپۆرتدەر چی دەبینێت')}</div>
     <div class="grp">${tg('showModel',T('موديل السيارة','Car model','مۆدێلی ئۆتۆمبێل'),esc(carName(c)))}${tg('showColor',T('اللون','Color','ڕەنگ'),colorName(c.color))}${tg('showPlate',T('آخر رقمين من اللوحة','Last two plate digits','کۆتا دوو ژمارەی تابلۆ'),T('حتى يتأكد إنها نفس السيارة',"So they know it's the right car",'بۆ ئەوەی دڵنیا بێت هەمان ئۆتۆمبێلە'))}</div>
     <div class="preview-line">${I.eye}<span>${T('المُبلِّغ يشوف:','The reporter sees:','ڕاپۆرتدەر دەبینێت:')} <b>${esc(see)}</b>. ${T('رقمك واسمك ما يظهرون أبداً.','Your number and name never show.','ژمارە و ناوت هەرگیز دەرناکەون.')}</span></div>
@@ -1368,17 +1581,10 @@ function aCar(){
       <button class="li" data-act="a-share"><span class="lic">${I.plus}</span><span class="lt"><b>${T('شارك السيارة','Share this car','هاوبەشکردنی ئۆتۆمبێل')}</b><small>${T('فرد من العائلة يستلم بلاغاتها وياك','A family member gets its reports with you','ئەندامێکی خێزان لەگەڵ تۆدا ڕاپۆرتەکانی وەردەگرێت')}</small></span></button></div>
     <div style="height:20px"></div></div>`;
 }
-function aAddScan(){
-  return aHead(T('تفعيل ملصق','Activate sticker','چالاککردنی ستیکەر'), 'cars') + `<div class="body">
-    <p style="margin:0 18px;color:var(--ink2);font-size:13.5px">${T('وجّه الكاميرا على الملصق الجديد اللي استلمته. نربطه بحسابك مباشرة.',"Point the camera at your new sticker. We'll link it to your account right away.",'کامێراکە بەرەو ستیکەرە نوێیەکەت بگرە. یەکسەر بە هەژمارەکەتەوە دەیبەستینەوە.')}</p>
-    <div class="scanbox"><div class="sf"><div class="stk-holder">${stickerHTML('sv','yellow','EB5001',1.15)}</div></div></div>
-    <div class="pad"><button class="pbtn" data-act="a-go" data-s="addForm">${I.scan} ${T('محاكاة المسح','Simulate scan','سکانکردنی نمایشی')}</button>
-    <p style="text-align:center;font-size:12.5px;color:var(--ink3);margin:12px 0 0">${T('أو اكتب رمز الملصق يدوياً','Or type the sticker code manually','یان کۆدی ستیکەرەکە بە دەست بنووسە')}</p></div></div>`;
-}
 function aAddForm(){
   const n = S.a.newCar, model = n.model || T('هيونداي إلنترا','Hyundai Elantra','هیوندای ئێلەنترا');
   return aHead(T('بيانات السيارة','Car details','زانیاریی ئۆتۆمبێل'), 'addScan') + `<div class="body"><div class="pad">
-    <div class="found">${I.check} ${T('لقينا الملصق، جاهز للتفعيل','Sticker found, ready to activate','ستیکەرەکە دۆزرایەوە، ئامادەی چالاککردنە')} <span>EB-5001</span></div>
+    <div class="found">${I.check} ${S.a.act.via==='code' ? T('تم التحقق بالرمز السري — جاهز للتفعيل','Verified with the secret code — ready to activate','بە کۆدی نهێنی پشتڕاستکرایەوە — ئامادەیە') : T('لقينا الملصق، جاهز للتفعيل','Sticker found, ready to activate','ستیکەرەکە دۆزرایەوە، ئامادەی چالاککردنە')} <span>${fmtCode(actId())}</span></div>
     <div class="field"><label for="ncModel">${T('موديل السيارة','Car model','مۆدێلی ئۆتۆمبێل')}</label><input class="inp" id="ncModel" value="${esc(model)}"></div>
     <div class="field"><label>${T('اللون','Color','ڕەنگ')}</label><div class="colors">${COLORS.map(([k,t,h])=>`<button class="${n.color===k?'on':''}" data-act="a-color" data-c="${k}"><i style="background:${h}"></i>${L(t)}</button>`).join('')}</div></div>
     <div class="field"><label for="ncPlate">${T('آخر رقمين من اللوحة','Last two plate digits','کۆتا دوو ژمارەی تابلۆ')} <span style="color:var(--ink3);font-weight:500">(${T('اختياري','optional','ئارەزوومەندانە')})</span></label><input class="inp" id="ncPlate" value="${esc(n.plate)}" maxlength="2" inputmode="numeric" dir="ltr"></div>
@@ -1393,6 +1599,7 @@ function aSettings(){
     <div class="grp"><div class="li"><span class="av">${esc(displayName()[0])}</span><span class="lt"><b>${esc(displayName())}</b><small>${ltr('+964 770 ••• 1290')}</small></span><span class="pill ok">${I.shield} ${T('موثّق','Verified','پشتڕاستکراوە')}</span></div></div>
     <div class="set-h">${T('الإشعارات','Notifications','ئاگادارکردنەوەکان')}</div>
     <div class="grp">${tg('sound','bell',T('صوت التنبيه','Alert sound','دەنگی ئاگادارکردنەوە'),T('نغمة إبلاغ المميزة','The signature Eblagh tone','ئاوازی تایبەتی ئیبلاغ'))}${tg('vibrate','vibrate',T('الاهتزاز','Vibration','لەرینەوە'),T('اهتزاز مع كل بلاغ','Vibrate on every report','لەرینەوە لەگەڵ هەر ڕاپۆرتێک'))}${tg('urgentBypass','alert',T('العاجل يتجاوز عدم الإزعاج','Urgent bypasses Do Not Disturb','بەپەلە دۆخی بێزارنەکردن تێدەپەڕێنێت'),T('طفل أو حيوان محبوس','Trapped child or pet','منداڵ یان ئاژەڵی گیراو'))}${tg('quiet','moon',T('أوقات الهدوء','Quiet hours','کاتەکانی بێدەنگی'),ltr('12:00 – 7:00'))}</div>
+    ${refCard()}
     <div class="set-h">${T('الملصقات','Stickers','ستیکەرەکان')}</div>
     <div class="grp"><button class="li" data-act="a-go" data-s="buy"><span class="lic">${I.bag}</span><span class="lt"><b>${T('اطلب ملصق','Order a sticker','داواکردنی ستیکەر')}</b><small>${T('للسيارة الثانية أو بديل','For another car or a replacement','بۆ ئۆتۆمبێلێکی تر یان جێگرەوە')}</small></span>${ch}</button>
       <button class="li" data-act="a-go" data-s="cars"><span class="lic">${I.car}</span><span class="lt"><b>${T('سياراتي','My cars','ئۆتۆمبێلەکانم')}</b><small>${T(`${S.cars.length} سيارات مربوطة`,`${S.cars.length} linked cars`,`${S.cars.length} ئۆتۆمبێلی بەستراو`)}</small></span>${ch}</button></div>
@@ -1433,7 +1640,8 @@ const OB_SCREENS = ['profile','plans','buy','delivery','payment','done'];
 function orderCalc(){
   const P = PLANS[S.a.plan], planPrice = S.a.billing === 'year' ? P.year : P.month;
   const extra = Math.max(0, S.a.cart.qty - P.stickers);
-  return {P, planPrice, extra, extraPrice: extra*EXTRA_STICKER, delivery: DELIVERY_FEE, total: planPrice + extra*EXTRA_STICKER + DELIVERY_FEE};
+  const disc = S.a.refOk ? REF_DISCOUNT : 0;
+  return {P, planPrice, extra, extraPrice: extra*EXTRA_STICKER, delivery: DELIVERY_FEE, disc, total: planPrice + extra*EXTRA_STICKER + DELIVERY_FEE - disc};
 }
 function obBar(step){
   const st = [T('الحساب','Account','هەژمار'),T('الاشتراك','Plan','پلان'),T('الملصق','Sticker','ستیکەر'),T('التوصيل','Delivery','گەیاندن'),T('الدفع','Payment','پارەدان')];
@@ -1452,6 +1660,7 @@ function aProfile(){
     <div class="field"><label>${T('المحافظة','Governorate','پارێزگا')}</label>${govSelect('reg.gov', r.gov)}</div>
     ${fld(T('المدينة أو المنطقة','City or area','شار یان ناوچە'),'reg.area',r.area)}
     <div class="field"><label>${T('شلون سمعت بينا؟','How did you hear about us?','چۆن ئێمەت ناسی؟')} <span style="color:var(--ink3);font-weight:500">(${T('اختياري','optional','ئارەزوومەندانە')})</span></label><div class="refs">${refs.map(([k,t])=>`<button class="${r.ref===k?'on':''}" data-act="ob-ref" data-k="${k}">${t}</button>`).join('')}</div></div>
+    ${refField()}
     <button class="pbtn" data-act="ob-next" data-s="plans">${T('متابعة','Continue','بەردەوامبە')} ${FWD('width:18px;height:18px')}</button>
   </div></div>`;
 }
@@ -1463,6 +1672,7 @@ function aPlans(){
       <span class="ph"><b>${L(P.t)}</b><span class="radio">${S.a.plan===k?I.check:''}</span></span>
       <div class="price">${IQD(b==='year'?P.year:P.month)} <small>/ ${b==='year'?T('سنة','year','ساڵ'):T('شهر','month','مانگ')}</small></div>
       <ul>${P.f.map(f=>`<li>${I.check}${L(f)}</li>`).join('')}</ul></button>`).join('')}
+    <button class="adline" style="margin:0 18px 12px" data-act="go-biz">${I.users}<span>${T('عندك شركة أو مجمع سكني؟ شوف باقات الأعمال','Own a company or a compound? See business packages','کۆمپانیا یان کۆمەڵگەت هەیە؟ پاکێجەکانی بازرگانی ببینە')}</span>${FWD()}</button>
     <p class="sample">${T('الأسعار للعرض فقط وتتحدد لاحقاً · تقدر تلغي الاشتراك بأي وقت','Prices are for demo only · cancel anytime','نرخەکان تەنها بۆ نمایشن · هەر کاتێک دەتوانیت هەڵیبوەشێنیتەوە')}</p>
     <div class="pad"><button class="pbtn" data-act="ob-next" data-s="buy">${T('اشترك وكمّل للملصق','Subscribe & get your sticker','بەشداربە و ستیکەرەکەت وەربگرە')} ${FWD('width:18px;height:18px')}</button></div>
   </div>`;
@@ -1499,17 +1709,18 @@ function aDelivery(){
 function aPayment(){
   const o = orderCalc(), s = S.a.ship, inFlow = !S.a.onboarded, p = S.a.pay;
   return aHead(T('الدفع','Payment','پارەدان'), 'delivery') + (inFlow ? obBar(4) : '') + `<div class="body">
-    <div class="pays">${Object.entries(PAYS).map(([k,v])=>`<button class="pay ${p===k?'on':''}" data-act="ob-pay" data-k="${k}"><span class="pic2" style="background:${v.bg};color:${v.fg}">${I[v.ic]}</span><span class="lt"><b>${L(v.t)}</b><small>${L(v.d)}</small></span><span class="radio2">${p===k?I.check:''}</span></button>`).join('')}</div>
+    ${S.a.payFail ? `<div class="banner bad" style="margin:0 18px 14px">${I.alert}<div><b>${T('ما تمّت عملية الدفع','Payment didn’t go through','پارەدانەکە سەرکەوتوو نەبوو')}</b>${T('ما انسحب أي مبلغ من حسابك. جرّب مرة ثانية، أو اختار الدفع عند الاستلام.','No money was taken. Try again, or choose cash on delivery.','هیچ پارەیەک نەبڕدرا. دووبارە هەوڵ بدەرەوە، یان پارەدان لە کاتی وەرگرتن هەڵبژێرە.')}</div></div>` : ''}<div class="pays">${Object.entries(PAYS).map(([k,v])=>`<button class="pay ${p===k?'on':''}" data-act="ob-pay" data-k="${k}"><span class="pic2" style="background:${v.bg};color:${v.fg}">${I[v.ic]}</span><span class="lt"><b>${L(v.t)}</b><small>${L(v.d)}</small></span><span class="radio2">${p===k?I.check:''}</span></button>`).join('')}</div>
     <div class="addr">${I.pin}<span><b>${esc(s.name || displayName())} · ${ltr('+964 '+esc(s.phone))}</b>${govName(s.gov || S.a.reg.gov)} — ${esc(s.area || S.a.reg.area)}${s.landmark?' · '+esc(s.landmark):''}</span><button data-act="a-go" data-s="delivery">${T('تعديل','Edit','دەستکاری')}</button></div>
     <div class="set-h">${T('ملخص الطلب','Order summary','پوختەی داواکاری')}</div>
     <div class="lines">
       <div class="ln"><span>${T('اشتراك','Plan','پلان')} ${L(o.P.t)} · ${S.a.billing==='year'?T('سنوي','yearly','ساڵانە'):T('شهري','monthly','مانگانە')}</span><b>${IQD(o.planPrice)}</b></div>
       <div class="ln"><span>${T('ملصقات','Stickers','ستیکەر')} × ${S.a.cart.qty}</span><b>${o.extra ? IQD(o.extraPrice) : `<span class="free">${T('مجاناً','Free','بێبەرامبەر')}</span>`}</b></div>
       <div class="ln"><span>${T('التوصيل','Delivery','گەیاندن')}</span><b>${IQD(o.delivery)}</b></div>
+      ${o.disc ? `<div class="ln"><span>${T('خصم الإحالة','Referral discount','داشکاندنی ناساندن')} · ${ltr(esc(S.a.reg.code))}</span><b class="free">− ${IQD(o.disc)}</b></div>` : ''}
       <div class="ln tot"><span>${T('المجموع','Total','کۆی گشتی')}</span><b>${IQD(o.total)}</b></div>
     </div>
     <p class="sample">${T('بالمتابعة توافق على شروط الاشتراك · يتجدد تلقائياً ويتلغى بأي وقت','By continuing you accept the subscription terms · auto-renews, cancel anytime','بە بەردەوامبوون ڕازی دەبیت بە مەرجەکان · خۆکار نوێ دەبێتەوە، هەر کاتێک هەڵدەوەشێتەوە')}</p>
-    <div class="pad"><button class="pbtn" data-act="ob-place">${p==='cod' ? I.check + ' ' + T('تأكيد الطلب','Place order','پشتڕاستکردنەوەی داواکاری') : I.lock + ' ' + T('ادفع','Pay','پارە بدە') + ' ' + IQD(o.total)}</button></div>
+    <div class="pad">${p!=='cod' ? `<button class="linkb" style="margin:0 auto 12px" data-act="ob-fail">${T('محاكاة: فشل الدفع','Simulate: payment fails','نمایشی: پارەدان سەرکەوتوو نابێت')}</button>` : ''}<button class="pbtn" data-act="ob-place">${p==='cod' ? I.check + ' ' + T('تأكيد الطلب','Place order','پشتڕاستکردنەوەی داواکاری') : I.lock + ' ' + T('ادفع','Pay','پارە بدە') + ' ' + IQD(o.total)}</button></div>
   </div>`;
 }
 function aDone(){
@@ -1577,7 +1788,7 @@ function stickerHTML(type, variant, code, u=3){
   if (type==='sh') return `<div class="stk sh v-${variant}" ${st}><i class="corner a"></i><i class="corner b"></i><div class="left"><div class="s-logo">${logo()}</div><div class="s-tag">${tag}</div>${pill}${feats}</div><div class="right">${q}${code$}</div></div>`;
   if (type==='sr') { const pid = `rp-${code}-${variant}-${LANG}-${Math.round(u*10)}`; return `<div class="stk sr v-${variant}" ${st}><svg class="ringtxt" viewBox="0 0 70 70"><defs><path id="${pid}" d="M35 35 m-30 0 a30 30 0 1 1 60 0 a30 30 0 1 1 -60 0"/></defs><text><textPath href="#${pid}" startOffset="25%" text-anchor="middle">${need} ${scanTxt}</textPath></text></svg><div class="s-logo">${logo()}</div>${q}<div class="s-tag">${T('بدون أرقام','No numbers','بێ ژمارە')}</div></div>`; }
   if (type==='ss') return `<div class="stk ss v-${variant}" ${st}><div class="s-logo">${logo()}</div><div class="mid"><b>${need} <em>${scanTxt}</em></b><small>${T('بدون اتصال · بدون كشف رقم الهاتف','No calls · No phone number shared','بێ پەیوەندیی تەلەفۆنی · ژمارەکەت ئاشکرا ناکرێت')} · eblagh.iq</small></div>${q}</div>`;
-  if (type==='cf') return `<div class="stk sc2 front v-${variant}" ${st}><div class="s-logo">${logo()}</div><div class="s-tag">${T('ملصقك جاهز — فعّله بدقيقة','Your sticker is ready — activate it in a minute','ستیکەرەکەت ئامادەیە — لە خولەکێکدا چالاکی بکە')}</div>${code$}</div>`;
+  if (type==='cf') return `<div class="stk sc2 front v-${variant}" ${st}><div class="s-logo">${logo()}</div><div class="s-tag">${T('ملصقك جاهز — فعّله بدقيقة','Your sticker is ready — activate it in a minute','ستیکەرەکەت ئامادەیە — لە خولەکێکدا چالاکی بکە')}</div>${code$}<div class="s-secret"><small>${T('الرمز السري للتفعيل','Secret activation code','کۆدی نهێنیی چالاککردن')}</small><b>${secretOf(code)}</b></div></div>`;
   if (type==='cb') return `<div class="stk sc2 back" ${st}><div><h4>${T('شلون تفعّل ملصقك؟','How to activate your sticker','چۆن ستیکەرەکەت چالاک دەکەیت؟')}</h4><ol><li><i>1</i>${T('حمّل تطبيق إبلاغ','Download the Eblagh app','ئەپی ئیبلاغ دابگرە')}</li><li><i>2</i>${T('سجّل برقم هاتفك','Sign up with your phone number','بە ژمارەی تەلەفۆنەکەت خۆت تۆمار بکە')}</li><li><i>3</i>${T('امسح الملصق واختار سيارتك','Scan the sticker and pick your car','ستیکەرەکە سکان بکە و ئۆتۆمبێلەکەت هەڵبژێرە')}</li><li><i>4</i>${T('الصقه على الزجاج من برّه','Stick it on the outside of the glass','لە دەرەوەی شووشەکە بیلکێنە')}</li></ol></div><div class="bq"><div class="s-qr">${qrSVG('APP',{logo:false})}</div><small>${T('امسح للتحميل','Scan to download','سکان بکە بۆ داگرتن')}</small></div></div>`;
   return '';
 }
@@ -1610,13 +1821,13 @@ function renderStickers(){
 
 /* ====================== Admin ====================== */
 const DESIGNS = {'v-y':o3('عمودي — أصفر','Vertical — yellow','ستوونی — زەرد'),'v-b':o3('عمودي — أسود','Vertical — black','ستوونی — ڕەش'),'h-y':o3('أفقي — أصفر','Horizontal — yellow','ئاسۆیی — زەرد'),'h-b':o3('أفقي — أسود','Horizontal — black','ئاسۆیی — ڕەش'),'r-y':o3('دائري — أصفر','Round — yellow','بازنەیی — زەرد'),'s-b':o3('شريط خلفي — أسود','Rear strip — black','شریتی دواوە — ڕەش')};
-const BST = {printed:[o3('مطبوعة','Printed','چاپکراو'),'info'], distributed:[o3('موزّعة','Distributed','دابەشکراو'),'ok'], ready:[o3('جاهزة للطباعة','Ready to print','ئامادەی چاپ'),'y']};
+const BST = {ready:[o3('جاهزة للطباعة','Ready to print','ئامادەی چاپ'),'y'], printing:[o3('بالمطبعة','At the printer','لە چاپخانە'),'warn'], printed:[o3('مطبوعة','Printed','چاپکراو'),'info'], stock:[o3('بالمخزن','In stock','لە کۆگا'),'mut'], distributed:[o3('بالتوزيع والبيع','Selling','لە فرۆشتندا'),'ok']};
 function renderAdmin(){
-  const A = S.adm, tabs = [['overview',T('نظرة عامة','Overview','گشتی'),'grid'],['batches',T('الدفعات والملصقات','Batches & stickers','کۆمەڵە و ستیکەرەکان'),'layers'],['reports',T('البلاغات','Reports','ڕاپۆرتەکان'),'inbox'],['abuse',T('الإساءات','Abuse','خراپ بەکارهێنان'),'flag'],['users',T('المستخدمون','Users','بەکارهێنەران'),'users'],['settings',T('الإعدادات','Settings','ڕێکخستنەکان'),'sliders']];
+  const A = S.adm, tabs = [['overview',T('نظرة عامة','Overview','گشتی'),'grid'],['batches',T('الدفعات والملصقات','Batches & stickers','کۆمەڵە و ستیکەرەکان'),'layers'],['orders',T('الطلبات','Orders','داواکارییەکان'),'bag'],['reports',T('البلاغات','Reports','ڕاپۆرتەکان'),'inbox'],['notif',T('وصول الإشعارات','Notifications','ئاگادارکردنەوەکان'),'bell'],['abuse',T('الإساءات','Abuse','خراپ بەکارهێنان'),'flag'],['users',T('المستخدمون','Users','بەکارهێنەران'),'users'],['settings',T('الإعدادات','Settings','ڕێکخستنەکان'),'sliders']];
   const side = `<aside class="adm-side"><div class="ab"><span class="brand-mk">${markSVG}</span><span><b class="h">${BRAND()}</b><small>${T('لوحة الإدارة','Admin panel','پانێڵی بەڕێوەبردن')}</small></span></div>
-    ${tabs.map(([k,t,ic])=>`<button class="${A.tab===k?'on':''}" data-act="ad-tab" data-k="${k}">${I[ic]}${t}${k==='abuse'&&A.abuse.length?`<span class="cnt">${A.abuse.length}</span>`:''}</button>`).join('')}
+    ${tabs.map(([k,t,ic])=>`<button class="${A.tab===k?'on':''}" data-act="ad-tab" data-k="${k}">${I[ic]}${t}${k==='abuse'&&A.abuse.length?`<span class="cnt">${A.abuse.length}</span>`:''}${k==='orders'&&ordNew()?`<span class="cnt" style="background:var(--y);color:#111">${ordNew()}</span>`:''}</button>`).join('')}
     <div class="adm-foot">${T('الحالة:','Status:','دۆخ:')} <b style="color:var(--ok)">${T('كل الأنظمة تعمل','All systems normal','هەموو سیستەمەکان کار دەکەن')}</b><br>${T('زمن وصول الإشعار:','Push latency:','کاتی گەیشتنی ئاگادارکردنەوە:')} ${ltr('1.2s')}</div></aside>`;
-  const fn = {overview:adOverview, batches:adBatches, reports:adReports, abuse:adAbuse, users:adUsers, settings:adSettings}[A.tab];
+  const fn = {overview:adOverview, batches:adBatches, orders:adOrders, notif:adNotif, reports:adReports, abuse:adAbuse, users:adUsers, settings:adSettings}[A.tab];
   $('#adm').innerHTML = side + `<div class="adm-main">${fn()}</div>`;
 }
 const allReportsAdmin = () => {
@@ -1655,17 +1866,6 @@ function adOverview(){
     </div>
     <div class="panel"><h3>${T('أحدث البلاغات','Latest reports','نوێترین ڕاپۆرتەکان')} <small>${T('بدون أي بيانات شخصية للمُبلِّغ','No personal data about reporters','هیچ زانیارییەکی کەسیی ڕاپۆرتدەر نییە')}</small></h3>${repTable(allReportsAdmin().slice(0,6))}</div>`;
 }
-function adBatches(){
-  const A = S.adm, sel = A.batches.find(b=>b.id===A.selBatch) || A.batches[0];
-  return `<div class="adm-h"><div><h2 class="h">${T('الدفعات والملصقات','Batches & stickers','کۆمەڵە و ستیکەرەکان')}</h2><p>${T('كل ملصق برمز عشوائي فريد غير قابل للتخمين، يتفعّل عند ربطه بحساب.','Every sticker has a unique, unguessable random code that activates when linked to an account.','هەر ستیکەرێک کۆدێکی هەڕەمەکیی تایبەت و پێشبینی‌نەکراوی هەیە کە بە بەستنەوە بە هەژمارێکەوە چالاک دەبێت.')}</p></div></div>
-    <div class="gen"><div class="field"><label>${T('الكمية','Quantity','بڕ')}</label><select id="genQty">${[100,250,500,1000,2000].map(q=>`<option ${A.genQty==q?'selected':''}>${q}</option>`).join('')}</select></div>
-      <div class="field"><label>${T('التصميم','Design','دیزاین')}</label><select id="genDesign">${Object.entries(DESIGNS).map(([k,d])=>`<option value="${k}" ${A.genDesign===k?'selected':''}>${L(d)}</option>`).join('')}</select></div>
-      <button class="tb-btn y" style="height:40px" data-act="ad-gen">${I.plus} ${T('توليد دفعة جديدة','Generate new batch','دروستکردنی کۆمەڵەی نوێ')}</button></div>
-    <div class="panel" style="margin-bottom:14px"><h3>${T('الدفعات','Batches','کۆمەڵەکان')}</h3><div class="tbl-wrap"><table class="tbl"><thead><tr><th>${T('الدفعة','Batch','کۆمەڵە')}</th><th>${T('الكمية','Qty','بڕ')}</th><th>${T('التصميم','Design','دیزاین')}</th><th>${T('التاريخ','Date','بەروار')}</th><th>${T('المفعّل','Activated','چالاککراو')}</th><th>${T('الحالة','Status','دۆخ')}</th><th></th></tr></thead><tbody>
-      ${A.batches.map(b=>`<tr><td class="mono">${b.id}</td><td class="mono">${b.qty.toLocaleString('en')}</td><td>${L(DESIGNS[b.design])}</td><td class="mono">${b.date}</td><td><span class="mono">${b.act}</span> <small style="color:var(--ink3)">(${Math.round(b.act/b.qty*100)}%)</small></td><td><span class="pill ${BST[b.st][1]}">${L(BST[b.st][0])}</span></td>
-      <td style="display:flex;gap:6px"><button class="tb-btn" data-act="ad-sel" data-id="${b.id}">${I.qr} ${T('الرموز','Codes','کۆدەکان')}</button><button class="tb-btn" data-act="ad-dl">${I.download} ${T('ملف الطباعة','Print file','فایلی چاپ')}</button></td></tr>`).join('')}</tbody></table></div></div>
-    <div class="panel"><h3>${T('عيّنة من رموز','Sample codes from','نموونەی کۆدەکانی')} ${sel.id} <small>${L(DESIGNS[sel.design])}</small></h3><div class="codes">${sel.codes.map(c=>`<div>${qrSVG(c)}<small>${fmtCode(c)}</small></div>`).join('')}</div></div>`;
-}
 function adReports(){
   return `<div class="adm-h"><div><h2 class="h">${T('البلاغات','Reports','ڕاپۆرتەکان')}</h2><p>${T('كل البلاغات مع زمن الرد. لا نخزّن رقم أو هوية المُبلِّغ، بس بصمة جهاز مؤقتة لمنع الإساءة.',"All reports with response times. We never store the reporter's number or identity — only a temporary device fingerprint to prevent abuse.",'هەموو ڕاپۆرتەکان لەگەڵ کاتی وەڵام. ژمارە یان ناسنامەی ڕاپۆرتدەر هەڵناگرین — تەنها پەنجەمۆری کاتیی ئامێر بۆ ڕێگریکردن لە خراپ بەکارهێنان.')}</p></div><div style="display:flex;gap:6px"><button class="tb-btn">${I.search} ${T('بحث','Search','گەڕان')}</button><button class="tb-btn">${I.download} CSV</button></div></div>
     <div class="panel">${repTable(allReportsAdmin())}</div>`;
@@ -1697,6 +1897,362 @@ function adSettings(){
     </div>`;
 }
 
+/* ====================== Added features ====================== */
+/* --- shared helpers --- */
+const R_ERR = ['unact','invalid','neterr','limit'];
+const SECRETS = {EB5001:'4K7-Q2M', EB5002:'H3T-8WP', EB5003:'Z9C-1LV', EB5004:'R6N-4DX', EB5005:'P2K-7SJ', EB5006:'W8F-5GA', EB5007:'M2R-7KC', EB5008:'T4B-9EY', EB5009:'C7J-2QH', EB5010:'L5V-6NU', EB5011:'D1X-8RM', EB5012:'K3S-4PZ', EB4471:'Q8D-3XN', EB2208:'F6G-2TB'};
+const secretOf = c => SECRETS[c] || 'X0X-0X0';
+const normCode = s => String(s || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+const knownCodes = () => new Set([...S.adm.batches.flatMap(b => b.codes), ...S.cars.map(c => c.id), ...Object.keys(SECRETS)]);
+const actId = () => S.a.act.verified || 'EB5001';
+const freshAct = () => ({method:'scan', code:'', secret:'', err:null, tries:0, via:null, verified:null});
+const REF_DISCOUNT = 2000, MY_REF = 'EB-7K42';
+const validRef = c => { const n = normCode(c); return n === 'SCAN2K' || /^EB[0-9A-Z]{4}$/.test(n); };
+const noteActive = c => !!(c && c.note && (!c.note.until || c.note.until > Date.now()));
+const liX = (b, t) => `<li>${I.check}<span><b>${b}</b> ${t}</span></li>`;
+const setMode = m => { S.mode = m; try { localStorage.setItem('eb_mode', m); } catch(e){} render(); window.scrollTo({top:0, behavior:'smooth'}); };
+
+/* --- 2. reporter error states --- */
+function adStrip(){
+  return `<div class="adpromo"><div class="pst">${stickerHTML('sv','yellow','EB5002',0.6)}</div><div><b>${T('تريد ملصق لسيارتك؟','Want a sticker for your car?','ستیکەرێکت بۆ ئۆتۆمبێلەکەت دەوێت؟')}</b><small>${T('خصم 2,000 د.ع لأول طلب من صفحة المسح · كود','2,000 IQD off your first order from this page · code','2,000 دینار داشکاندن بۆ یەکەم داواکاری لەم پەڕەیەوە · کۆد')} ${ltr('SCAN-2K')}</small><button class="tb-btn y" data-act="r-promo">${I.bag} ${T('احجز ملصقك','Book your sticker','ستیکەرەکەت حیجز بکە')}</button></div></div>`;
+}
+function rErr(kind){
+  const scanAgain = `<button class="pbtn dark" data-act="r-go" data-s="camera">${I.scan} ${T('امسح مرة ثانية','Scan again','دووبارە سکان بکە')}</button>`;
+  const emg = `<p class="err-emg">${I.alert}<span>${T('إذا الحالة طارئة، اتصل بالطوارئ أو بالمرور مباشرة.','In an emergency, call emergency services or the traffic police directly.','لە کاتی فریاکەوتندا ڕاستەوخۆ پەیوەندی بە فریاکەوتن یان پۆلیسی هاتووچۆوە بکە.')}</span></p>`;
+  const E = {
+    unact: {ic:I.key, c:'', h:T('هذا الملصق ما متفعّل بعد','This sticker isn’t activated yet','ئەم ستیکەرە هێشتا چالاک نەکراوە'),
+      p:T('صاحبه ما ربطه بحسابه لحد الآن، فما نكدر نوصّل بلاغك.','Its owner hasn’t linked it to an account yet, so we can’t deliver your report.','خاوەنەکەی هێشتا بە هەژمارێکەوە نەیبەستووەتەوە، بۆیە ناتوانین ڕاپۆرتەکەت بگەیەنین.'),
+      x:`<div class="err-own">${I.info}<span><b>${T('هذا ملصقك؟','Is this your sticker?','ئەمە ستیکەری تۆیە؟')}</b>${T('حمّل التطبيق وفعّله بالرمز السري اللي بكرت التفعيل داخل الظرف.','Get the app and activate it with the secret code on the activation card in the envelope.','ئەپەکە دابگرە و بە کۆدە نهێنییەکەی سەر کارتی چالاککردن لەناو زەرفەکەدا چالاکی بکە.')}</span></div>${emg}`},
+    invalid: {ic:I.x, c:'bad', h:T('الرمز غير صالح','Invalid code','کۆدەکە نادروستە'),
+      p:T('هذا الرمز غير موجود، أو انلغى لأن صاحبه بلّغ إنه ضاع أو استبدله. تأكد إنك مسحت الملصق الصحيح.','This code doesn’t exist, or it was cancelled because the owner reported it lost or replaced it. Make sure you scanned the right sticker.','ئەم کۆدە بوونی نییە، یان هەڵوەشێنراوەتەوە چونکە خاوەنەکەی ڕایگەیاندووە ون بووە یان گۆڕیویەتی. دڵنیابە ستیکەرە دروستەکەت سکان کردووە.'),
+      x:scanAgain + emg},
+    neterr: {ic:I.alert, c:'warn', h:T('ما انرسل البلاغ','Report not sent','ڕاپۆرتەکە نەنێردرا'),
+      p:T('الاتصال بالإنترنت ضعيف أو منقطع. رسالتك محفوظة على هذي الصفحة — ما تحتاج تكتبها من جديد.','Your connection is weak or offline. Your message is kept on this page — no need to retype it.','هێڵی ئینتەرنێتەکەت لاوازە یان پچڕاوە. نامەکەت لەم پەڕەیەدا هەڵگیراوە — پێویست ناکات دووبارە بینووسیتەوە.'),
+      x:`<div class="err-msg">${T('رسالتك','Your message','نامەکەت')}: <b>${rt(S.r.reason || 'block')}</b>${S.r.note ? ' — ' + esc(L(S.r.note)) : ''}</div><button class="pbtn" data-act="r-retry">${I.refresh} ${T('إعادة المحاولة','Try again','دووبارە هەوڵ بدەرەوە')}</button><p class="err-small">${T('نعيد المحاولة تلقائياً أول ما يرجع الاتصال.','We’ll retry automatically as soon as you’re back online.','هەر کە هێڵ گەڕایەوە خۆکارانە دووبارە هەوڵ دەدەینەوە.')}</p>`},
+    limit: {ic:I.clock, c:'warn', h:T('وصلت الحد المسموح','Report limit reached','گەیشتیتە سنووری ڕێگەپێدراو'),
+      p:T(`تقدر ترسل ${S.adm.limits.perHour} بلاغات بالساعة لنفس السيارة، حتى ما ينزعج صاحبها من التكرار.`, `You can send ${S.adm.limits.perHour} reports per hour for the same car, so its owner isn’t spammed.`, `دەتوانیت لە کاتژمێرێکدا ${S.adm.limits.perHour} ڕاپۆرت بۆ هەمان ئۆتۆمبێل بنێریت، بۆ ئەوەی خاوەنەکەی بێزار نەبێت.`),
+      x:`<div class="err-own">${I.check}<span><b>${T('بلاغك السابق وصل','Your earlier report was delivered','ڕاپۆرتە پێشووەکەت گەیشت')}</b>${T('تقدر تبلّغ مرة ثانية بعد','You can report again in','دەتوانیت دووبارە ڕاپۆرت بدەیت دوای')} ${ltr('42')} ${T('دقيقة','minutes','خولەک')}.</span></div>${S.r.reportId ? `<button class="pbtn dark" data-act="r-go" data-s="status">${I.eye} ${T('تابع بلاغك','Track your report','بەدواداچوونی ڕاپۆرتەکەت')}</button>` : ''}${emg}`},
+  }[kind];
+  return `${wHead()}<div class="inact err ${E.c}"><div class="st-ring">${E.ic}</div><h3 class="h" style="margin:0;font-size:20px">${E.h}</h3><p style="color:var(--ink2);font-size:13.5px;margin:8px 0 20px">${E.p}</p>${E.x}</div>${kind === 'unact' || kind === 'invalid' ? adStrip() : ''}<div style="height:18px"></div>`;
+}
+
+/* --- 6. owner note --- */
+const NOTE_PRESETS = [
+  o3('راجع خلال 10 دقائق','Back in 10 minutes','لە ماوەی 10 خولەکدا دەگەڕێمەوە'),
+  o3('بالجامع — أطلع بعد الصلاة','At the mosque — out after prayer','لە مزگەوتم — دوای نوێژ دێمە دەرەوە'),
+  o3('بالمحل المقابل، دقيقة وأطلع','In the shop opposite, out in a minute','لە دوکانەکەی بەرامبەرم، خولەکێکی تر دێمە دەرەوە'),
+  o3('بالمستشفى — رجاءً لا تسحبوها','At the hospital — please don’t tow it','لە نەخۆشخانەم — تکایە ڕای مەکێشن'),
+];
+const noteDur = () => [[30,T('30 د','30 min','30 خ')],[60,T('ساعة','1 hr','1 کاتژمێر')],[180,T('3 ساعات','3 hrs','3 کاتژمێر')],[0,T('لحد ما ألغيها','Until removed','تا لای دەبەم')]];
+function noteCard(car){
+  if (!noteActive(car)) return '';
+  const n = car.note;
+  return `<div class="onote">${I.msg}<div><small>${T('ملاحظة من صاحب السيارة','Note from the car owner','تێبینی لە خاوەنی ئۆتۆمبێلەوە')} · ${ago(n.t)}</small><b>${esc(L(n.text))}</b><em>${n.until ? T('تنتهي','Expires','کۆتایی دێت') + ' ' + clock(n.until) : T('لحد ما يلغيها','Until removed','تا لای دەبات')}</em></div></div>
+    <p class="onote-sub">${T('إذا بعدك تحتاجه، اختار السبب تحت.','Still need them? Pick a reason below.','هێشتا پێویستت پێیەتی؟ هۆکارێک لە خوارەوە هەڵبژێرە.')}</p>`;
+}
+function noteSection(c){
+  const head = `<div class="set-h">${T('ملاحظة تظهر للمُبلِّغ','Note shown to reporters','تێبینی بۆ ڕاپۆرتدەر')} <span class="pill y" style="margin-inline-start:6px">${T('جديد','New','نوێ')}</span></div>`;
+  if (noteActive(c)) return head + `<div class="grp"><div class="li"><span class="lic" style="background:var(--ysoft);color:var(--ytext)">${I.msg}</span><span class="lt"><b>${esc(L(c.note.text))}</b><small>${c.note.until ? T('تنتهي','Expires','کۆتایی دێت') + ' ' + clock(c.note.until) : T('لحد ما تلغيها','Until you remove it','تا لای دەبەیت')} · ${T('ظاهرة بصفحة المسح هسّه','Live on the scan page now','ئێستا لە پەڕەی سکان دیارە')}</small></span></div>
+      <button class="li" data-act="note-clear"><span class="lic" style="color:var(--bad)">${I.trash}</span><span class="lt"><b style="color:var(--bad)">${T('شيل الملاحظة','Remove note','لابردنی تێبینی')}</b></span></button></div>`;
+  const d = S.a.noteDur;
+  return head + `<div class="note-ed"><div class="phr">${NOTE_PRESETS.map((p,i)=>`<button data-act="note-preset" data-i="${i}">${esc(L(p))}</button>`).join('')}</div>
+    <input class="inp" id="noteIn" maxlength="60" placeholder="${T('أو اكتب ملاحظتك… مثال: الطابق 2 بالكراج','Or write your own… e.g. garage, level 2','یان تێبینیی خۆت بنووسە… بۆ نموونە: گەراج، نهۆمی 2')}" value="${esc(S.a.noteDraft)}">
+    <div class="slots" style="margin:10px 0">${noteDur().map(([m,t])=>`<button class="${d===m?'on':''}" data-act="note-dur" data-m="${m}">${t}</button>`).join('')}</div>
+    <button class="pbtn" style="height:48px;font-size:15px" data-act="note-set">${I.send} ${T('انشر على صفحة المسح','Post to the scan page','بڵاوی بکەرەوە لە پەڕەی سکان')}</button>
+    <p class="note-hint">${T('تقلّل البلاغات: اللي يمسح الملصق يشوف ملاحظتك قبل ما يبلّغ. لا تكتب رقمك أو اسمك.','Fewer reports: whoever scans sees your note before reporting. Don’t write your number or name.','ڕاپۆرتی کەمتر: ئەوەی سکان دەکات پێش ڕاپۆرتدان تێبینییەکەت دەبینێت. ژمارە یان ناوت مەنووسە.')}</p></div>`;
+}
+
+/* --- 1. activation: scan or secret code --- */
+function actErrs(){
+  const A = S.a.act;
+  return {
+    empty:[T('اكتب الرمزين','Enter both codes','هەردوو کۆدەکە بنووسە'), T('رمز الملصق والرمز السري.','The sticker code and the secret code.','کۆدی ستیکەر و کۆدی نهێنی.')],
+    nocode:[T('رمز الملصق غير موجود','Sticker code not found','کۆدی ستیکەر نەدۆزرایەوە'), T('تأكد من الرمز المطبوع تحت الباركود، مثل EB-5001.','Check the code printed under the barcode, e.g. EB-5001.','کۆدە چاپکراوەکەی ژێر بارکۆدەکە بپشکنە، بۆ نموونە EB-5001.')],
+    taken:[T('هذا الملصق مفعّل على حساب ثاني','This sticker is active on another account','ئەم ستیکەرە لەسەر هەژمارێکی تر چالاکە'), T('إذا هو ملصقك وانسرق، تواصل ويا الدعم حتى نلغيه ونطلع لك بديل.','If it’s yours and was stolen, contact support so we cancel it and send a replacement.','ئەگەر هی تۆیە و دزراوە، پەیوەندی بە پشتگیرییەوە بکە بۆ هەڵوەشاندنەوە و ناردنی جێگرەوە.')],
+    wrong:[T('الرمز السري غير صحيح','Wrong secret code','کۆدی نهێنی هەڵەیە'), T(`باقي لك ${5 - A.tries} محاولات قبل ما ينقفل التفعيل مؤقتاً.`, `${5 - A.tries} attempts left before activation is locked.`, `${5 - A.tries} هەوڵت ماوە پێش ئەوەی چالاککردن داخرێت.`)],
+    locked:[T('انقفل التفعيل 15 دقيقة','Activation locked for 15 minutes','چالاککردن بۆ 15 خولەک داخرا'), T('حماية للملصق بعد 5 محاولات خاطئة. نرسل لصاحب الطلب رسالة إذا أحد حاول يفعّل ملصقه.','Protection after 5 wrong attempts. We alert the buyer if someone tries to activate their sticker.','پاراستن دوای 5 هەوڵی هەڵە. ئەگەر کەسێک هەوڵی چالاککردنی ستیکەرەکەی دا، ئاگاداری کڕیار دەکەینەوە.')],
+  };
+}
+function aAddScan(){
+  const A = S.a.act, m = A.method;
+  const seg = `<div class="bill"><button class="${m==='scan'?'on':''}" data-act="act-method" data-m="scan">${I.scan} ${T('مسح الباركود','Scan barcode','سکانی بارکۆد')}</button><button class="${m==='code'?'on':''}" data-act="act-method" data-m="code">${I.key} ${T('الرمز السري','Secret code','کۆدی نهێنی')}</button></div>`;
+  const head = aHead(T('تفعيل ملصق','Activate sticker','چالاککردنی ستیکەر'), 'cars');
+  if (m === 'scan') return head + `<div class="body">${seg}
+    <p style="margin:0 18px;color:var(--ink2);font-size:13.5px">${T('وجّه الكاميرا على الملصق الجديد اللي استلمته. نربطه بحسابك مباشرة.',"Point the camera at your new sticker. We'll link it to your account right away.",'کامێراکە بەرەو ستیکەرە نوێیەکەت بگرە. یەکسەر بە هەژمارەکەتەوە دەیبەستینەوە.')}</p>
+    <div class="scanbox"><div class="sf"><div class="stk-holder">${stickerHTML('sv','yellow','EB5001',1.15)}</div></div></div>
+    <div class="pad"><button class="pbtn" data-act="act-scan">${I.scan} ${T('محاكاة المسح','Simulate scan','سکانکردنی نمایشی')}</button>
+    <button class="linkb" data-act="act-method" data-m="code">${T('أو فعّله بالرمز السري من كرت التفعيل','Or activate with the secret code from the activation card','یان بە کۆدی نهێنیی سەر کارتی چالاککردن چالاکی بکە')}</button></div></div>`;
+  const locked = A.err === 'locked', E = A.err ? actErrs()[A.err] : null;
+  return head + `<div class="body">${seg}<div class="pad">
+    <div class="card-prev">${stickerHTML('cf','yellow','EB5001',0.62)}<span>${T('الرمز السري مطبوع على كرت التفعيل داخل الظرف — مو على الملصق. فما أحد يكدر يفعّل ملصقك غيرك حتى لو صوّره.','The secret code is printed on the activation card inside the envelope — not on the sticker. Nobody else can activate your sticker, even if they photograph it.','کۆدە نهێنییەکە لەسەر کارتی چالاککردن لەناو زەرفەکەدا چاپکراوە — نەک لەسەر ستیکەرەکە. کەس ناتوانێت ستیکەرەکەت چالاک بکات، تەنانەت ئەگەر وێنەشی بگرێت.')}</span></div>
+    ${E ? `<div class="banner ${locked || A.err==='taken' ? 'bad' : 'warn'}" style="margin:0 0 14px">${I.alert}<div><b>${E[0]}</b>${E[1]}</div></div>` : ''}
+    <div class="field"><label for="actCode">${T('رمز الملصق','Sticker code','کۆدی ستیکەر')}</label><input class="inp" id="actCode" dir="ltr" placeholder="EB-5001" value="${esc(A.code)}" ${locked?'disabled':''}></div>
+    <div class="field"><label for="actSecret">${T('الرمز السري (6 خانات)','Secret code (6 characters)','کۆدی نهێنی (6 پیت)')}</label><input class="inp" id="actSecret" dir="ltr" placeholder="4K7-Q2M" maxlength="7" autocomplete="off" value="${esc(A.secret)}" style="letter-spacing:.18em;font-family:-apple-system,system-ui,sans-serif" ${locked?'disabled':''}></div>
+    <button class="pbtn" data-act="act-check" ${locked?'disabled style="opacity:.5;cursor:not-allowed"':''}>${I.check} ${T('تحقق وفعّل','Verify & activate','پشتڕاستکردنەوە و چالاککردن')}</button>
+    <p class="sample" style="margin:12px 0 0">${T('للتجربة:','To try:','بۆ تاقیکردنەوە:')} ${ltr('EB-5001')} + ${ltr('4K7-Q2M')} · ${T('جرّب رمز خطأ حتى تشوف حالات الخطأ','try a wrong code to see the error states','کۆدێکی هەڵە تاقی بکەرەوە بۆ بینینی دۆخەکانی هەڵە')}</p>
+  </div></div>`;
+}
+
+/* --- 7. referral --- */
+function refCard(){
+  return `<div class="set-h">${T('ادعُ أصدقاءك','Invite friends','هاوڕێکانت بانگهێشت بکە')} <span class="pill y" style="margin-inline-start:6px">${T('جديد','New','نوێ')}</span></div>
+  <div class="refc"><div class="refc-top"><span class="lic">${I.userPlus}</span><div><b>${T('ملصق مجاني لكل صديق يطلب','A free sticker for every friend who orders','ستیکەرێکی بێبەرامبەر بۆ هەر هاوڕێیەک کە داوا بکات')}</b><small>${T('وصديقك ياخذ خصم 2,000 د.ع على أول طلب.','And your friend gets 2,000 IQD off their first order.','هاوڕێکەشت 2,000 دینار داشکاندن وەردەگرێت بۆ یەکەم داواکاری.')}</small></div></div>
+  <div class="refcode"><span class="ltr">${MY_REF}</span><button data-act="ref-copy">${T('نسخ','Copy','کۆپی')}</button></div>
+  <div class="refstats"><div><b class="num">${S.a.refInv}</b><small>${T('دعوات','Invites','بانگهێشت')}</small></div><div><b class="num">${S.a.refJoined}</b><small>${T('طلبوا','Ordered','داوایان کرد')}</small></div><div><b class="num">${S.a.refJoined}</b><small>${T('ملصق مجاني لك','Free stickers','ستیکەری بێبەرامبەر')}</small></div></div>
+  <button class="pbtn" style="height:46px;font-size:14.5px" data-act="ref-share">${I.share} ${T('شارك رابط الدعوة','Share invite link','بەستەری بانگهێشت بنێرە')}</button></div>`;
+}
+function refField(){
+  const r = S.a.reg;
+  return `<div class="field"><label>${T('كود إحالة','Referral code','کۆدی ناساندن')} <span style="color:var(--ink3);font-weight:500">(${T('اختياري','optional','ئارەزوومەندانە')})</span></label><div class="refin"><input class="inp" data-bind="reg.code" dir="ltr" placeholder="EB-7K42" value="${esc(r.code || '')}"><button data-act="ref-apply">${T('تطبيق','Apply','جێبەجێکردن')}</button></div>
+    ${S.a.refOk ? `<div class="okline">${I.check} ${T('تم — خصم 2,000 د.ع على طلبك','Applied — 2,000 IQD off your order','جێبەجێ کرا — 2,000 دینار داشکاندن لە داواکارییەکەت')}</div>` : S.a.refErr ? `<div class="errline">${I.alert} ${T('الكود غير صحيح — تأكد منه ويا اللي دعاك','Invalid code — check it with whoever invited you','کۆدەکە هەڵەیە — لەگەڵ ئەو کەسەی بانگهێشتی کردیت بیپشکنە')}</div>` : ''}</div>`;
+}
+
+/* --- 4. pre-booking page --- */
+const bkCodeOf = pos => 'EB-' + String(4100 + pos);
+function bkOpts(){
+  return [['basic',T('ملصق أساسي','Basic sticker','ستیکەری بنەڕەتی'),5000,T('مقاوم للشمس والماي','Sun- and water-resistant','بەرگەی خۆر و ئاو دەگرێت')],
+    ['premium',T('ملصق Premium','Premium sticker','ستیکەری Premium'),10000,T('تصميم وخامة مميزة','Premium design and material','دیزاین و کەرەستەی تایبەت')],
+    ['family',T('باقة عائلية — 3 ملصقات','Family pack — 3 stickers','پاکێجی خێزان — 3 ستیکەر'),20000,T('لسيارات البيت كلها','For every car at home','بۆ هەموو ئۆتۆمبێلەکانی ماڵ')],
+    ['biz',T('شركة أو مجمع سكني','Company or compound','کۆمپانیا یان کۆمەڵگە'),0,T('سعر حسب العدد','Priced by volume','نرخ بەپێی ژمارە')]];
+}
+function bkPage(){
+  const b = S.bk, cnt = S.bookings, goal = 100;
+  const head = `<header class="w-head">${logo()}<span class="pill y">${T('حجز مسبق','Pre-booking','حیجزی پێشوەختە')}</span></header>`;
+  if (b.done) return head + `<div class="inact" style="padding:24px 22px 8px"><div class="st-ring ok">${I.checks}</div>
+      <h3 class="h" style="margin:0;font-size:21px">${T(`تم حجزك يا ${esc(b.name)}!`, `You’re booked, ${esc(b.name)}!`, `حیجزەکەت کرا، ${esc(b.name)}!`)}</h3>
+      <p style="color:var(--ink2);font-size:13px;margin:10px 0 0">${T('دورك','Your place','ژمارەکەت')}</p><b class="bk-pos num">#${b.pos}</b>
+      <p style="color:var(--ink2);font-size:13px;margin:4px 0 16px">${T('نتواصل وياك قبل الإطلاق. ما تدفع شي هسه — الدفع عند الاستلام.','We’ll contact you before launch. Nothing to pay now — pay on delivery.','پێش دەستپێکردن پەیوەندیت پێوە دەکەین. ئێستا هیچ مەدە — لە کاتی وەرگرتن پارە بدە.')}</p></div>
+    <div class="refc"><div class="refc-top"><span class="lic">${I.userPlus}</span><div><b>${T('تقدّم بالدور مع أصدقائك','Move up the list with friends','لەگەڵ هاوڕێکانت لە ڕیزدا بچۆ پێشەوە')}</b><small>${T('كل صديق يحجز برابطك يقدّمك 5 أماكن، وياخذ خصم 2,000 د.ع.','Every friend who books with your link moves you up 5 places and gets 2,000 IQD off.','هەر هاوڕێیەک بە بەستەرەکەت حیجز بکات 5 شوێن دەتباتە پێشەوە و 2,000 دینار داشکاندن وەردەگرێت.')}</small></div></div>
+      <div class="refcode"><span class="ltr">${bkCodeOf(b.pos)}</span><button data-act="bk-share">${T('شارك','Share','بنێرە')}</button></div></div>
+    <div class="pad" style="padding-top:14px"><button class="pbtn ghost" data-act="bk-reset">${I.refresh} ${T('حجز جديد','New booking','حیجزی نوێ')}</button></div>`;
+  return head + `<div class="bk-hero"><small>${T('قريباً بالعراق','Coming soon in Iraq','بەم زووانە لە عێراق')}</small><h2 class="h">${T('تواصل مع صاحب أي سيارة — بلا أرقام','Reach any car owner — without numbers','پەیوەندی بە خاوەنی هەر ئۆتۆمبێلێکەوە — بێ ژمارە')}</h2><p>${T('احجز ملصقك قبل الإطلاق. ما تدفع هسه — الدفع عند الاستلام.','Book your sticker before launch. Pay nothing now — pay on delivery.','پێش دەستپێکردن ستیکەرەکەت حیجز بکە. ئێستا هیچ مەدە — لە کاتی وەرگرتن پارە بدە.')}</p>
+      <div class="bk-prog"><div><b class="num">${cnt}</b> ${T('من أول','of the first','لە یەکەم')} ${goal} ${T('حجزوا','have booked','حیجزیان کردووە')}</div><span><i style="width:${Math.min(100, cnt/goal*100)}%"></i></span><small>${T('أول 100 ياخذون سعر الإطلاق','The first 100 get the launch price','یەکەم 100 کەس نرخی دەستپێکردن وەردەگرن')}</small></div></div>
+    <div class="bk-how"><div>${I.sticker}${T('تلصق الملصق على الزجاج','Stick it on the window','لەسەر شووشەکە بیلکێنە')}</div><div>${I.scan}${T('أي واحد يمسحه بكاميرته','Anyone scans it','هەر کەسێک سکانی دەکات')}</div><div>${I.bell}${T('يوصلك إشعار بدون رقمك','You get an alert — no number','ئاگادار دەکرێیتەوە — بێ ژمارە')}</div></div>
+    <div class="lbl">${T('اختار الباقة','Choose a package','پاکێجێک هەڵبژێرە')} <span>${T('أسعار تجريبية','Test prices','نرخی تاقیکاری')}</span></div>
+    <div class="bk-opts">${bkOpts().map(([k,t,p,d])=>`<button class="${b.kind===k?'on':''}" data-act="bk-kind" data-k="${k}"><span class="radio">${b.kind===k?I.check:''}</span><span class="lt"><b>${t}</b><small>${d}</small></span><b class="pr">${p ? IQD(p) : T('عرض سعر','Quote','نرخ')}</b></button>`).join('')}</div>
+    ${b.kind === 'biz' ? `<div class="pad" style="padding-top:14px"><button class="pbtn dark" data-act="go-biz">${I.users} ${T('شوف باقات الشركات والمجمعات','See business & compound packages','پاکێجەکانی کۆمپانیا و کۆمەڵگە ببینە')}</button></div>` : `
+    <div class="pad" style="padding-top:16px">
+      ${b.err ? `<div class="banner bad" style="margin:0 0 14px">${I.alert}<div><b>${T('كمّل المعلومات','Complete the details','زانیارییەکان تەواو بکە')}</b>${T('نحتاج اسمك ورقم هاتف صحيح (10 أرقام) حتى نتواصل وياك.','We need your name and a valid phone number (10 digits) to reach you.','ناو و ژمارەیەکی دروستی تەلەفۆن (10 ژمارە) پێویستە بۆ پەیوەندیکردن.')}</div></div>` : ''}
+      <div class="field"><label>${T('الاسم','Name','ناو')}</label><input class="inp" data-bk="name" value="${esc(b.name)}" placeholder="${T('مثال: أحمد علي','e.g. Ahmed Ali','بۆ نموونە: ئەحمەد عەلی')}"></div>
+      <div class="field"><label>${T('رقم الهاتف','Phone number','ژمارەی تەلەفۆن')}</label><div class="phonein"><span class="cc">${flag('iq')} +964</span><input class="inp" data-bk="phone" value="${esc(b.phone)}" inputmode="tel" placeholder="770 000 0000"></div></div>
+      <div class="field"><label>${T('المحافظة','Governorate','پارێزگا')}</label><select class="inp" data-bk="gov">${GOVS.map(([k,n])=>`<option value="${k}" ${b.gov===k?'selected':''}>${L(n)}</option>`).join('')}</select></div>
+      <div class="field"><label>${T('كود إحالة','Referral code','کۆدی ناساندن')} <span style="color:var(--ink3);font-weight:500">(${T('اختياري','optional','ئارەزوومەندانە')})</span></label><input class="inp" data-bk="ref" dir="ltr" value="${esc(b.ref)}" placeholder="EB-7K42"></div>
+      ${b.ref ? (validRef(b.ref) ? `<div class="okline" style="margin:-6px 0 12px">${I.check} ${T('الكود صالح — خصم 2,000 د.ع عند الطلب','Valid code — 2,000 IQD off when you order','کۆدەکە دروستە — 2,000 دینار داشکاندن لە کاتی داواکردن')}</div>` : `<div class="errline" style="margin:-6px 0 12px">${I.alert} ${T('الكود غير صحيح','Invalid code','کۆدەکە هەڵەیە')}</div>`) : ''}
+      <button class="pbtn" data-act="bk-submit">${I.check} ${T('احجز مكاني','Reserve my spot','شوێنەکەم حیجز بکە')}</button>
+      <p class="sample" style="margin:10px 0 0">${T('بدون دفع الآن · نستخدم رقمك بس للتواصل بخصوص الحجز','No payment now · we only use your number for this booking','ئێستا پارەدان نییە · ژمارەکەت تەنها بۆ ئەم حیجزە بەکاردێت')}</p></div>`}
+    <p class="w-foot"><b>${BRAND()}</b> · ${T('ابتكار عراقي','An Iraqi innovation','داهێنانێکی عێراقی')}</p>`;
+}
+function renderBookingAll(){
+  const view = $('#v-booking'); if (!view) return;
+  const keep = $('#bBody')?.scrollTop || 0;
+  $$('[data-phone="b"]').forEach(scr => {
+    scr.innerHTML = `<div class="island"></div><div class="sb">${clock(Date.now())}${SB_ICONS}</div><div class="body" id="bBody">${bkPage()}</div>
+      <div class="bbar"><div class="url">${I.lock}<span>eblagh.iq</span><small>/book${S.bk.ref ? '?ref=' + esc(normCode(S.bk.ref)) : ''}</small></div><div class="bnav"><span class="dim">${BACK()}</span><span class="dim">${FWD()}</span>${I.share}${I.layers}</div></div>
+      ${S.toast.b ? `<div class="toast">${I.check}${esc(L(S.toast.b))}</div>` : ''}<div class="homebar"></div>`;
+  });
+  const bb = $('#bBody'); if (bb) bb.scrollTop = S._jumpB ? 0 : keep; S._jumpB = false;
+  const st = S.bk.done ? 'done' : S.bk.err ? 'err' : 'form';
+  $$('[data-chips="b"]').forEach(el => el.innerHTML = [['form',T('صفحة الحجز','Booking page','پەڕەی حیجز')],['err',T('خطأ بالنموذج','Form error','هەڵەی فۆرم')],['done',T('تم الحجز','Booked','حیجز کرا')]].map(([k,t])=>`<button class="chip ${st===k?'on':''}" data-act="bk-jump" data-s="${k}">${t}</button>`).join(''));
+  const conv = (S.bookings / 2340 * 100).toFixed(1);
+  $('#notesB').innerHTML = `<div class="note"><h3 class="h">${I.route} ${T('اختبار السوق قبل البرمجة','Test the market before building','تاقیکردنەوەی بازاڕ پێش بەرنامەسازی')}</h3><p>${T('صفحة حجز بسيطة مع فيديوهات المحتوى. الهدف 100 حجز جاد بدون تحصيل أموال، ونقارن الزيارات بالحجوزات قبل قرار التطوير.','A simple booking page alongside the content videos. The goal is 100 serious bookings without taking money, comparing visits with bookings before deciding to build.','پەڕەیەکی سادەی حیجز لەگەڵ ڤیدیۆکانی ناوەڕۆک. ئامانج 100 حیجزی جددییە بێ وەرگرتنی پارە، و بەراوردی سەردان و حیجز پێش بڕیاری پەرەپێدان.')}</p>
+      <div class="bk-goal"><div class="row2"><b class="num">${S.bookings}/100</b><small>${T('حجز','bookings','حیجز')}</small></div><span class="bar"><i style="width:${Math.min(100, S.bookings)}%"></i></span></div></div>
+    <div class="note"><h3 class="h">${I.grid} ${T('أرقام الحملة','Campaign numbers','ژمارەکانی کەمپەین')}</h3>
+      <div class="mstats"><div><b class="num">2,340</b><small>${T('زيارة','visits','سەردان')}</small></div><div><b class="num">${conv}%</b><small>${T('نسبة التحويل','conversion','ڕێژەی گۆڕین')}</small></div><div><b class="num">${S.bkRef}</b><small>${T('عبر الإحالة','via referral','لە ڕێگەی ناساندن')}</small></div></div>
+      <div class="hbars" style="margin-top:14px">${[['TikTok',41],['Instagram',28],[T('ملصق على سيارة','Sticker on a car','ستیکەر لەسەر ئۆتۆمبێل'),18],[T('صديق','A friend','هاوڕێ'),13]].map(([n,v])=>`<div class="hb"><span>${n}</span><span class="tr"><i style="width:${v*2}%"></i></span><b>${v}%</b></div>`).join('')}</div></div>
+    <div class="note"><h3 class="h">${I.info} ${T('شنو بالصفحة','What’s on the page','لە پەڕەکەدا چی هەیە')}</h3><ul>
+      ${liX(T('عدّاد حي:','Live counter:','ژمێرەری ڕاستەوخۆ:'), T('كم واحد حجز من أول 100 — يحفّز القرار.','How many of the first 100 have booked — nudges the decision.','چەند کەس لە یەکەم 100 حیجزیان کردووە — هاندەری بڕیارە.'))}
+      ${liX(T('بدون دفع:','No payment:','بێ پارەدان:'), T('الاسم والرقم والمحافظة بس.','Just name, phone and governorate.','تەنها ناو، ژمارە و پارێزگا.'))}
+      ${liX(T('إحالة:','Referral:','ناساندن:'), T('كل حاجز ياخذ رابط يقدّمه بالدور.','Every booker gets a link that moves them up the list.','هەر حیجزکەرێک بەستەرێک وەردەگرێت کە لە ڕیزدا دەیباتە پێشەوە.'))}
+      ${liX(T('من صفحة المسح:','From the scan page:','لە پەڕەی سکانەوە:'), T('إعلان صفحة المُبلِّغ يفتح هذي الصفحة بكود SCAN-2K.','The reporter-page ad opens this page with code SCAN-2K.','ڕیکلامی پەڕەی ڕاپۆرتدەر ئەم پەڕەیە بە کۆدی SCAN-2K دەکاتەوە.'))}</ul></div>`;
+}
+
+/* --- 5 & 9. business packages and company dashboard --- */
+const BIZ_DRIVERS = [o3('علي حسين','Ali Hussein','عەلی حوسێن'), o3('مصطفى كريم','Mustafa Kareem','مستەفا کەریم'), o3('حيدر عباس','Haider Abbas','حەیدەر عەباس'), o3('سجاد ناصر','Sajjad Nasser','سەججاد ناسر')];
+function bizPlans(){
+  const q = S.biz.q;
+  const P = [
+    {k:'fleet', ic:'car', t:T('الشركات والأساطيل','Companies & fleets','کۆمپانیا و فلیتەکان'), s:T('شركات التأجير والتوصيل والتكسي وسيارات الموظفين','Rental, delivery, taxi and staff cars','بەکرێدان، گەیاندن، تەکسی و ئۆتۆمبێلی فەرمانبەران'), p:4000, u:T('للمركبة · من 10 مركبات','per vehicle · from 10 vehicles','بۆ هەر ئۆتۆمبێلێک · لە 10 ئۆتۆمبێلەوە'),
+      f:[T('لوحة تحكم لكل المركبات','One dashboard for every vehicle','داشبۆردێک بۆ هەموو ئۆتۆمبێلەکان'), T('البلاغ يروح للسائق المعيّن ثم المشرف','Reports go to the assigned driver, then the supervisor','ڕاپۆرت بۆ شۆفێری دیاریکراو دەچێت، پاشان سەرپەرشتیار'), T('تقارير شهرية وزمن الاستجابة','Monthly reports & response times','ڕاپۆرتی مانگانە و کاتی وەڵام'), T('فاتورة شهرية واحدة','One monthly invoice','یەک پسوولەی مانگانە')]},
+    {k:'compound', ic:'home', pop:true, t:T('المجمعات السكنية','Residential compounds','کۆمەڵگە نیشتەجێبوونەکان'), s:T('تواصل بين السكان بدون نشر أرقامهم','Residents reach each other without sharing numbers','دانیشتووان بێ بڵاوکردنەوەی ژمارە پەیوەندی بە یەکەوە دەکەن'), p:3500, u:T('للملصق · من 50 وحدة','per sticker · from 50 units','بۆ هەر ستیکەرێک · لە 50 یەکەوە'),
+      f:[T('ملصق لكل سيارة ساكن، مربوط بالوحدة','A sticker per resident car, linked to the unit','ستیکەرێک بۆ هەر ئۆتۆمبێلی دانیشتوو، بەستراو بە یەکەکە'), T('العاجل يوصل لبوابة الحراسة','Urgent reports also reach the guard gate','ڕاپۆرتی بەپەلە دەگاتە دەروازەی پاسەوانیش'), T('ملصقات زوار مؤقتة','Temporary visitor stickers','ستیکەری کاتی بۆ میوان'), T('لوحة لإدارة المجمع','A dashboard for compound management','داشبۆرد بۆ بەڕێوەبەرایەتی کۆمەڵگە')]},
+    {k:'campus', ic:'users', t:T('الجامعات والدوائر','Universities & offices','زانکۆ و فەرمانگەکان'), s:T('مواقف مشتركة للطلاب والموظفين','Shared parking for students and staff','پارکینگی هاوبەش بۆ خوێندکار و فەرمانبەران'), p:0, u:T('سعر حسب العدد','Priced by volume','نرخ بەپێی ژمارە'),
+      f:[T('تفعيل جماعي بملف Excel','Bulk activation from an Excel file','چالاککردنی بەکۆمەڵ بە فایلی Excel'), T('ملصق موظف أو طالب بشعار الجهة','Staff or student sticker with your logo','ستیکەری فەرمانبەر یان خوێندکار بە لۆگۆی دامەزراوەکە'), T('إحصائيات المواقف','Parking statistics','ئاماری پارکینگ'), T('دعم مخصص','Dedicated support','پشتگیریی تایبەت')]},
+  ];
+  const tiers = [[T('10 – 49 مركبة','10 – 49 vehicles','10 – 49 ئۆتۆمبێل'),4000,'—'],[T('50 – 199 مركبة','50 – 199 vehicles','50 – 199 ئۆتۆمبێل'),3500,'12%'],[T('200+ مركبة','200+ vehicles','200+ ئۆتۆمبێل'),3000,'25%']];
+  const form = S.biz.sent
+    ? `<div class="inact" style="padding:24px 10px"><div class="st-ring ok">${I.checks}</div><h3 class="h" style="margin:0">${T('وصل طلبك','Request received','داواکارییەکەت گەیشت')}</h3><p style="color:var(--ink2);font-size:13.5px">${T('فريق المبيعات يتواصل وياك خلال 24 ساعة بعرض سعر مفصّل.','Our sales team will reach you within 24 hours with a detailed quote.','تیمی فرۆشتن لە ماوەی 24 کاتژمێردا نرخێکی وردت بۆ دەنێرێت.')}</p><button class="btn-o" data-act="biz-new">${T('طلب جديد','New request','داواکاریی نوێ')}</button></div>`
+    : `<h3>${T('طلب عرض سعر','Request a quote','داوای نرخ')} <small>${T('رد خلال 24 ساعة','Reply within 24h','وەڵام لە 24 کاتژمێردا')}</small></h3>
+      ${S.biz.err ? `<div class="banner bad" style="margin:0 0 12px">${I.alert}<div><b>${T('كمّل الحقول المطلوبة','Fill in the required fields','خانە پێویستەکان پڕ بکەرەوە')}</b>${T('اسم الجهة، العدد، ورقم تواصل صحيح.','Organization name, volume and a valid contact number.','ناوی دامەزراوە، ژمارە و ژمارەیەکی دروستی پەیوەندی.')}</div></div>` : ''}
+      <div class="bform"><div class="field"><label>${T('اسم الجهة','Organization','دامەزراوە')}</label><input class="inp" data-bq="org" value="${esc(q.org)}" placeholder="${T('مثال: شركة الرافدين للتأجير','e.g. Rafidain Car Rental','بۆ نموونە: کۆمپانیای ڕافیدەین')}"></div>
+      <div class="field"><label>${T('النوع','Type','جۆر')}</label><select class="inp" data-bq="type">${P.map(p=>`<option value="${p.k}" ${q.type===p.k?'selected':''}>${p.t}</option>`).join('')}</select></div>
+      <div class="field"><label>${q.type==='compound' ? T('عدد الوحدات','Number of units','ژمارەی یەکەکان') : T('عدد المركبات','Number of vehicles','ژمارەی ئۆتۆمبێلەکان')}</label><input class="inp" data-bq="n" inputmode="numeric" dir="ltr" value="${esc(q.n)}" placeholder="25"></div>
+      <div class="field"><label>${T('رقم التواصل','Contact phone','ژمارەی پەیوەندی')}</label><input class="inp" data-bq="phone" inputmode="tel" dir="ltr" value="${esc(q.phone)}" placeholder="+964 7xx xxx xxxx"></div></div>
+      <div id="bqEst">${bqEst()}</div>
+      <button class="btn-y" style="width:100%" data-act="biz-quote">${I.send} ${T('أرسل الطلب','Send request','داواکاری بنێرە')}</button>`;
+  return `<div class="bplans">${P.map(p=>`<article class="bplan ${p.pop?'pop':''} ${q.type===p.k?'on':''}">${p.pop?`<span class="pop">${T('الأكثر طلباً','Most requested','زۆرترین داواکراو')}</span>`:''}<span class="bic">${I[p.ic]}</span><h3 class="h">${p.t}</h3><p>${p.s}</p><div class="bprice">${p.p ? IQD(p.p) : T('عرض سعر','Custom quote','نرخی تایبەت')}<small>${p.u}</small></div><ul>${p.f.map(f=>`<li>${I.check}${f}</li>`).join('')}</ul><button class="btn-y" data-act="biz-pick" data-k="${p.k}">${T('اطلب عرض سعر','Request a quote','داوای نرخ بکە')}</button></article>`).join('')}</div>
+    <div class="bgrid2">
+      <div class="panel"><h3>${T('خصم الكمية','Volume pricing','نرخی بەکۆمەڵ')} <small>${T('الأساطيل والشركات','Fleets & companies','فلیت و کۆمپانیاکان')}</small></h3><div class="tbl-wrap"><table class="tbl"><thead><tr><th>${T('العدد','Volume','ژمارە')}</th><th>${T('سعر الملصق','Per sticker','نرخی ستیکەر')}</th><th>${T('التوفير','Saving','پاشەکەوت')}</th></tr></thead><tbody>${tiers.map(([a,b,c])=>`<tr><td>${a}</td><td>${IQD(b)}</td><td class="mono">${c}</td></tr>`).join('')}</tbody></table></div>
+        <p class="bnote">${T('كل الباقات تشمل: لوحة التحكم، تقارير شهرية، استبدال الملصق التالف، وفاتورة رسمية. الأسعار تجريبية.','Every package includes the dashboard, monthly reports, replacement of damaged stickers and an official invoice. Prices are for testing.','هەموو پاکێجەکان: داشبۆرد، ڕاپۆرتی مانگانە، گۆڕینی ستیکەری تێکچوو و پسوولەی فەرمی. نرخەکان تاقیکارین.')}</p>
+        <button class="btn-o" style="margin-top:12px" data-act="biz-tab" data-k="dash">${I.grid} ${T('شوف شكل لوحة الشركة','Preview the company dashboard','داشبۆردی کۆمپانیا ببینە')}</button></div>
+      <div class="panel" id="bq">${form}</div>
+    </div>`;
+}
+function bqEst(){
+  const q = S.biz.q, n = +q.n || 0, unit = q.type === 'compound' ? 3500 : n >= 200 ? 3000 : n >= 50 ? 3500 : 4000;
+  return n > 0 ? `<div class="okline" style="margin:0 0 12px">${I.info} ${T('تقدير أولي:','Rough estimate:','خەمڵاندنی سەرەتایی:')} ${IQD(n * unit)} <span style="color:var(--ink3);font-weight:500">(${IQD(unit)} × ${n})</span></div>` : '';
+}
+function bizDash(){
+  const B = S.biz, cmp = B.type === 'compound', rows = cmp ? B.units : B.veh, mn = T('د','min','خ');
+  const K = cmp
+    ? [[I.home,T('الوحدات','Units','یەکەکان'),'180',T('8 عمارات','8 buildings','8 باڵەخانە')],[I.sticker,T('ملصقات مفعّلة','Active stickers','ستیکەری چالاک'),'196',T('92% من السيارات','92% of cars','92%ی ئۆتۆمبێلەکان')],[I.inbox,T('بلاغات الشهر','Reports this month','ڕاپۆرتی ئەم مانگە'),'52',ltr('−18%') + ' ' + T('عن الشهر الماضي','vs last month','بەراورد بە مانگی پێشوو')],[I.clock,T('متوسط الرد','Avg. response','ناوەندی وەڵام'),'4.2 ' + mn,T('من الساكن','by residents','لە دانیشتووانەوە')],[I.shield,T('وصلت الحراسة','Escalated to guards','گەیشتە پاسەوان'),'3',T('بلاغات عاجلة','urgent reports','ڕاپۆرتی بەپەلە')]]
+    : [[I.car,T('المركبات','Vehicles','ئۆتۆمبێلەکان'),'24',T('6 معروضة هنا','6 shown here','6 لێرە پیشاندراون')],[I.sticker,T('ملصقات مفعّلة','Active stickers','ستیکەری چالاک'),'22',T('2 بدون سائق','2 unassigned','2 بێ شۆفێر')],[I.inbox,T('بلاغات الشهر','Reports this month','ڕاپۆرتی ئەم مانگە'),'37',ltr('+4') + ' ' + T('هذا الأسبوع','this week','ئەم هەفتەیە')],[I.clock,T('متوسط الرد','Avg. response','ناوەندی وەڵام'),'3.1 ' + mn,T('أسرع سائق 1.2 د','fastest driver 1.2 min','خێراترین شۆفێر 1.2 خ')],[I.checks,T('تم الحل','Resolved','چارەسەرکراو'),'95%',T('بدون غرامات سحب','no tow fines','بێ سزای ڕاکێشان')]];
+  const RT = cmp
+    ? [['driver',T('للساكن أولاً، والعاجل يوصل لبوابة الحراسة','Resident first; urgent ones also reach the guard gate','سەرەتا دانیشتوو؛ بەپەلەکان دەگەنە دەروازەی پاسەوانیش')],['super',T('لإدارة المجمع مباشرة','Straight to compound management','ڕاستەوخۆ بۆ بەڕێوەبەرایەتی کۆمەڵگە')],['all',T('للساكن والحراسة سوية','Resident and guards together','دانیشتوو و پاسەوان پێکەوە')]]
+    : [['driver',T('للسائق المعيّن، وإذا ما ردّ خلال 3 دقائق للمشرف','Assigned driver; supervisor if no reply in 3 min','شۆفێری دیاریکراو؛ ئەگەر لە 3 خولەکدا وەڵامی نەدایەوە بۆ سەرپەرشتیار')],['super',T('للمشرف مباشرة','Straight to the supervisor','ڕاستەوخۆ بۆ سەرپەرشتیار')],['all',T('للسائق والمشرف سوية','Driver and supervisor together','شۆفێر و سەرپەرشتیار پێکەوە')]];
+  const stP = s => s === 'active' ? `<span class="pill ok">${T('مفعّل','Active','چالاک')}</span>` : s === 'paused' ? `<span class="pill warn">${T('متوقف','Paused','ڕاگیراو')}</span>` : `<span class="pill mut">${cmp ? T('غير مفعّل','Not activated','چالاک نەکراو') : T('بدون سائق','Unassigned','بێ شۆفێر')}</span>`;
+  const recent = cmp
+    ? [['block','EB-7203','B-04',T('للساكن','to resident','بۆ دانیشتوو'),'2 ' + mn],['inside','EB-7211','C-17',T('للساكن + الحراسة','resident + guards','دانیشتوو + پاسەوان'),'1 ' + mn],['lights','EB-7208','A-02',T('للساكن','to resident','بۆ دانیشتوو'),'6 ' + mn]]
+    : [['block','EB-6102','',L(BIZ_DRIVERS[1]),'1 ' + mn],['tow','EB-6106','',L(BIZ_DRIVERS[0]) + ' ← ' + T('المشرف','supervisor','سەرپەرشتیار'),'4 ' + mn],['lights','EB-6101','',L(BIZ_DRIVERS[0]),'3 ' + mn]];
+  return `<div class="bdash"><div class="bdash-h"><span class="bic">${I[cmp?'home':'car']}</span><div><b>${cmp ? T('مجمع واحة بغداد السكني','Baghdad Oasis Residential Compound','کۆمەڵگەی نیشتەجێبوونی واحەی بەغدا') : T('شركة الرافدين لتأجير السيارات','Rafidain Car Rental Co.','کۆمپانیای ڕافیدەین بۆ بەکرێدانی ئۆتۆمبێل')}</b><small>${cmp ? T('باقة المجمعات · 196 ملصق','Compound package · 196 stickers','پاکێجی کۆمەڵگە · 196 ستیکەر') : T('باقة الأساطيل · 24 مركبة','Fleet package · 24 vehicles','پاکێجی فلیت · 24 ئۆتۆمبێل')}</small></div>
+      <div class="acts3"><button class="tb-btn" data-act="biz-bulk" data-k="import">${I.download} ${T('تفعيل جماعي (Excel)','Bulk activate (Excel)','چالاککردنی بەکۆمەڵ (Excel)')}</button><button class="tb-btn" data-act="biz-bulk" data-k="export">${I.printer} ${T('تقرير شهري','Monthly report','ڕاپۆرتی مانگانە')}</button><button class="tb-btn y" data-act="biz-bulk" data-k="order">${I.bag} ${T('اطلب ملصقات بالجملة','Order stickers in bulk','داواکردنی ستیکەر بە کۆمەڵ')}</button></div></div>
+    <div class="kpis">${K.map(([ic,t,v,e])=>`<div class="kpi"><small>${ic} ${t}</small><b class="num">${v}</b><em>${e}</em></div>`).join('')}</div>
+    <div class="adm-grid">
+      <div class="panel"><h3>${cmp ? T('الوحدات والسيارات','Units & cars','یەکە و ئۆتۆمبێلەکان') : T('المركبات','Vehicles','ئۆتۆمبێلەکان')} <small>${T('الأرقام مخفية حتى عن الإدارة','Numbers are hidden even from management','ژمارەکان تەنانەت لە بەڕێوەبەرایەتیش شاراونەتەوە')}</small></h3><div class="tbl-wrap"><table class="tbl"><thead><tr><th>${T('الملصق','Sticker','ستیکەر')}</th><th>${cmp ? T('الوحدة','Unit','یەکە') : T('المركبة','Vehicle','ئۆتۆمبێل')}</th><th>${cmp ? T('السيارة','Car','ئۆتۆمبێل') : T('السائق','Driver','شۆفێر')}</th><th>${T('الحالة','Status','دۆخ')}</th><th>${T('بلاغات الشهر','This month','ئەم مانگە')}</th><th>${T('آخر بلاغ','Last report','دوایین ڕاپۆرت')}</th>${cmp ? '' : '<th></th>'}</tr></thead><tbody>
+        ${rows.map((v,i)=>`<tr><td class="mono">${fmtCode(v.id)}</td><td>${cmp ? `<b>${v.unit}</b>` : esc(L(v.m))}</td><td>${cmp ? esc(L(v.m)) : (v.d == null ? '<span style="color:var(--ink3)">—</span>' : esc(L(BIZ_DRIVERS[v.d])))}</td><td>${stP(v.st)}</td><td class="mono">${v.r}</td><td>${v.last ? ago(Date.now() - v.last) : '—'}</td>${cmp ? '' : `<td><button class="tb-btn" data-act="biz-assign" data-i="${i}">${I.users} ${v.d == null ? T('عيّن سائق','Assign driver','شۆفێر دیاری بکە') : T('غيّر','Change','گۆڕین')}</button></td>`}</tr>`).join('')}
+      </tbody></table></div></div>
+      <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+        <div class="panel"><h3>${T('توزيع البلاغات','Report routing','دابەشکردنی ڕاپۆرت')}</h3><div class="route">${RT.map(([k,t])=>`<button class="${B.route===k?'on':''}" data-act="biz-route" data-k="${k}"><span class="radio">${B.route===k?I.check:''}</span>${t}</button>`).join('')}</div></div>
+        <div class="panel"><h3>${T('آخر البلاغات','Latest reports','دوایین ڕاپۆرتەکان')}</h3>${recent.map(([k,code,unit,to,resp])=>`<div class="brep"><span class="ri2">${I[REASONS[k].ic]}</span><span class="lt"><b>${rt(k)}</b><small>${code}${unit ? ' · ' + unit : ''} · ${to}</small></span><span class="pill ok">${resp}</span></div>`).join('')}</div>
+      </div></div></div>`;
+}
+function renderBiz(){
+  const B = S.biz;
+  const tabs = `<div class="biz-top"><div class="mini-seg">${[['plans',T('باقات الأعمال','Business packages','پاکێجەکانی بازرگانی'),'bag'],['dash',T('لوحة الشركة','Company dashboard','داشبۆردی کۆمپانیا'),'grid']].map(([k,t,ic])=>`<button aria-pressed="${B.tab===k}" data-act="biz-tab" data-k="${k}">${I[ic]}${t}</button>`).join('')}</div>
+    ${B.tab === 'dash' ? `<div class="mini-seg">${[['fleet',T('شركة / أسطول','Company / fleet','کۆمپانیا / فلیت'),'car'],['compound',T('مجمع سكني','Residential compound','کۆمەڵگەی نیشتەجێبوون'),'home']].map(([k,t,ic])=>`<button aria-pressed="${B.type===k}" data-act="biz-type" data-k="${k}">${I[ic]}${t}</button>`).join('')}</div>` : ''}</div>`;
+  $('#biz').innerHTML = tabs + (B.tab === 'plans' ? bizPlans() : bizDash());
+}
+
+/* --- 3. admin: orders --- */
+const OST = {new:[o3('جديد','New','نوێ'),'y'], preparing:[o3('قيد التجهيز','Preparing','ئامادەدەکرێت'),'info'], shipped:[o3('مع المندوب','With courier','لای گەیەنەر'),'warn'], delivered:[o3('تم التسليم','Delivered','گەیەندرا'),'ok'], activated:[o3('مفعّل','Activated','چالاککرا'),'ok'], cancelled:[o3('ملغي','Cancelled','هەڵوەشێنرایەوە'),'bad']};
+const ONEXT = {new:['preparing',o3('بدء التجهيز','Start preparing','دەستپێکردنی ئامادەکردن'),'printer'], preparing:['shipped',o3('سلّم للمندوب','Hand to courier','ڕادەستی گەیەنەر بکە'),'truck'], shipped:['delivered',o3('تم التسليم','Mark delivered','گەیەندرا'),'check']};
+function liveOrder(){
+  const od = S.a.order || S.adm.liveOrd; if (!od) return null;
+  const st = od.activated ? 'activated' : ['new','preparing','shipped','delivered'][Math.min(3, od.step || 0)];
+  return {id:od.id, live:true, name:od.name || displayName(), gov:od.gov, items:`${L(PLANS[od.plan].t)} · ${od.qty || 1} × ${T('ملصق','sticker','ستیکەر')}`, total:od.total, pay:od.pay, st, t:od.t};
+}
+const allOrders = () => [liveOrder(), ...S.adm.orders].filter(Boolean);
+const ordNew = () => allOrders().filter(o => o.st === 'new').length;
+function adOrders(){
+  const A = S.adm, all = allOrders(), f = A.ofilter || 'all';
+  const rows = all.filter(o => f === 'all' || o.st === f);
+  const cnt = k => all.filter(o => o.st === k).length;
+  const cod = all.filter(o => o.pay === 'cod' && ['new','preparing','shipped'].includes(o.st)).reduce((s,o) => s + o.total, 0);
+  const done = cnt('delivered') + cnt('activated');
+  return `<div class="adm-h"><div><h2 class="h">${T('الطلبات','Orders','داواکارییەکان')}</h2><p>${T('طلبات الملصقات من التطبيق: التجهيز، التوصيل، الدفع والتفعيل. رقم الزبون يوصل للمندوب بس.','Sticker orders from the app: preparation, delivery, payment and activation. The customer’s phone goes to the courier only.','داواکاریی ستیکەر لە ئەپەکەوە: ئامادەکردن، گەیاندن، پارەدان و چالاککردن. ژمارەی کڕیار تەنها بۆ گەیەنەر دەچێت.')}</p></div><button class="tb-btn" data-act="ad-oexp">${I.download} ${T('ملف المندوبين','Courier sheet','فایلی گەیەنەران')}</button></div>
+    <div class="kpis">
+      <div class="kpi"><small>${I.bag} ${T('طلبات جديدة','New orders','داواکاریی نوێ')}</small><b class="num">${cnt('new')}</b><em>${T('بانتظار التجهيز','awaiting preparation','چاوەڕێی ئامادەکردن')}</em></div>
+      <div class="kpi"><small>${I.printer} ${T('قيد التجهيز','Preparing','ئامادەدەکرێت')}</small><b class="num">${cnt('preparing')}</b><em>${T('طباعة وتغليف','printing & packing','چاپ و پێچانەوە')}</em></div>
+      <div class="kpi"><small>${I.truck} ${T('مع المندوب','With courier','لای گەیەنەر')}</small><b class="num">${cnt('shipped')}</b><em>${T('2–3 أيام','2–3 days','2–3 ڕۆژ')}</em></div>
+      <div class="kpi"><small>${I.check} ${T('تسليم وتفعيل','Delivered & activated','گەیەندراو و چالاک')}</small><b class="num">${done}</b><em>${Math.round(cnt('activated') / Math.max(1, done) * 100)}% ${T('فعّلوا','activated','چالاکیان کرد')}</em></div>
+      <div class="kpi"><small>${I.cash} ${T('نقد للتحصيل','Cash to collect','پارەی نەقد بۆ وەرگرتن')}</small><b class="num" style="font-size:20px">${IQD(cod)}</b><em class="dn">${T('عند الاستلام','on delivery','لە کاتی گەیاندن')}</em></div>
+    </div>
+    <div class="mini-seg ofilt">${[['all',T('الكل','All','هەموو')],['new',L(OST.new[0])],['preparing',L(OST.preparing[0])],['shipped',L(OST.shipped[0])],['delivered',L(OST.delivered[0])],['activated',L(OST.activated[0])],['cancelled',L(OST.cancelled[0])]].map(([k,t])=>`<button aria-pressed="${f===k}" data-act="ad-ofilter" data-k="${k}">${t} <small>${k === 'all' ? all.length : cnt(k)}</small></button>`).join('')}</div>
+    <div class="panel"><div class="tbl-wrap"><table class="tbl"><thead><tr><th>${T('الطلب','Order','داواکاری')}</th><th>${T('الزبون','Customer','کڕیار')}</th><th>${T('المحافظة','Governorate','پارێزگا')}</th><th>${T('المحتوى','Items','ناوەڕۆک')}</th><th>${T('الدفع','Payment','پارەدان')}</th><th>${T('المبلغ','Total','بڕ')}</th><th>${T('الحالة','Status','دۆخ')}</th><th></th></tr></thead><tbody>
+      ${rows.length ? rows.map(o => { const [l,c] = OST[o.st], nx = ONEXT[o.st]; return `<tr class="${o.live?'live':''}"><td class="mono">${o.id}${o.live ? ` <span class="pill y">${T('من التجربة','From the demo','لە نمایشەکەوە')}</span>` : ''}<small class="sub">${ago(o.t)}</small></td><td>${esc(L(o.name))}</td><td>${govName(o.gov)}</td><td>${esc(L(o.items))}</td><td>${L(PAYS[o.pay].t)}</td><td>${IQD(o.total)}</td><td><span class="pill ${c}">${L(l)}</span></td><td><span style="display:flex;gap:6px">${nx ? `<button class="tb-btn y" data-act="ad-onext" data-id="${o.id}">${I[nx[2]]} ${L(nx[1])}</button>` : ''}${o.st === 'new' && !o.live ? `<button class="tb-btn r" data-act="ad-ocancel" data-id="${o.id}" aria-label="${T('إلغاء','Cancel','هەڵوەشاندنەوە')}">${I.x}</button>` : ''}</span></td></tr>`; }).join('') : `<tr><td colspan="8"><div class="empty">${I.bag}${T('ماكو طلبات بهذي الحالة','No orders with this status','هیچ داواکارییەک بەم دۆخە نییە')}</div></td></tr>`}
+    </tbody></table></div></div>
+    <p class="adm-tip">${I.info} ${T('جرّب: اطلب ملصق من «تسجيل زبون جديد» وراح يظهر هنا، وكل تحديث للحالة يوصل لتطبيق الزبون.','Try it: order a sticker in “New customer” — it shows up here, and every status update reaches the customer’s app.','تاقی بکەرەوە: لە «کڕیاری نوێ» ستیکەرێک داوا بکە — لێرە دەردەکەوێت، و هەر نوێکردنەوەیەکی دۆخ دەگاتە ئەپی کڕیار.')}</p>`;
+}
+
+/* --- 10. admin: notification delivery --- */
+function adNotif(){
+  const live = S.reports.filter(r => r.t > T0);
+  const sent = 1248 + live.length, deliv = 1231 + live.filter(r => r.status !== 'sent').length;
+  const opened = 1140 + live.filter(r => ['seen','replied','resolved'].includes(r.status)).length;
+  const replied = 1086 + live.filter(r => ['replied','resolved'].includes(r.status)).length;
+  const rate = (deliv / sent * 100).toFixed(1);
+  const ch = [['FCM · Android',99.4],['APNs · iPhone',98.1],[T('Web Push (تطبيق ويب)','Web Push (PWA)','Web Push (ئەپی وێب)'),93.2],[T('بديل: واتساب','Fallback: WhatsApp','جێگرەوە: واتساپ'),99.0],[T('بديل: SMS','Fallback: SMS','جێگرەوە: SMS'),97.5]];
+  const funnel = [[T('أُرسل','Sent','نێردرا'),sent],[T('وصل','Delivered','گەیشت'),deliv],[T('انفتح','Opened','کرایەوە'),opened],[T('ردّ','Replied','وەڵام'),replied]];
+  const fails = [
+    [18*MIN,'EB-3390','APNs',T('الهاتف مطفي','Phone switched off','مۆبایلەکە کوژاوەتەوە'),T('بديل واتساب بعد 60 ث — وصل','WhatsApp fallback after 60s — delivered','دوای 60 چرکە جێگرەوەی واتساپ — گەیشت'),'ok'],
+    [1*HR,'EB-1184','FCM',T('رمز الجهاز منتهي','Expired device token','تۆکنی ئامێر بەسەرچووە'),T('انحذف الرمز · بديل SMS — وصل','Token removed · SMS fallback — delivered','تۆکن سڕایەوە · جێگرەوەی SMS — گەیشت'),'ok'],
+    [3*HR,'EB-0941','Web Push',T('المستخدم لغى الإذن','Permission revoked','ڕێگەپێدان هەڵوەشێنرایەوە'),T('ما عنده قناة بديلة — انرسل إيميل','No fallback channel — email sent','کەناڵی جێگرەوە نییە — ئیمەیڵ نێردرا'),'warn'],
+    [5*HR,'EB-2702','APNs',T('التطبيق محذوف','App uninstalled','ئەپەکە سڕاوەتەوە'),T('الملصق انوقف مؤقتاً تلقائياً','Sticker auto-paused','ستیکەرەکە خۆکارانە ڕاگیرا'),'bad'],
+  ];
+  return `<div class="adm-h"><div><h2 class="h">${T('وصول الإشعارات','Notification delivery','گەیشتنی ئاگادارکردنەوە')}</h2><p>${T('أهم مؤشر تقني: هل البلاغ وصل فعلاً لهاتف صاحب السيارة؟ آخر 7 أيام.','The key technical metric: did the report actually reach the owner’s phone? Last 7 days.','گرنگترین پێوەری تەکنیکی: ئایا ڕاپۆرتەکە بەڕاستی گەیشتە مۆبایلی خاوەنەکەی؟ کۆتا 7 ڕۆژ.')}</p></div><span class="pill ${rate >= 98 ? 'ok' : 'warn'}">${I.check} ${T('الهدف ≥ 98%','Target ≥ 98%','ئامانج ≥ 98%')}</span></div>
+    <div class="kpis">
+      <div class="kpi"><small>${I.bell} ${T('نسبة الوصول','Delivery rate','ڕێژەی گەیشتن')}</small><b class="num">${rate}%</b><em>${ltr('+0.4%')} ${T('عن الأسبوع الماضي','vs last week','بەراورد بە هەفتەی پێشوو')}</em></div>
+      <div class="kpi"><small>${I.bolt} ${T('زمن الوصول','Latency','کاتی گەیشتن')}</small><b class="num">1.2 ${T('ث','s','چ')}</b><em>p95 ${ltr('3.8s')}</em></div>
+      <div class="kpi"><small>${I.eye} ${T('انفتح خلال 5 د','Opened within 5 min','لە 5 خولەکدا کرایەوە')}</small><b class="num">91%</b><em>${T('العاجل','urgent','بەپەلە')} 97%</em></div>
+      <div class="kpi"><small>${I.refresh} ${T('استُخدم البديل','Fallback used','جێگرەوە بەکارهات')}</small><b class="num">3.4%</b><em>${T('واتساب و SMS','WhatsApp & SMS','واتساپ و SMS')}</em></div>
+      <div class="kpi"><small>${I.alert} ${T('ما وصل','Not delivered','نەگەیشت')}</small><b class="num">${sent - deliv}</b><em class="dn">${T('بعد كل المحاولات','after all retries','دوای هەموو هەوڵەکان')}</em></div>
+    </div>
+    <div class="adm-grid">
+      <div class="panel"><h3>${T('حسب القناة','By channel','بەپێی کەناڵ')} <small>${T('نسبة الوصول','delivery rate','ڕێژەی گەیشتن')}</small></h3><div class="hbars">${ch.map(([n,v])=>`<div class="hb ${v < 95 ? 'u' : ''}"><span>${n}</span><span class="tr"><i style="width:${Math.max(4,(v-85)/15*100)}%"></i></span><b>${v}%</b></div>`).join('')}</div>
+        <p class="bnote">${T('Web Push على الآيفون يحتاج إضافة التطبيق للشاشة الرئيسية — لهذا نسبته أقل. نرشّح تطبيق المتجر لأصحاب الآيفون.','Web Push on iPhone needs the app added to the home screen — hence the lower rate. We recommend the store app for iPhone owners.','Web Push لە ئایفۆن پێویستی بە زیادکردنی ئەپەکە بۆ شاشەی سەرەکی هەیە — بۆیە ڕێژەکەی کەمترە. ئەپی ستۆر بۆ خاوەنانی ئایفۆن پێشنیار دەکەین.')}</p></div>
+      <div class="panel"><h3>${T('مسار البلاغ','Report funnel','ڕێڕەوی ڕاپۆرت')} <small>${T('من الإرسال للرد','send → reply','لە ناردنەوە بۆ وەڵام')}</small></h3><div class="funnel">${funnel.map(([n,v],i)=>`<div><span>${n}</span><span class="tr"><i style="width:${v/sent*100}%"></i></span><b class="num">${v.toLocaleString('en')}</b><small>${i ? (v/sent*100).toFixed(0) + '%' : ''}</small></div>`).join('')}</div></div>
+    </div>
+    <div class="panel" style="margin-bottom:14px"><h3>${T('آخر الإشعارات وحالات عدم الوصول','Latest deliveries & failures','دوایین ئاگادارکردنەوە و شکستەکان')} <small>${T('مع الإجراء التلقائي','with the automatic action','لەگەڵ کرداری خۆکار')}</small></h3><div class="tbl-wrap"><table class="tbl"><thead><tr><th>${T('الوقت','Time','کات')}</th><th>${T('الملصق','Sticker','ستیکەر')}</th><th>${T('القناة','Channel','کەناڵ')}</th><th>${T('النتيجة','Result','ئەنجام')}</th><th>${T('الإجراء','Action','کردار')}</th></tr></thead><tbody>
+      ${live.map(r=>`<tr><td>${ago(r.t)}</td><td class="mono">${fmtCode(r.car)}</td><td>FCM</td><td>${r.status === 'sent' ? T('جاري الإرسال…','Sending…','دەنێردرێت…') : T('وصل خلال','Delivered in','گەیشت لە') + ' ' + ltr('1.1s')}</td><td><span class="pill y">${T('مباشر من التجربة','Live from the demo','ڕاستەوخۆ لە نمایشەکەوە')}</span></td></tr>`).join('')}
+      ${fails.map(([t,code,c,why,act,cl])=>`<tr><td>${ago(Date.now() - t)}</td><td class="mono">${code}</td><td>${c}</td><td>${why}</td><td><span class="pill ${cl}">${act}</span></td></tr>`).join('')}
+    </tbody></table></div></div>
+    <div class="panel"><h3>${T('سياسة البديل','Fallback policy','سیاسەتی جێگرەوە')}</h3>
+      <div class="setrow"><span>${T('إذا ما وصل الإشعار خلال (ثانية)','If the push isn’t delivered within (seconds)','ئەگەر ئاگادارکردنەوە نەگەیشت لە ماوەی (چرکە)')}<small>${T('بعدها نجرّب القناة البديلة','then we try the fallback channel','پاشان کەناڵی جێگرەوە تاقی دەکەینەوە')}</small></span><input type="number" value="60"></div>
+      <div class="setrow"><span>${T('القناة البديلة','Fallback channel','کەناڵی جێگرەوە')}<small>${T('بموافقة صاحب السيارة فقط','Only with the owner’s consent','تەنها بە ڕەزامەندیی خاوەنەکەی')}</small></span><span style="display:flex;gap:6px"><span class="pill ok">WhatsApp</span><span class="pill mut">SMS</span></span></div>
+      <div class="setrow"><span>${T('تنبيه الإدارة إذا نزلت النسبة تحت (%)','Alert admins if the rate drops below (%)','ئاگادارکردنەوەی بەڕێوەبەر ئەگەر ڕێژەکە دابەزی بۆ خوار (%)')}</span><input type="number" value="97"></div></div>`;
+}
+
+/* --- 11. admin: batch tracking --- */
+const BSTAGES = ['ready','printing','printed','stock','distributed'];
+const CST = {active:[o3('مفعّل','Active','چالاک'),'ok'], inactive:[o3('غير مفعّل','Not activated','چالاک نەکراو'),'mut'], paused:[o3('متوقف','Paused','ڕاگیراو'),'warn'], lost:[o3('ملغي — مفقود','Cancelled — lost','هەڵوەشاوە — ون'),'bad']};
+function adBatches(){
+  const A = S.adm, sel = A.batches.find(b => b.id === A.selBatch) || A.batches[0];
+  const tot = k => A.batches.reduce((s,b) => s + (b[k] || 0), 0);
+  const pct = (a,b) => b ? Math.round(a / b * 100) : 0;
+  const sbar = b => `<span class="sbar"><i style="width:${b.act/b.qty*100}%;background:var(--ok)"></i><i style="width:${(b.sold-b.act)/b.qty*100}%;background:var(--y)"></i><i style="width:${(b.printed-b.sold)/b.qty*100}%;background:var(--info)"></i></span>`;
+  const si = BSTAGES.indexOf(sel.st);
+  const codeSt = (c,i) => { const car = carById(c); if (car) return car.paused ? 'paused' : 'active'; return (sel.cst || [])[i] || 'inactive'; };
+  return `<div class="adm-h"><div><h2 class="h">${T('الدفعات والملصقات','Batches & stickers','کۆمەڵە و ستیکەرەکان')}</h2><p>${T('كل ملصق برمز عشوائي فريد غير قابل للتخمين، يتفعّل عند ربطه بحساب. تتبّع كل دفعة من التوليد للتفعيل.','Every sticker has a unique, unguessable random code that activates when linked to an account. Track each batch from generation to activation.','هەر ستیکەرێک کۆدێکی هەڕەمەکیی تایبەت و نەزانراوی هەیە کە کاتی بەستنەوە بە هەژمارێکەوە چالاک دەبێت. هەر کۆمەڵەیەک لە دروستکردنەوە تا چالاککردن بەدوادا بچۆ.')}</p></div></div>
+    <div class="gen"><div class="field"><label>${T('الكمية','Quantity','بڕ')}</label><select id="genQty">${[100,250,500,1000,2000].map(q=>`<option ${A.genQty==q?'selected':''}>${q}</option>`).join('')}</select></div>
+      <div class="field"><label>${T('التصميم','Design','دیزاین')}</label><select id="genDesign">${Object.entries(DESIGNS).map(([k,d])=>`<option value="${k}" ${A.genDesign===k?'selected':''}>${L(d)}</option>`).join('')}</select></div>
+      <button class="tb-btn y" style="height:40px" data-act="ad-gen">${I.plus} ${T('توليد دفعة جديدة','Generate new batch','دروستکردنی کۆمەڵەی نوێ')}</button></div>
+    <div class="kpis">
+      <div class="kpi"><small>${I.qr} ${T('رموز مولّدة','Codes generated','کۆدی دروستکراو')}</small><b class="num">${tot('qty').toLocaleString('en')}</b><em>${A.batches.length} ${T('دفعات','batches','کۆمەڵە')}</em></div>
+      <div class="kpi"><small>${I.printer} ${T('مطبوعة','Printed','چاپکراو')}</small><b class="num">${tot('printed').toLocaleString('en')}</b><em>${pct(tot('printed'), tot('qty'))}%</em></div>
+      <div class="kpi"><small>${I.bag} ${T('مباعة أو موزّعة','Sold or distributed','فرۆشراو یان دابەشکراو')}</small><b class="num">${tot('sold').toLocaleString('en')}</b><em>${pct(tot('sold'), tot('printed'))}% ${T('من المطبوع','of printed','لە چاپکراو')}</em></div>
+      <div class="kpi"><small>${I.check} ${T('مفعّلة','Activated','چالاککراو')}</small><b class="num">${tot('act').toLocaleString('en')}</b><em>${pct(tot('act'), tot('sold'))}% ${T('من المباع','of sold','لە فرۆشراو')}</em></div>
+      <div class="kpi"><small>${I.alert} ${T('مفقودة أو ملغاة','Lost or cancelled','ون یان هەڵوەشاوە')}</small><b class="num">${tot('lost')}</b><em class="dn">${T('انلغت رموزها','codes revoked','کۆدەکانیان هەڵوەشێنرایەوە')}</em></div>
+    </div>
+    <div class="panel" style="margin-bottom:14px"><h3>${T('الدفعات','Batches','کۆمەڵەکان')} <small><span class="lg"><i style="background:var(--ok)"></i>${T('مفعّل','Active','چالاک')}</span><span class="lg"><i style="background:var(--y)"></i>${T('مباع','Sold','فرۆشراو')}</span><span class="lg"><i style="background:var(--info)"></i>${T('بالمخزن','In stock','لە کۆگا')}</span></small></h3><div class="tbl-wrap"><table class="tbl"><thead><tr><th>${T('الدفعة','Batch','کۆمەڵە')}</th><th>${T('الكمية','Qty','بڕ')}</th><th>${T('التصميم','Design','دیزاین')}</th><th>${T('المرحلة','Stage','قۆناغ')}</th><th>${T('التقدّم','Progress','پێشکەوتن')}</th><th></th></tr></thead><tbody>
+      ${A.batches.map(b=>`<tr class="${b.id===sel.id?'live':''}"><td class="mono">${b.id}<small class="sub">${b.date}</small></td><td class="mono">${b.qty.toLocaleString('en')}</td><td>${L(DESIGNS[b.design])}</td><td><span class="pill ${BST[b.st][1]}">${L(BST[b.st][0])}</span></td><td>${sbar(b)}<small>${b.act} ${T('مفعّل','active','چالاک')} · ${b.sold} ${T('مباع','sold','فرۆشراو')}</small></td>
+        <td><span style="display:flex;gap:6px"><button class="tb-btn" data-act="ad-sel" data-id="${b.id}">${I.eye} ${T('تتبّع','Track','بەدواداچوون')}</button><button class="tb-btn" data-act="ad-dl">${I.download} ${T('ملف الطباعة','Print file','فایلی چاپ')}</button></span></td></tr>`).join('')}
+    </tbody></table></div></div>
+    <div class="panel"><h3>${T('تتبّع الدفعة','Batch tracking','بەدواداچوونی کۆمەڵە')} ${sel.id} <small>${L(DESIGNS[sel.design])} · ${sel.qty.toLocaleString('en')}</small></h3>
+      <div class="stages">${BSTAGES.map((k,i)=>`<div class="${i<si?'done':i===si?'now':''}"><i>${i<=si?I.check:i+1}</i><b>${L(BST[k][0])}</b><small>${sel.dates && sel.dates[k] ? ltr(sel.dates[k]) : '—'}</small></div>`).join('')}</div>
+      ${sel.st !== 'distributed' ? `<button class="tb-btn y" data-act="ad-bnext" data-id="${sel.id}">${I.refresh} ${T('نقل للمرحلة التالية:','Move to next stage:','گواستنەوە بۆ قۆناغی داهاتوو:')} ${L(BST[BSTAGES[si+1]][0])}</button>` : `<span class="pill ok">${I.check} ${T('الدفعة بالتوزيع — التفعيل يتحدّث تلقائياً','Batch is selling — activations update automatically','کۆمەڵەکە لە فرۆشتندایە — چالاککردن خۆکارانە نوێ دەبێتەوە')}</span>`}
+      <div class="bfun">${[[T('مولّدة','Generated','دروستکراو'),sel.qty],[T('مطبوعة','Printed','چاپکراو'),sel.printed],[T('مباعة','Sold','فرۆشراو'),sel.sold],[T('مفعّلة','Activated','چالاککراو'),sel.act],[T('مفقودة / ملغاة','Lost / cancelled','ون / هەڵوەشاوە'),sel.lost]].map(([t,v],i)=>`<div><small>${t}</small><b class="num">${v.toLocaleString('en')}</b><em>${i ? pct(v, sel.qty) + '%' : '100%'}</em></div>`).join('')}</div>
+      <h3 style="margin-top:18px">${T('عيّنة من الرموز وحالتها','Sample codes and their status','نموونەی کۆدەکان و دۆخیان')}</h3>
+      <div class="codes">${sel.codes.map((c,i)=>{ const [l,cl] = CST[codeSt(c,i)]; return `<div>${qrSVG(c)}<small>${fmtCode(c)}</small><span class="pill ${cl}">${L(l)}</span></div>`; }).join('')}</div></div>`;
+}
+
+/* --- notes for the new features --- */
+function extraNotes(){
+  if (S.mode === 'reporter') $('#notesR')?.insertAdjacentHTML('beforeend', `<div class="note"><h3 class="h">${I.alert} ${T('حالات الخطأ','Error states','دۆخەکانی هەڵە')}</h3><p>${T('جرّبها من الأزرار تحت الهاتف:','Try them from the chips under the phone:','لە دوگمەکانی ژێر مۆبایلەکەوە تاقییان بکەرەوە:')}</p><ul>
+      ${liX(T('غير مفعّل:','Not activated:','چالاک نەکراو:'), T('ملصق جديد ما ربطه صاحبه بعد.','A new sticker its owner hasn’t linked yet.','ستیکەرێکی نوێ کە خاوەنەکەی هێشتا نەیبەستووە.'))}
+      ${liX(T('رمز غير صالح:','Invalid code:','کۆدی نادروست:'), T('رمز غلط أو ملصق انلغى بعد ما ضاع.','A wrong code, or a sticker cancelled after it was lost.','کۆدێکی هەڵە، یان ستیکەرێک کە دوای ونبوون هەڵوەشێنراوەتەوە.'))}
+      ${liX(T('بدون إنترنت:','Offline:','بێ ئینتەرنێت:'), T('البلاغ ما انرسل — الرسالة محفوظة وزر إعادة المحاولة.','The report didn’t send — the message is kept, with a retry button.','ڕاپۆرتەکە نەنێردرا — نامەکە هەڵگیراوە و دوگمەی دووبارە هەوڵدان هەیە.'))}
+      ${liX(T('وصلت الحد:','Limit reached:','گەیشتە سنوور:'), T('حماية من التكرار، مع رابط لمتابعة البلاغ السابق.','Spam protection, with a link to track the earlier report.','پاراستن لە دووبارەبوونەوە، لەگەڵ بەستەری بەدواداچوونی ڕاپۆرتی پێشوو.'))}</ul></div>
+    <div class="note"><h3 class="h">${I.bag} ${T('صفحة المسح كإعلان','The scan page as an ad','پەڕەی سکان وەک ڕیکلام')}</h3><p>${T('كل مسح زبون محتمل، بدون ما نزعج اللي يبلّغ: سطر خفيف أسفل صفحة البلاغ، إعلان وقت الانتظار، وعرض بكود خصم بعد الحل. كلها تفتح صفحة الحجز.','Every scan is a potential customer, without bothering the reporter: a light line at the bottom of the report page, an ad while waiting, and a discount offer after it’s resolved. All open the booking page.','هەر سکانێک کڕیارێکی ئەگەرییە، بێ بێزارکردنی ڕاپۆرتدەر: هێڵێکی سووک لە خوارەوەی پەڕەکە، ڕیکلام لە کاتی چاوەڕوانی و پێشکەشکردنی داشکاندن دوای چارەسەر. هەموویان پەڕەی حیجز دەکەنەوە.')}</p></div>`);
+  if (S.mode === 'app') $('#notesA')?.insertAdjacentHTML('beforeend', `<div class="note"><h3 class="h">${I.star} ${T('ميزات جديدة بالتطبيق','New in the app','نوێ لە ئەپەکەدا')}</h3><ul>
+      ${liX(T('ملاحظة على السيارة:','Car note:','تێبینی سەر ئۆتۆمبێل:'), T('صاحب السيارة يكتب «راجع خلال 10 دقائق» وتظهر لأي واحد يمسح الملصق، فتقلّ البلاغات.','The owner posts “Back in 10 minutes” and anyone who scans sees it — fewer reports.','خاوەنەکە دەنووسێت «لە ماوەی 10 خولەکدا دەگەڕێمەوە» و هەر کەسێک سکان بکات دەیبینێت — ڕاپۆرتی کەمتر.'))}
+      ${liX(T('تفعيل آمن:','Secure activation:','چالاککردنی پارێزراو:'), T('بالمسح أو بالرمز السري من كرت التفعيل، مع قفل بعد 5 محاولات خاطئة.','By scanning or with the secret code from the activation card, locked after 5 wrong attempts.','بە سکان یان بە کۆدی نهێنیی کارتی چالاککردن، دوای 5 هەوڵی هەڵە دادەخرێت.'))}
+      ${liX(T('كود الإحالة:','Referral code:','کۆدی ناساندن:'), T('من «حسابي» — ملصق مجاني لكل صديق يطلب.','In “Account” — a free sticker for every friend who orders.','لە «هەژمار» — ستیکەرێکی بێبەرامبەر بۆ هەر هاوڕێیەک داوا بکات.'))}</ul>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:12px"><button class="btn-o" style="height:38px;font-size:13px" data-act="a-car" data-id="EB4471">${I.msg} ${T('جرّب الملاحظة','Try the note','تێبینی تاقی بکەرەوە')}</button><button class="btn-o" style="height:38px;font-size:13px" data-act="a-jump" data-s="addScan">${I.key} ${T('التفعيل','Activation','چالاککردن')}</button><button class="btn-o" style="height:38px;font-size:13px" data-act="a-jump" data-s="settings">${I.userPlus} ${T('الإحالة','Referral','ناساندن')}</button></div></div>`);
+}
+
+/* --- input sync helpers --- */
+const bkSync = () => $$('[data-bk]').forEach(i => { S.bk[i.dataset.bk] = i.value; });
+const bqSync = () => $$('[data-bq]').forEach(i => { S.biz.q[i.dataset.bq] = i.value; });
+
 /* ====================== Static texts & notes ====================== */
 function renderStatic(){
   $('#brandName').textContent = BRAND();
@@ -1708,6 +2264,8 @@ function renderStatic(){
   $('#introO').innerHTML = intro(T('تسجيل زبون جديد — من تنزيل التطبيق إلى استلام الملصق','New customer — from download to sticker delivery','کڕیاری نوێ — لە داگرتنی ئەپەوە تا گەیشتنی ستیکەر'), T('يسجّل برقمه، يكتب معلوماته، يختار اشتراكه، يشتري الملصق، يعبّي التوصيل ويدفع — وبعدها يفعّل الملصق بمسحة لما يوصل.','Sign up by phone, add details, pick a plan, buy the sticker, fill delivery and pay — then activate the sticker with a scan when it arrives.','بە ژمارە تۆمار دەبێت، زانیاری دەنووسێت، پلان هەڵدەبژێرێت، ستیکەر دەکڕێت، گەیاندن پڕ دەکاتەوە و پارە دەدات — پاشان کاتێک گەیشت بە سکان چالاکی دەکات.'));
   $('#introS').innerHTML = intro(T('الملصقات — تصاميم جاهزة للطباعة','Stickers — print-ready designs','ستیکەرەکان — دیزاینی ئامادەی چاپ'), T('رموز QR حقيقية تنقرأ بالكاميرا، بتصحيح أخطاء عالي (H). المقاسات بالمليمتر الفعلي.','Real, scannable QR codes with high error correction (H). Sizes are true millimetres.','کۆدی QRی ڕاستەقینە و سکانکراو بە ڕاستکردنەوەی هەڵەی بەرز (H). قەبارەکان بە ملیمەتری ڕاستەقینەن.'));
   $('#introAd').innerHTML = intro(T('لوحة الإدارة','Admin panel','پانێڵی بەڕێوەبردن'), T('توليد دفعات الملصقات، متابعة البلاغات وزمن الرد، مراجعة الإساءات، وضبط حدود الاستخدام.','Generate sticker batches, track reports and response times, review abuse and set usage limits.','دروستکردنی کۆمەڵەی ستیکەر، بەدواداچوونی ڕاپۆرت و کاتی وەڵام، پێداچوونەوەی خراپ بەکارهێنان و دیاریکردنی سنوورەکان.'));
+  $('#introB').innerHTML = intro(T('الحجز المسبق — اختبار السوق قبل البرمجة','Pre-booking — test the market before building','حیجزی پێشوەختە — تاقیکردنەوەی بازاڕ پێش بەرنامەسازی'), T('صفحة ويب بسيطة: عدّاد أول 100، اختيار الباقة، حجز بدون دفع، ورابط إحالة لكل حاجز.','A simple web page: a first-100 counter, package choice, booking with no payment, and a referral link for every booker.','پەڕەیەکی سادەی وێب: ژمێرەری یەکەم 100، هەڵبژاردنی پاکێج، حیجز بێ پارەدان و بەستەری ناساندن بۆ هەر حیجزکەرێک.'));
+  $('#introBiz').innerHTML = intro(T('الشركات والمجمعات السكنية','Companies & residential compounds','کۆمپانیا و کۆمەڵگە نیشتەجێبوونەکان'), T('باقات بالجملة للأساطيل والمجمعات والجامعات، ولوحة تحكم توزّع البلاغات على السائق أو الساكن.','Bulk packages for fleets, compounds and campuses, plus a dashboard that routes reports to the driver or resident.','پاکێجی بەکۆمەڵ بۆ فلیت، کۆمەڵگە و زانکۆکان، لەگەڵ داشبۆردێک کە ڕاپۆرتەکان بۆ شۆفێر یان دانیشتوو دابەش دەکات.'));
   $('#plR').innerHTML = `<span class="tag">${I.globe}${T('المُبلِّغ','Reporter','ڕاپۆرتدەر')}</span> ${T('عبر المتصفح، بدون تطبيق','In the browser, no app','لە وێبگەڕەوە، بێ ئەپ')}`;
   $('#plA').innerHTML = `<span class="tag">${I.smartphone}${T('صاحب السيارة','Car owner','خاوەنی ئۆتۆمبێل')}</span> ${T('تطبيق إبلاغ','Eblagh app','ئەپی ئیبلاغ')}`;
   $('#logT').textContent = T('شنو يصير بالخلفية','Behind the scenes','لە پشتی پەردەوە');
@@ -1749,7 +2307,7 @@ function renderNotes(){
 
 /* ====================== Chips & log ====================== */
 function renderChips(){
-  const rc = [['camera',T('الكاميرا','Camera','کامێرا')],['landing',T('صفحة البلاغ','Report page','پەڕەی ڕاپۆرت')],['compose',T('التفاصيل','Details','وردەکاری')],['status',T('المتابعة','Tracking','بەدواداچوون')],['inactive',T('ملصق متوقف','Paused sticker','ستیکەری ڕاگیراو')]];
+  const rc = [['camera',T('الكاميرا','Camera','کامێرا')],['landing',T('صفحة البلاغ','Report page','پەڕەی ڕاپۆرت')],['compose',T('التفاصيل','Details','وردەکاری')],['status',T('المتابعة','Tracking','بەدواداچوون')],['inactive',T('ملصق متوقف','Paused sticker','ستیکەری ڕاگیراو')],['unact',T('غير مفعّل','Not activated','چالاک نەکراو')],['invalid',T('رمز غير صالح','Invalid code','کۆدی نادروست')],['neterr',T('بدون إنترنت','Offline','بێ ئینتەرنێت')],['limit',T('وصل الحد','Limit reached','گەیشتە سنوور')]];
   const ac = [['splash',T('البداية','Start','سەرەتا')],['login',T('الدخول','Sign-in','چوونەژوورەوە')],['otp',T('رمز التحقق','Code','کۆد')],['home',T('الرئيسية','Home','سەرەکی')],['inbox',T('البلاغات','Reports','ڕاپۆرتەکان')],['report',T('بلاغ','Report','ڕاپۆرت')],['cars',T('سياراتي','My cars','ئۆتۆمبێلەکانم')],['car',T('تفاصيل سيارة','Car details','وردەکاریی ئۆتۆمبێل')],['addScan',T('تفعيل ملصق','Activate','چالاککردن')],['profile',T('معلوماتي','Profile','زانیاری')],['plans',T('الاشتراك','Plan','پلان')],['buy',T('شراء ملصق','Buy sticker','کڕینی ستیکەر')],['delivery',T('التوصيل','Delivery','گەیاندن')],['payment',T('الدفع','Payment','پارەدان')],['done',T('تم الطلب','Ordered','داواکرا')],['settings',T('حسابي','Account','هەژمار')]];
   $$('[data-chips="r"]').forEach(el => el.innerHTML = rc.map(([k,t])=>`<button class="chip ${S.r.screen===k?'on':''}" data-act="r-jump" data-s="${k}">${t}</button>`).join(''));
   $$('[data-chips="a"]').forEach(el => el.innerHTML = ac.map(([k,t])=>`<button class="chip ${S.a.screen===k?'on':''}" data-act="a-jump" data-s="${k}">${t}</button>`).join(''));
@@ -1773,7 +2331,9 @@ function render(){
   $$('[data-phone="a"]', view).forEach(renderApp);
   if (S.mode === 'stickers') renderStickers();
   if (S.mode === 'admin') renderAdmin();
-  if (['reporter','app','onboard'].includes(S.mode)) renderNotes();
+  if (S.mode === 'booking') renderBookingAll();
+  if (S.mode === 'biz') renderBiz();
+  if (['reporter','app','onboard'].includes(S.mode)){ renderNotes(); extraNotes(); }
   renderChips(); renderLog();
   const rb = $('#rBody', view); if (rb && !S._jumpR) rb.scrollTop = keepR; S._jumpR = false;
   const ab = $('[data-phone="a"] .body', view); if (ab && !S._jumpA) ab.scrollTop = keepA; S._jumpA = false;
@@ -1929,6 +2489,109 @@ const ACT = {
   'ad-esc': () => { S.adm.limits.escalate = !S.adm.limits.escalate; render(); },
   'ad-save': () => pageToast(T('تم حفظ الإعدادات','Settings saved','ڕێکخستنەکان پاشەکەوت کران')),
 };
+/* ====================== Added actions ====================== */
+const _actMode = ACT['mode'], _obPlace = ACT['ob-place'], _obPay = ACT['ob-pay'], _placeOrder = placeOrder;
+placeOrder = function(){ _placeOrder(); Object.assign(S.a.order, {name:displayName(), qty:S.a.cart.qty}); S.adm.liveOrd = S.a.order; };
+Object.assign(ACT, {
+  'mode': el => {
+    if (el.dataset.m === 'onboard'){ Object.assign(S.a, {refOk:false, refErr:false, payFail:false, act:freshAct()}); S.a.reg.code = ''; }
+    _actMode(el);
+    const lo = S.adm.liveOrd;   /* the demo customer keeps their placed order, so admin updates show in their app */
+    if (el.dataset.m === 'onboard' && lo && !lo.activated){ Object.assign(S.a, {order:lo, authed:true, onboarded:true, screen:'done'}); S.a.reg.name = lo.name || ''; render(); }
+  },
+  /* reporter: errors + ad */
+  'r-retry': () => { if (!S.r.reason) S.r.reason = 'block'; S.r.screen = 'compose'; log(o3('رجع الاتصال — إعادة إرسال البلاغ','Back online — resending the report','هێڵ گەڕایەوە — ڕاپۆرتەکە دووبارە دەنێردرێتەوە'), 'refresh'); sendReport(); },
+  'r-promo': () => { S.bk.ref = 'SCAN-2K'; S.bk.done = false; S.bk.err = false; S.bk.kind = 'basic'; S._jumpB = true; log(o3('المُبلِّغ ضغط إعلان صفحة المسح ← صفحة الحجز بكود <b>SCAN-2K</b>','Reporter tapped the scan-page ad → booking page with code <b>SCAN-2K</b>','ڕاپۆرتدەر کرتەی لە ڕیکلامی پەڕەی سکان کرد ← پەڕەی حیجز بە کۆدی <b>SCAN-2K</b>'), 'bag', 'y'); setMode('booking'); },
+  /* owner note */
+  'note-preset': el => { S.a.noteDraft = L(NOTE_PRESETS[+el.dataset.i]); render(); },
+  'note-dur': el => { const v = $('#noteIn')?.value; if (v != null) S.a.noteDraft = v; S.a.noteDur = +el.dataset.m; render(); },
+  'note-set': () => {
+    const v = ($('#noteIn')?.value || '').trim();
+    if (!v){ toast('a', o3('اختار ملاحظة أو اكتبها','Pick or write a note','تێبینییەک هەڵبژێرە یان بینووسە')); return; }
+    if (/\d{7,}/.test(v.replace(/[\s-]/g,''))){ toast('a', o3('لا تكتب رقم هاتف بالملاحظة','Don’t put a phone number in the note','ژمارەی تەلەفۆن لە تێبینیدا مەنووسە')); return; }
+    const c = carById(S.a.car) || S.cars[0];
+    c.note = {text:v, t:Date.now(), until: S.a.noteDur ? Date.now() + S.a.noteDur*MIN : 0}; S.a.noteDraft = '';
+    log(o3(`صاحب السيارة نشر <b>ملاحظة</b> على صفحة المسح: ${esc(v)}`, `Owner posted a <b>note</b> on the scan page: ${esc(v)}`, `خاوەنەکە <b>تێبینییەکی</b> لە پەڕەی سکان بڵاو کردەوە: ${esc(v)}`), 'msg', 'y');
+    toast('a', o3('انتشرت — تظهر لأي واحد يمسح الملصق','Posted — anyone who scans will see it','بڵاو کرایەوە — هەر کەسێک سکانی بکات دەیبینێت'));
+  },
+  'note-clear': () => { const c = carById(S.a.car) || S.cars[0]; c.note = null; log(o3('صاحب السيارة شال الملاحظة من صفحة المسح','Owner removed the note from the scan page','خاوەنەکە تێبینییەکەی لە پەڕەی سکان لابرد'), 'msg'); render(); },
+  /* activation */
+  'act-method': el => { const A = S.a.act; A.method = el.dataset.m; if (A.err !== 'locked') A.err = null; render(); },
+  'act-scan': () => { Object.assign(S.a.act, {via:'scan', verified:null}); S.a.screen = 'addForm'; S._jumpA = true; render(); },
+  'act-check': () => {
+    const A = S.a.act; if (A.err === 'locked') return;
+    A.code = $('#actCode')?.value ?? A.code; A.secret = $('#actSecret')?.value ?? A.secret;
+    const c = normCode(A.code), s = normCode(A.secret);
+    if (!c || !s){ A.err = 'empty'; render(); return; }
+    if (!knownCodes().has(c)){ A.err = 'nocode'; render(); return; }
+    if (carById(c)){ A.err = 'taken'; log(o3(`محاولة تفعيل ملصق مفعّل مسبقاً <b>${ltr(fmtCode(c))}</b> — انرفضت`, `Attempt to activate an already-active sticker <b>${fmtCode(c)}</b> — rejected`, `هەوڵی چالاککردنی ستیکەرێکی چالاک <b>${ltr(fmtCode(c))}</b> — ڕەتکرایەوە`), 'shield'); render(); return; }
+    if (s !== normCode(secretOf(c))){ A.tries++; A.err = A.tries >= 5 ? 'locked' : 'wrong'; if (A.err === 'locked') log(o3('5 محاولات خاطئة — التفعيل انقفل 15 دقيقة','5 wrong attempts — activation locked for 15 minutes','5 هەوڵی هەڵە — چالاککردن بۆ 15 خولەک داخرا'), 'lock'); render(); return; }
+    Object.assign(A, {err:null, tries:0, via:'code', verified:c});
+    log(o3(`تحقّق الرمز السري للملصق <b>${ltr(fmtCode(c))}</b>`, `Secret code verified for sticker <b>${fmtCode(c)}</b>`, `کۆدی نهێنیی ستیکەری <b>${ltr(fmtCode(c))}</b> پشتڕاستکرایەوە`), 'key', 'g');
+    S.a.screen = 'addForm'; S._jumpA = true; render();
+  },
+  'a-activate': () => {
+    const n = S.a.newCar, id = actId();
+    n.model = $('#ncModel')?.value || n.model || T('هيونداي إلنترا','Hyundai Elantra','هیوندای ئێلەنترا'); n.plate = $('#ncPlate')?.value || '';
+    const ex = carById(id);
+    if (ex && S.a.newUser) ex.mine = true;
+    if (!ex) S.cars.push({id, mine:!!S.a.newUser, model:n.model, color:n.color, plate:n.plate, showModel:true, showColor:true, showPlate:!!n.plate, paused:false, shared:[], since:'2026-11-26', note:null});
+    const b = S.adm.batches.find(x => x.codes.includes(id)); if (b && !ex) b.act++;
+    if (S.a.order) S.a.order.activated = true;
+    S.a.screen = 'cars'; S.a.act = freshAct();
+    log(o3(`تفعّل ملصق جديد <b>${ltr(fmtCode(id))}</b>`, `New sticker <b>${fmtCode(id)}</b> activated`, `ستیکەری نوێی <b>${ltr(fmtCode(id))}</b> چالاک کرا`), 'check', 'g');
+    toast('a', o3('تفعّل الملصق! الصقه على زجاج سيارتك','Sticker activated! Put it on your car window','ستیکەرەکە چالاک کرا! لەسەر شووشەی ئۆتۆمبێلەکەت بیلکێنە'));
+  },
+  /* referral */
+  'ref-copy': () => toast('a', o3(`انسخ الكود ${MY_REF}`, `Copied ${MY_REF}`, `${MY_REF} کۆپی کرا`)),
+  'ref-share': () => { S.a.refInv++; log(o3('صاحب السيارة شارك رابط الدعوة','The owner shared the invite link','خاوەنەکە بەستەری بانگهێشتی نارد'), 'userPlus'); toast('a', o3('انفتحت المشاركة: eblagh.iq/i/EB-7K42','Share sheet opened: eblagh.iq/i/EB-7K42','بەشداریکردن کرایەوە: eblagh.iq/i/EB-7K42')); },
+  'ref-apply': () => { const v = $('[data-bind="reg.code"]')?.value || ''; S.a.reg.code = v; S.a.refOk = validRef(v); S.a.refErr = !S.a.refOk; if (S.a.refOk) log(o3(`انطبّق كود إحالة <b>${esc(v)}</b> — خصم 2,000 د.ع`, `Referral code <b>${esc(v)}</b> applied — 2,000 IQD off`, `کۆدی ناساندن <b>${esc(v)}</b> جێبەجێ کرا — 2,000 دینار داشکاندن`), 'userPlus', 'g'); render(); },
+  'ob-fail': () => { S.a.payFail = true; log(o3('فشلت عملية الدفع — ما انسحب أي مبلغ','Payment failed — nothing was charged','پارەدان سەرکەوتوو نەبوو — هیچ پارەیەک نەبڕدرا'), 'alert'); render(); },
+  'ob-pay': el => { S.a.payFail = false; _obPay(el); },
+  'ob-place': () => { S.a.payFail = false; _obPlace(); },
+  /* booking */
+  'bk-kind': el => { bkSync(); S.bk.kind = el.dataset.k; render(); },
+  'bk-submit': () => { bkSync(); const b = S.bk; if (!b.name.trim() || b.phone.replace(/\D/g,'').length < 10){ b.err = true; S._jumpB = true; render(); return; }
+    b.err = false; S.bookings++; b.pos = S.bookings; if (b.ref && validRef(b.ref)) S.bkRef++; b.done = true; S._jumpB = true;
+    log(o3(`حجز مسبق جديد <b>#${b.pos}</b> — ${esc(b.name)}`, `New pre-booking <b>#${b.pos}</b> — ${esc(b.name)}`, `حیجزی پێشوەختەی نوێ <b>#${b.pos}</b> — ${esc(b.name)}`), 'star', 'g'); render(); },
+  'bk-reset': () => { Object.assign(S.bk, {name:'', phone:'', ref:'', done:false, err:false, kind:'basic'}); S._jumpB = true; render(); },
+  'bk-share': () => toast('b', o3(`انسخ رابطك: eblagh.iq/b/${bkCodeOf(S.bk.pos)}`, `Link copied: eblagh.iq/b/${bkCodeOf(S.bk.pos)}`, `بەستەر کۆپی کرا: eblagh.iq/b/${bkCodeOf(S.bk.pos)}`)),
+  'bk-jump': el => { const s = el.dataset.s, b = S.bk; S._jumpB = true;
+    if (s === 'done'){ if (!b.name.trim()) b.name = T('أحمد','Ahmed','ئەحمەد'); if (!b.done){ S.bookings++; b.pos = S.bookings; b.done = true; } b.err = false; }
+    else { b.done = false; b.err = s === 'err'; if (b.kind === 'biz') b.kind = 'basic'; }
+    render(); },
+  'go-biz': () => { S.biz.tab = 'plans'; setMode('biz'); },
+  /* business */
+  'biz-tab': el => { bqSync(); S.biz.tab = el.dataset.k; render(); window.scrollTo({top:0, behavior:'smooth'}); },
+  'biz-type': el => { S.biz.type = el.dataset.k; S.biz.route = 'driver'; render(); },
+  'biz-pick': el => { bqSync(); S.biz.q.type = el.dataset.k; S.biz.sent = false; render(); $('#bq')?.scrollIntoView({behavior:'smooth', block:'center'}); },
+  'biz-quote': () => { bqSync(); const q = S.biz.q;
+    if (!q.org.trim() || !(+q.n > 0) || q.phone.replace(/\D/g,'').length < 10){ S.biz.err = true; render(); return; }
+    S.biz.err = false; S.biz.sent = true;
+    log(o3(`طلب عرض سعر أعمال: <b>${esc(q.org)}</b> — ${+q.n}`, `Business quote request: <b>${esc(q.org)}</b> — ${+q.n}`, `داوای نرخی بازرگانی: <b>${esc(q.org)}</b> — ${+q.n}`), 'users', 'g'); render(); },
+  'biz-new': () => { S.biz.sent = false; S.biz.q = {org:'', type:'fleet', n:'', phone:''}; render(); },
+  'biz-route': el => { S.biz.route = el.dataset.k; pageToast(T('تم تحديث توزيع البلاغات','Report routing updated','دابەشکردنی ڕاپۆرت نوێ کرایەوە')); render(); },
+  'biz-assign': el => { const v = S.biz.veh[+el.dataset.i]; v.d = v.d == null ? 0 : (v.d + 1) % BIZ_DRIVERS.length; if (v.st === 'unassigned') v.st = 'active'; pageToast(T('تم تعيين السائق — البلاغات توصله هسّه','Driver assigned — reports now reach them','شۆفێر دیاری کرا — ئێستا ڕاپۆرتەکانی پێدەگات')); render(); },
+  'biz-bulk': el => pageToast({import:T('ارفع ملف Excel فيه رموز الملصقات وأرقام المركبات — بالنسخة الحقيقية','Upload an Excel file with sticker codes and vehicle numbers — in the real version','فایلێکی Excel بە کۆدی ستیکەر و ژمارەی ئۆتۆمبێل باربکە — لە وەشانی ڕاستەقینەدا'), export:T('تقرير PDF شهري بالبلاغات وزمن الاستجابة — بالنسخة الحقيقية','Monthly PDF report with reports and response times — in the real version','ڕاپۆرتی مانگانەی PDF بە ڕاپۆرت و کاتی وەڵام — لە وەشانی ڕاستەقینەدا'), order:T('طلب جملة: يروح لقسم الطلبات بلوحة الإدارة','Bulk order: goes to Orders in the admin panel','داواکاریی بەکۆمەڵ: دەچێتە بەشی داواکارییەکانی پانێڵی بەڕێوەبردن')}[el.dataset.k]),
+  /* admin: orders, batches */
+  'ad-ofilter': el => { S.adm.ofilter = el.dataset.k; render(); },
+  'ad-onext': el => { const id = el.dataset.id, od = S.a.order;
+    const lo = S.adm.liveOrd; if (lo && lo.id === id && (!od || od.id !== id)){ lo.step = Math.min(3, (lo.step || 0) + 1); render(); return; }
+    if (od && od.id === id){ od.step = Math.min(3, (od.step || 0) + 1); const lv = liveOrder(); log(o3(`الإدارة حدّثت الطلب <b>${id}</b>: ${OST[lv.st][0].ar} — وصل إشعار للزبون`, `Admin updated order <b>${id}</b>: ${OST[lv.st][0].en} — customer notified`, `بەڕێوەبەر داواکاریی <b>${id}</b> نوێ کردەوە: ${OST[lv.st][0].ku} — کڕیار ئاگادار کرایەوە`), 'truck', 'g'); }
+    else { const o = S.adm.orders.find(x => x.id === id); if (o && ONEXT[o.st]) o.st = ONEXT[o.st][0]; }
+    render(); },
+  'ad-ocancel': el => { const o = S.adm.orders.find(x => x.id === el.dataset.id); if (o) o.st = 'cancelled'; render(); },
+  'ad-oexp': () => pageToast(T('ملف المندوبين: العنوان، أقرب نقطة دالة، رقم التواصل، والمبلغ — بالنسخة الحقيقية','Courier sheet: address, landmark, contact number and amount — in the real version','فایلی گەیەنەران: ناونیشان، شوێنی ناسراو، ژمارەی پەیوەندی و بڕ — لە وەشانی ڕاستەقینەدا')),
+  'ad-gen': () => { const A = S.adm; A.genQty = +$('#genQty').value; A.genDesign = $('#genDesign').value; const id = 'B-00' + (A.batches.length + 12);
+    A.batches.unshift({id, qty:A.genQty, design:A.genDesign, date:'2026-11-26', printed:0, sold:0, act:0, lost:0, st:'ready', dates:{ready:'11-26'}, codes:['EB5007','EB5008','EB5009','EB5010','EB5011','EB5012'], cst:['inactive','inactive','inactive','inactive','inactive','inactive']});
+    A.selBatch = id; log(o3(`انولّدت دفعة <b>${id}</b> — ${A.genQty} رمز`, `Batch <b>${id}</b> generated — ${A.genQty} codes`, `کۆمەڵەی <b>${id}</b> دروستکرا — ${A.genQty} کۆد`), 'layers', 'g'); render(); },
+  'ad-bnext': el => { const b = S.adm.batches.find(x => x.id === el.dataset.id); if (!b) return; const i = BSTAGES.indexOf(b.st); if (i >= BSTAGES.length - 1) return;
+    b.st = BSTAGES[i+1]; b.dates = b.dates || {}; b.dates[b.st] = '11-26';
+    if (b.st === 'printed') b.printed = b.qty;
+    if (b.st === 'distributed') b.sold = Math.max(b.sold, Math.round(b.qty * 0.04));
+    pageToast(T(`الدفعة ${b.id}: ${BST[b.st][0].ar}`, `Batch ${b.id}: ${BST[b.st][0].en}`, `کۆمەڵەی ${b.id}: ${BST[b.st][0].ku}`)); render(); },
+});
+
 function pageToast(t){ const d = document.createElement('div'); d.className='toast'; d.style.cssText='position:fixed;left:50%;transform:translateX(-50%);bottom:30px;right:auto;width:auto;max-width:90vw'; d.innerHTML = I.check + esc(t); document.body.appendChild(d); setTimeout(()=>d.remove(), 2400); }
 
 document.addEventListener('click', e => {
@@ -1942,7 +2605,17 @@ document.addEventListener('input', e => {
   if (e.target.dataset && e.target.dataset.bind) setBind(e.target);
   if (e.target.id === 'rNote') S.r.note = e.target.value;
   if (e.target.id === 'aDraft') S.a.draft = e.target.value;
+  if (e.target.id === 'noteIn') S.a.noteDraft = e.target.value;
+  if (e.target.id === 'actCode') S.a.act.code = e.target.value;
+  if (e.target.id === 'actSecret') S.a.act.secret = e.target.value;
+  if (e.target.dataset && e.target.dataset.bk) S.bk[e.target.dataset.bk] = e.target.value;
+  if (e.target.dataset && e.target.dataset.bq){ S.biz.q[e.target.dataset.bq] = e.target.value; if (e.target.dataset.bq === 'n' && $('#bqEst')) $('#bqEst').innerHTML = bqEst(); }
 });
+document.addEventListener('change', e => {
+  if (e.target.dataset && e.target.dataset.bk) S.bk[e.target.dataset.bk] = e.target.value;
+  if (e.target.dataset && e.target.dataset.bq){ S.biz.q[e.target.dataset.bq] = e.target.value; if (e.target.dataset.bq === 'type') render(); }
+});
+document.addEventListener('keydown', e => { if (e.key === 'Enter' && (e.target.id === 'actCode' || e.target.id === 'actSecret')) ACT['act-check'](); });
 document.addEventListener('keydown', e => { if (e.key === 'Enter' && e.target.id === 'aDraft') ACT['a-send'](); });
 
 /* ====================== Chrome: modes, theme, fonts, language ====================== */
@@ -1961,7 +2634,7 @@ function applyFonts(){
 }
 function saveFonts(){ try { localStorage.setItem('eb_fonts', JSON.stringify(fontPrefs)); } catch(e){} }
 function setupModes(){
-  const M = [['flow',T('التدفق المباشر','Live flow','ڕەوتی ڕاستەوخۆ'),'route'],['reporter',T('المُبلِّغ (متصفح)','Reporter (browser)','ڕاپۆرتدەر (وێبگەڕ)'),'globe'],['app',T('تطبيق صاحب السيارة','Owner app','ئەپی خاوەن ئۆتۆمبێل'),'smartphone'],['onboard',T('تسجيل زبون جديد','New customer','کڕیاری نوێ'),'userPlus'],['stickers',T('الملصقات','Stickers','ستیکەرەکان'),'sticker'],['admin',T('الإدارة','Admin','بەڕێوەبردن'),'monitor']];
+  const M = [['flow',T('التدفق المباشر','Live flow','ڕەوتی ڕاستەوخۆ'),'route'],['reporter',T('المُبلِّغ (متصفح)','Reporter (browser)','ڕاپۆرتدەر (وێبگەڕ)'),'globe'],['app',T('تطبيق صاحب السيارة','Owner app','ئەپی خاوەن ئۆتۆمبێل'),'smartphone'],['onboard',T('تسجيل زبون جديد','New customer','کڕیاری نوێ'),'userPlus'],['booking',T('الحجز المسبق','Pre-booking','حیجزی پێشوەختە'),'star'],['biz',T('الشركات والمجمعات','Business','بازرگانی'),'users'],['stickers',T('الملصقات','Stickers','ستیکەرەکان'),'sticker'],['admin',T('الإدارة','Admin','بەڕێوەبردن'),'monitor']];
   $('#modes').innerHTML = M.map(([k,t,ic])=>`<button data-act="mode" data-m="${k}">${I[ic]}${t}</button>`).join('');
   $('#modes').setAttribute('aria-label', T('الواجهات','Interfaces','ڕووکارەکان'));
   $('#langs').innerHTML = Object.entries(LANGS).map(([k,v])=>`<button data-act="lang" data-l="${k}" title="${v.name}${v.sub?' — '+v.sub:''}">${flag(v.flag)}<span class="lt">${v.short}</span></button>`).join('');
