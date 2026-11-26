@@ -279,9 +279,8 @@ svg{display:block}
 @media (max-width:480px){.sound{width:32px;height:32px}}
 
 /* stage: alert + call + sticker */
-.stage{--tilt-x:0deg;--tilt-y:0deg;--shine-x:50%;position:relative;display:grid;justify-items:center;width:min(100%,420px);padding-top:20px;transition:padding-top .65s cubic-bezier(.65,0,.35,1);touch-action:pan-y}
-.stage.is-alert{padding-top:84px}
-.stage.is-call{padding-top:152px}
+.stage{--tilt-x:0deg;--tilt-y:0deg;--shine-x:50%;position:relative;display:grid;justify-items:center;width:min(100%,420px);padding-top:20px;touch-action:pan-y}
+/* the sticker never moves down: the alerts float over the stage and the sticker leans back to make room */
 .alert-slot{position:absolute;top:0;left:50%;transform:translate(-50%);z-index:3;width:min(330px,92%);display:grid;gap:8px;pointer-events:none}
 .alert-slot>*{pointer-events:auto}
 .alert{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:18px;text-align:start;background:var(--glass);border:1px solid var(--glassline);box-shadow:inset 0 1px rgba(255,255,255,.95),0 1px 2px rgba(28,25,23,.06),0 10px 24px -10px rgba(28,25,23,.22),0 28px 56px -28px rgba(245,180,0,.45);transition:opacity .3s,transform .3s;animation:drop .42s var(--ease) backwards}
@@ -345,7 +344,8 @@ svg{display:block}
 
 /* hero sticker: lean back while the alerts show (narrow top, wide base), spring upright when they leave */
 .stk-btn .lean{display:block;transform-origin:50% 100%;transition:transform .9s cubic-bezier(.34,1.32,.5,1),filter .9s ease}
-.stage.lean-on .stk-btn .lean{transform:translateY(4px) perspective(640px) rotateX(26deg) scale(.97);filter:brightness(1.04)}
+.stage.lean-on .stk-btn .lean{transform:perspective(560px) rotateX(var(--lean,34deg));filter:brightness(1.04)}
+.stage.lean-on.is-call{--lean:52deg}
 .stage.lean-on .stk-btn .float{animation-play-state:paused}
 /* QR scan overlay, drawn over the real sticker's QR (placed from JS, redrawn on resize/shape/colour) */
 .hxq{position:absolute;z-index:4;pointer-events:none}
