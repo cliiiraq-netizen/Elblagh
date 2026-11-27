@@ -279,8 +279,9 @@ svg{display:block}
 @media (max-width:480px){.sound{width:32px;height:32px}}
 
 /* stage: alert + call + sticker */
-.stage{--tilt-x:0deg;--tilt-y:0deg;--shine-x:50%;position:relative;display:grid;justify-items:center;width:min(100%,420px);padding-top:20px;touch-action:pan-y}
-/* the sticker never moves down: the alerts float over the stage and the sticker leans back to make room */
+.stage{--tilt-x:0deg;--tilt-y:0deg;--shine-x:50%;position:relative;display:grid;justify-items:center;width:min(100%,420px);padding-top:20px;transition:padding-top .65s cubic-bezier(.65,0,.35,1);touch-action:pan-y}
+.stage.is-alert{padding-top:84px}
+.stage.is-call{padding-top:152px}
 .alert-slot{position:absolute;top:0;left:50%;transform:translate(-50%);z-index:3;width:min(330px,92%);display:grid;gap:8px;pointer-events:none}
 .alert-slot>*{pointer-events:auto}
 .alert{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:18px;text-align:start;background:var(--glass);border:1px solid var(--glassline);box-shadow:inset 0 1px rgba(255,255,255,.95),0 1px 2px rgba(28,25,23,.06),0 10px 24px -10px rgba(28,25,23,.22),0 28px 56px -28px rgba(245,180,0,.45);transition:opacity .3s,transform .3s;animation:drop .42s var(--ease) backwards}
@@ -342,11 +343,6 @@ svg{display:block}
 @keyframes cast{0%,100%{opacity:1}50%{opacity:.62}}
 @keyframes wave{0%{opacity:0;transform:scale(.55)}15%{opacity:1}100%{opacity:0;transform:scale(2.1)}}
 
-/* hero sticker: lean back while the alerts show (narrow top, wide base), spring upright when they leave */
-.stk-btn .lean{display:block;transform-origin:50% 100%;transition:transform .9s cubic-bezier(.34,1.32,.5,1),filter .9s ease}
-.stage.lean-on .stk-btn .lean{transform:perspective(560px) rotateX(var(--lean,34deg));filter:brightness(1.04)}
-.stage.lean-on.is-call{--lean:52deg}
-.stage.lean-on .stk-btn .float{animation-play-state:paused}
 /* QR scan overlay, drawn over the real sticker's QR (placed from JS, redrawn on resize/shape/colour) */
 .hxq{position:absolute;z-index:4;pointer-events:none}
 .hxq-win{position:absolute;inset:0;overflow:hidden;border-radius:6%}
@@ -365,7 +361,7 @@ svg{display:block}
 .stage.is-scan .hxq-frame{animation:hxqLock .62s var(--ease) both}
 @keyframes hxqSweep{0%{opacity:0;transform:translateY(-100%)}12%{opacity:1}78%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(0)}}
 @keyframes hxqLock{0%,45%{opacity:0;transform:scale(1.15)}80%,100%{opacity:1;transform:scale(1)}}
-@media (prefers-reduced-motion:reduce){.stk-btn .lean{transition:none}.stage.is-scan .hxq-frame{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.stage.is-scan .hxq-frame{opacity:1;transform:none}}
 
 /* controls: sticker switches + CTA */
 .controls{display:grid;justify-items:center;gap:16px;animation:rise .8s var(--ease) .7s backwards}
@@ -1454,14 +1450,13 @@ function playSequence(withSound){
   const st = $('#stage'), slot = $('#slot'), hero = $('#hero');
   if (cycleDone) alertIx++; cycleDone = false;
   const txt = ALERTS[alertIx % ALERTS.length];
-  slot.innerHTML = ''; slot.classList.remove('slot-out'); st.classList.remove('is-call','is-scan','lean-on'); void st.offsetWidth; st.classList.add('is-alert','is-scan'); hero.classList.add('scan');
+  slot.innerHTML = ''; slot.classList.remove('slot-out'); st.classList.remove('is-call','is-scan'); void st.offsetWidth; st.classList.add('is-alert','is-scan'); hero.classList.add('scan');
   ripple(); if (withSound) chime();
   const at = (ms, fn) => seqTimers.push(setTimeout(() => { if (heroAway()){ stopSequence(); return; } fn(); }, ms));
   at(280, () => { slot.innerHTML = alertHTML(txt, false); $('#alert').classList.add('show'); });
-  at(460, () => st.classList.add('lean-on'));
   at(2600, () => { st.classList.remove('is-alert'); st.classList.add('is-call'); });
   at(2900, () => { const a = $('#alert'); if (a){ a.classList.add('missed'); $('#alertWhen').textContent = 'ما انشاف'; } slot.insertAdjacentHTML('beforeend', callHTML); $('#capsule').classList.add('show'); if (withSound) ringTone(); });
-  at(6300, () => { slot.classList.add('slot-out'); st.classList.remove('lean-on','is-scan'); });
+  at(6300, () => { slot.classList.add('slot-out'); st.classList.remove('is-scan'); });
   at(6640, () => { slot.innerHTML = ''; slot.classList.remove('slot-out'); st.classList.remove('is-alert','is-call'); hero.classList.remove('scan'); cycleDone = true; });
 }
 $('#stkBtn').onclick = () => playSequence(true);
@@ -1471,7 +1466,7 @@ function stopSequence(){
   seqTimers.forEach(clearTimeout); seqTimers = [];
   const st = $('#stage'); if (!st.classList.contains('is-alert') && !st.classList.contains('is-call') && !$('#slot').innerHTML) return;
   const ref = $('#how'), y0 = ref.getBoundingClientRect().top; st.style.transition = 'none';
-  $('#slot').innerHTML = ''; $('#slot').classList.remove('slot-out'); st.classList.remove('is-alert','is-call','is-scan','lean-on'); $('#hero').classList.remove('scan'); cycleDone = true;
+  $('#slot').innerHTML = ''; $('#slot').classList.remove('slot-out'); st.classList.remove('is-alert','is-call','is-scan'); $('#hero').classList.remove('scan'); cycleDone = true;
   const d = ref.getBoundingClientRect().top - y0; if (d) scrollBy({top:d, behavior:'instant'});
   requestAnimationFrame(() => { st.style.transition = ''; });
 }
